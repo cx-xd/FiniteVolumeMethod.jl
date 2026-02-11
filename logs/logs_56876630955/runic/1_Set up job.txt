@@ -1,0 +1,45 @@
+﻿2026-02-09T19:16:22.3829507Z Current runner version: '2.331.0'
+2026-02-09T19:16:22.3864098Z ##[group]Runner Image Provisioner
+2026-02-09T19:16:22.3865482Z Hosted Compute Agent
+2026-02-09T19:16:22.3866425Z Version: 20260123.484
+2026-02-09T19:16:22.3867341Z Commit: 6bd6555ca37d84114959e1c76d2c01448ff61c5d
+2026-02-09T19:16:22.3868663Z Build Date: 2026-01-23T19:41:17Z
+2026-02-09T19:16:22.3869960Z Worker ID: {672e78d6-34bb-4e6c-a20a-beb9116f35b3}
+2026-02-09T19:16:22.3871118Z Azure Region: eastus2
+2026-02-09T19:16:22.3872100Z ##[endgroup]
+2026-02-09T19:16:22.3874509Z ##[group]Operating System
+2026-02-09T19:16:22.3875429Z Ubuntu
+2026-02-09T19:16:22.3876361Z 24.04.3
+2026-02-09T19:16:22.3877070Z LTS
+2026-02-09T19:16:22.3877883Z ##[endgroup]
+2026-02-09T19:16:22.3878927Z ##[group]Runner Image
+2026-02-09T19:16:22.3879815Z Image: ubuntu-24.04
+2026-02-09T19:16:22.3880811Z Version: 20260201.15.1
+2026-02-09T19:16:22.3882512Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260201.15/images/ubuntu/Ubuntu2404-Readme.md
+2026-02-09T19:16:22.3885451Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260201.15
+2026-02-09T19:16:22.3887204Z ##[endgroup]
+2026-02-09T19:16:22.3892301Z ##[group]GITHUB_TOKEN Permissions
+2026-02-09T19:16:22.3895282Z Actions: write
+2026-02-09T19:16:22.3896199Z ArtifactMetadata: write
+2026-02-09T19:16:22.3897162Z Attestations: write
+2026-02-09T19:16:22.3898018Z Checks: write
+2026-02-09T19:16:22.3898908Z Contents: write
+2026-02-09T19:16:22.3899819Z Deployments: write
+2026-02-09T19:16:22.3900707Z Discussions: write
+2026-02-09T19:16:22.3901521Z Issues: write
+2026-02-09T19:16:22.3902330Z Metadata: read
+2026-02-09T19:16:22.3903110Z Models: read
+2026-02-09T19:16:22.3903908Z Packages: write
+2026-02-09T19:16:22.3904787Z Pages: write
+2026-02-09T19:16:22.3905768Z PullRequests: write
+2026-02-09T19:16:22.3906575Z RepositoryProjects: write
+2026-02-09T19:16:22.3907608Z SecurityEvents: write
+2026-02-09T19:16:22.3908432Z Statuses: write
+2026-02-09T19:16:22.3909486Z ##[endgroup]
+2026-02-09T19:16:22.3912784Z Secret source: Actions
+2026-02-09T19:16:22.3914115Z Prepare workflow directory
+2026-02-09T19:16:22.4360264Z Prepare all required actions
+2026-02-09T19:16:22.4416026Z Getting action download info
+2026-02-09T19:16:22.7802189Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-02-09T19:16:22.8786693Z Download action repository 'fredrikekre/runic-action@v1' (SHA:b5007693fe5fdf8a4217a07f632a631afdc36e98)
+2026-02-09T19:16:23.5689677Z Complete job name: runic
