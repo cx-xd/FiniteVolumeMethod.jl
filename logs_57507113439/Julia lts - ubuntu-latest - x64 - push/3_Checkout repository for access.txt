@@ -1,0 +1,74 @@
+﻿2026-02-16T02:04:05.5997826Z ##[group]Run actions/checkout@v4
+2026-02-16T02:04:05.5998149Z with:
+2026-02-16T02:04:05.5998378Z   repository: cx-xd/FiniteVolumeMethod.jl
+2026-02-16T02:04:05.5998781Z   token: ***
+2026-02-16T02:04:05.5998962Z   ssh-strict: true
+2026-02-16T02:04:05.5999137Z   ssh-user: git
+2026-02-16T02:04:05.5999330Z   persist-credentials: true
+2026-02-16T02:04:05.5999547Z   clean: true
+2026-02-16T02:04:05.5999737Z   sparse-checkout-cone-mode: true
+2026-02-16T02:04:05.5999965Z   fetch-depth: 1
+2026-02-16T02:04:05.6000151Z   fetch-tags: false
+2026-02-16T02:04:05.6000333Z   show-progress: true
+2026-02-16T02:04:05.6000515Z   lfs: false
+2026-02-16T02:04:05.6000677Z   submodules: false
+2026-02-16T02:04:05.6000874Z   set-safe-directory: true
+2026-02-16T02:04:05.6001098Z env:
+2026-02-16T02:04:05.6001247Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:05.6001428Z ##[endgroup]
+2026-02-16T02:04:05.7099490Z Syncing repository: cx-xd/FiniteVolumeMethod.jl
+2026-02-16T02:04:05.7101556Z ##[group]Getting Git version info
+2026-02-16T02:04:05.7102489Z Working directory is '/home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl'
+2026-02-16T02:04:05.7103628Z [command]/usr/bin/git version
+2026-02-16T02:04:05.7111182Z git version 2.52.0
+2026-02-16T02:04:05.7138318Z ##[endgroup]
+2026-02-16T02:04:05.7155430Z Temporarily overriding HOME='/home/runner/work/_temp/45433bfa-9185-4ad3-8813-38013d258a57' before making global git config changes
+2026-02-16T02:04:05.7156997Z Adding repository directory to the temporary git global config as a safe directory
+2026-02-16T02:04:05.7171463Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl
+2026-02-16T02:04:05.7213819Z Deleting the contents of '/home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl'
+2026-02-16T02:04:05.7217746Z ##[group]Initializing the repository
+2026-02-16T02:04:05.7222582Z [command]/usr/bin/git init /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl
+2026-02-16T02:04:05.7351266Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-02-16T02:04:05.7352321Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-02-16T02:04:05.7352865Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-02-16T02:04:05.7353249Z hint: call:
+2026-02-16T02:04:05.7353468Z hint:
+2026-02-16T02:04:05.7353725Z hint: 	git config --global init.defaultBranch <name>
+2026-02-16T02:04:05.7354025Z hint:
+2026-02-16T02:04:05.7354295Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-02-16T02:04:05.7355142Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-02-16T02:04:05.7355827Z hint:
+2026-02-16T02:04:05.7356262Z hint: 	git branch -m <name>
+2026-02-16T02:04:05.7356491Z hint:
+2026-02-16T02:04:05.7356790Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-02-16T02:04:05.7357849Z Initialized empty Git repository in /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/.git/
+2026-02-16T02:04:05.7369747Z [command]/usr/bin/git remote add origin https://github.com/cx-xd/FiniteVolumeMethod.jl
+2026-02-16T02:04:05.7407766Z ##[endgroup]
+2026-02-16T02:04:05.7408445Z ##[group]Disabling automatic garbage collection
+2026-02-16T02:04:05.7413335Z [command]/usr/bin/git config --local gc.auto 0
+2026-02-16T02:04:05.7444343Z ##[endgroup]
+2026-02-16T02:04:05.7444932Z ##[group]Setting up auth
+2026-02-16T02:04:05.7452636Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-02-16T02:04:05.7485366Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-02-16T02:04:05.7846261Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-02-16T02:04:05.7879043Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-02-16T02:04:05.8114916Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-02-16T02:04:05.8147147Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-02-16T02:04:05.8396469Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-02-16T02:04:05.8432956Z ##[endgroup]
+2026-02-16T02:04:05.8433642Z ##[group]Fetching the repository
+2026-02-16T02:04:05.8442321Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +779fd206d892818a1fb83ea9aea34177333f763e:refs/remotes/origin/main
+2026-02-16T02:04:08.3320997Z From https://github.com/cx-xd/FiniteVolumeMethod.jl
+2026-02-16T02:04:08.3321592Z  * [new ref]         779fd206d892818a1fb83ea9aea34177333f763e -> origin/main
+2026-02-16T02:04:08.3354445Z ##[endgroup]
+2026-02-16T02:04:08.3355252Z ##[group]Determining the checkout info
+2026-02-16T02:04:08.3357999Z ##[endgroup]
+2026-02-16T02:04:08.3363311Z [command]/usr/bin/git sparse-checkout disable
+2026-02-16T02:04:08.3406142Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-02-16T02:04:08.3433622Z ##[group]Checking out the ref
+2026-02-16T02:04:08.3437423Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-02-16T02:04:08.7139311Z Switched to a new branch 'main'
+2026-02-16T02:04:08.7140018Z branch 'main' set up to track 'origin/main'.
+2026-02-16T02:04:08.7173482Z ##[endgroup]
+2026-02-16T02:04:08.7213466Z [command]/usr/bin/git log -1 --format=%H
+2026-02-16T02:04:08.7237886Z 779fd206d892818a1fb83ea9aea34177333f763e

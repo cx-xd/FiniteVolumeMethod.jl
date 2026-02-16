@@ -1,0 +1,43 @@
+﻿2026-02-16T02:04:00.1864271Z Current runner version: '2.331.0'
+2026-02-16T02:04:00.1891512Z ##[group]Runner Image Provisioner
+2026-02-16T02:04:00.1892366Z Hosted Compute Agent
+2026-02-16T02:04:00.1893061Z Version: 20260123.484
+2026-02-16T02:04:00.1893644Z Commit: 6bd6555ca37d84114959e1c76d2c01448ff61c5d
+2026-02-16T02:04:00.1894344Z Build Date: 2026-01-23T19:41:17Z
+2026-02-16T02:04:00.1895003Z Worker ID: {5c77eb8a-dd63-49e9-88ff-7cc446ad55d2}
+2026-02-16T02:04:00.1895716Z Azure Region: westus
+2026-02-16T02:04:00.1896671Z ##[endgroup]
+2026-02-16T02:04:00.1898175Z ##[group]Operating System
+2026-02-16T02:04:00.1898825Z Ubuntu
+2026-02-16T02:04:00.1899310Z 24.04.3
+2026-02-16T02:04:00.1899810Z LTS
+2026-02-16T02:04:00.1900254Z ##[endgroup]
+2026-02-16T02:04:00.1900750Z ##[group]Runner Image
+2026-02-16T02:04:00.1901232Z Image: ubuntu-24.04
+2026-02-16T02:04:00.1901844Z Version: 20260209.23.1
+2026-02-16T02:04:00.1902793Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260209.23/images/ubuntu/Ubuntu2404-Readme.md
+2026-02-16T02:04:00.1904462Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260209.23
+2026-02-16T02:04:00.1905361Z ##[endgroup]
+2026-02-16T02:04:00.1906717Z ##[group]GITHUB_TOKEN Permissions
+2026-02-16T02:04:00.1908571Z Contents: read
+2026-02-16T02:04:00.1909114Z Metadata: read
+2026-02-16T02:04:00.1909721Z Packages: read
+2026-02-16T02:04:00.1910195Z ##[endgroup]
+2026-02-16T02:04:00.1912368Z Secret source: Actions
+2026-02-16T02:04:00.1913187Z Prepare workflow directory
+2026-02-16T02:04:00.2313167Z Prepare all required actions
+2026-02-16T02:04:00.2353423Z Getting action download info
+2026-02-16T02:04:00.7651529Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-02-16T02:04:00.9121048Z Download action repository 'julia-actions/setup-julia@v2' (SHA:5c9647d97b78a5debe5164e9eec09d653d29bd71)
+2026-02-16T02:04:01.4229248Z Download action repository 'julia-actions/cache@v2' (SHA:d10a6fd8f31b12404a54613ebad242900567f2b9)
+2026-02-16T02:04:01.8143019Z Download action repository 'julia-actions/julia-buildpkg@v1' (SHA:e3eb439fad4f9aba7da2667e7510e4a46ebc46e1)
+2026-02-16T02:04:02.2052204Z Download action repository 'julia-actions/julia-runtest@v1' (SHA:d60b785c6f2bdf4ebfb18b2b6f7d93b7dfb0efe3)
+2026-02-16T02:04:02.5678882Z Download action repository 'julia-actions/julia-processcoverage@v1' (SHA:03114f09f119417c3242a9fb6e0b722676aedf38)
+2026-02-16T02:04:02.9274929Z Download action repository 'codecov/codecov-action@v5' (SHA:671740ac38dd9b0130fbe1cec585b89eea48d3de)
+2026-02-16T02:04:03.4147534Z Getting action download info
+2026-02-16T02:04:03.6230130Z Download action repository 'dcarbone/install-jq-action@f0e10f46ff84f4d32178b4b76e1ef180b16f82c3' (SHA:f0e10f46ff84f4d32178b4b76e1ef180b16f82c3)
+2026-02-16T02:04:04.0168947Z Download action repository 'actions/cache@5a3ec84eff668545956fd18022155c47e93e2684' (SHA:5a3ec84eff668545956fd18022155c47e93e2684)
+2026-02-16T02:04:04.1758521Z Download action repository 'pyTooling/Actions@42e17fae05f224e5ac3d79d021a4e3577878efe5' (SHA:42e17fae05f224e5ac3d79d021a4e3577878efe5)
+2026-02-16T02:04:04.7183021Z Getting action download info
+2026-02-16T02:04:04.9112320Z Download action repository 'actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea' (SHA:60a0d83039c74a4aee543508d2ffcb1c3799cdea)
+2026-02-16T02:04:05.4460478Z Complete job name: Julia lts - ubuntu-latest - x64 - push

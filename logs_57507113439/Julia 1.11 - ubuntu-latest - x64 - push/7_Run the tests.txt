@@ -1,0 +1,1542 @@
+﻿2026-02-16T02:05:48.6421381Z ##[group]Run julia-actions/julia-runtest@v1
+2026-02-16T02:05:48.6421655Z with:
+2026-02-16T02:05:48.6421823Z   check_bounds: yes
+2026-02-16T02:05:48.6422007Z   coverage: true
+2026-02-16T02:05:48.6422171Z   depwarn: yes
+2026-02-16T02:05:48.6422546Z   force_latest_compatible_version: auto
+2026-02-16T02:05:48.6422781Z   inline: yes
+2026-02-16T02:05:48.6422951Z   project: @.
+2026-02-16T02:05:48.6423109Z   annotate: false
+2026-02-16T02:05:48.6423292Z   compiled_modules: yes
+2026-02-16T02:05:48.6423489Z   allow_reresolve: true
+2026-02-16T02:05:48.6423667Z env:
+2026-02-16T02:05:48.6423829Z   JULIA_PKG_SERVER: 
+2026-02-16T02:05:48.6424035Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-16T02:05:48.6424292Z   JULIA_REFERENCETESTS_UPDATE: true
+2026-02-16T02:05:48.6424519Z ##[endgroup]
+2026-02-16T02:05:48.6444458Z ##[group]Run echo "JULIA_PKG_SERVER_REGISTRY_PREFERENCE=${JULIA_PKG_SERVER_REGISTRY_PREFERENCE:-eager}" >> ${GITHUB_ENV}
+2026-02-16T02:05:48.6445681Z [36;1mecho "JULIA_PKG_SERVER_REGISTRY_PREFERENCE=${JULIA_PKG_SERVER_REGISTRY_PREFERENCE:-eager}" >> ${GITHUB_ENV}[0m
+2026-02-16T02:05:48.6488257Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T02:05:48.6488740Z env:
+2026-02-16T02:05:48.6489016Z   JULIA_PKG_SERVER: 
+2026-02-16T02:05:48.6489363Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-16T02:05:48.6489789Z   JULIA_REFERENCETESTS_UPDATE: true
+2026-02-16T02:05:48.6490143Z ##[endgroup]
+2026-02-16T02:05:48.6572801Z ##[group]Run # The Julia command that will be executed
+2026-02-16T02:05:48.6573147Z [36;1m# The Julia command that will be executed[0m
+2026-02-16T02:05:48.6573709Z [36;1mjulia_cmd=( julia --color=yes --inline=yes --project=@. -e 'include(joinpath(ENV["GITHUB_ACTION_PATH"], "test_harness.jl"))' --  )[0m
+2026-02-16T02:05:48.6574208Z [36;1m[0m
+2026-02-16T02:05:48.6574437Z [36;1m# Add the prefix in front of the command if there is one[0m
+2026-02-16T02:05:48.6574732Z [36;1mprefix=(  )[0m
+2026-02-16T02:05:48.6575009Z [36;1m[[ -n ${prefix[*]} ]] && julia_cmd=( "${prefix[@]}" "${julia_cmd[@]}" )[0m
+2026-02-16T02:05:48.6575317Z [36;1m[0m
+2026-02-16T02:05:48.6575477Z [36;1m# Run the Julia command[0m
+2026-02-16T02:05:48.6575749Z [36;1mecho "::debug::Executing Julia: ${julia_cmd[*]}"[0m
+2026-02-16T02:05:48.6576024Z [36;1m"${julia_cmd[@]}"[0m
+2026-02-16T02:05:48.6601084Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T02:05:48.6601390Z env:
+2026-02-16T02:05:48.6601558Z   JULIA_PKG_SERVER: 
+2026-02-16T02:05:48.6601783Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-16T02:05:48.6602054Z   JULIA_REFERENCETESTS_UPDATE: true
+2026-02-16T02:05:48.6602396Z   ANNOTATE: false
+2026-02-16T02:05:48.6602670Z   COVERAGE: true
+2026-02-16T02:05:48.6602961Z   FORCE_LATEST_COMPATIBLE_VERSION: auto
+2026-02-16T02:05:48.6603221Z   CHECK_BOUNDS: yes
+2026-02-16T02:05:48.6603410Z   COMPILED_MODULES: yes
+2026-02-16T02:05:48.6603603Z   ALLOW_RERESOLVE: true
+2026-02-16T02:05:48.6603781Z   DEPWARN: yes
+2026-02-16T02:05:48.6603975Z ##[endgroup]
+2026-02-16T02:05:49.5955810Z │
+2026-02-16T02:05:49.5956829Z │ To reproduce this CI run locally run the following from the same repository state on julia version 1.11.9:
+2026-02-16T02:05:49.5957546Z │
+2026-02-16T02:05:49.5958721Z │ `import Pkg; Pkg.test(;coverage=true, julia_args=["--check-bounds=yes", "--compiled-modules=yes", "--depwarn=yes"], force_latest_compatible_version=false, allow_reresolve=true)`
+2026-02-16T02:05:49.5959672Z │
+2026-02-16T02:05:50.6909633Z [32m[1m     Testing[22m[39m FiniteVolumeMethod
+2026-02-16T02:05:53.8705685Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mCould not use exact versions of packages in manifest, re-resolving
+2026-02-16T02:05:53.8706754Z [33m[1m└ [22m[39m[90m@ Pkg.Operations /opt/hostedtoolcache/julia/1.11.9/x64/share/julia/stdlib/v1.11/Pkg/src/Operations.jl:1924[39m
+2026-02-16T02:05:56.6142093Z [32m[1m      Status[22m[39m `/tmp/jl_1SDn6e/Project.toml`
+2026-02-16T02:05:56.6575425Z   [90m[47edcb42] [39mADTypes v1.21.0
+2026-02-16T02:05:56.6576508Z   [90m[7d9f7c33] [39mAccessors v0.1.43
+2026-02-16T02:05:56.6577417Z [33m⌅[39m [90m[4c88cf16] [39mAqua v0.7.4
+2026-02-16T02:05:56.6578048Z   [90m[6e4b80f9] [39mBenchmarkTools v1.6.3
+2026-02-16T02:05:56.6578647Z   [90m[0e736298] [39mBessels v0.2.8
+2026-02-16T02:05:56.6579313Z [32m⌃[39m [90m[13f3f980] [39mCairoMakie v0.13.10
+2026-02-16T02:05:56.6579988Z [33m⌅[39m [90m[f68482b8] [39mCthulhu v2.16.6
+2026-02-16T02:05:56.6580593Z   [90m[667455a9] [39mCubature v1.5.1
+2026-02-16T02:05:56.6581215Z   [90m[82cc6244] [39mDataInterpolations v8.9.0
+2026-02-16T02:05:56.6581899Z   [90m[927a84f5] [39mDelaunayTriangulation v1.6.6
+2026-02-16T02:05:56.6582645Z   [90m[8bb1440f] [39mDelimitedFiles v1.9.1
+2026-02-16T02:05:56.6583026Z   [90m[0b91fe84] [39mDisplayAs v0.1.6
+2026-02-16T02:05:56.6583385Z   [90m[fdbdab4c] [39mElasticArrays v1.2.12
+2026-02-16T02:05:56.6583768Z   [90m[7d51a73a] [39mExplicitImports v1.15.0
+2026-02-16T02:05:56.6584159Z   [90m[442a2c76] [39mFastGaussQuadrature v1.1.0
+2026-02-16T02:05:56.6584918Z   [90m[d4f04ab7] [39mFiniteVolumeMethod v1.2.0 `~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl`
+2026-02-16T02:05:56.6585519Z [33m⌅[39m [90m[c3a54625] [39mJET v0.9.20
+2026-02-16T02:05:56.6585863Z   [90m[ba0b0d4f] [39mKrylov v0.10.5
+2026-02-16T02:05:56.6586264Z [32m⌃[39m [90m[7ed4a6bd] [39mLinearSolve v3.26.0
+2026-02-16T02:05:56.6586691Z [32m⌃[39m [90m[f16ad982] [39mNaturalNeighbours v1.3.5
+2026-02-16T02:05:56.6588979Z [32m⌃[39m [90m[8913a72c] [39mNonlinearSolve v4.10.0
+2026-02-16T02:05:56.6589487Z [32m⌃[39m [90m[1dea7af3] [39mOrdinaryDiffEq v6.101.0
+2026-02-16T02:05:56.6589951Z   [90m[647866c9] [39mPolygonOps v0.1.2
+2026-02-16T02:05:56.6590372Z   [90m[324d217c] [39mReferenceTests v0.10.6
+2026-02-16T02:05:56.6590771Z   [90m[f2b01f46] [39mRoots v2.2.10
+2026-02-16T02:05:56.6591151Z   [90m[55797a34] [39mSimpleGraphs v0.8.8
+2026-02-16T02:05:56.6591568Z   [90m[47a9eef4] [39mSparseDiffTools v2.26.0
+2026-02-16T02:05:56.6592034Z   [90m[276daf66] [39mSpecialFunctions v2.7.1
+2026-02-16T02:05:56.6592699Z   [90m[860ef19b] [39mStableRNGs v1.0.4
+2026-02-16T02:05:56.6593150Z   [90m[90137ffa] [39mStaticArrays v1.9.16
+2026-02-16T02:05:56.6593594Z   [90m[2913bbd2] [39mStatsBase v0.34.10
+2026-02-16T02:05:56.6594166Z [32m⌃[39m [90m[9672c7b4] [39mSteadyStateDiffEq v2.6.0
+2026-02-16T02:05:56.6594718Z   [90m[6ec83bb0] [39mStructEquality v2.1.0
+2026-02-16T02:05:56.6595206Z   [90m[ade2ca70] [39mDates v1.11.0
+2026-02-16T02:05:56.6595732Z   [90m[37e2e46d] [39mLinearAlgebra v1.11.0
+2026-02-16T02:05:56.6596218Z   [90m[9a3f8284] [39mRandom v1.11.0
+2026-02-16T02:05:56.6596682Z   [90m[2f01184e] [39mSparseArrays v1.11.0
+2026-02-16T02:05:56.6597130Z   [90m[8dfed614] [39mTest v1.11.0
+2026-02-16T02:05:56.6597657Z [32m[1m      Status[22m[39m `/tmp/jl_1SDn6e/Manifest.toml`
+2026-02-16T02:05:56.7610238Z   [90m[47edcb42] [39mADTypes v1.21.0
+2026-02-16T02:05:56.7610939Z   [90m[621f4979] [39mAbstractFFTs v1.5.0
+2026-02-16T02:05:56.7611568Z   [90m[398f06c4] [39mAbstractLattices v0.3.1
+2026-02-16T02:05:56.7612430Z   [90m[1520ce14] [39mAbstractTrees v0.4.5
+2026-02-16T02:05:56.7612985Z   [90m[7d9f7c33] [39mAccessors v0.1.43
+2026-02-16T02:05:56.7613404Z   [90m[79e6a3ab] [39mAdapt v4.4.0
+2026-02-16T02:05:56.7614001Z   [90m[35492f91] [39mAdaptivePredicates v1.2.0
+2026-02-16T02:05:56.7614635Z   [90m[66dad0bd] [39mAliasTables v1.1.3
+2026-02-16T02:05:56.7615230Z   [90m[27a7e980] [39mAnimations v0.4.2
+2026-02-16T02:05:56.7615843Z [33m⌅[39m [90m[4c88cf16] [39mAqua v0.7.4
+2026-02-16T02:05:56.7616452Z   [90m[ec485272] [39mArnoldiMethod v0.4.0
+2026-02-16T02:05:56.7617068Z   [90m[4fba245c] [39mArrayInterface v7.22.0
+2026-02-16T02:05:56.7617684Z   [90m[4c555306] [39mArrayLayouts v1.12.2
+2026-02-16T02:05:56.7618208Z   [90m[67c07d97] [39mAutoma v1.1.0
+2026-02-16T02:05:56.7618776Z   [90m[13072b0f] [39mAxisAlgorithms v1.1.0
+2026-02-16T02:05:56.7619358Z   [90m[39de3d68] [39mAxisArrays v0.4.8
+2026-02-16T02:05:56.7619761Z   [90m[18cc8868] [39mBaseDirs v1.3.2
+2026-02-16T02:05:56.7620693Z   [90m[6e4b80f9] [39mBenchmarkTools v1.6.3
+2026-02-16T02:05:56.7621416Z   [90m[0e736298] [39mBessels v0.2.8
+2026-02-16T02:05:56.7622179Z   [90m[62783981] [39mBitTwiddlingConvenienceFunctions v0.1.6
+2026-02-16T02:05:56.7623178Z [32m⌃[39m [90m[70df07ce] [39mBracketingNonlinearSolve v1.3.0
+2026-02-16T02:05:56.7623878Z   [90m[fa961155] [39mCEnum v0.5.0
+2026-02-16T02:05:56.7624436Z   [90m[2a0fbf3d] [39mCPUSummary v0.2.7
+2026-02-16T02:05:56.7624979Z   [90m[96374032] [39mCRlibm v1.0.2
+2026-02-16T02:05:56.7625522Z   [90m[159f3aea] [39mCairo v1.1.1
+2026-02-16T02:05:56.7626147Z [32m⌃[39m [90m[13f3f980] [39mCairoMakie v0.13.10
+2026-02-16T02:05:56.7626792Z   [90m[d360d2e6] [39mChainRulesCore v1.26.0
+2026-02-16T02:05:56.7627468Z [33m⌅[39m [90m[ae650224] [39mChunkSplitters v2.6.0
+2026-02-16T02:05:56.7628163Z   [90m[fb6a15b2] [39mCloseOpenIntervals v0.1.13
+2026-02-16T02:05:56.7628853Z [33m⌅[39m [90m[da1fd8a2] [39mCodeTracking v1.3.9
+2026-02-16T02:05:56.7629497Z   [90m[a2cac450] [39mColorBrewer v0.4.2
+2026-02-16T02:05:56.7630104Z   [90m[35d6a980] [39mColorSchemes v3.31.0
+2026-02-16T02:05:56.7630694Z   [90m[3da002f7] [39mColorTypes v0.12.1
+2026-02-16T02:05:56.7631299Z   [90m[c3611d14] [39mColorVectorSpace v0.11.0
+2026-02-16T02:05:56.7631947Z   [90m[5ae59095] [39mColors v0.13.1
+2026-02-16T02:05:56.7632615Z   [90m[861a8166] [39mCombinatorics v1.1.0
+2026-02-16T02:05:56.7633201Z   [90m[38540f10] [39mCommonSolve v0.2.6
+2026-02-16T02:05:56.7633829Z   [90m[bbf7d656] [39mCommonSubexpressions v0.3.1
+2026-02-16T02:05:56.7634558Z   [90m[f70d9fcc] [39mCommonWorldInvalidations v1.0.0
+2026-02-16T02:05:56.7635202Z   [90m[34da2185] [39mCompat v4.18.1
+2026-02-16T02:05:56.7635789Z   [90m[a33af91c] [39mCompositionsBase v0.1.2
+2026-02-16T02:05:56.7636426Z   [90m[2569d6c7] [39mConcreteStructs v0.2.3
+2026-02-16T02:05:56.7636995Z   [90m[187b0558] [39mConstructionBase v1.6.0
+2026-02-16T02:05:56.7637480Z   [90m[d38c429a] [39mContour v0.6.3
+2026-02-16T02:05:56.7637942Z   [90m[adafc99b] [39mCpuId v0.3.1
+2026-02-16T02:05:56.7638396Z   [90m[a8cc5b0e] [39mCrayons v4.1.1
+2026-02-16T02:05:56.7638897Z [33m⌅[39m [90m[f68482b8] [39mCthulhu v2.16.6
+2026-02-16T02:05:56.7639385Z   [90m[667455a9] [39mCubature v1.5.1
+2026-02-16T02:05:56.7639857Z   [90m[9a962f9c] [39mDataAPI v1.16.0
+2026-02-16T02:05:56.7640365Z   [90m[82cc6244] [39mDataInterpolations v8.9.0
+2026-02-16T02:05:56.7640963Z [33m⌅[39m [90m[864edb3b] [39mDataStructures v0.18.22
+2026-02-16T02:05:56.7641545Z   [90m[e2d170a0] [39mDataValueInterfaces v1.0.0
+2026-02-16T02:05:56.7642071Z   [90m[ab62b9b5] [39mDeepDiffs v1.2.0
+2026-02-16T02:05:56.7642675Z   [90m[927a84f5] [39mDelaunayTriangulation v1.6.6
+2026-02-16T02:05:56.7643226Z   [90m[8bb1440f] [39mDelimitedFiles v1.9.1
+2026-02-16T02:05:56.7643772Z [32m⌃[39m [90m[2b5f629d] [39mDiffEqBase v6.176.0
+2026-02-16T02:05:56.7644313Z   [90m[459566f4] [39mDiffEqCallbacks v4.12.0
+2026-02-16T02:05:56.7644796Z   [90m[163ba53b] [39mDiffResults v1.1.0
+2026-02-16T02:05:56.7645290Z   [90m[b552c78f] [39mDiffRules v1.15.1
+2026-02-16T02:05:56.7645863Z   [90m[a0c0ee7d] [39mDifferentiationInterface v0.7.16
+2026-02-16T02:05:56.7646401Z   [90m[0b91fe84] [39mDisplayAs v0.1.6
+2026-02-16T02:05:56.7646881Z   [90m[b4f34e82] [39mDistances v0.10.12
+2026-02-16T02:05:56.7647391Z   [90m[31c24e10] [39mDistributions v0.25.123
+2026-02-16T02:05:56.7647929Z   [90m[ffbed154] [39mDocStringExtensions v0.9.5
+2026-02-16T02:05:56.7648473Z   [90m[fdbdab4c] [39mElasticArrays v1.2.12
+2026-02-16T02:05:56.7648952Z   [90m[4e289a0a] [39mEnumX v1.0.6
+2026-02-16T02:05:56.7649401Z   [90m[f151be2c] [39mEnzymeCore v0.8.18
+2026-02-16T02:05:56.7649928Z   [90m[429591f6] [39mExactPredicates v2.2.9
+2026-02-16T02:05:56.7650448Z   [90m[7d51a73a] [39mExplicitImports v1.15.0
+2026-02-16T02:05:56.7651008Z   [90m[d4d017d3] [39mExponentialUtilities v1.30.0
+2026-02-16T02:05:56.7651527Z   [90m[e2ba6199] [39mExprTools v0.1.10
+2026-02-16T02:05:56.7652026Z   [90m[55351af7] [39mExproniconLite v0.10.14
+2026-02-16T02:05:56.7652896Z   [90m[411431e0] [39mExtents v0.1.6
+2026-02-16T02:05:56.7653342Z   [90m[b86e33f2] [39mFFTA v0.3.1
+2026-02-16T02:05:56.7653810Z   [90m[7034ab61] [39mFastBroadcast v0.3.5
+2026-02-16T02:05:56.7654310Z   [90m[9aa1b823] [39mFastClosures v0.3.2
+2026-02-16T02:05:56.7654830Z   [90m[442a2c76] [39mFastGaussQuadrature v1.1.0
+2026-02-16T02:05:56.7655346Z   [90m[a4df4552] [39mFastPower v1.3.1
+2026-02-16T02:05:56.7655812Z   [90m[5789e2e9] [39mFileIO v1.18.0
+2026-02-16T02:05:56.7656317Z [33m⌅[39m [90m[8fc22ac5] [39mFilePaths v0.8.3
+2026-02-16T02:05:56.7656834Z   [90m[48062228] [39mFilePathsBase v0.9.24
+2026-02-16T02:05:56.7657325Z   [90m[1a297f60] [39mFillArrays v1.16.0
+2026-02-16T02:05:56.7657838Z   [90m[64ca27bc] [39mFindFirstFunctions v1.8.0
+2026-02-16T02:05:56.7658349Z   [90m[6a86dc24] [39mFiniteDiff v2.29.0
+2026-02-16T02:05:56.7659203Z   [90m[d4f04ab7] [39mFiniteVolumeMethod v1.2.0 `~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl`
+2026-02-16T02:05:56.7660057Z   [90m[53c48c17] [39mFixedPointNumbers v0.8.5
+2026-02-16T02:05:56.7660576Z   [90m[1eca21be] [39mFoldingTrees v1.2.2
+2026-02-16T02:05:56.7661054Z   [90m[1fa38f19] [39mFormat v1.3.7
+2026-02-16T02:05:56.7661527Z   [90m[f6369f11] [39mForwardDiff v1.3.2
+2026-02-16T02:05:56.7661999Z   [90m[b38be410] [39mFreeType v4.1.1
+2026-02-16T02:05:56.7662613Z   [90m[663a7486] [39mFreeTypeAbstraction v0.10.8
+2026-02-16T02:05:56.7663161Z   [90m[069b7b12] [39mFunctionWrappers v1.1.3
+2026-02-16T02:05:56.7663752Z   [90m[77dc65aa] [39mFunctionWrappersWrappers v0.1.3
+2026-02-16T02:05:56.7664309Z   [90m[46192b85] [39mGPUArraysCore v0.2.0
+2026-02-16T02:05:56.7664807Z   [90m[c145ed77] [39mGenericSchur v0.5.6
+2026-02-16T02:05:56.7665357Z   [90m[5c1252a2] [39mGeometryBasics v0.5.10
+2026-02-16T02:05:56.7665842Z   [90m[a2bd30eb] [39mGraphics v1.1.3
+2026-02-16T02:05:56.7666342Z [32m⌃[39m [90m[86223c79] [39mGraphs v1.13.1
+2026-02-16T02:05:56.7666865Z   [90m[3955a311] [39mGridLayoutBase v0.11.2
+2026-02-16T02:05:56.7667353Z   [90m[42e2da0e] [39mGrisu v1.0.2
+2026-02-16T02:05:56.7667884Z   [90m[34004b35] [39mHypergeometricFunctions v0.3.28
+2026-02-16T02:05:56.7668411Z   [90m[615f187c] [39mIfElse v0.1.1
+2026-02-16T02:05:56.7668901Z   [90m[2803e5a7] [39mImageAxes v0.6.12
+2026-02-16T02:05:56.7669365Z   [90m[c817782e] [39mImageBase v0.1.7
+2026-02-16T02:05:56.7669835Z   [90m[a09fc81d] [39mImageCore v0.10.5
+2026-02-16T02:05:56.7670302Z   [90m[82e4d734] [39mImageIO v0.6.9
+2026-02-16T02:05:56.7670775Z   [90m[bc367c6b] [39mImageMetadata v0.9.10
+2026-02-16T02:05:56.7671300Z   [90m[9b13fd28] [39mIndirectArrays v1.0.0
+2026-02-16T02:05:56.7671795Z   [90m[d25df0c9] [39mInflate v0.1.5
+2026-02-16T02:05:56.7672353Z   [90m[18e54dd8] [39mIntegerMathUtils v0.1.3
+2026-02-16T02:05:56.7672936Z [33m⌅[39m [90m[a98d9a8b] [39mInterpolations v0.15.1
+2026-02-16T02:05:56.7673508Z   [90m[d1acc4aa] [39mIntervalArithmetic v1.0.2
+2026-02-16T02:05:56.7674037Z   [90m[8197267c] [39mIntervalSets v0.7.13
+2026-02-16T02:05:56.7674553Z   [90m[3587e190] [39mInverseFunctions v0.1.17
+2026-02-16T02:05:56.7675113Z   [90m[92d709cd] [39mIrrationalConstants v0.2.6
+2026-02-16T02:05:56.7675616Z   [90m[f1662d9f] [39mIsoband v0.1.1
+2026-02-16T02:05:56.7676082Z   [90m[c8e1da08] [39mIterTools v1.10.0
+2026-02-16T02:05:56.7676648Z   [90m[82899510] [39mIteratorInterfaceExtensions v1.0.0
+2026-02-16T02:05:56.7677210Z [33m⌅[39m [90m[c3a54625] [39mJET v0.9.20
+2026-02-16T02:05:56.7677695Z   [90m[692b3bcd] [39mJLLWrappers v1.7.1
+2026-02-16T02:05:56.7678150Z   [90m[682c06a0] [39mJSON v1.4.0
+2026-02-16T02:05:56.7678595Z   [90m[ae98c720] [39mJieko v0.2.1
+2026-02-16T02:05:56.7679043Z   [90m[b835a17e] [39mJpegTurbo v0.1.6
+2026-02-16T02:05:56.7679591Z [33m⌅[39m [90m[aa1ae85d] [39mJuliaInterpreter v0.9.46
+2026-02-16T02:05:56.7680194Z [33m⌅[39m [90m[70703baa] [39mJuliaSyntax v0.4.10
+2026-02-16T02:05:56.7680731Z   [90m[5ab0869b] [39mKernelDensity v0.6.11
+2026-02-16T02:05:56.7681201Z   [90m[ba0b0d4f] [39mKrylov v0.10.5
+2026-02-16T02:05:56.7681810Z   [90m[b964fa9f] [39mLaTeXStrings v1.4.0
+2026-02-16T02:05:56.7682521Z   [90m[10f19ff3] [39mLayoutPointers v0.1.17
+2026-02-16T02:05:56.7683009Z   [90m[5078a376] [39mLazyArrays v2.9.5
+2026-02-16T02:05:56.7683484Z   [90m[8cdb02fc] [39mLazyModules v0.3.1
+2026-02-16T02:05:56.7683959Z   [90m[9c8b4983] [39mLightXML v0.9.3
+2026-02-16T02:05:56.7684420Z   [90m[87fe0de2] [39mLineSearch v0.1.6
+2026-02-16T02:05:56.7684898Z   [90m[d3d80556] [39mLineSearches v7.6.0
+2026-02-16T02:05:56.7685409Z   [90m[9b3f67b0] [39mLinearAlgebraX v0.2.10
+2026-02-16T02:05:56.7685971Z [32m⌃[39m [90m[7ed4a6bd] [39mLinearSolve v3.26.0
+2026-02-16T02:05:56.7686513Z   [90m[2ab3a3ac] [39mLogExpFunctions v0.3.29
+2026-02-16T02:05:56.7687129Z [32m⌃[39m [90m[6f1432cf] [39mLoweredCodeUtils v3.2.2
+2026-02-16T02:05:56.7687669Z   [90m[1914dd2f] [39mMacroTools v0.5.16
+2026-02-16T02:05:56.7688170Z [33m⌅[39m [90m[ee78f7c6] [39mMakie v0.22.10
+2026-02-16T02:05:56.7688733Z [33m⌅[39m [90m[20f20a25] [39mMakieCore v0.9.5
+2026-02-16T02:05:56.7689270Z   [90m[d125e4d3] [39mManualMemory v0.1.8
+2026-02-16T02:05:56.7689755Z   [90m[dbb5928d] [39mMappedArrays v0.4.3
+2026-02-16T02:05:56.7690251Z   [90m[0a4f8689] [39mMathTeXEngine v0.6.7
+2026-02-16T02:05:56.7690746Z   [90m[bb5d69b7] [39mMaybeInplace v0.1.4
+2026-02-16T02:05:56.7691227Z   [90m[e1d29d7a] [39mMissings v1.2.0
+2026-02-16T02:05:56.7691679Z   [90m[7475f97c] [39mMods v2.2.6
+2026-02-16T02:05:56.7692134Z   [90m[e94cdb99] [39mMosaicViews v0.3.4
+2026-02-16T02:05:56.7692680Z   [90m[2e0e35c7] [39mMoshi v0.3.7
+2026-02-16T02:05:56.7693131Z   [90m[46d2c3a1] [39mMuladdMacro v0.2.4
+2026-02-16T02:05:56.7693608Z   [90m[3b2b4ff1] [39mMultisets v0.4.5
+2026-02-16T02:05:56.7694094Z   [90m[d41bc354] [39mNLSolversBase v8.0.0
+2026-02-16T02:05:56.7694567Z   [90m[77ba4419] [39mNaNMath v1.1.3
+2026-02-16T02:05:56.7695114Z [32m⌃[39m [90m[f16ad982] [39mNaturalNeighbours v1.3.5
+2026-02-16T02:05:56.7695651Z   [90m[f09324ee] [39mNetpbm v1.1.1
+2026-02-16T02:05:56.7696185Z [32m⌃[39m [90m[8913a72c] [39mNonlinearSolve v4.10.0
+2026-02-16T02:05:56.7696821Z [33m⌅[39m [90m[be0214bd] [39mNonlinearSolveBase v1.14.0
+2026-02-16T02:05:56.7697510Z [32m⌃[39m [90m[5959db7a] [39mNonlinearSolveFirstOrder v1.7.0
+2026-02-16T02:05:56.7698229Z [32m⌃[39m [90m[9a2c21bd] [39mNonlinearSolveQuasiNewton v1.8.0
+2026-02-16T02:05:56.7698962Z [32m⌃[39m [90m[26075421] [39mNonlinearSolveSpectralMethods v1.3.0
+2026-02-16T02:05:56.7699577Z   [90m[510215fc] [39mObservables v0.5.5
+2026-02-16T02:05:56.7700070Z   [90m[6fe1bfb0] [39mOffsetArrays v1.17.0
+2026-02-16T02:05:56.7700541Z   [90m[52e1d378] [39mOpenEXR v0.3.3
+2026-02-16T02:05:56.7700989Z   [90m[429524aa] [39mOptim v2.0.1
+2026-02-16T02:05:56.7701482Z   [90m[bac558e1] [39mOrderedCollections v1.8.1
+2026-02-16T02:05:56.7702069Z [32m⌃[39m [90m[1dea7af3] [39mOrdinaryDiffEq v6.101.0
+2026-02-16T02:05:56.7702889Z [32m⌃[39m [90m[89bda076] [39mOrdinaryDiffEqAdamsBashforthMoulton v1.4.0
+2026-02-16T02:05:56.7703639Z [32m⌃[39m [90m[6ad6398a] [39mOrdinaryDiffEqBDF v1.9.0
+2026-02-16T02:05:56.7704281Z [33m⌅[39m [90m[bbf590c4] [39mOrdinaryDiffEqCore v1.26.2
+2026-02-16T02:05:56.7704937Z [32m⌃[39m [90m[50262376] [39mOrdinaryDiffEqDefault v1.7.0
+2026-02-16T02:05:56.7705661Z [33m⌅[39m [90m[4302a76b] [39mOrdinaryDiffEqDifferentiation v1.11.0
+2026-02-16T02:05:56.7706401Z [32m⌃[39m [90m[9286f039] [39mOrdinaryDiffEqExplicitRK v1.3.0
+2026-02-16T02:05:56.7707110Z [32m⌃[39m [90m[e0540318] [39mOrdinaryDiffEqExponentialRK v1.7.0
+2026-02-16T02:05:56.7707849Z [32m⌃[39m [90m[becaefa8] [39mOrdinaryDiffEqExtrapolation v1.7.0
+2026-02-16T02:05:56.7708551Z [32m⌃[39m [90m[5960d6e9] [39mOrdinaryDiffEqFIRK v1.14.0
+2026-02-16T02:05:56.7709210Z [32m⌃[39m [90m[101fe9f7] [39mOrdinaryDiffEqFeagin v1.3.0
+2026-02-16T02:05:56.7709914Z [32m⌃[39m [90m[d3585ca7] [39mOrdinaryDiffEqFunctionMap v1.4.0
+2026-02-16T02:05:56.7710655Z [32m⌃[39m [90m[d28bc4f8] [39mOrdinaryDiffEqHighOrderRK v1.4.0
+2026-02-16T02:05:56.7711392Z [32m⌃[39m [90m[9f002381] [39mOrdinaryDiffEqIMEXMultistep v1.6.0
+2026-02-16T02:05:56.7711906Z [32m⌃[39m [90m[521117fe] [39mOrdinaryDiffEqLinear v1.4.0
+2026-02-16T02:05:56.7712388Z [32m⌃[39m [90m[1344f307] [39mOrdinaryDiffEqLowOrderRK v1.5.0
+2026-02-16T02:05:56.7712799Z [32m⌃[39m [90m[b0944070] [39mOrdinaryDiffEqLowStorageRK v1.5.0
+2026-02-16T02:05:56.7713218Z [32m⌃[39m [90m[127b3ac7] [39mOrdinaryDiffEqNonlinearSolve v1.12.0
+2026-02-16T02:05:56.7713622Z [32m⌃[39m [90m[c9986a66] [39mOrdinaryDiffEqNordsieck v1.3.0
+2026-02-16T02:05:56.7714007Z [32m⌃[39m [90m[5dd0a6cf] [39mOrdinaryDiffEqPDIRK v1.5.0
+2026-02-16T02:05:56.7714376Z [32m⌃[39m [90m[5b33eab2] [39mOrdinaryDiffEqPRK v1.3.0
+2026-02-16T02:05:56.7714733Z [32m⌃[39m [90m[04162be5] [39mOrdinaryDiffEqQPRK v1.3.0
+2026-02-16T02:05:56.7715095Z [32m⌃[39m [90m[af6ede74] [39mOrdinaryDiffEqRKN v1.4.0
+2026-02-16T02:05:56.7715476Z [32m⌃[39m [90m[43230ef6] [39mOrdinaryDiffEqRosenbrock v1.14.0
+2026-02-16T02:05:56.7715858Z [32m⌃[39m [90m[2d112036] [39mOrdinaryDiffEqSDIRK v1.6.0
+2026-02-16T02:05:56.7716235Z [32m⌃[39m [90m[669c94d9] [39mOrdinaryDiffEqSSPRK v1.5.0
+2026-02-16T02:05:56.7716628Z [32m⌃[39m [90m[e3e12d00] [39mOrdinaryDiffEqStabilizedIRK v1.5.0
+2026-02-16T02:05:56.7717043Z [32m⌃[39m [90m[358294b1] [39mOrdinaryDiffEqStabilizedRK v1.4.0
+2026-02-16T02:05:56.7717451Z [32m⌃[39m [90m[fa646aed] [39mOrdinaryDiffEqSymplecticRK v1.6.0
+2026-02-16T02:05:56.7717841Z [32m⌃[39m [90m[b1df2697] [39mOrdinaryDiffEqTsit5 v1.4.0
+2026-02-16T02:05:56.7718214Z [32m⌃[39m [90m[79d7bb75] [39mOrdinaryDiffEqVerner v1.5.0
+2026-02-16T02:05:56.7718529Z   [90m[90014a1f] [39mPDMats v0.11.37
+2026-02-16T02:05:56.7718801Z   [90m[f57f5aa1] [39mPNGFiles v0.4.4
+2026-02-16T02:05:56.7719118Z   [90m[65ce6f38] [39mPackageExtensionCompat v1.0.2
+2026-02-16T02:05:56.7719430Z   [90m[19eb6ba3] [39mPacking v0.5.1
+2026-02-16T02:05:56.7719700Z   [90m[5432bcbf] [39mPaddedViews v0.5.12
+2026-02-16T02:05:56.7719983Z   [90m[d96e819e] [39mParameters v0.12.3
+2026-02-16T02:05:56.7720267Z   [90m[69de0a69] [39mParsers v2.8.3
+2026-02-16T02:05:56.7720543Z   [90m[2ae35dd2] [39mPermutations v0.4.23
+2026-02-16T02:05:56.7720828Z   [90m[eebad327] [39mPkgVersion v0.3.3
+2026-02-16T02:05:56.7721101Z   [90m[995b91a9] [39mPlotUtils v1.4.4
+2026-02-16T02:05:56.7721368Z   [90m[f517fe37] [39mPolyester v0.7.19
+2026-02-16T02:05:56.7721661Z   [90m[1d0040c9] [39mPolyesterWeave v0.2.2
+2026-02-16T02:05:56.7721954Z   [90m[647866c9] [39mPolygonOps v0.1.2
+2026-02-16T02:05:56.7722309Z [32m⌃[39m [90m[f27b6e38] [39mPolynomials v4.0.21
+2026-02-16T02:05:56.7722653Z   [90m[85a6dd25] [39mPositiveFactorizations v0.2.4
+2026-02-16T02:05:56.7723013Z [33m⌅[39m [90m[d236fae5] [39mPreallocationTools v0.4.34
+2026-02-16T02:05:56.7723377Z [33m⌅[39m [90m[aea7be01] [39mPrecompileTools v1.2.1
+2026-02-16T02:05:56.7723680Z   [90m[21216c6a] [39mPreferences v1.5.1
+2026-02-16T02:05:56.7723957Z   [90m[08abe8d2] [39mPrettyTables v3.2.3
+2026-02-16T02:05:56.7724232Z   [90m[27ebfcd6] [39mPrimes v0.5.7
+2026-02-16T02:05:56.7724516Z   [90m[92933f4c] [39mProgressMeter v1.11.0
+2026-02-16T02:05:56.7724796Z   [90m[43287f4e] [39mPtrArrays v1.3.0
+2026-02-16T02:05:56.7725063Z   [90m[4b34888f] [39mQOI v1.0.2
+2026-02-16T02:05:56.7725311Z   [90m[1fd47b50] [39mQuadGK v2.11.2
+2026-02-16T02:05:56.7725577Z   [90m[b3c3ace0] [39mRangeArrays v0.3.2
+2026-02-16T02:05:56.7725851Z   [90m[c84ed2f1] [39mRatios v0.4.5
+2026-02-16T02:05:56.7726118Z   [90m[3cdcf5f2] [39mRecipesBase v1.3.4
+2026-02-16T02:05:56.7726416Z   [90m[731186ca] [39mRecursiveArrayTools v3.48.0
+2026-02-16T02:05:56.7726717Z   [90m[189a3867] [39mReexport v1.2.2
+2026-02-16T02:05:56.7726998Z   [90m[324d217c] [39mReferenceTests v0.10.6
+2026-02-16T02:05:56.7727298Z   [90m[05181044] [39mRelocatableFolders v1.0.1
+2026-02-16T02:05:56.7727584Z   [90m[ae029012] [39mRequires v1.3.1
+2026-02-16T02:05:56.7727848Z   [90m[286e9d63] [39mRingLists v0.2.9
+2026-02-16T02:05:56.7728104Z   [90m[79098fc4] [39mRmath v0.9.0
+2026-02-16T02:05:56.7728518Z   [90m[f2b01f46] [39mRoots v2.2.10
+2026-02-16T02:05:56.7728856Z   [90m[5eaf0fd0] [39mRoundingEmulator v0.2.1
+2026-02-16T02:05:56.7729200Z   [90m[7e49a35a] [39mRuntimeGeneratedFunctions v0.5.17
+2026-02-16T02:05:56.7729512Z   [90m[fdea26ae] [39mSIMD v3.7.2
+2026-02-16T02:05:56.7729771Z   [90m[94e857df] [39mSIMDTypes v0.1.0
+2026-02-16T02:05:56.7730076Z [32m⌃[39m [90m[0bca4576] [39mSciMLBase v2.99.0
+2026-02-16T02:05:56.7730445Z [32m⌃[39m [90m[19f34311] [39mSciMLJacobianOperators v0.1.11
+2026-02-16T02:05:56.7730816Z [33m⌅[39m [90m[c0aeaf25] [39mSciMLOperators v0.4.0
+2026-02-16T02:05:56.7731127Z   [90m[431bcebd] [39mSciMLPublic v1.0.1
+2026-02-16T02:05:56.7731425Z   [90m[53ae85a6] [39mSciMLStructures v1.10.0
+2026-02-16T02:05:56.7731712Z   [90m[6c6a2e73] [39mScratch v1.3.0
+2026-02-16T02:05:56.7731978Z   [90m[efcf1570] [39mSetfield v1.1.2
+2026-02-16T02:05:56.7732340Z   [90m[65257c39] [39mShaderAbstractions v0.5.0
+2026-02-16T02:05:56.7732635Z   [90m[992d4aef] [39mShowoff v1.0.3
+2026-02-16T02:05:56.7732932Z   [90m[73760f76] [39mSignedDistanceFields v0.4.1
+2026-02-16T02:05:56.7733246Z   [90m[55797a34] [39mSimpleGraphs v0.8.8
+2026-02-16T02:05:56.7733588Z [32m⌃[39m [90m[727e6d20] [39mSimpleNonlinearSolve v2.7.0
+2026-02-16T02:05:56.7733924Z   [90m[ec83eff0] [39mSimplePartitions v0.3.3
+2026-02-16T02:05:56.7734244Z   [90m[cc47b68c] [39mSimplePolynomials v0.2.18
+2026-02-16T02:05:56.7734554Z   [90m[a6525b86] [39mSimpleRandom v0.3.2
+2026-02-16T02:05:56.7734852Z   [90m[699a6c99] [39mSimpleTraits v0.9.5
+2026-02-16T02:05:56.7735133Z   [90m[ce78b400] [39mSimpleUnPack v1.1.0
+2026-02-16T02:05:56.7735414Z   [90m[45858cf5] [39mSixel v0.1.5
+2026-02-16T02:05:56.7735703Z   [90m[a2af1166] [39mSortingAlgorithms v1.2.2
+2026-02-16T02:05:56.7736005Z   [90m[47a9eef4] [39mSparseDiffTools v2.26.0
+2026-02-16T02:05:56.7736331Z   [90m[0a514795] [39mSparseMatrixColorings v0.4.23
+2026-02-16T02:05:56.7736651Z   [90m[276daf66] [39mSpecialFunctions v2.7.1
+2026-02-16T02:05:56.7736937Z   [90m[860ef19b] [39mStableRNGs v1.0.4
+2026-02-16T02:05:56.7737220Z   [90m[cae243ae] [39mStackViews v0.1.2
+2026-02-16T02:05:56.7737489Z   [90m[aedffcd0] [39mStatic v1.3.1
+2026-02-16T02:05:56.7737780Z   [90m[0d7ed370] [39mStaticArrayInterface v1.9.0
+2026-02-16T02:05:56.7738084Z   [90m[90137ffa] [39mStaticArrays v1.9.16
+2026-02-16T02:05:56.7738374Z   [90m[1e83bf80] [39mStaticArraysCore v1.4.4
+2026-02-16T02:05:56.7738659Z   [90m[10745b16] [39mStatistics v1.11.1
+2026-02-16T02:05:56.7738924Z   [90m[82ae8749] [39mStatsAPI v1.8.0
+2026-02-16T02:05:56.7739191Z   [90m[2913bbd2] [39mStatsBase v0.34.10
+2026-02-16T02:05:56.7739461Z   [90m[4c63d2b9] [39mStatsFuns v1.5.2
+2026-02-16T02:05:56.7739772Z [32m⌃[39m [90m[9672c7b4] [39mSteadyStateDiffEq v2.6.0
+2026-02-16T02:05:56.7740098Z   [90m[7792a7ef] [39mStrideArraysCore v0.5.8
+2026-02-16T02:05:56.7740406Z   [90m[892a3eda] [39mStringManipulation v0.4.2
+2026-02-16T02:05:56.7740696Z   [90m[09ab397b] [39mStructArrays v0.7.2
+2026-02-16T02:05:56.7740987Z   [90m[6ec83bb0] [39mStructEquality v2.1.0
+2026-02-16T02:05:56.7741275Z   [90m[ec057cc2] [39mStructUtils v2.6.3
+2026-02-16T02:05:56.7741603Z   [90m[2efcf032] [39mSymbolicIndexingInterface v0.3.46
+2026-02-16T02:05:56.7741912Z   [90m[3783bdb8] [39mTableTraits v1.0.1
+2026-02-16T02:05:56.7742185Z   [90m[bd369af6] [39mTables v1.12.1
+2026-02-16T02:05:56.7742515Z   [90m[62fd8b95] [39mTensorCore v0.1.1
+2026-02-16T02:05:56.7742780Z   [90m[1c621080] [39mTestItems v1.0.0
+2026-02-16T02:05:56.7743069Z   [90m[8290d209] [39mThreadingUtilities v0.5.5
+2026-02-16T02:05:56.7743363Z   [90m[731e570b] [39mTiffImages v0.11.6
+2026-02-16T02:05:56.7743637Z   [90m[a759f4b9] [39mTimerOutputs v0.5.29
+2026-02-16T02:05:56.7743945Z   [90m[3bb67fe8] [39mTranscodingStreams v0.11.3
+2026-02-16T02:05:56.7744241Z   [90m[981d1d27] [39mTriplotBase v0.1.0
+2026-02-16T02:05:56.7744544Z   [90m[781d530d] [39mTruncatedStacktraces v1.4.0
+2026-02-16T02:05:56.7744875Z [33m⌅[39m [90m[d265eb64] [39mTypedSyntax v1.4.3
+2026-02-16T02:05:56.7745265Z   [90m[3a884ed6] [39mUnPack v1.0.2
+2026-02-16T02:05:56.7745600Z   [90m[1cfade01] [39mUnicodeFun v0.4.1
+2026-02-16T02:05:56.7745868Z   [90m[1986cc42] [39mUnitful v1.28.0
+2026-02-16T02:05:56.7746155Z   [90m[19fa3120] [39mVertexSafeGraphs v0.2.0
+2026-02-16T02:05:56.7746442Z   [90m[e3aaa7dc] [39mWebP v0.1.3
+2026-02-16T02:05:56.7746718Z   [90m[b8c1c048] [39mWidthLimitedIO v1.0.1
+2026-02-16T02:05:56.7747023Z   [90m[efce3f68] [39mWoodburyMatrices v1.1.0
+2026-02-16T02:05:56.7747317Z   [90m[c8c2cc18] [39mXTermColors v0.2.1
+2026-02-16T02:05:56.7747593Z   [90m[6e34b625] [39mBzip2_jll v1.0.9+0
+2026-02-16T02:05:56.7747872Z   [90m[4e9b3aee] [39mCRlibm_jll v1.0.1+0
+2026-02-16T02:05:56.7748155Z   [90m[83423d85] [39mCairo_jll v1.18.5+0
+2026-02-16T02:05:56.7748439Z   [90m[7bc98958] [39mCubature_jll v1.0.5+0
+2026-02-16T02:05:56.7748715Z   [90m[5ae413db] [39mEarCut_jll v2.2.4+0
+2026-02-16T02:05:56.7748991Z   [90m[2e619515] [39mExpat_jll v2.7.3+0
+2026-02-16T02:05:56.7749303Z [33m⌅[39m [90m[b22a6f82] [39mFFMPEG_jll v6.1.3+0
+2026-02-16T02:05:56.7749620Z   [90m[a3f928ae] [39mFontconfig_jll v2.17.1+0
+2026-02-16T02:05:56.7749924Z   [90m[d7e528f0] [39mFreeType2_jll v2.13.4+0
+2026-02-16T02:05:56.7750217Z   [90m[559328eb] [39mFriBidi_jll v1.0.17+0
+2026-02-16T02:05:56.7750518Z   [90m[b0724c58] [39mGettextRuntime_jll v0.22.4+0
+2026-02-16T02:05:56.7750821Z   [90m[59f7168a] [39mGiflib_jll v5.2.3+0
+2026-02-16T02:05:56.7751095Z   [90m[7746bdde] [39mGlib_jll v2.86.3+0
+2026-02-16T02:05:56.7751375Z   [90m[3b182d85] [39mGraphite2_jll v1.3.15+0
+2026-02-16T02:05:56.7751669Z   [90m[2e76f6c2] [39mHarfBuzz_jll v8.5.1+0
+2026-02-16T02:05:56.7751945Z   [90m[905a6f67] [39mImath_jll v3.2.2+0
+2026-02-16T02:05:56.7752315Z   [90m[1d5cc7b8] [39mIntelOpenMP_jll v2025.2.0+0
+2026-02-16T02:05:56.7752621Z   [90m[aacddb02] [39mJpegTurbo_jll v3.1.4+0
+2026-02-16T02:05:56.7752909Z   [90m[c1c5ebd0] [39mLAME_jll v3.100.3+0
+2026-02-16T02:05:56.7753180Z   [90m[88015f11] [39mLERC_jll v4.0.1+0
+2026-02-16T02:05:56.7753468Z   [90m[1d63c593] [39mLLVMOpenMP_jll v18.1.8+0
+2026-02-16T02:05:56.7753759Z   [90m[dd4b983a] [39mLZO_jll v2.10.3+0
+2026-02-16T02:05:56.7754061Z [33m⌅[39m [90m[e9f186c6] [39mLibffi_jll v3.4.7+0
+2026-02-16T02:05:56.7754361Z   [90m[7e76a0d4] [39mLibglvnd_jll v1.7.1+1
+2026-02-16T02:05:56.7754655Z   [90m[94ce4f54] [39mLibiconv_jll v1.18.0+0
+2026-02-16T02:05:56.7754949Z   [90m[4b2f31a3] [39mLibmount_jll v2.41.3+0
+2026-02-16T02:05:56.7755232Z   [90m[89763e89] [39mLibtiff_jll v4.7.2+0
+2026-02-16T02:05:56.7755512Z   [90m[38a345b3] [39mLibuuid_jll v2.41.3+0
+2026-02-16T02:05:56.7755788Z   [90m[856f044c] [39mMKL_jll v2025.2.0+0
+2026-02-16T02:05:56.7756060Z   [90m[e7412a2a] [39mOgg_jll v1.3.6+0
+2026-02-16T02:05:56.7756386Z   [90m[6cdc7f73] [39mOpenBLASConsistentFPCSR_jll v0.3.30+0
+2026-02-16T02:05:56.7756716Z   [90m[18a262bb] [39mOpenEXR_jll v3.4.4+0
+2026-02-16T02:05:56.7756996Z   [90m[458c3c95] [39mOpenSSL_jll v3.5.5+0
+2026-02-16T02:05:56.7757285Z   [90m[efe28fd5] [39mOpenSpecFun_jll v0.5.6+0
+2026-02-16T02:05:56.7757583Z   [90m[91d4177d] [39mOpus_jll v1.6.1+0
+2026-02-16T02:05:56.7757856Z   [90m[36c8627f] [39mPango_jll v1.57.0+0
+2026-02-16T02:05:56.7758157Z [33m⌅[39m [90m[30392449] [39mPixman_jll v0.44.2+0
+2026-02-16T02:05:56.7758458Z   [90m[f50d1b31] [39mRmath_jll v0.5.1+0
+2026-02-16T02:05:56.7758733Z   [90m[02c8fc9c] [39mXML2_jll v2.15.1+0
+2026-02-16T02:05:56.7759007Z   [90m[ffd25f8a] [39mXZ_jll v5.8.2+0
+2026-02-16T02:05:56.7759292Z   [90m[4f6342f7] [39mXorg_libX11_jll v1.8.13+0
+2026-02-16T02:05:56.7759601Z   [90m[0c0b7dd1] [39mXorg_libXau_jll v1.0.13+0
+2026-02-16T02:05:56.7759913Z   [90m[a3789734] [39mXorg_libXdmcp_jll v1.1.6+0
+2026-02-16T02:05:56.7760215Z   [90m[1082639a] [39mXorg_libXext_jll v1.3.8+0
+2026-02-16T02:05:56.7760532Z   [90m[ea2f1a96] [39mXorg_libXrender_jll v0.9.12+0
+2026-02-16T02:05:56.7760849Z   [90m[c7cfdc94] [39mXorg_libxcb_jll v1.17.1+0
+2026-02-16T02:05:56.7761149Z   [90m[c5fb5394] [39mXorg_xtrans_jll v1.6.0+0
+2026-02-16T02:05:56.7761518Z   [90m[3161d3a3] [39mZstd_jll v1.5.7+1
+2026-02-16T02:05:56.7761904Z   [90m[9a68df92] [39misoband_jll v0.2.3+0
+2026-02-16T02:05:56.7762187Z   [90m[a4ae2306] [39mlibaom_jll v3.13.1+0
+2026-02-16T02:05:56.7762530Z   [90m[0ac62f75] [39mlibass_jll v0.17.4+0
+2026-02-16T02:05:56.7762824Z   [90m[f638f0a6] [39mlibfdk_aac_jll v2.0.4+0
+2026-02-16T02:05:56.7763137Z   [90m[b53b4c65] [39mlibpng_jll v1.6.55+0
+2026-02-16T02:05:56.7763456Z   [90m[075b6546] [39mlibsixel_jll v1.10.5+0
+2026-02-16T02:05:56.7763756Z   [90m[f27f6e37] [39mlibvorbis_jll v1.3.8+0
+2026-02-16T02:05:56.7764043Z   [90m[c5f90fcd] [39mlibwebp_jll v1.6.0+0
+2026-02-16T02:05:56.7764324Z   [90m[1317d2d5] [39moneTBB_jll v2022.0.0+1
+2026-02-16T02:05:56.7764644Z [33m⌅[39m [90m[1270edf5] [39mx264_jll v10164.0.1+0
+2026-02-16T02:05:56.7764945Z   [90m[dfaa095f] [39mx265_jll v4.1.0+0
+2026-02-16T02:05:56.7765214Z   [90m[0dad84c5] [39mArgTools v1.1.2
+2026-02-16T02:05:56.7765477Z   [90m[56f22d72] [39mArtifacts v1.11.0
+2026-02-16T02:05:56.7765754Z   [90m[2a0f44e3] [39mBase64 v1.11.0
+2026-02-16T02:05:56.7766022Z   [90m[8bf52ea8] [39mCRC32c v1.11.0
+2026-02-16T02:05:56.7766277Z   [90m[ade2ca70] [39mDates v1.11.0
+2026-02-16T02:05:56.7766548Z   [90m[8ba89e20] [39mDistributed v1.11.0
+2026-02-16T02:05:56.7766820Z   [90m[f43a241f] [39mDownloads v1.6.0
+2026-02-16T02:05:56.7767086Z   [90m[7b1f6079] [39mFileWatching v1.11.0
+2026-02-16T02:05:56.7767357Z   [90m[9fa8497b] [39mFuture v1.11.0
+2026-02-16T02:05:56.7767643Z   [90m[b77e0a4c] [39mInteractiveUtils v1.11.0
+2026-02-16T02:05:56.7767935Z   [90m[4af54fe1] [39mLazyArtifacts v1.11.0
+2026-02-16T02:05:56.7768209Z   [90m[b27032c2] [39mLibCURL v0.6.4
+2026-02-16T02:05:56.7768469Z   [90m[76f85450] [39mLibGit2 v1.11.0
+2026-02-16T02:05:56.7768732Z   [90m[8f399da3] [39mLibdl v1.11.0
+2026-02-16T02:05:56.7769000Z   [90m[37e2e46d] [39mLinearAlgebra v1.11.0
+2026-02-16T02:05:56.7769273Z   [90m[56ddb016] [39mLogging v1.11.0
+2026-02-16T02:05:56.7769539Z   [90m[d6f4376e] [39mMarkdown v1.11.0
+2026-02-16T02:05:56.7769806Z   [90m[a63ad114] [39mMmap v1.11.0
+2026-02-16T02:05:56.7770087Z   [90m[ca575930] [39mNetworkOptions v1.2.0
+2026-02-16T02:05:56.7770364Z   [90m[44cfe95a] [39mPkg v1.11.0
+2026-02-16T02:05:56.7770617Z   [90m[de0858da] [39mPrintf v1.11.0
+2026-02-16T02:05:56.7770882Z   [90m[9abbd945] [39mProfile v1.11.0
+2026-02-16T02:05:56.7771145Z   [90m[3fa0cd96] [39mREPL v1.11.0
+2026-02-16T02:05:56.7771401Z   [90m[9a3f8284] [39mRandom v1.11.0
+2026-02-16T02:05:56.7771665Z   [90m[ea8e919c] [39mSHA v0.7.0
+2026-02-16T02:05:56.7771942Z   [90m[9e88b42a] [39mSerialization v1.11.0
+2026-02-16T02:05:56.7772231Z   [90m[1a1011a3] [39mSharedArrays v1.11.0
+2026-02-16T02:05:56.7772566Z   [90m[6462fe0b] [39mSockets v1.11.0
+2026-02-16T02:05:56.7772842Z   [90m[2f01184e] [39mSparseArrays v1.11.0
+2026-02-16T02:05:56.7773135Z   [90m[f489334b] [39mStyledStrings v1.11.0
+2026-02-16T02:05:56.7773406Z   [90m[4607b0f0] [39mSuiteSparse
+2026-02-16T02:05:56.7773663Z   [90m[fa267f1f] [39mTOML v1.0.3
+2026-02-16T02:05:56.7773923Z   [90m[a4e569a6] [39mTar v1.10.0
+2026-02-16T02:05:56.7774173Z   [90m[8dfed614] [39mTest v1.11.0
+2026-02-16T02:05:56.7774435Z   [90m[cf7118a7] [39mUUIDs v1.11.0
+2026-02-16T02:05:56.7774704Z   [90m[4ec0a83e] [39mUnicode v1.11.0
+2026-02-16T02:05:56.7775031Z   [90m[e66e0078] [39mCompilerSupportLibraries_jll v1.1.1+0
+2026-02-16T02:05:56.7775369Z   [90m[deac9b47] [39mLibCURL_jll v8.6.0+0
+2026-02-16T02:05:56.7775650Z   [90m[e37daf67] [39mLibGit2_jll v1.7.2+0
+2026-02-16T02:05:56.7775935Z   [90m[29816b5a] [39mLibSSH2_jll v1.11.0+1
+2026-02-16T02:05:56.7776216Z   [90m[c8ffd9c3] [39mMbedTLS_jll v2.28.6+0
+2026-02-16T02:05:56.7776537Z   [90m[14a3606d] [39mMozillaCACerts_jll v2023.12.12
+2026-02-16T02:05:56.7776855Z   [90m[4536629a] [39mOpenBLAS_jll v0.3.27+1
+2026-02-16T02:05:56.7777138Z   [90m[05823500] [39mOpenLibm_jll v0.8.5+0
+2026-02-16T02:05:56.7777421Z   [90m[efcefdf7] [39mPCRE2_jll v10.42.0+1
+2026-02-16T02:05:56.7777721Z   [90m[bea87d4a] [39mSuiteSparse_jll v7.7.0+0
+2026-02-16T02:05:56.7778100Z   [90m[83775a58] [39mZlib_jll v1.2.13+1
+2026-02-16T02:05:56.7778486Z   [90m[8e850b90] [39mlibblastrampoline_jll v5.11.0+0
+2026-02-16T02:05:56.7778801Z   [90m[8e850ede] [39mnghttp2_jll v1.59.0+0
+2026-02-16T02:05:56.7779077Z   [90m[3f19e933] [39mp7zip_jll v17.4.0+2
+2026-02-16T02:05:56.7780008Z [36m[1m        Info[22m[39m Packages marked with [32m⌃[39m and [33m⌅[39m have new versions available. Those with [32m⌃[39m may be upgradable, but those with [33m⌅[39m are restricted by compatibility constraints from upgrading.
+2026-02-16T02:05:57.4540202Z Precompiling project for configuration --code-coverage=@/home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl --color=yes --check-bounds=yes --warn-overwrite=yes --depwarn=yes --inline=yes --startup-file=no --track-allocation=none --check-bounds=yes --compiled-modules=yes --depwarn=yes...
+2026-02-16T02:05:58.1244699Z     565.1 ms  ✓ RangeArrays
+2026-02-16T02:05:58.1354254Z     574.4 ms  ✓ SimpleUnPack
+2026-02-16T02:05:58.1354824Z     571.5 ms  ✓ MuladdMacro
+2026-02-16T02:05:58.6001296Z    1037.8 ms  ✓ FunctionWrappers
+2026-02-16T02:05:58.6567988Z     531.9 ms  ✓ ConcreteStructs
+2026-02-16T02:05:58.9124331Z    1436.4 ms  ✓ Combinatorics
+2026-02-16T02:05:59.0021904Z     863.4 ms  ✓ AbstractFFTs
+2026-02-16T02:05:59.3047916Z     648.4 ms  ✓ LaTeXStrings
+2026-02-16T02:05:59.4691638Z     869.4 ms  ✓ PositiveFactorizations
+2026-02-16T02:05:59.4933319Z     485.2 ms  ✓ PolygonOps
+2026-02-16T02:05:59.5118945Z     597.4 ms  ✓ IndirectArrays
+2026-02-16T02:05:59.7774897Z     472.1 ms  ✓ ExprTools
+2026-02-16T02:05:59.9398452Z     469.8 ms  ✓ IteratorInterfaceExtensions
+2026-02-16T02:06:00.0991336Z     608.5 ms  ✓ TensorCore
+2026-02-16T02:06:00.1675972Z     387.8 ms  ✓ AbstractLattices
+2026-02-16T02:06:00.3093676Z     797.8 ms  ✓ StatsAPI
+2026-02-16T02:06:00.6620633Z     562.5 ms  ✓ Contour
+2026-02-16T02:06:00.8064727Z     639.0 ms  ✓ CEnum
+2026-02-16T02:06:01.0245309Z    1081.1 ms  ✓ ADTypes
+2026-02-16T02:06:01.4957625Z     690.8 ms  ✓ TriplotBase
+2026-02-16T02:06:01.9408156Z     444.5 ms  ✓ UnPack
+2026-02-16T02:06:02.5460525Z    1883.8 ms  ✓ OffsetArrays
+2026-02-16T02:06:02.9300320Z    1907.0 ms  ✓ Format
+2026-02-16T02:06:03.1864286Z     638.8 ms  ✓ IntegerMathUtils
+2026-02-16T02:06:03.7170091Z    1772.4 ms  ✓ FillArrays
+2026-02-16T02:06:03.7473897Z    3436.1 ms  ✓ ExproniconLite
+2026-02-16T02:06:03.9689539Z     778.2 ms  ✓ InverseFunctions
+2026-02-16T02:06:04.5444115Z     578.0 ms  ✓ CommonSolve
+2026-02-16T02:06:04.7014857Z     984.9 ms  ✓ Statistics
+2026-02-16T02:06:04.8039025Z    6667.9 ms  ✓ BaseDirs
+2026-02-16T02:06:05.2190785Z     674.1 ms  ✓ IterTools
+2026-02-16T02:06:05.9827414Z     763.5 ms  ✓ ManualMemory
+2026-02-16T02:06:06.0824011Z    3153.9 ms  ✓ Bessels
+2026-02-16T02:06:06.1557021Z    1352.2 ms  ✓ Grisu
+2026-02-16T02:06:06.8093761Z     826.0 ms  ✓ OrderedCollections
+2026-02-16T02:06:06.9224669Z     766.2 ms  ✓ Requires
+2026-02-16T02:06:06.9284304Z     844.7 ms  ✓ Observables
+2026-02-16T02:06:07.2147961Z     404.9 ms  ✓ DataValueInterfaces
+2026-02-16T02:06:07.5222581Z     599.6 ms  ✓ EnumX
+2026-02-16T02:06:07.5968461Z     667.7 ms  ✓ StableRNGs
+2026-02-16T02:06:07.8254762Z     609.6 ms  ✓ Reexport
+2026-02-16T02:06:08.1401335Z     614.1 ms  ✓ SIMDTypes
+2026-02-16T02:06:08.5786191Z     983.5 ms  ✓ DocStringExtensions
+2026-02-16T02:06:08.9051159Z    1078.9 ms  ✓ AbstractTrees
+2026-02-16T02:06:09.5454364Z    4843.4 ms  ✓ MacroTools
+2026-02-16T02:06:09.5699843Z     990.8 ms  ✓ IntervalSets
+2026-02-16T02:06:09.7912165Z     883.8 ms  ✓ RoundingEmulator
+2026-02-16T02:06:10.1681408Z    2028.5 ms  ✓ IrrationalConstants
+2026-02-16T02:06:10.1683559Z     622.6 ms  ✓ DeepDiffs
+2026-02-16T02:06:10.1813563Z     606.7 ms  ✓ CompositionsBase
+2026-02-16T02:06:10.5206521Z     732.0 ms  ✓ TestItems
+2026-02-16T02:06:10.6502074Z     476.4 ms  ✓ PtrArrays
+2026-02-16T02:06:10.9093657Z     740.9 ms  ✓ Extents
+2026-02-16T02:06:11.1995867Z     548.3 ms  ✓ FastPower
+2026-02-16T02:06:11.3133145Z     792.5 ms  ✓ TranscodingStreams
+2026-02-16T02:06:11.5210917Z    1344.2 ms  ✓ DisplayAs
+2026-02-16T02:06:11.8409896Z     527.1 ms  ✓ LazyModules
+2026-02-16T02:06:12.0229693Z     821.0 ms  ✓ NaNMath
+2026-02-16T02:06:12.0445585Z     522.3 ms  ✓ Multisets
+2026-02-16T02:06:12.4439632Z     602.4 ms  ✓ DelimitedFiles
+2026-02-16T02:06:12.5679000Z     548.7 ms  ✓ RingLists
+2026-02-16T02:06:12.7344556Z     690.2 ms  ✓ Inflate
+2026-02-16T02:06:13.0664194Z    2152.8 ms  ✓ AdaptivePredicates
+2026-02-16T02:06:13.2937661Z     725.4 ms  ✓ IfElse
+2026-02-16T02:06:13.3859703Z     651.1 ms  ✓ ConstructionBase
+2026-02-16T02:06:13.5993474Z    1155.2 ms  ✓ EnzymeCore
+2026-02-16T02:06:13.7083665Z     411.0 ms  ✓ CommonWorldInvalidations
+2026-02-16T02:06:13.7142235Z     651.4 ms  ✓ Mods
+2026-02-16T02:06:14.0815649Z     695.4 ms  ✓ DataAPI
+2026-02-16T02:06:14.1317524Z     531.7 ms  ✓ PackageExtensionCompat
+2026-02-16T02:06:14.2614868Z     541.3 ms  ✓ FastClosures
+2026-02-16T02:06:14.8175700Z     735.4 ms  ✓ WidthLimitedIO
+2026-02-16T02:06:14.9096836Z     650.5 ms  ✓ StaticArraysCore
+2026-02-16T02:06:14.9661641Z     833.9 ms  ✓ SciMLPublic
+2026-02-16T02:06:15.4793456Z     661.2 ms  ✓ MappedArrays
+2026-02-16T02:06:15.5392613Z    1831.0 ms  ✓ Crayons
+2026-02-16T02:06:15.8449924Z     935.6 ms  ✓ SuiteSparse
+2026-02-16T02:06:16.8119390Z    1845.6 ms  ✓ GenericSchur
+2026-02-16T02:06:16.8985642Z    1053.5 ms  ✓ WoodburyMatrices
+2026-02-16T02:06:16.9374318Z    1400.7 ms  ✓ ProgressMeter
+2026-02-16T02:06:17.5584303Z     618.8 ms  ✓ Scratch
+2026-02-16T02:06:18.0473720Z    1235.3 ms  ✓ StructUtils
+2026-02-16T02:06:18.7705695Z    1211.9 ms  ✓ CpuId
+2026-02-16T02:06:19.0794003Z    1027.5 ms  ✓ Preferences
+2026-02-16T02:06:19.5980074Z     823.3 ms  ✓ Compat
+2026-02-16T02:06:20.8375612Z    1762.0 ms  ✓ CodeTracking
+2026-02-16T02:06:22.5413883Z    2943.8 ms  ✓ UnicodeFun
+2026-02-16T02:06:22.6933801Z    1853.8 ms  ✓ PkgVersion
+2026-02-16T02:06:23.0412875Z     499.3 ms  ✓ FunctionWrappersWrappers
+2026-02-16T02:06:23.6144854Z     920.4 ms  ✓ Permutations
+2026-02-16T02:06:24.1184741Z     505.8 ms  ✓ RuntimeGeneratedFunctions
+2026-02-16T02:06:25.6695694Z    2627.2 ms  ✓ AbstractFFTs → AbstractFFTsTestExt
+2026-02-16T02:06:26.3359673Z     666.8 ms  ✓ TableTraits
+2026-02-16T02:06:27.0724493Z   11590.2 ms  ✓ Krylov
+2026-02-16T02:06:28.0375769Z     964.9 ms  ✓ StackViews
+2026-02-16T02:06:28.3424457Z    2005.1 ms  ✓ DifferentiationInterface
+2026-02-16T02:06:29.0701127Z    1029.0 ms  ✓ PaddedViews
+2026-02-16T02:06:29.9717193Z    1628.1 ms  ✓ Primes
+2026-02-16T02:06:30.3865454Z    1314.9 ms  ✓ FillArrays → FillArraysSparseArraysExt
+2026-02-16T02:06:31.4204797Z    1033.8 ms  ✓ InverseFunctions → InverseFunctionsTestExt
+2026-02-16T02:06:31.9850176Z    7863.3 ms  ✓ TimerOutputs
+2026-02-16T02:06:32.3494184Z     923.9 ms  ✓ InverseFunctions → InverseFunctionsDatesExt
+2026-02-16T02:06:35.7534301Z    5781.1 ms  ✓ Jieko
+2026-02-16T02:06:36.6785281Z    4693.3 ms  ✓ SignedDistanceFields
+2026-02-16T02:06:37.2410716Z    1484.5 ms  ✓ Distances
+2026-02-16T02:06:38.0098191Z     769.2 ms  ✓ FillArrays → FillArraysStatisticsExt
+2026-02-16T02:06:38.2616180Z    1583.6 ms  ✓ Statistics → SparseArraysExt
+2026-02-16T02:06:38.3590252Z    6009.0 ms  ✓ FixedPointNumbers
+2026-02-16T02:06:39.1360793Z     777.5 ms  ✓ Parameters
+2026-02-16T02:06:39.1810107Z     919.2 ms  ✓ Showoff
+2026-02-16T02:06:39.8408126Z     704.6 ms  ✓ Ratios
+2026-02-16T02:06:39.9433960Z    1930.8 ms  ✓ ThreadingUtilities
+2026-02-16T02:06:40.0435559Z     862.4 ms  ✓ Adapt
+2026-02-16T02:06:41.0918726Z    1047.8 ms  ✓ CommonSubexpressions
+2026-02-16T02:06:41.2836482Z    1340.2 ms  ✓ FoldingTrees
+2026-02-16T02:06:42.0512766Z     769.6 ms  ✓ IntervalSets → IntervalSetsRandomExt
+2026-02-16T02:06:42.6365418Z    1543.6 ms  ✓ SimpleTraits
+2026-02-16T02:06:43.1268399Z    1075.4 ms  ✓ IntervalSets → IntervalSetsStatisticsExt
+2026-02-16T02:06:43.7887571Z    1148.1 ms  ✓ LogExpFunctions
+2026-02-16T02:06:43.9121917Z     785.2 ms  ✓ CompositionsBase → CompositionsBaseInverseFunctionsExt
+2026-02-16T02:06:44.7610003Z     974.4 ms  ✓ ChunkSplitters
+2026-02-16T02:06:45.0093872Z    1092.2 ms  ✓ AliasTables
+2026-02-16T02:06:45.5207801Z     760.2 ms  ✓ ConstructionBase → ConstructionBaseIntervalSetsExt
+2026-02-16T02:06:45.8913210Z     882.5 ms  ✓ ConstructionBase → ConstructionBaseLinearAlgebraExt
+2026-02-16T02:06:46.1484700Z     625.6 ms  ✓ ADTypes → ADTypesConstructionBaseExt
+2026-02-16T02:06:46.5342749Z     644.6 ms  ✓ ADTypes → ADTypesEnzymeCoreExt
+2026-02-16T02:06:46.9613852Z     811.1 ms  ✓ Missings
+2026-02-16T02:06:47.6442728Z    1104.8 ms  ✓ DiffResults
+2026-02-16T02:06:48.9473814Z    1987.4 ms  ✓ PDMats
+2026-02-16T02:06:49.2403875Z    1595.1 ms  ✓ AxisAlgorithms
+2026-02-16T02:06:50.0784438Z    1130.4 ms  ✓ RelocatableFolders
+2026-02-16T02:06:50.6337099Z    1395.9 ms  ✓ JLLWrappers
+2026-02-16T02:06:51.3170567Z    1236.0 ms  ✓ PrecompileTools
+2026-02-16T02:06:51.9203890Z   12076.0 ms  ✓ FileIO
+2026-02-16T02:06:51.9753880Z    1336.1 ms  ✓ TruncatedStacktraces
+2026-02-16T02:06:52.4264273Z    1109.2 ms  ✓ Compat → CompatLinearAlgebraExt
+2026-02-16T02:06:53.3630487Z   49616.4 ms  ✓ JuliaSyntax
+2026-02-16T02:06:53.3909754Z     963.9 ms  ✓ DifferentiationInterface → DifferentiationInterfaceSparseArraysExt
+2026-02-16T02:06:53.6373115Z    1665.7 ms  ✓ Tables
+2026-02-16T02:06:54.4013602Z    1037.1 ms  ✓ MosaicViews
+2026-02-16T02:06:55.4285609Z    2033.8 ms  ✓ FFTA
+2026-02-16T02:06:55.5225280Z    1121.0 ms  ✓ Distances → DistancesSparseArraysExt
+2026-02-16T02:06:56.3264692Z     803.1 ms  ✓ Ratios → RatiosFixedPointNumbersExt
+2026-02-16T02:06:57.3524560Z    1025.0 ms  ✓ Adapt → AdaptSparseArraysExt
+2026-02-16T02:06:58.3001836Z     945.4 ms  ✓ ArrayInterface
+2026-02-16T02:06:58.6173884Z    3189.6 ms  ✓ ColorTypes
+2026-02-16T02:06:59.0532222Z     751.9 ms  ✓ ElasticArrays
+2026-02-16T02:06:59.5639202Z     948.6 ms  ✓ GPUArraysCore
+2026-02-16T02:06:59.7872900Z     735.0 ms  ✓ OffsetArrays → OffsetArraysAdaptExt
+2026-02-16T02:07:00.3925069Z     827.4 ms  ✓ EnzymeCore → AdaptExt
+2026-02-16T02:07:01.1147052Z     720.9 ms  ✓ LogExpFunctions → LogExpFunctionsInverseFunctionsExt
+2026-02-16T02:07:01.5205398Z    1734.2 ms  ✓ AxisArrays
+2026-02-16T02:07:03.8323935Z    2719.0 ms  ✓ Setfield
+2026-02-16T02:07:04.3218184Z   47422.3 ms  ✓ Unitful
+2026-02-16T02:07:05.0726129Z    1240.4 ms  ✓ FillArrays → FillArraysPDMatsExt
+2026-02-16T02:07:05.5898432Z    1268.7 ms  ✓ OpenSSL_jll
+2026-02-16T02:07:06.1309751Z    4607.3 ms  ✓ Accessors
+2026-02-16T02:07:06.3519191Z    1279.1 ms  ✓ Graphite2_jll
+2026-02-16T02:07:06.5432128Z     952.8 ms  ✓ Libmount_jll
+2026-02-16T02:07:07.2114051Z    1075.1 ms  ✓ LLVMOpenMP_jll
+2026-02-16T02:07:07.4013947Z     854.8 ms  ✓ Cubature_jll
+2026-02-16T02:07:07.6694411Z    1315.6 ms  ✓ Bzip2_jll
+2026-02-16T02:07:08.2442855Z    1034.0 ms  ✓ Rmath_jll
+2026-02-16T02:07:08.5774065Z    1177.1 ms  ✓ Xorg_libXau_jll
+2026-02-16T02:07:08.7854869Z    1115.0 ms  ✓ libpng_jll
+2026-02-16T02:07:09.4095506Z    1165.1 ms  ✓ libfdk_aac_jll
+2026-02-16T02:07:09.7919916Z    1212.8 ms  ✓ Imath_jll
+2026-02-16T02:07:10.5413841Z    1131.8 ms  ✓ Giflib_jll
+2026-02-16T02:07:11.3026371Z    1511.0 ms  ✓ LAME_jll
+2026-02-16T02:07:11.5211393Z    2731.7 ms  ✓ IntelOpenMP_jll
+2026-02-16T02:07:11.9709757Z    1430.5 ms  ✓ LERC_jll
+2026-02-16T02:07:12.7370145Z    1431.9 ms  ✓ EarCut_jll
+2026-02-16T02:07:12.9929872Z    1472.1 ms  ✓ CRlibm_jll
+2026-02-16T02:07:13.2140747Z    1243.5 ms  ✓ JpegTurbo_jll
+2026-02-16T02:07:14.3941326Z    1654.8 ms  ✓ XZ_jll
+2026-02-16T02:07:14.4643325Z    1471.7 ms  ✓ Ogg_jll
+2026-02-16T02:07:15.6677846Z    1276.2 ms  ✓ Xorg_libXdmcp_jll
+2026-02-16T02:07:15.7142982Z    1249.2 ms  ✓ x265_jll
+2026-02-16T02:07:16.1707369Z    2954.8 ms  ✓ oneTBB_jll
+2026-02-16T02:07:16.7200142Z    1051.6 ms  ✓ x264_jll
+2026-02-16T02:07:17.0921505Z   25174.9 ms  ✓ JuliaInterpreter
+2026-02-16T02:07:17.0999599Z    1386.1 ms  ✓ libaom_jll
+2026-02-16T02:07:17.2918629Z    1122.7 ms  ✓ Zstd_jll
+2026-02-16T02:07:17.8102984Z    1089.5 ms  ✓ Expat_jll
+2026-02-16T02:07:18.1371388Z    1044.3 ms  ✓ LZO_jll
+2026-02-16T02:07:18.1923432Z    1089.1 ms  ✓ Opus_jll
+2026-02-16T02:07:18.2310435Z     938.6 ms  ✓ Xorg_xtrans_jll
+2026-02-16T02:07:18.6818466Z     872.0 ms  ✓ Libiconv_jll
+2026-02-16T02:07:19.1340692Z     902.8 ms  ✓ OpenSpecFun_jll
+2026-02-16T02:07:19.1524410Z     962.7 ms  ✓ isoband_jll
+2026-02-16T02:07:19.1863505Z    1048.1 ms  ✓ Libffi_jll
+2026-02-16T02:07:19.4090796Z   25771.2 ms  ✓ Moshi
+2026-02-16T02:07:19.4671722Z     785.2 ms  ✓ FriBidi_jll
+2026-02-16T02:07:19.9953901Z     859.1 ms  ✓ Libuuid_jll
+2026-02-16T02:07:20.1984613Z    1044.9 ms  ✓ OpenBLASConsistentFPCSR_jll
+2026-02-16T02:07:22.0998441Z    1901.3 ms  ✓ FindFirstFunctions
+2026-02-16T02:07:22.6524228Z    3243.1 ms  ✓ RecipesBase
+2026-02-16T02:07:23.6063983Z    4138.6 ms  ✓ StringManipulation
+2026-02-16T02:07:33.3620933Z   14173.0 ms  ✓ StaticArrays
+2026-02-16T02:07:34.9124378Z    1549.3 ms  ✓ Static
+2026-02-16T02:07:37.5104470Z   17515.3 ms  ✓ SIMD
+2026-02-16T02:07:38.0136758Z    3097.5 ms  ✓ DataStructures
+2026-02-16T02:07:39.3990122Z    1885.8 ms  ✓ FilePathsBase
+2026-02-16T02:07:40.7646506Z    2754.0 ms  ✓ ChainRulesCore
+2026-02-16T02:07:41.9013631Z    1136.1 ms  ✓ StructEquality
+2026-02-16T02:07:43.8714792Z    1970.0 ms  ✓ TypedSyntax
+2026-02-16T02:07:45.4850196Z    6083.5 ms  ✓ Aqua
+2026-02-16T02:07:45.8703427Z    1995.2 ms  ✓ StructArrays
+2026-02-16T02:07:46.5927560Z    1108.2 ms  ✓ StructUtils → StructUtilsTablesExt
+2026-02-16T02:07:47.1450681Z    1277.7 ms  ✓ MaybeInplace
+2026-02-16T02:07:48.0095023Z     864.3 ms  ✓ ArrayInterface → ArrayInterfaceStaticArraysCoreExt
+2026-02-16T02:07:48.1194723Z    1526.6 ms  ✓ ArrayInterface → ArrayInterfaceSparseArraysExt
+2026-02-16T02:07:49.3983892Z    1384.8 ms  ✓ SciMLStructures
+2026-02-16T02:07:50.7295625Z    2609.9 ms  ✓ PreallocationTools
+2026-02-16T02:07:52.4643510Z    3069.7 ms  ✓ QOI
+2026-02-16T02:07:52.6654065Z   29055.3 ms  ✓ SparseMatrixColorings
+2026-02-16T02:07:53.4114207Z     941.2 ms  ✓ ColorTypes → StyledStringsExt
+2026-02-16T02:07:54.0827367Z     676.5 ms  ✓ DifferentiationInterface → DifferentiationInterfaceGPUArraysCoreExt
+2026-02-16T02:07:54.8624481Z     778.6 ms  ✓ ArrayInterface → ArrayInterfaceGPUArraysCoreExt
+2026-02-16T02:07:55.2710123Z    4537.2 ms  ✓ ColorVectorSpace
+2026-02-16T02:07:56.1354096Z    1270.5 ms  ✓ Unitful → ConstructionBaseUnitfulExt
+2026-02-16T02:07:56.3769439Z    1106.3 ms  ✓ Unitful → NaNMathExt
+2026-02-16T02:07:56.4966428Z   34397.1 ms  ✓ Parsers
+2026-02-16T02:07:57.0385125Z     904.9 ms  ✓ Unitful → InverseFunctionsUnitfulExt
+2026-02-16T02:07:57.2643800Z     763.2 ms  ✓ Accessors → LinearAlgebraExt
+2026-02-16T02:07:57.4576428Z    1080.4 ms  ✓ Unitful → PrintfExt
+2026-02-16T02:07:57.9154610Z     876.8 ms  ✓ Accessors → TestExt
+2026-02-16T02:07:58.2386268Z     977.9 ms  ✓ Accessors → IntervalSetsExt
+2026-02-16T02:07:58.5841815Z    1125.8 ms  ✓ Accessors → UnitfulExt
+2026-02-16T02:07:58.8209549Z     904.8 ms  ✓ Pixman_jll
+2026-02-16T02:07:59.1672649Z     927.6 ms  ✓ Cubature
+2026-02-16T02:07:59.4233667Z     835.9 ms  ✓ FreeType2_jll
+2026-02-16T02:07:59.8401641Z    1018.8 ms  ✓ Rmath
+2026-02-16T02:08:00.4093834Z     988.1 ms  ✓ CRlibm
+2026-02-16T02:08:00.6529247Z    1485.2 ms  ✓ OpenEXR_jll
+2026-02-16T02:08:00.9182575Z    1073.7 ms  ✓ libsixel_jll
+2026-02-16T02:08:01.8077402Z    1398.1 ms  ✓ libvorbis_jll
+2026-02-16T02:08:02.6117178Z    9949.3 ms  ✓ Colors
+2026-02-16T02:08:03.0819877Z    2162.0 ms  ✓ MKL_jll
+2026-02-16T02:08:03.2018061Z    2549.5 ms  ✓ Xorg_libxcb_jll
+2026-02-16T02:08:03.6659221Z    1050.7 ms  ✓ Libtiff_jll
+2026-02-16T02:08:04.1078647Z    1026.3 ms  ✓ XML2_jll
+2026-02-16T02:08:04.3429722Z    1138.7 ms  ✓ GettextRuntime_jll
+2026-02-16T02:08:04.7457786Z     634.5 ms  ✓ Isoband
+2026-02-16T02:08:05.5254645Z     782.4 ms  ✓ IntervalSets → IntervalSetsRecipesBaseExt
+2026-02-16T02:08:08.4834130Z    4818.1 ms  ✓ SpecialFunctions
+2026-02-16T02:08:10.5281116Z    2046.7 ms  ✓ ArnoldiMethod
+2026-02-16T02:08:11.8391270Z    1306.6 ms  ✓ StaticArrays → StaticArraysStatisticsExt
+2026-02-16T02:08:13.0984623Z    1262.4 ms  ✓ FillArrays → FillArraysStaticArraysExt
+2026-02-16T02:08:14.3109814Z    1211.2 ms  ✓ ConstructionBase → ConstructionBaseStaticArraysExt
+2026-02-16T02:08:15.5322952Z    1221.1 ms  ✓ DifferentiationInterface → DifferentiationInterfaceStaticArraysExt
+2026-02-16T02:08:16.6024874Z    1071.9 ms  ✓ Adapt → AdaptStaticArraysExt
+2026-02-16T02:08:18.1257490Z    1523.1 ms  ✓ Accessors → StaticArraysExt
+2026-02-16T02:08:28.6458732Z   26839.7 ms  ✓ LoweredCodeUtils
+2026-02-16T02:08:29.4216099Z     772.8 ms  ✓ BitTwiddlingConvenienceFunctions
+2026-02-16T02:08:31.5552406Z    2136.2 ms  ✓ CPUSummary
+2026-02-16T02:08:34.1091758Z    2549.6 ms  ✓ StaticArrayInterface
+2026-02-16T02:08:49.3494601Z   31221.0 ms  ✓ GeometryBasics
+2026-02-16T02:08:50.6633982Z    1310.8 ms  ✓ SortingAlgorithms
+2026-02-16T02:08:53.3702871Z    2705.7 ms  ✓ QuadGK
+2026-02-16T02:08:54.7092775Z    1340.2 ms  ✓ SimplePartitions
+2026-02-16T02:08:56.9972500Z   94344.2 ms  ✓ ExplicitImports
+2026-02-16T02:08:58.1140432Z    1113.6 ms  ✓ FilePathsBase → FilePathsBaseMmapExt
+2026-02-16T02:09:00.8555560Z    2741.9 ms  ✓ FilePathsBase → FilePathsBaseTestExt
+2026-02-16T02:09:02.7734377Z    1916.1 ms  ✓ FilePaths
+2026-02-16T02:09:04.3642189Z    1586.5 ms  ✓ ChainRulesCore → ChainRulesCoreSparseArraysExt
+2026-02-16T02:09:05.5422962Z    1179.7 ms  ✓ AbstractFFTs → AbstractFFTsChainRulesCoreExt
+2026-02-16T02:09:06.7072849Z    1160.5 ms  ✓ ADTypes → ADTypesChainRulesCoreExt
+2026-02-16T02:09:07.9823582Z    1275.0 ms  ✓ EnzymeCore → EnzymeCoreChainRulesCoreExt
+2026-02-16T02:09:09.1445605Z    1164.9 ms  ✓ DifferentiationInterface → DifferentiationInterfaceChainRulesCoreExt
+2026-02-16T02:09:10.3487613Z    1201.8 ms  ✓ Distances → DistancesChainRulesCoreExt
+2026-02-16T02:09:14.1214064Z    3771.5 ms  ✓ LogExpFunctions → LogExpFunctionsChainRulesCoreExt
+2026-02-16T02:09:15.2300402Z    1109.5 ms  ✓ ArrayInterface → ArrayInterfaceChainRulesCoreExt
+2026-02-16T02:09:16.9234053Z    1691.9 ms  ✓ StaticArrays → StaticArraysChainRulesCoreExt
+2026-02-16T02:09:23.0451342Z   48937.0 ms  ✓ Automa
+2026-02-16T02:09:23.9038733Z     857.4 ms  ✓ StructArrays → StructArraysAdaptExt
+2026-02-16T02:09:25.1054282Z    1198.2 ms  ✓ StructArrays → StructArraysSparseArraysExt
+2026-02-16T02:09:26.0504413Z   81705.0 ms  ✓ Polynomials
+2026-02-16T02:09:26.6301899Z    1522.3 ms  ✓ StructArrays → StructArraysStaticArraysExt
+2026-02-16T02:09:26.8991660Z     847.7 ms  ✓ StructArrays → StructArraysLinearAlgebraExt
+2026-02-16T02:09:27.5816985Z     953.1 ms  ✓ Accessors → StructArraysExt
+2026-02-16T02:09:27.9655361Z    1066.8 ms  ✓ MaybeInplace → MaybeInplaceSparseArraysExt
+2026-02-16T02:09:28.9789361Z    1391.2 ms  ✓ FiniteDiff
+2026-02-16T02:09:29.3570540Z    1388.5 ms  ✓ DifferentiationInterface → DifferentiationInterfaceSparseMatrixColoringsExt
+2026-02-16T02:09:39.3374647Z    9980.2 ms  ✓ JSON
+2026-02-16T02:09:40.0889396Z   94562.9 ms  ✓ PrettyTables
+2026-02-16T02:09:42.6113409Z    2521.2 ms  ✓ SciMLOperators
+2026-02-16T02:09:44.7574616Z    2146.7 ms  ✓ SymbolicIndexingInterface
+2026-02-16T02:09:44.8096929Z    5471.8 ms  ✓ Roots
+2026-02-16T02:09:46.1044858Z    1294.6 ms  ✓ Fontconfig_jll
+2026-02-16T02:09:46.6281603Z    1870.6 ms  ✓ FreeType
+2026-02-16T02:09:47.7844467Z    1156.2 ms  ✓ Graphics
+2026-02-16T02:09:48.8307755Z    1046.2 ms  ✓ Animations
+2026-02-16T02:09:50.8435787Z    4736.1 ms  ✓ IntervalArithmetic
+2026-02-16T02:09:51.4911339Z    2658.1 ms  ✓ OpenEXR
+2026-02-16T02:09:52.6718098Z    1830.9 ms  ✓ SparseMatrixColorings → SparseMatrixColoringsColorsExt
+2026-02-16T02:10:00.2604416Z    7587.1 ms  ✓ ColorSchemes
+2026-02-16T02:10:01.6638582Z    1397.0 ms  ✓ Xorg_libX11_jll
+2026-02-16T02:10:02.8850102Z    1227.2 ms  ✓ LightXML
+2026-02-16T02:10:04.9981968Z    2110.2 ms  ✓ Glib_jll
+2026-02-16T02:10:08.0587382Z    3062.7 ms  ✓ FastGaussQuadrature
+2026-02-16T02:10:11.5740262Z    3510.7 ms  ✓ SpecialFunctions → SpecialFunctionsChainRulesCoreExt
+2026-02-16T02:10:13.7291846Z    2156.4 ms  ✓ HypergeometricFunctions
+2026-02-16T02:10:15.2273871Z    1495.9 ms  ✓ DiffRules
+2026-02-16T02:10:16.4927127Z    1268.0 ms  ✓ ColorVectorSpace → SpecialFunctionsExt
+2026-02-16T02:10:24.4696071Z    7975.7 ms  ✓ Graphs
+2026-02-16T02:10:35.5634769Z  100851.7 ms  ✓ TiffImages
+2026-02-16T02:10:38.7364242Z   47246.8 ms  ✓ ImageCore
+2026-02-16T02:10:39.8896608Z    1150.8 ms  ✓ PolyesterWeave
+2026-02-16T02:10:41.1235164Z    1234.8 ms  ✓ StaticArrayInterface → StaticArrayInterfaceStaticArraysExt
+2026-02-16T02:10:42.0103471Z     885.5 ms  ✓ StaticArrayInterface → StaticArrayInterfaceOffsetArraysExt
+2026-02-16T02:10:42.8493899Z     839.0 ms  ✓ CloseOpenIntervals
+2026-02-16T02:10:44.1402111Z    1288.8 ms  ✓ LayoutPointers
+2026-02-16T02:10:45.0809684Z    9513.9 ms  ✓ JET
+2026-02-16T02:10:47.2098716Z    2129.3 ms  ✓ Packing
+2026-02-16T02:10:49.8811928Z    2671.2 ms  ✓ ShaderAbstractions
+2026-02-16T02:10:53.1464784Z   28676.7 ms  ✓ ArrayLayouts
+2026-02-16T02:10:57.7132405Z    4563.1 ms  ✓ StatsBase
+2026-02-16T02:11:02.3263760Z   12445.0 ms  ✓ MakieCore
+2026-02-16T02:11:02.4048196Z    4693.2 ms  ✓ Interpolations
+2026-02-16T02:11:03.5203460Z   19378.6 ms  ✓ GridLayoutBase
+2026-02-16T02:11:03.9414433Z    1613.9 ms  ✓ Polynomials → PolynomialsChainRulesCoreExt
+2026-02-16T02:11:04.6600085Z    1142.6 ms  ✓ FiniteDiff → FiniteDiffSparseArraysExt
+2026-02-16T02:11:04.6949892Z    2286.6 ms  ✓ SimplePolynomials
+2026-02-16T02:11:05.2059840Z    1261.0 ms  ✓ FiniteDiff → FiniteDiffStaticArraysExt
+2026-02-16T02:11:05.6612458Z     998.2 ms  ✓ DifferentiationInterface → DifferentiationInterfaceFiniteDiffExt
+2026-02-16T02:11:06.6454493Z     986.1 ms  ✓ SciMLOperators → SciMLOperatorsStaticArraysCoreExt
+2026-02-16T02:11:07.3468008Z    2651.7 ms  ✓ BenchmarkTools
+2026-02-16T02:11:07.4969071Z    2291.3 ms  ✓ ColorBrewer
+2026-02-16T02:11:07.9839830Z    1337.9 ms  ✓ SciMLOperators → SciMLOperatorsSparseArraysExt
+2026-02-16T02:11:09.2686004Z    1281.3 ms  ✓ Roots → RootsChainRulesCoreExt
+2026-02-16T02:11:09.3634034Z    2016.4 ms  ✓ SymbolicIndexingInterface → SymbolicIndexingInterfacePrettyTablesExt
+2026-02-16T02:11:10.5464509Z    1277.0 ms  ✓ Roots → RootsUnitfulExt
+2026-02-16T02:11:11.8926004Z    1349.5 ms  ✓ IntervalArithmetic → IntervalArithmeticSparseArraysExt
+2026-02-16T02:11:12.8715431Z     978.3 ms  ✓ IntervalArithmetic → IntervalArithmeticIntervalSetsExt
+2026-02-16T02:11:14.0212985Z    4658.3 ms  ✓ FreeTypeAbstraction
+2026-02-16T02:11:14.3870149Z    1513.7 ms  ✓ IntervalArithmetic → IntervalArithmeticRecipesBaseExt
+2026-02-16T02:11:15.2788859Z    1256.4 ms  ✓ IntervalArithmetic → IntervalArithmeticLinearAlgebraExt
+2026-02-16T02:11:16.0593702Z  119137.4 ms  ✓ Cthulhu
+2026-02-16T02:11:16.3930852Z    1110.9 ms  ✓ Xorg_libXrender_jll
+2026-02-16T02:11:17.7468487Z    1688.9 ms  ✓ Xorg_libXext_jll
+2026-02-16T02:11:19.7631640Z    3366.6 ms  ✓ StatsFuns
+2026-02-16T02:11:19.9390974Z   12441.5 ms  ✓ RecursiveArrayTools
+2026-02-16T02:11:20.7387700Z     979.3 ms  ✓ IntervalArithmetic → IntervalArithmeticDiffRulesExt
+2026-02-16T02:11:22.3133697Z    2374.2 ms  ✓ VertexSafeGraphs
+2026-02-16T02:11:25.6588677Z    4919.5 ms  ✓ ImageBase
+2026-02-16T02:11:25.8114032Z    8062.4 ms  ✓ ForwardDiff
+2026-02-16T02:11:32.2391805Z    6579.2 ms  ✓ Sixel
+2026-02-16T02:11:32.7215165Z   10408.0 ms  ✓ PNGFiles
+2026-02-16T02:11:33.2066049Z    7397.0 ms  ✓ JpegTurbo
+2026-02-16T02:11:34.0005424Z    1761.1 ms  ✓ StrideArraysCore
+2026-02-16T02:11:34.7222774Z    1513.5 ms  ✓ PDMats → StatsBaseExt
+2026-02-16T02:11:35.5642729Z    2842.6 ms  ✓ ArrayLayouts → ArrayLayoutsSparseArraysExt
+2026-02-16T02:11:37.5204348Z    2793.7 ms  ✓ Interpolations → InterpolationsUnitfulExt
+2026-02-16T02:11:37.6944959Z    2129.9 ms  ✓ LinearAlgebraX
+2026-02-16T02:11:37.9304439Z    3930.3 ms  ✓ Polynomials → PolynomialsMakieCoreExt
+2026-02-16T02:11:38.9707315Z    1455.1 ms  ✓ NLSolversBase
+2026-02-16T02:11:42.8114131Z    3839.9 ms  ✓ JET → JETCthulhuExt
+2026-02-16T02:11:44.6736644Z    1862.1 ms  ✓ Libglvnd_jll
+2026-02-16T02:11:46.5420147Z    1868.8 ms  ✓ Cairo_jll
+2026-02-16T02:11:47.8343576Z    9902.9 ms  ✓ ExactPredicates
+2026-02-16T02:11:47.9710441Z    1425.3 ms  ✓ StatsFuns → StatsFunsInverseFunctionsExt
+2026-02-16T02:11:48.9023365Z     931.1 ms  ✓ RecursiveArrayTools → RecursiveArrayToolsStatisticsExt
+2026-02-16T02:11:50.0050588Z   35615.2 ms  ✓ PlotUtils
+2026-02-16T02:11:50.1317355Z    1229.7 ms  ✓ RecursiveArrayTools → RecursiveArrayToolsStructArraysExt
+2026-02-16T02:11:50.3849524Z    2551.0 ms  ✓ StatsFuns → StatsFunsChainRulesCoreExt
+2026-02-16T02:11:51.1052389Z     972.8 ms  ✓ RecursiveArrayTools → RecursiveArrayToolsTablesExt
+2026-02-16T02:11:51.5329328Z    1528.3 ms  ✓ RecursiveArrayTools → RecursiveArrayToolsSparseArraysExt
+2026-02-16T02:11:52.5031402Z    2113.8 ms  ✓ XTermColors
+2026-02-16T02:11:52.7700218Z  143790.5 ms  ✓ ExponentialUtilities
+2026-02-16T02:11:53.1814006Z    1646.7 ms  ✓ ForwardDiff → ForwardDiffStaticArraysExt
+2026-02-16T02:11:53.5503506Z   15855.2 ms  ✓ MathTeXEngine
+2026-02-16T02:11:53.5798959Z    1079.3 ms  ✓ FastPower → FastPowerForwardDiffExt
+2026-02-16T02:11:53.8785193Z    1108.9 ms  ✓ DifferentiationInterface → DifferentiationInterfaceForwardDiffExt
+2026-02-16T02:11:54.3880817Z    1207.6 ms  ✓ Unitful → ForwardDiffExt
+2026-02-16T02:11:54.7014885Z    1121.4 ms  ✓ PreallocationTools → PreallocationToolsForwardDiffExt
+2026-02-16T02:11:54.8076812Z    3698.4 ms  ✓ ImageAxes
+2026-02-16T02:11:54.8452609Z     966.1 ms  ✓ Roots → RootsForwardDiffExt
+2026-02-16T02:11:55.4588396Z    1071.1 ms  ✓ IntervalArithmetic → IntervalArithmeticForwardDiffExt
+2026-02-16T02:11:55.8301081Z    1026.7 ms  ✓ Polyester
+2026-02-16T02:11:55.8426083Z    1140.5 ms  ✓ RecursiveArrayTools → RecursiveArrayToolsForwardDiffExt
+2026-02-16T02:11:56.7934617Z     959.1 ms  ✓ LineSearches
+2026-02-16T02:11:57.1756735Z    3622.6 ms  ✓ DataInterpolations
+2026-02-16T02:11:57.2520207Z    1408.8 ms  ✓ libwebp_jll
+2026-02-16T02:11:58.0116057Z    1221.6 ms  ✓ HarfBuzz_jll
+2026-02-16T02:11:59.9415088Z    4482.5 ms  ✓ LazyArrays
+2026-02-16T02:12:02.4861216Z    2542.4 ms  ✓ ExponentialUtilities → ExponentialUtilitiesStaticArraysExt
+2026-02-16T02:12:02.7006151Z    7855.1 ms  ✓ Distributions
+2026-02-16T02:12:03.8168789Z    6643.0 ms  ✓ DelaunayTriangulation
+2026-02-16T02:12:04.5533921Z    6540.1 ms  ✓ ReferenceTests
+2026-02-16T02:12:05.0498367Z    1233.4 ms  ✓ FastBroadcast
+2026-02-16T02:12:05.0786238Z    2374.2 ms  ✓ ImageMetadata
+2026-02-16T02:12:06.3109757Z    3822.9 ms  ✓ SparseDiffTools
+2026-02-16T02:12:07.1398413Z    2089.8 ms  ✓ DataInterpolations → DataInterpolationsChainRulesCoreExt
+2026-02-16T02:12:07.2904247Z     979.0 ms  ✓ libass_jll
+2026-02-16T02:12:08.2825314Z    1142.0 ms  ✓ Pango_jll
+2026-02-16T02:12:08.5590564Z    4006.7 ms  ✓ Optim
+2026-02-16T02:12:09.2110563Z    4132.6 ms  ✓ WebP
+2026-02-16T02:12:09.3907802Z    2101.0 ms  ✓ LazyArrays → LazyArraysStaticArraysExt
+2026-02-16T02:12:10.0499575Z    1490.3 ms  ✓ Distributions → DistributionsChainRulesCoreExt
+2026-02-16T02:12:10.1734774Z    1885.6 ms  ✓ Distributions → DistributionsTestExt
+2026-02-16T02:12:11.0344607Z   13779.3 ms  ✓ SciMLBase
+2026-02-16T02:12:11.0715168Z    1860.9 ms  ✓ SimpleRandom
+2026-02-16T02:12:11.1669677Z    1115.8 ms  ✓ RecursiveArrayTools → RecursiveArrayToolsFastBroadcastExt
+2026-02-16T02:12:11.4908863Z    2099.6 ms  ✓ NaturalNeighbours
+2026-02-16T02:12:12.6124831Z    1540.4 ms  ✓ FFMPEG_jll
+2026-02-16T02:12:13.3444151Z    2177.4 ms  ✓ Cairo
+2026-02-16T02:12:13.3581798Z    2320.9 ms  ✓ SparseDiffTools → SparseDiffToolsPolyesterExt
+2026-02-16T02:12:13.7290411Z    3557.6 ms  ✓ Netpbm
+2026-02-16T02:12:13.8708399Z    2379.7 ms  ✓ DataInterpolations → DataInterpolationsOptimExt
+2026-02-16T02:12:14.7680226Z    1423.3 ms  ✓ SciMLBase → SciMLBaseChainRulesCoreExt
+2026-02-16T02:12:15.0982128Z    2485.5 ms  ✓ KernelDensity
+2026-02-16T02:12:17.0447811Z    1946.3 ms  ✓ ImageIO
+2026-02-16T02:12:17.6214253Z    3750.3 ms  ✓ SimpleGraphs
+2026-02-16T02:12:18.3443430Z    4985.5 ms  ✓ SciMLJacobianOperators
+2026-02-16T02:12:18.6519261Z    3884.4 ms  ✓ DiffEqBase
+2026-02-16T02:12:27.5469556Z    9205.5 ms  ✓ LineSearch
+2026-02-16T02:12:29.3727554Z    1825.2 ms  ✓ DiffEqBase → DiffEqBaseChainRulesCoreExt
+2026-02-16T02:12:29.4184651Z   10765.8 ms  ✓ NonlinearSolveBase
+2026-02-16T02:12:31.4620767Z    2088.7 ms  ✓ DiffEqBase → DiffEqBaseUnitfulExt
+2026-02-16T02:12:31.7184015Z    2297.4 ms  ✓ DiffEqBase → DiffEqBaseForwardDiffExt
+2026-02-16T02:12:33.7555373Z    2292.9 ms  ✓ DiffEqBase → DiffEqBaseDistributionsExt
+2026-02-16T02:12:33.7627460Z    2046.0 ms  ✓ DiffEqBase → DiffEqBaseSparseArraysExt
+2026-02-16T02:12:39.9524827Z    6187.7 ms  ✓ OrdinaryDiffEqCore
+2026-02-16T02:12:41.4028843Z    1451.2 ms  ✓ LineSearch → LineSearchLineSearchesExt
+2026-02-16T02:12:43.6961783Z    2293.1 ms  ✓ NonlinearSolveBase → NonlinearSolveBaseSparseMatrixColoringsExt
+2026-02-16T02:12:44.1440574Z   10388.4 ms  ✓ DiffEqCallbacks
+2026-02-16T02:12:45.6189412Z    1923.2 ms  ✓ NonlinearSolveBase → NonlinearSolveBaseForwardDiffExt
+2026-02-16T02:12:45.9405886Z    1795.9 ms  ✓ NonlinearSolveBase → NonlinearSolveBaseSparseArraysExt
+2026-02-16T02:12:47.2649726Z    1645.3 ms  ✓ NonlinearSolveBase → NonlinearSolveBaseLineSearchExt
+2026-02-16T02:12:47.4969307Z    1556.2 ms  ✓ NonlinearSolveBase → NonlinearSolveBaseDiffEqBaseExt
+2026-02-16T02:12:49.3773858Z    1876.3 ms  ✓ OrdinaryDiffEqCore → OrdinaryDiffEqCoreEnzymeCoreExt
+2026-02-16T02:12:54.9284532Z    7662.7 ms  ✓ BracketingNonlinearSolve
+2026-02-16T02:13:00.3185356Z    5388.3 ms  ✓ SteadyStateDiffEq
+2026-02-16T02:13:05.9253222Z   16551.8 ms  ✓ NonlinearSolveSpectralMethods
+2026-02-16T02:13:06.1764086Z    5853.7 ms  ✓ OrdinaryDiffEqExplicitRK
+2026-02-16T02:13:11.5783994Z    5651.9 ms  ✓ OrdinaryDiffEqHighOrderRK
+2026-02-16T02:13:12.2390043Z    6064.6 ms  ✓ OrdinaryDiffEqStabilizedRK
+2026-02-16T02:13:17.0870264Z    5504.4 ms  ✓ OrdinaryDiffEqSymplecticRK
+2026-02-16T02:13:21.0843363Z    8845.2 ms  ✓ OrdinaryDiffEqSSPRK
+2026-02-16T02:13:25.0480145Z    7960.9 ms  ✓ OrdinaryDiffEqLowOrderRK
+2026-02-16T02:13:26.0679646Z    4984.0 ms  ✓ OrdinaryDiffEqFunctionMap
+2026-02-16T02:13:29.1109700Z   72065.6 ms  ✓ LinearSolve
+2026-02-16T02:13:29.7170012Z    4669.4 ms  ✓ OrdinaryDiffEqLinear
+2026-02-16T02:13:34.6810655Z    4963.4 ms  ✓ OrdinaryDiffEqPRK
+2026-02-16T02:13:40.2310479Z    5550.3 ms  ✓ OrdinaryDiffEqRKN
+2026-02-16T02:13:44.7423882Z    4509.5 ms  ✓ OrdinaryDiffEqFeagin
+2026-02-16T02:13:44.9331523Z   18865.0 ms  ✓ OrdinaryDiffEqTsit5
+2026-02-16T02:13:45.2394600Z   91508.9 ms  ✓ FiniteVolumeMethod
+2026-02-16T02:13:47.1885407Z    1948.5 ms  ✓ BracketingNonlinearSolve → BracketingNonlinearSolveForwardDiffExt
+2026-02-16T02:13:48.3988239Z    3657.5 ms  ✓ OrdinaryDiffEqQPRK
+2026-02-16T02:13:49.1053948Z    1915.1 ms  ✓ NonlinearSolveSpectralMethods → NonlinearSolveSpectralMethodsForwardDiffExt
+2026-02-16T02:13:51.3729019Z    6439.1 ms  ✓ OrdinaryDiffEqLowStorageRK
+2026-02-16T02:13:52.7685926Z    4366.6 ms  ✓ OrdinaryDiffEqAdamsBashforthMoulton
+2026-02-16T02:13:55.6701877Z    4292.8 ms  ✓ LinearSolve → LinearSolveEnzymeExt
+2026-02-16T02:13:55.7923896Z    6683.6 ms  ✓ LinearSolve → LinearSolveForwardDiffExt
+2026-02-16T02:13:59.1104319Z    3321.0 ms  ✓ OrdinaryDiffEqNordsieck
+2026-02-16T02:14:00.1136391Z    4445.0 ms  ✓ NonlinearSolveBase → NonlinearSolveBaseLinearSolveExt
+2026-02-16T02:14:00.8166299Z    1706.0 ms  ✓ BracketingNonlinearSolve → BracketingNonlinearSolveChainRulesCoreExt
+2026-02-16T02:14:03.3946450Z   10626.4 ms  ✓ LinearSolve → LinearSolveSparseArraysExt
+2026-02-16T02:14:11.8313537Z    8431.5 ms  ✓ OrdinaryDiffEqDifferentiation
+2026-02-16T02:14:26.8188052Z   26705.0 ms  ✓ SimpleNonlinearSolve
+2026-02-16T02:14:36.7968679Z    9977.8 ms  ✓ OrdinaryDiffEqExponentialRK
+2026-02-16T02:14:38.1794564Z   34780.8 ms  ✓ NonlinearSolveQuasiNewton
+2026-02-16T02:14:49.1961327Z   12398.7 ms  ✓ OrdinaryDiffEqExtrapolation
+2026-02-16T02:14:51.8849875Z    2688.7 ms  ✓ SimpleNonlinearSolve → SimpleNonlinearSolveDiffEqBaseExt
+2026-02-16T02:14:54.5225966Z    2637.4 ms  ✓ SimpleNonlinearSolve → SimpleNonlinearSolveChainRulesCoreExt
+2026-02-16T02:15:00.8468767Z    6324.2 ms  ✓ NonlinearSolveQuasiNewton → NonlinearSolveQuasiNewtonForwardDiffExt
+2026-02-16T02:15:21.2920785Z   69462.6 ms  ✓ NonlinearSolveFirstOrder
+2026-02-16T02:15:40.7225824Z  131608.4 ms  ✓ OrdinaryDiffEqVerner
+2026-02-16T02:15:47.1020695Z   25810.1 ms  ✓ NonlinearSolve
+2026-02-16T02:15:49.5903372Z   71410.2 ms  ✓ OrdinaryDiffEqRosenbrock
+2026-02-16T02:15:52.5673563Z    5464.4 ms  ✓ OrdinaryDiffEqNonlinearSolve
+2026-02-16T02:16:01.9363985Z    9366.3 ms  ✓ OrdinaryDiffEqStabilizedIRK
+2026-02-16T02:16:02.5358364Z    9964.2 ms  ✓ OrdinaryDiffEqIMEXMultistep
+2026-02-16T02:16:02.8509663Z   10283.3 ms  ✓ OrdinaryDiffEqPDIRK
+2026-02-16T02:16:04.8393345Z   12268.8 ms  ✓ OrdinaryDiffEqSDIRK
+2026-02-16T02:16:29.6933638Z   24852.3 ms  ✓ OrdinaryDiffEqBDF
+2026-02-16T02:16:48.3324646Z   46396.8 ms  ✓ OrdinaryDiffEqFIRK
+2026-02-16T02:17:29.7373432Z  312115.2 ms  ✓ Makie
+2026-02-16T02:17:42.7388147Z   13001.2 ms  ✓ DataInterpolations → DataInterpolationsMakieExt
+2026-02-16T02:17:43.1212422Z   13381.5 ms  ✓ SciMLBase → SciMLBaseMakieExt
+2026-02-16T02:17:46.0358202Z   76343.1 ms  ✓ OrdinaryDiffEqDefault
+2026-02-16T02:17:50.7063313Z    4670.1 ms  ✓ OrdinaryDiffEq
+2026-02-16T02:18:22.5537139Z   52811.0 ms  ✓ CairoMakie
+2026-02-16T02:18:22.5538154Z   485 dependencies successfully precompiled in 746 seconds. 41 already precompiled.
+2026-02-16T02:18:22.5539121Z   2 dependencies had output during precompilation:
+2026-02-16T02:18:22.5539593Z ┌ LinearSolve
+2026-02-16T02:18:22.5540048Z │  [32m[1m Downloading[22m[39m artifact: MKL
+2026-02-16T02:18:22.5540561Z └  
+2026-02-16T02:18:22.5540950Z ┌ OrdinaryDiffEqRosenbrock
+2026-02-16T02:18:22.5549185Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rosenbrock23 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5550110Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5550982Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rosenbrock32 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5551655Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5552685Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS3P :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5553401Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5554156Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas23W :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5554867Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5555632Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS34PW1a :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5556301Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5557049Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS34PW1b :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5557708Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5558454Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS34PW2 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5559097Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5560282Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS34PW3 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5560936Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5561691Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.RosShamp4 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5562483Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5563230Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas3 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5563886Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5564632Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas3P :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5565282Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5566034Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas4 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5566676Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5567428Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Ros4LStab :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5568083Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5568799Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas42 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5569426Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5570139Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas4P :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5570774Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5571496Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas4P2 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5572121Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5573055Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas5 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5573677Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5574399Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas5P :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5575028Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5575762Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas5Pr :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5576405Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5577127Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Rodas5Pe :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5577761Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5578470Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.GRK4T :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5579093Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5579806Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.GRK4A :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5580541Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5581319Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Veldd4 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5581951Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5582849Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Velds4 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5583481Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5584187Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS2 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5584812Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5585529Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS2PR :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5586179Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5586881Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS2S :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5587509Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5588221Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS3 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5588841Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5589545Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS3PR :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5590181Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5590927Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.Scholz4_7 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5591584Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5592421Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS34PRw :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5593175Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5593901Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS3PRL :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5594541Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5595258Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROS3PRL2 :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5595899Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5596619Z │  [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mReplacing docs for `OrdinaryDiffEqRosenbrock.ROK4a :: Union{}` in module `OrdinaryDiffEqRosenbrock`
+2026-02-16T02:18:22.5597254Z │  [33m[1m└ [22m[39m[90m@ Base.Docs docs/Docs.jl:243[39m
+2026-02-16T02:18:22.5597523Z └  
+2026-02-16T02:18:22.5597764Z [32m[1m     Testing[22m[39m Running tests...
+2026-02-16T02:18:27.0286953Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:18:26] Testing geometry.jl
+2026-02-16T02:18:53.1788325Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:18:53] Testing conditions.jl
+2026-02-16T02:20:25.7378377Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:20:24] Testing robin.jl
+2026-02-16T02:20:29.8328279Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:20:29] Testing problem.jl
+2026-02-16T02:22:09.8569483Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:22:09] Testing equations.jl
+2026-02-16T02:29:52.1049950Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:29:52] Testing schemes.jl
+2026-02-16T02:29:52.5829693Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:29:52] Testing advanced_bcs.jl
+2026-02-16T02:29:53.8170133Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:29:53] Testing physics.jl
+2026-02-16T02:29:55.2467095Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:29:55] Testing hyperbolic.jl
+2026-02-16T02:30:00.6240957Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:30:00] Testing hyperbolic_2d.jl
+2026-02-16T02:30:09.8224173Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:30:09] Testing mhd.jl
+2026-02-16T02:30:20.7101682Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:30:20] Testing mhd_2d.jl
+2026-02-16T02:30:39.4143579Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:30:39] Testing navier_stokes.jl
+2026-02-16T02:30:46.8668553Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:30:46] Testing srmhd.jl
+2026-02-16T02:30:59.7406205Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:30:59] Testing srmhd_2d.jl
+2026-02-16T02:31:27.9513219Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:31:27] Testing grmhd.jl
+2026-02-16T02:31:38.5445321Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:31:38] Testing grmhd_2d.jl
+2026-02-16T02:31:58.0030120Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:31:58] Testing hyperbolic_3d.jl
+2026-02-16T02:32:26.9641400Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:32:26] Testing mhd_3d.jl
+2026-02-16T02:32:59.1167460Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:32:59] Testing amr.jl
+2026-02-16T02:33:02.6367704Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:33:02] Testing weno.jl
+2026-02-16T02:33:07.5519663Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:33:07] Testing imex.jl
+2026-02-16T02:33:11.1490101Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:33:11] Testing unstructured_hyperbolic.jl
+2026-02-16T02:33:24.8720768Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:33:24] Testing coupling.jl
+2026-02-16T02:33:35.1664510Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:33:35] Testing performance.jl
+2026-02-16T02:33:39.9200617Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:33:39] Testing advanced_numerics.jl
+2026-02-16T02:33:44.2637120Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:33:44] Testing extended_physics.jl
+2026-02-16T02:33:49.6804265Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:33:49] Testing README.jl
+2026-02-16T02:34:21.5904284Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:34:21] Testing diffusion_equation_in_a_wedge_with_mixed_boundary_conditions.jl
+2026-02-16T02:35:25.8159199Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:35:25] Testing diffusion_equation_on_a_square_plate.jl
+2026-02-16T02:35:47.8994608Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:35:47] Testing diffusion_equation_on_an_annulus.jl
+2026-02-16T02:36:44.2510247Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mNatural neighbour interpolation is only defined over unconstrained triangulations.
+2026-02-16T02:36:44.2511578Z [33m[1m│ [22m[39mYou may find unexpected results when interpolating near the boundaries or constrained edges, and especially near non-convex boundaries or outside of the triangulation.
+2026-02-16T02:36:44.2512951Z [33m[1m│ [22m[39mIn your later evaluations of this interpolant, consider using project=false.
+2026-02-16T02:36:44.2513844Z [33m[1m└ [22m[39m[90m@ NaturalNeighbours ~/.julia/packages/NaturalNeighbours/HJ2P0/src/data_structures/interpolant.jl:19[39m
+2026-02-16T02:36:54.1730153Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:36:54] Testing equilibrium_temperature_distribution_with_mixed_boundary_conditions_and_using_ensembleproblems.jl
+2026-02-16T02:37:31.7673307Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:37:31] Testing helmholtz_equation_with_inhomogeneous_boundary_conditions.jl
+2026-02-16T02:37:56.1627279Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:37:56] Testing laplaces_equation_with_internal_dirichlet_conditions.jl
+2026-02-16T02:38:10.6248875Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:38:10] Testing mean_exit_time.jl
+2026-02-16T02:38:50.9673209Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mAssignment to `n` in soft scope is ambiguous because a global variable by the same name exists: `n` will be treated as a new local. Disambiguate by using `local n` to suppress this warning or `global n` to assign to the existing global variable.
+2026-02-16T02:38:50.9675392Z [33m[1m└ [22m[39m[90m@ ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/mean_exit_time.jl:212[39m
+2026-02-16T02:38:51.1332513Z WARNING: Method definition T_exact(Any, Any) in module ##267 at /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/mean_exit_time.jl:186 overwritten at /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/mean_exit_time.jl:229.
+2026-02-16T02:39:43.2015729Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mAssignment to `n` in soft scope is ambiguous because a global variable by the same name exists: `n` will be treated as a new local. Disambiguate by using `local n` to suppress this warning or `global n` to assign to the existing global variable.
+2026-02-16T02:39:43.2018177Z [33m[1m└ [22m[39m[90m@ ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/mean_exit_time.jl:321[39m
+2026-02-16T02:40:23.9093569Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mAssignment to `n` in soft scope is ambiguous because a global variable by the same name exists: `n` will be treated as a new local. Disambiguate by using `local n` to suppress this warning or `global n` to assign to the existing global variable.
+2026-02-16T02:40:23.9095223Z [33m[1m└ [22m[39m[90m@ ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/mean_exit_time.jl:366[39m
+2026-02-16T02:40:57.6193606Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:40:57] Testing piecewise_linear_and_natural_neighbour_interpolation_for_an_advection_diffusion_equation.jl
+2026-02-16T02:44:05.6659951Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mFound `resolution` in the theme when creating a `Scene`. The `resolution` keyword for `Scene`s and `Figure`s has been deprecated. Use `Figure(; size = ...` or `Scene(; size = ...)` instead, which better reflects that this is a unitless size and not a pixel resolution. The key could also come from `set_theme!` calls or related theming functions.
+2026-02-16T02:44:05.6662742Z [33m[1m└ [22m[39m[90m@ Makie ~/.julia/packages/Makie/FUAHr/src/scenes.jl:238[39m
+2026-02-16T02:44:05.6831204Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mAssignment to `triangles` in soft scope is ambiguous because a global variable by the same name exists: `triangles` will be treated as a new local. Disambiguate by using `local triangles` to suppress this warning or `global triangles` to assign to the existing global variable.
+2026-02-16T02:44:05.6834382Z [33m[1m└ [22m[39m[90m@ ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/piecewise_linear_and_natural_neighbour_interpolation_for_an_advection_diffusion_equation.jl:322[39m
+2026-02-16T02:44:05.6837345Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mAssignment to `x` in soft scope is ambiguous because a global variable by the same name exists: `x` will be treated as a new local. Disambiguate by using `local x` to suppress this warning or `global x` to assign to the existing global variable.
+2026-02-16T02:44:05.6840065Z [33m[1m└ [22m[39m[90m@ ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/piecewise_linear_and_natural_neighbour_interpolation_for_an_advection_diffusion_equation.jl:323[39m
+2026-02-16T02:44:05.6843169Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mAssignment to `y` in soft scope is ambiguous because a global variable by the same name exists: `y` will be treated as a new local. Disambiguate by using `local y` to suppress this warning or `global y` to assign to the existing global variable.
+2026-02-16T02:44:05.6846074Z [33m[1m└ [22m[39m[90m@ ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/piecewise_linear_and_natural_neighbour_interpolation_for_an_advection_diffusion_equation.jl:324[39m
+2026-02-16T02:44:33.2889000Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mtest fails because PSNR 24.48061752319336 < 25
+2026-02-16T02:44:33.2890204Z [33m[1m└ [22m[39m[90m@ ReferenceTests ~/.julia/packages/ReferenceTests/QAKab/src/equality_metrics.jl:47[39m
+2026-02-16T02:44:36.4741655Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mReference Test for "piecewise_linear_and_natural_neighbour_interpolation_for_an_advection_diffusion_equation_natural_neighbour_interpolation.png" failed:
+2026-02-16T02:44:36.4743263Z [36m[1m│ [22m[39m- REFERENCE -------------------
+2026-02-16T02:44:36.4743768Z [36m[1m│ [22m[39meltype: ColorTypes.RGBA{FixedPointNumbers.N0f8}
+2026-02-16T02:44:36.4744207Z [36m[1m│ [22m[39msize: (3100, 12700)
+2026-02-16T02:44:36.4744524Z [36m[1m│ [22m[39mthumbnail:
+2026-02-16T02:44:36.4746376Z [36m[1m│ [22m[39m[0m[38;5;16;48;5;59m▀[38;5;16;48;5;145m▀[38;5;16;48;5;180m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;180m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;180m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;180m▀[38;5;16;48;5;59m▀[0m
+2026-02-16T02:44:36.4749476Z [36m[1m│ [22m[39m[0m[38;5;95;48;5;101m▀[38;5;187;48;5;188m▀[38;5;174;48;5;187m▀[38;5;181;48;5;188m▀[38;5;187;48;5;188m▀[38;5;180;48;5;187m▀[38;5;181;48;5;187m▀[38;5;187;48;5;188m▀[38;5;180;48;5;187m▀[38;5;181;48;5;187m▀[38;5;188;48;5;188m▀[38;5;180;48;5;187m▀[38;5;180;48;5;187m▀[38;5;188;48;5;188m▀[38;5;180;48;5;187m▀[38;5;180;48;5;187m▀[38;5;188;48;5;188m▀[38;5;180;48;5;187m▀[38;5;180;48;5;187m▀[38;5;188;48;5;188m▀[38;5;180;48;5;187m▀[38;5;174;48;5;187m▀[38;5;188;48;5;188m▀[38;5;187;48;5;187m▀[38;5;174;48;5;187m▀[38;5;59;48;5;95m▀[0m
+2026-02-16T02:44:36.4752963Z [36m[1m│ [22m[39m[0m[38;5;59;48;5;59m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;187m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;187m▀[38;5;188;48;5;187m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;102;48;5;59m▀[0m
+2026-02-16T02:44:36.4756170Z [36m[1m│ [22m[39m[0m[38;5;59;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;181;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;181;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;181;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;187;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;188;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;59;48;5;16m▀[0m
+2026-02-16T02:44:36.4757387Z [36m[1m│ [22m[39m-------------------------------
+2026-02-16T02:44:36.4757711Z [36m[1m│ [22m[39m- ACTUAL ----------------------
+2026-02-16T02:44:36.4758094Z [36m[1m│ [22m[39meltype: ColorTypes.RGBA{FixedPointNumbers.N0f8}
+2026-02-16T02:44:36.4758442Z [36m[1m│ [22m[39msize: (3100, 12700)
+2026-02-16T02:44:36.4758696Z [36m[1m│ [22m[39mthumbnail:
+2026-02-16T02:44:36.4760171Z [36m[1m│ [22m[39m[0m[38;5;16;48;5;59m▀[38;5;16;48;5;145m▀[38;5;16;48;5;180m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;180m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;144m▀[38;5;16;48;5;180m▀[38;5;16;48;5;181m▀[38;5;16;48;5;181m▀[38;5;16;48;5;180m▀[38;5;16;48;5;59m▀[0m
+2026-02-16T02:44:36.4763262Z [36m[1m│ [22m[39m[0m[38;5;95;48;5;101m▀[38;5;187;48;5;188m▀[38;5;174;48;5;187m▀[38;5;181;48;5;188m▀[38;5;187;48;5;188m▀[38;5;180;48;5;187m▀[38;5;181;48;5;187m▀[38;5;187;48;5;188m▀[38;5;180;48;5;187m▀[38;5;181;48;5;187m▀[38;5;188;48;5;188m▀[38;5;180;48;5;187m▀[38;5;180;48;5;187m▀[38;5;188;48;5;188m▀[38;5;180;48;5;187m▀[38;5;180;48;5;187m▀[38;5;188;48;5;188m▀[38;5;180;48;5;187m▀[38;5;180;48;5;187m▀[38;5;188;48;5;188m▀[38;5;181;48;5;187m▀[38;5;174;48;5;187m▀[38;5;188;48;5;188m▀[38;5;187;48;5;187m▀[38;5;174;48;5;187m▀[38;5;59;48;5;95m▀[0m
+2026-02-16T02:44:36.4765792Z [36m[1m│ [22m[39m[0m[38;5;59;48;5;59m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;181m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;187m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;187m▀[38;5;188;48;5;187m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;188;48;5;188m▀[38;5;102;48;5;59m▀[0m
+2026-02-16T02:44:36.4768236Z [36m[1m│ [22m[39m[0m[38;5;59;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;181;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;181;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;181;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;181;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;188;48;5;16m▀[38;5;145;48;5;16m▀[38;5;145;48;5;16m▀[38;5;59;48;5;16m▀[0m
+2026-02-16T02:44:36.4769399Z [36m[1m│ [22m[39m-------------------------------
+2026-02-16T02:44:36.4770407Z [36m[1m│ [22m[39m  reference = "/home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/figures/piecewise_linear_and_natural_neighbour_interpolation_for_an_advection_diffusion_equation_natural_neighbour_interpolation.png"
+2026-02-16T02:44:36.4771761Z [36m[1m└ [22m[39m  actual = "/tmp/jl_hNsMvc/piecewise_linear_and_natural_neighbour_interpolation_for_an_advection_diffusion_equation_natural_neighbour_interpolation.png"
+2026-02-16T02:44:36.4772629Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mPlease run the tests again for any changes to take effect
+2026-02-16T02:44:36.4773234Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:44:36] Testing porous_fisher_equation_and_travelling_waves.jl
+2026-02-16T02:45:03.7337415Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mLinear indexing of `AbstractVectorOfArray` is deprecated. Change `A[i]` to `A.u[i]` 
+2026-02-16T02:45:03.7338199Z [33m[1m│ [22m[39m  caller = top-level scope at porous_fisher_equation_and_travelling_waves.jl:87
+2026-02-16T02:45:03.7339471Z [33m[1m└ [22m[39m[90m@ Core ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/porous_fisher_equation_and_travelling_waves.jl:87[39m
+2026-02-16T02:45:03.9772792Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mFound `resolution` in the theme when creating a `Scene`. The `resolution` keyword for `Scene`s and `Figure`s has been deprecated. Use `Figure(; size = ...` or `Scene(; size = ...)` instead, which better reflects that this is a unitless size and not a pixel resolution. The key could also come from `set_theme!` calls or related theming functions.
+2026-02-16T02:45:03.9774561Z [33m[1m└ [22m[39m[90m@ Makie ~/.julia/packages/Makie/FUAHr/src/scenes.jl:238[39m
+2026-02-16T02:45:06.8393628Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:45:06] Testing porous_medium_equation.jl
+2026-02-16T02:47:51.1987637Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:47:51] Testing reaction_diffusion_brusselator_system_of_pdes.jl
+2026-02-16T02:48:56.7281238Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39m`Base.getindex(VA::AbstractDiffEqArray{T, N, A}, i::Int) where {T, N, A <: Union{AbstractArray, AbstractVectorOfArray}}` is deprecated, use `VA.u[i]` instead.
+2026-02-16T02:48:56.7282746Z [33m[1m│ [22m[39m  caller = top-level scope at reaction_diffusion_brusselator_system_of_pdes.jl:173
+2026-02-16T02:48:56.7283838Z [33m[1m└ [22m[39m[90m@ Core ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/reaction_diffusion_brusselator_system_of_pdes.jl:173[39m
+2026-02-16T02:48:56.7609707Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39m`Base.getindex(VA::AbstractDiffEqArray{T, N, A}, i::Int) where {T, N, A <: Union{AbstractArray, AbstractVectorOfArray}}` is deprecated, use `VA.u[i]` instead.
+2026-02-16T02:48:56.7610900Z [33m[1m│ [22m[39m  caller = top-level scope at reaction_diffusion_brusselator_system_of_pdes.jl:174
+2026-02-16T02:48:56.7611982Z [33m[1m└ [22m[39m[90m@ Core ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/reaction_diffusion_brusselator_system_of_pdes.jl:174[39m
+2026-02-16T02:49:03.2444591Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:49:03] Testing reaction_diffusion_equation_with_a_time_dependent_dirichlet_boundary_condition_on_a_disk.jl
+2026-02-16T02:49:05.5101853Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mUsing a `Bool` for keyword argument `autodiff` is deprecated. Please use an `ADType` specifier.
+2026-02-16T02:49:05.5103743Z [33m[1m│ [22m[39m  caller = _process_AD_choice(ad_alg::Bool, ::Val{0}, ::Val{:forward}) at misc_utils.jl:158
+2026-02-16T02:49:05.5105039Z [33m[1m└ [22m[39m[90m@ OrdinaryDiffEqCore ~/.julia/packages/OrdinaryDiffEqCore/zs1s7/src/misc_utils.jl:158[39m
+2026-02-16T02:49:28.9265406Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:49:28] Testing solving_mazes_with_laplaces_equation.jl
+2026-02-16T02:50:59.8564797Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:50:59] Testing gray_scott_model_turing_patterns_from_a_coupled_reaction_diffusion_system.jl
+2026-02-16T02:58:00.9157334Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mAssignment to `ax` in soft scope is ambiguous because a global variable by the same name exists: `ax` will be treated as a new local. Disambiguate by using `local ax` to suppress this warning or `global ax` to assign to the existing global variable.
+2026-02-16T02:58:00.9159751Z [33m[1m└ [22m[39m[90m@ ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/gray_scott_model_turing_patterns_from_a_coupled_reaction_diffusion_system.jl:96[39m
+2026-02-16T02:58:01.1870525Z [33m[1m┌ [22m[39m[33m[1mWarning: [22m[39mAssignment to `ax` in soft scope is ambiguous because a global variable by the same name exists: `ax` will be treated as a new local. Disambiguate by using `local ax` to suppress this warning or `global ax` to assign to the existing global variable.
+2026-02-16T02:58:01.1873765Z [33m[1m└ [22m[39m[90m@ ~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/docs/src/literate_tutorials/gray_scott_model_turing_patterns_from_a_coupled_reaction_diffusion_system.jl:105[39m
+2026-02-16T02:58:06.6264359Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:58:06] Testing diffusion_equations.jl
+2026-02-16T02:58:47.8179550Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:58:47] Testing mean_exit_time.jl
+2026-02-16T02:59:12.3444731Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[02:59:12] Testing linear_reaction_diffusion_equations.jl
+2026-02-16T03:00:01.3329602Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[03:00:01] Testing poissons_equation.jl
+2026-02-16T03:00:51.4110256Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[03:00:51] Testing laplaces_equation.jl
+2026-02-16T03:01:33.7484376Z WARNING: using deprecated binding ImageCore.permuteddimsview in ImageBase.
+2026-02-16T03:01:33.7485130Z , use PermutedDimsArray instead.
+2026-02-16T03:01:33.7486090Z WARNING: ImageBase.permuteddimsview is deprecated, use Base.PermutedDimsArrays.PermutedDimsArray{T, N, perm, iperm, AA} where AA<:(AbstractArray{T, N} where N where T) where iperm where perm where N where T instead.
+2026-02-16T03:01:33.7487285Z   likely near /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/test/runtests.jl:15
+2026-02-16T03:01:34.0683415Z [91m[1mUnbound type parameters detected:[22m[39m
+2026-02-16T03:01:35.1181240Z [1] AMRBlock([90mid[39m::[1mInt64[22m, [90mlevel[39m::[1mInt64[22m, [90morigin[39m::[1mNTuple[22m[0m{Dim, FT}, [90mdims[39m::[1mNTuple[22m[0m{Dim, Int64}, [90mdx[39m::[1mNTuple[22m[0m{Dim, FT}, ::[1mVal[22m[0m{N}) where {N, FT, Dim}[90m @[39m [90mFiniteVolumeMethod[39m [90m~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/src/amr/[39m[90m[4mamr_grid.jl:50[24m[39m
+2026-02-16T03:01:35.1217438Z [2] AMRGrid([90mlaw[39m, [90mcriterion[39m::[1mAbstractRefinementCriterion[22m, [90mblock_size[39m::[1mNTuple[22m[0m{Dim, Int64}, [90mmax_level[39m::[1mInt64[22m, [90mdomain_lo[39m::[1mNTuple[22m[0m{Dim, FT}, [90mdomain_hi[39m::[1mNTuple[22m[0m{Dim, FT}, ::[1mVal[22m[0m{N}) where {N, FT, Dim}[90m @[39m [90mFiniteVolumeMethod[39m [90m~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/src/amr/[39m[90m[4mamr_grid.jl:111[24m[39m
+2026-02-16T03:01:38.4681425Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39m[03:01:38] Testing explicit_imports.jl
+2026-02-16T03:02:01.6678869Z [0m[1mTest Summary:                                                                                                  | [22m[32m[1m   Pass  [22m[39m[33m[1mBroken  [22m[39m[36m[1m  Total  [22m[39m[0m[1m    Time[22m
+2026-02-16T03:02:01.6686375Z FiniteVolumeMethod.jl                                                                                          | [32m1374342  [39m[33m     1  [39m[36m1374343  [39m[0m43m36.2s
+2026-02-16T03:02:01.6687970Z   Geometry                                                                                                     | [32m   8058  [39m[33m        [39m[36m   8058  [39m[0m   27.7s
+2026-02-16T03:02:01.6689501Z     Example: geometry.jl                                                                                       | [32m   8058  [39m[33m        [39m[36m   8058  [39m[0m   26.1s
+2026-02-16T03:02:01.6691037Z   Conditions                                                                                                   | [32m   1941  [39m[33m        [39m[36m   1941  [39m[0m 1m31.6s
+2026-02-16T03:02:01.6692746Z     Example: conditions.jl                                                                                     | [32m   1941  [39m[33m        [39m[36m   1941  [39m[0m 1m31.6s
+2026-02-16T03:02:01.6693663Z       BoundaryConditions                                                                                       | [32m   1200  [39m[33m        [39m[36m   1200  [39m[0m 1m01.2s
+2026-02-16T03:02:01.6695000Z       BoundaryConditions and InternalConditions                                                                | [32m    708  [39m[33m        [39m[36m    708  [39m[0m   18.7s
+2026-02-16T03:02:01.6696744Z       apply_dudt_conditions!                                                                                   | [32m     24  [39m[33m        [39m[36m     24  [39m[0m    0.3s
+2026-02-16T03:02:01.6703325Z       Flattening and evaluating heterogeneous tuples                                                           | [32m      9  [39m[33m        [39m[36m      9  [39m[0m    0.2s
+2026-02-16T03:02:01.6704366Z   Robin BCs                                                                                                    | [32m     34  [39m[33m        [39m[36m     34  [39m[0m    5.0s
+2026-02-16T03:02:01.6705062Z     Example: robin.jl                                                                                          | [32m     34  [39m[33m        [39m[36m     34  [39m[0m    4.1s
+2026-02-16T03:02:01.6705811Z       Robin Boundary Conditions                                                                                | [32m     34  [39m[33m        [39m[36m     34  [39m[0m    4.0s
+2026-02-16T03:02:01.6706536Z   Problem                                                                                                      | [32m  10363  [39m[33m        [39m[36m  10363  [39m[0m 1m39.5s
+2026-02-16T03:02:01.6707256Z     Example: problem.jl                                                                                        | [32m  10363  [39m[33m        [39m[36m  10363  [39m[0m 1m39.5s
+2026-02-16T03:02:01.6707970Z       Some generic tests                                                                                       | [32m   8040  [39m[33m        [39m[36m   8040  [39m[0m 1m31.0s
+2026-02-16T03:02:01.6708676Z       FVMSystem                                                                                                | [32m   2323  [39m[33m        [39m[36m   2323  [39m[0m    3.4s
+2026-02-16T03:02:01.6709382Z   Equations                                                                                                    | [32m1267805  [39m[33m        [39m[36m1267805  [39m[0m 7m42.7s
+2026-02-16T03:02:01.6710122Z     Example: equations.jl                                                                                      | [32m1267805  [39m[33m        [39m[36m1267805  [39m[0m 7m42.2s
+2026-02-16T03:02:01.6710876Z       Diffusion problem                                                                                        | [32m  18291  [39m[33m        [39m[36m  18291  [39m[0m   14.3s
+2026-02-16T03:02:01.6711615Z       Convection problem                                                                                       | [32m1231216  [39m[33m        [39m[36m1231216  [39m[0m 5m15.6s
+2026-02-16T03:02:01.6712648Z       Exact test for a corner point: Can we get the Neumann edge contributions correct?                        | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    6.7s
+2026-02-16T03:02:01.6714128Z       Diffusion problem                                                                                        | [32m  18291  [39m[33m        [39m[36m  18291  [39m[0m    0.7s
+2026-02-16T03:02:01.6715448Z       FVMSystem                                                                                                | [32m      2  [39m[33m        [39m[36m      2  [39m[0m 2m04.6s
+2026-02-16T03:02:01.6716701Z   Schemes                                                                                                      | [32m    121  [39m[33m        [39m[36m    121  [39m[0m    0.5s
+2026-02-16T03:02:01.6717975Z     Example: schemes.jl                                                                                        | [32m    121  [39m[33m        [39m[36m    121  [39m[0m    0.5s
+2026-02-16T03:02:01.6719360Z       Flux Limiters                                                                                            | [32m     42  [39m[33m        [39m[36m     42  [39m[0m    0.1s
+2026-02-16T03:02:01.6720695Z       Gradient Reconstruction                                                                                  | [32m     75  [39m[33m        [39m[36m     75  [39m[0m    0.3s
+2026-02-16T03:02:01.6722442Z       MUSCLScheme                                                                                              | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.0s
+2026-02-16T03:02:01.6723746Z   Advanced BCs                                                                                                 | [32m     53  [39m[33m        [39m[36m     53  [39m[0m    1.2s
+2026-02-16T03:02:01.6725040Z     Example: advanced_bcs.jl                                                                                   | [32m     53  [39m[33m        [39m[36m     53  [39m[0m    1.2s
+2026-02-16T03:02:01.6726427Z       Advanced Boundary Conditions                                                                             | [32m     53  [39m[33m        [39m[36m     53  [39m[0m    1.1s
+2026-02-16T03:02:01.6727783Z   Physics Models                                                                                               | [32m     51  [39m[33m        [39m[36m     51  [39m[0m    1.4s
+2026-02-16T03:02:01.6729101Z     Example: physics.jl                                                                                        | [32m     51  [39m[33m        [39m[36m     51  [39m[0m    1.4s
+2026-02-16T03:02:01.6730395Z       Physics Models                                                                                           | [32m     51  [39m[33m        [39m[36m     51  [39m[0m    1.3s
+2026-02-16T03:02:01.6731697Z   Hyperbolic Solver                                                                                            | [32m   2031  [39m[33m        [39m[36m   2031  [39m[0m    5.4s
+2026-02-16T03:02:01.6733123Z     Example: hyperbolic.jl                                                                                     | [32m   2031  [39m[33m        [39m[36m   2031  [39m[0m    5.4s
+2026-02-16T03:02:01.6734401Z       Mesh                                                                                                     | [32m     14  [39m[33m        [39m[36m     14  [39m[0m    0.1s
+2026-02-16T03:02:01.6735607Z       EOS                                                                                                      | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    0.0s
+2026-02-16T03:02:01.6736888Z       Conservation Law Interface                                                                               | [32m      7  [39m[33m        [39m[36m      7  [39m[0m    0.2s
+2026-02-16T03:02:01.6738212Z       Riemann Solvers                                                                                          | [32m     10  [39m[33m        [39m[36m     10  [39m[0m    0.0s
+2026-02-16T03:02:01.6739493Z       Sod Shock Tube                                                                                           | [32m      9  [39m[33m        [39m[36m      9  [39m[0m    0.8s
+2026-02-16T03:02:01.6740846Z       Einfeldt 1-2-3 (Two-Rarefaction)                                                                         | [32m    550  [39m[33m        [39m[36m    550  [39m[0m    0.3s
+2026-02-16T03:02:01.6742211Z       Conservation                                                                                             | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.5s
+2026-02-16T03:02:01.6743557Z       CFL Stability                                                                                            | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.1s
+2026-02-16T03:02:01.6744868Z       All Limiters with MUSCL                                                                                  | [32m   1212  [39m[33m        [39m[36m   1212  [39m[0m    1.9s
+2026-02-16T03:02:01.6746257Z       First Order (NoReconstruction)                                                                           | [32m    201  [39m[33m        [39m[36m    201  [39m[0m    0.2s
+2026-02-16T03:02:01.6747980Z       Boundary Conditions                                                                                      | [32m     11  [39m[33m        [39m[36m     11  [39m[0m    0.0s
+2026-02-16T03:02:01.6749358Z       2D Euler Types                                                                                           | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    0.1s
+2026-02-16T03:02:01.6750690Z   Hyperbolic 2D + HLLC                                                                                         | [32m   8823  [39m[33m        [39m[36m   8823  [39m[0m    9.2s
+2026-02-16T03:02:01.6752034Z     Example: hyperbolic_2d.jl                                                                                  | [32m   8823  [39m[33m        [39m[36m   8823  [39m[0m    9.2s
+2026-02-16T03:02:01.6753460Z       HLLC Riemann Solver                                                                                      | [32m    408  [39m[33m        [39m[36m    408  [39m[0m    1.3s
+2026-02-16T03:02:01.6754802Z       2D Structured Solver                                                                                     | [32m   8415  [39m[33m        [39m[36m   8415  [39m[0m    7.6s
+2026-02-16T03:02:01.6756103Z   MHD + HLLD                                                                                                   | [32m    147  [39m[33m        [39m[36m    147  [39m[0m   10.9s
+2026-02-16T03:02:01.6757353Z     Example: mhd.jl                                                                                            | [32m    147  [39m[33m        [39m[36m    147  [39m[0m   10.9s
+2026-02-16T03:02:01.6758671Z       IdealMHDEquations Type                                                                                   | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.0s
+2026-02-16T03:02:01.6760057Z       MHD Conserved ↔ Primitive                                                                                | [32m     16  [39m[33m        [39m[36m     16  [39m[0m    0.1s
+2026-02-16T03:02:01.6761403Z       MHD Physical Flux                                                                                        | [32m     19  [39m[33m        [39m[36m     19  [39m[0m    0.0s
+2026-02-16T03:02:01.6762763Z       MHD Wave Speeds                                                                                          | [32m     16  [39m[33m        [39m[36m     16  [39m[0m    0.1s
+2026-02-16T03:02:01.6764058Z       HLLD Riemann Solver                                                                                      | [32m     12  [39m[33m        [39m[36m     12  [39m[0m    0.0s
+2026-02-16T03:02:01.6765361Z       Brio-Wu Shock Tube                                                                                       | [32m     23  [39m[33m        [39m[36m     23  [39m[0m    2.9s
+2026-02-16T03:02:01.6766660Z       MHD Conservation                                                                                         | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.7s
+2026-02-16T03:02:01.6768018Z       MHD with Different Limiters                                                                              | [32m     24  [39m[33m        [39m[36m     24  [39m[0m    2.8s
+2026-02-16T03:02:01.6769379Z       MHD Boundary Conditions                                                                                  | [32m     14  [39m[33m        [39m[36m     14  [39m[0m    0.0s
+2026-02-16T03:02:01.6770703Z       MHD CFL Stability                                                                                        | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.5s
+2026-02-16T03:02:01.6772056Z       MHD Double Rarefaction                                                                                   | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    0.5s
+2026-02-16T03:02:01.6773539Z       MHD Alfvén Wave                                                                                          | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.7s
+2026-02-16T03:02:01.6775153Z       MHD First Order (NoReconstruction)                                                                       | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.4s
+2026-02-16T03:02:01.6776482Z   MHD 2D + CT                                                                                                  | [32m   1084  [39m[33m        [39m[36m   1084  [39m[0m   18.7s
+2026-02-16T03:02:01.6777764Z     Example: mhd_2d.jl                                                                                         | [32m   1084  [39m[33m        [39m[36m   1084  [39m[0m   18.7s
+2026-02-16T03:02:01.6779090Z       2D MHD Solver Basics                                                                                     | [32m    406  [39m[33m        [39m[36m    406  [39m[0m    1.7s
+2026-02-16T03:02:01.6780446Z       ∇·B = 0 (Constrained Transport)                                                                          | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    2.1s
+2026-02-16T03:02:01.6781826Z       Orszag-Tang Vortex                                                                                       | [32m     13  [39m[33m        [39m[36m     13  [39m[0m    3.3s
+2026-02-16T03:02:01.6783235Z       Field Loop Advection                                                                                     | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    1.6s
+2026-02-16T03:02:01.6784554Z       2D MHD Conservation                                                                                      | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    1.0s
+2026-02-16T03:02:01.6785887Z       2D MHD Boundary Conditions                                                                               | [32m      9  [39m[33m        [39m[36m      9  [39m[0m    2.0s
+2026-02-16T03:02:01.6787213Z       2D MHD CFL Stability                                                                                     | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    0.8s
+2026-02-16T03:02:01.6788528Z       2D MHD All Solvers                                                                                       | [32m     12  [39m[33m        [39m[36m     12  [39m[0m    1.8s
+2026-02-16T03:02:01.6789839Z       2D MHD Sod (1D on 2D)                                                                                    | [32m    602  [39m[33m        [39m[36m    602  [39m[0m    1.1s
+2026-02-16T03:02:01.6791161Z       2D MHD with Different Limiters                                                                           | [32m      9  [39m[33m        [39m[36m      9  [39m[0m    2.2s
+2026-02-16T03:02:01.6792536Z       MHD Rotor                                                                                                | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.8s
+2026-02-16T03:02:01.6793765Z       CTData2D                                                                                                 | [32m     10  [39m[33m        [39m[36m     10  [39m[0m    0.1s
+2026-02-16T03:02:01.6795043Z   Navier-Stokes                                                                                                | [32m    266  [39m[33m        [39m[36m    266  [39m[0m    7.5s
+2026-02-16T03:02:01.6796378Z     Example: navier_stokes.jl                                                                                  | [32m    266  [39m[33m        [39m[36m    266  [39m[0m    7.5s
+2026-02-16T03:02:01.6797726Z       StiffenedGasEOS                                                                                          | [32m     21  [39m[33m        [39m[36m     21  [39m[0m    0.4s
+2026-02-16T03:02:01.6799076Z       NavierStokesEquations                                                                                    | [32m     20  [39m[33m        [39m[36m     20  [39m[0m    0.2s
+2026-02-16T03:02:01.6800545Z       Viscous Flux                                                                                             | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    0.0s
+2026-02-16T03:02:01.6801845Z       NS with μ=0 matches Euler                                                                                | [32m    201  [39m[33m        [39m[36m    201  [39m[0m    0.5s
+2026-02-16T03:02:01.6803449Z       1D Viscous Velocity Decay                                                                                | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.4s
+2026-02-16T03:02:01.6804764Z       2D Couette Flow                                                                                          | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.9s
+2026-02-16T03:02:01.6806086Z       2D Taylor-Green Vortex Decay                                                                             | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    2.0s
+2026-02-16T03:02:01.6807483Z       Taylor-Green Convergence                                                                                 | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    1.0s
+2026-02-16T03:02:01.6808867Z       Conservation (periodic BCs)                                                                              | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    1.2s
+2026-02-16T03:02:01.6810170Z       NoSlipBC                                                                                                 | [32m      9  [39m[33m        [39m[36m      9  [39m[0m    0.0s
+2026-02-16T03:02:01.6811510Z       NoSlipBC differs from ReflectiveBC                                                                       | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.0s
+2026-02-16T03:02:01.6812918Z   SRMHD                                                                                                        | [32m    571  [39m[33m        [39m[36m    571  [39m[0m   12.9s
+2026-02-16T03:02:01.6814185Z     Example: srmhd.jl                                                                                          | [32m    571  [39m[33m        [39m[36m    571  [39m[0m   12.9s
+2026-02-16T03:02:01.6815502Z       SRMHDEquations Type                                                                                      | [32m      7  [39m[33m        [39m[36m      7  [39m[0m    0.0s
+2026-02-16T03:02:01.6816837Z       Con2Prim Roundtrip                                                                                       | [32m    514  [39m[33m        [39m[36m    514  [39m[0m    0.0s
+2026-02-16T03:02:01.6818172Z       Con2Prim Convergence                                                                                     | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.0s
+2026-02-16T03:02:01.6819485Z       Physical Flux                                                                                            | [32m      8  [39m[33m        [39m[36m      8  [39m[0m    0.0s
+2026-02-16T03:02:01.6820738Z       Wave Speeds                                                                                              | [32m      9  [39m[33m        [39m[36m      9  [39m[0m    0.0s
+2026-02-16T03:02:01.6822017Z       Balsara Shock Tubes                                                                                      | [32m     11  [39m[33m        [39m[36m     11  [39m[0m    6.7s
+2026-02-16T03:02:01.6823462Z       Conservation with Periodic BCs                                                                           | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.6s
+2026-02-16T03:02:01.6824900Z       Relativistic Alfvén Wave Advection                                                                       | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.7s
+2026-02-16T03:02:01.6826256Z       CFL Stability                                                                                            | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.4s
+2026-02-16T03:02:01.6827713Z       All Limiters                                                                                             | [32m     10  [39m[33m        [39m[36m     10  [39m[0m    2.3s
+2026-02-16T03:02:01.6829001Z       Newtonian Limit                                                                                          | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    1.1s
+2026-02-16T03:02:01.6830270Z   SRMHD 2D                                                                                                     | [32m   4751  [39m[33m        [39m[36m   4751  [39m[0m   28.2s
+2026-02-16T03:02:01.6831561Z     Example: srmhd_2d.jl                                                                                       | [32m   4751  [39m[33m        [39m[36m   4751  [39m[0m   28.2s
+2026-02-16T03:02:01.6832986Z       2D SRMHD Sod x-direction                                                                                 | [32m    303  [39m[33m        [39m[36m    303  [39m[0m    1.2s
+2026-02-16T03:02:01.6834333Z       2D SRMHD Sod y-direction                                                                                 | [32m    302  [39m[33m        [39m[36m    302  [39m[0m    1.0s
+2026-02-16T03:02:01.6835664Z       CT DivB Preservation                                                                                     | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.8s
+2026-02-16T03:02:01.6836979Z       2D Conservation                                                                                          | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.9s
+2026-02-16T03:02:01.6838277Z       Reflective BCs                                                                                           | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.8s
+2026-02-16T03:02:01.6839545Z       Balsara 1 in 2D                                                                                          | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    3.2s
+2026-02-16T03:02:01.6840813Z       Balsara 2 in 2D                                                                                          | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    4.1s
+2026-02-16T03:02:01.6842098Z       2D SRMHD diagonal shock                                                                                  | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    1.2s
+2026-02-16T03:02:01.6843489Z       Angled flow                                                                                              | [32m   4096  [39m[33m        [39m[36m   4096  [39m[0m    0.8s
+2026-02-16T03:02:01.6844757Z       All Limiters 2D                                                                                          | [32m     10  [39m[33m        [39m[36m     10  [39m[0m    4.4s
+2026-02-16T03:02:01.6846048Z       Riemann Solvers 2D                                                                                       | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    1.8s
+2026-02-16T03:02:01.6847345Z       2D Newtonian Limit                                                                                       | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    1.8s
+2026-02-16T03:02:01.6848681Z       2D SRMHD Pressure Pulse                                                                                  | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    1.0s
+2026-02-16T03:02:01.6849993Z       Forward Euler                                                                                            | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.8s
+2026-02-16T03:02:01.6851324Z       NoReconstruction                                                                                         | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.7s
+2026-02-16T03:02:01.6852893Z       High Lorentz factor                                                                                      | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    1.0s
+2026-02-16T03:02:01.6854201Z       Full Conservation                                                                                        | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.9s
+2026-02-16T03:02:01.6855533Z       Radiation-dominated EOS                                                                                  | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.9s
+2026-02-16T03:02:01.6856844Z       CT Field Loop                                                                                            | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.9s
+2026-02-16T03:02:01.6858085Z   GRMHD                                                                                                        | [32m    751  [39m[33m        [39m[36m    751  [39m[0m   10.6s
+2026-02-16T03:02:01.6859356Z     Example: grmhd.jl                                                                                          | [32m    751  [39m[33m        [39m[36m    751  [39m[0m   10.6s
+2026-02-16T03:02:01.6860632Z       Metrics                                                                                                  | [32m    109  [39m[33m        [39m[36m    109  [39m[0m    0.1s
+2026-02-16T03:02:01.6861918Z       GRMHDEquations Type                                                                                      | [32m     13  [39m[33m        [39m[36m     13  [39m[0m    0.0s
+2026-02-16T03:02:01.6863320Z       Minkowski Limit                                                                                          | [32m     73  [39m[33m        [39m[36m     73  [39m[0m    0.0s
+2026-02-16T03:02:01.6864676Z       GRMHD Con2Prim                                                                                           | [32m    203  [39m[33m        [39m[36m    203  [39m[0m    0.0s
+2026-02-16T03:02:01.6865998Z       GRMHD Physical Flux                                                                                      | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    0.0s
+2026-02-16T03:02:01.6867297Z       GRMHD Wave Speeds                                                                                        | [32m     19  [39m[33m        [39m[36m     19  [39m[0m    0.0s
+2026-02-16T03:02:01.6868608Z       GRMHD Source Terms                                                                                       | [32m    326  [39m[33m        [39m[36m    326  [39m[0m    0.0s
+2026-02-16T03:02:01.6869915Z       Densitized Prim2Con                                                                                      | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.1s
+2026-02-16T03:02:01.6871191Z   GRMHD 2D                                                                                                     | [32m    361  [39m[33m        [39m[36m    361  [39m[0m   19.5s
+2026-02-16T03:02:01.6872551Z     Example: grmhd_2d.jl                                                                                       | [32m    361  [39m[33m        [39m[36m    361  [39m[0m   19.5s
+2026-02-16T03:02:01.6873920Z       Flat-Spacetime Conservation                                                                              | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    1.5s
+2026-02-16T03:02:01.6875343Z       Flat-Spacetime Full Conservation                                                                         | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.9s
+2026-02-16T03:02:01.6876738Z       CT DivB Preservation (GRMHD)                                                                             | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    1.0s
+2026-02-16T03:02:01.6878249Z       GRMHD matches SRMHD in Minkowski                                                                         | [32m    160  [39m[33m        [39m[36m    160  [39m[0m    1.6s
+2026-02-16T03:02:01.6879768Z       GRMHD matches SRMHD (y-direction Sod)                                                                    | [32m    160  [39m[33m        [39m[36m    160  [39m[0m    1.5s
+2026-02-16T03:02:01.6881201Z       Schwarzschild basic stability                                                                            | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    1.1s
+2026-02-16T03:02:01.6882732Z       Schwarzschild MUSCL stability                                                                            | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    1.0s
+2026-02-16T03:02:01.6884115Z       Schwarzschild CT DivB                                                                                    | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.7s
+2026-02-16T03:02:01.6885447Z       Kerr basic stability                                                                                     | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    1.4s
+2026-02-16T03:02:01.6886799Z       Kerr high spin stability                                                                                 | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.8s
+2026-02-16T03:02:01.6888129Z       GRMHD Reflective BCs                                                                                     | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.9s
+2026-02-16T03:02:01.6889485Z       Schwarzschild pressure pulse                                                                             | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.9s
+2026-02-16T03:02:01.6890849Z       Forward Euler method                                                                                     | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.7s
+2026-02-16T03:02:01.6892164Z       Riemann solvers                                                                                          | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    1.6s
+2026-02-16T03:02:01.6893506Z       Limiters                                                                                                 | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    2.9s
+2026-02-16T03:02:01.6894884Z       Schwarzschild gravitational attraction                                                                   | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    1.0s
+2026-02-16T03:02:01.6896286Z   Hyperbolic 3D                                                                                                | [32m  37707  [39m[33m        [39m[36m  37707  [39m[0m   29.0s
+2026-02-16T03:02:01.6897634Z     Example: hyperbolic_3d.jl                                                                                  | [32m  37707  [39m[33m        [39m[36m  37707  [39m[0m   29.0s
+2026-02-16T03:02:01.6899010Z       3D Euler Equations Types                                                                                 | [32m     60  [39m[33m        [39m[36m     60  [39m[0m    0.0s
+2026-02-16T03:02:01.6900360Z       StructuredMesh3D                                                                                         | [32m    382  [39m[33m        [39m[36m    382  [39m[0m    0.0s
+2026-02-16T03:02:01.6901681Z       3D Sod Shock Tube                                                                                        | [32m   5289  [39m[33m        [39m[36m   5289  [39m[0m    2.6s
+2026-02-16T03:02:01.6903052Z       3D Sod All Limiters                                                                                      | [32m   4410  [39m[33m        [39m[36m   4410  [39m[0m    3.6s
+2026-02-16T03:02:01.6904408Z       3D Sod All Riemann Solvers                                                                               | [32m   1284  [39m[33m        [39m[36m   1284  [39m[0m    1.4s
+2026-02-16T03:02:01.6905915Z       3D HLL vs LF Sharpness                                                                                   | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    1.6s
+2026-02-16T03:02:01.6907231Z       3D Forward Euler                                                                                         | [32m    642  [39m[33m        [39m[36m    642  [39m[0m    0.7s
+2026-02-16T03:02:01.6908550Z       3D NoReconstruction                                                                                      | [32m    642  [39m[33m        [39m[36m    642  [39m[0m    0.6s
+2026-02-16T03:02:01.6909927Z       3D Uniform Flow Preservation                                                                             | [32m   2560  [39m[33m        [39m[36m   2560  [39m[0m    0.9s
+2026-02-16T03:02:01.6911329Z       3D Conservation (periodic)                                                                               | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    1.1s
+2026-02-16T03:02:01.6912778Z       3D Conservation HLLC + Euler                                                                             | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.8s
+2026-02-16T03:02:01.6914094Z       3D Sedov Blast                                                                                           | [32m   2010  [39m[33m        [39m[36m   2010  [39m[0m    1.0s
+2026-02-16T03:02:01.6915389Z       3D Diagonal Shock                                                                                        | [32m   3458  [39m[33m        [39m[36m   3458  [39m[0m    0.7s
+2026-02-16T03:02:01.6916704Z       3D Reflective BC Symmetry                                                                                | [32m   1500  [39m[33m        [39m[36m   1500  [39m[0m    0.7s
+2026-02-16T03:02:01.6918127Z       3D Pressure Pulse Spherical Symmetry                                                                     | [32m   3474  [39m[33m        [39m[36m   3474  [39m[0m    0.6s
+2026-02-16T03:02:01.6919522Z       3D Einfeldt 1-2-3                                                                                        | [32m   1281  [39m[33m        [39m[36m   1281  [39m[0m    0.7s
+2026-02-16T03:02:01.6920809Z       3D Strong Shock                                                                                          | [32m   1281  [39m[33m        [39m[36m   1281  [39m[0m    0.9s
+2026-02-16T03:02:01.6922086Z       3D Sod gamma=5/3                                                                                         | [32m    961  [39m[33m        [39m[36m    961  [39m[0m    0.7s
+2026-02-16T03:02:01.6923400Z       3D Inflow BC                                                                                             | [32m    960  [39m[33m        [39m[36m    960  [39m[0m    0.7s
+2026-02-16T03:02:01.6924699Z       3D CFL Sensitivity                                                                                       | [32m   2053  [39m[33m        [39m[36m   2053  [39m[0m    1.0s
+2026-02-16T03:02:01.6926066Z       3D Acoustic Wave Convergence                                                                             | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.8s
+2026-02-16T03:02:01.6927412Z       3D LF vs HLL Diffusivity                                                                                 | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    1.5s
+2026-02-16T03:02:01.6928771Z       3D Sod with Transverse Velocity                                                                          | [32m    961  [39m[33m        [39m[36m    961  [39m[0m    0.7s
+2026-02-16T03:02:01.6930106Z       3D Lax Problem                                                                                           | [32m   1282  [39m[33m        [39m[36m   1282  [39m[0m    0.8s
+2026-02-16T03:02:01.6931508Z       3D Conservation All Axes                                                                                 | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    0.9s
+2026-02-16T03:02:01.6933005Z       3D Static Atmosphere                                                                                     | [32m   2560  [39m[33m        [39m[36m   2560  [39m[0m    0.7s
+2026-02-16T03:02:01.6934362Z       3D Most Diffusive Combo                                                                                  | [32m    642  [39m[33m        [39m[36m    642  [39m[0m    0.6s
+2026-02-16T03:02:01.6935662Z   MHD 3D                                                                                                       | [32m  15754  [39m[33m        [39m[36m  15754  [39m[0m   32.2s
+2026-02-16T03:02:01.6936443Z     Example: mhd_3d.jl                                                                                         | [32m  15754  [39m[33m        [39m[36m  15754  [39m[0m   32.2s
+2026-02-16T03:02:01.6937147Z       3D MHD Type Tests                                                                                        | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.0s
+2026-02-16T03:02:01.6937912Z       3D MHD Primitive <-> Conserved Roundtrip                                                                 | [32m     23  [39m[33m        [39m[36m     23  [39m[0m    0.0s
+2026-02-16T03:02:01.6938666Z       3D MHD Physical Flux                                                                                     | [32m     42  [39m[33m        [39m[36m     42  [39m[0m    0.0s
+2026-02-16T03:02:01.6939372Z       3D MHD Wave Speeds                                                                                       | [32m     30  [39m[33m        [39m[36m     30  [39m[0m    0.0s
+2026-02-16T03:02:01.6940065Z       3D Brio-Wu x-axis                                                                                        | [32m    648  [39m[33m        [39m[36m    648  [39m[0m    2.1s
+2026-02-16T03:02:01.6940769Z       3D Brio-Wu y-axis                                                                                        | [32m    644  [39m[33m        [39m[36m    644  [39m[0m    0.9s
+2026-02-16T03:02:01.6941472Z       3D Brio-Wu z-axis                                                                                        | [32m    645  [39m[33m        [39m[36m    645  [39m[0m    0.9s
+2026-02-16T03:02:01.6942177Z       3D Brio-Wu MUSCL                                                                                         | [32m   4810  [39m[33m        [39m[36m   4810  [39m[0m    5.9s
+2026-02-16T03:02:01.6943039Z       3D CT Divergence-Free                                                                                    | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    3.5s
+2026-02-16T03:02:01.6943758Z       3D Field Loop Advection                                                                                  | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    1.8s
+2026-02-16T03:02:01.6944482Z       3D MHD Conservation                                                                                      | [32m      7  [39m[33m        [39m[36m      7  [39m[0m    1.2s
+2026-02-16T03:02:01.6945216Z       3D MHD Conservation MUSCL + Euler                                                                        | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    1.0s
+2026-02-16T03:02:01.6945931Z       CTData3D                                                                                                 | [32m     15  [39m[33m        [39m[36m     15  [39m[0m    0.1s
+2026-02-16T03:02:01.6946609Z       3D MHD All Solvers                                                                                       | [32m     12  [39m[33m        [39m[36m     12  [39m[0m    2.3s
+2026-02-16T03:02:01.6947314Z       3D MHD Uniform State                                                                                     | [32m    513  [39m[33m        [39m[36m    513  [39m[0m    0.7s
+2026-02-16T03:02:01.6948188Z       3D MHD Uniform Flow Preservation                                                                         | [32m    513  [39m[33m        [39m[36m    513  [39m[0m    1.0s
+2026-02-16T03:02:01.6948950Z       3D MHD Reflective BC Symmetry                                                                            | [32m   1280  [39m[33m        [39m[36m   1280  [39m[0m    1.0s
+2026-02-16T03:02:01.6949687Z       3D MHD Blast Wave                                                                                        | [32m   2002  [39m[33m        [39m[36m   2002  [39m[0m    0.8s
+2026-02-16T03:02:01.6950382Z       3D MHD HLLD Brio-Wu                                                                                      | [32m    962  [39m[33m        [39m[36m    962  [39m[0m    0.8s
+2026-02-16T03:02:01.6951103Z       3D MHD HLLD vs HLL                                                                                       | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    2.1s
+2026-02-16T03:02:01.6951795Z       3D MHD gamma=1.4                                                                                         | [32m   1025  [39m[33m        [39m[36m   1025  [39m[0m    1.0s
+2026-02-16T03:02:01.6952678Z       3D MHD Forward Euler                                                                                     | [32m    643  [39m[33m        [39m[36m    643  [39m[0m    0.8s
+2026-02-16T03:02:01.6953409Z       3D MHD Strong Shock                                                                                      | [32m    961  [39m[33m        [39m[36m    961  [39m[0m    0.8s
+2026-02-16T03:02:01.6954126Z       3D MHD B=0 Matches Euler                                                                                 | [32m    960  [39m[33m        [39m[36m    960  [39m[0m    1.4s
+2026-02-16T03:02:01.6954826Z   AMR                                                                                                          | [32m    512  [39m[33m        [39m[36m    512  [39m[0m    3.5s
+2026-02-16T03:02:01.6955512Z     Example: amr.jl                                                                                            | [32m    512  [39m[33m        [39m[36m    512  [39m[0m    3.5s
+2026-02-16T03:02:01.6956278Z       AMRBlock constructor and basic properties                                                                | [32m     27  [39m[33m        [39m[36m     27  [39m[0m    0.0s
+2026-02-16T03:02:01.6957082Z       AMRBlock with non-square block size                                                                      | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.0s
+2026-02-16T03:02:01.6957818Z       block_cell_center                                                                                        | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    0.0s
+2026-02-16T03:02:01.6958537Z       AMRGrid constructor                                                                                      | [32m     14  [39m[33m        [39m[36m     14  [39m[0m    0.2s
+2026-02-16T03:02:01.6959265Z       active_blocks on fresh grid                                                                              | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.3s
+2026-02-16T03:02:01.6960000Z       blocks_at_level on fresh grid                                                                            | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.1s
+2026-02-16T03:02:01.6960742Z       max_active_level on fresh grid                                                                           | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.0s
+2026-02-16T03:02:01.6961510Z       GradientRefinement: keyword constructor                                                                  | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.0s
+2026-02-16T03:02:01.6962611Z       GradientRefinement: default keyword constructor                                                          | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.0s
+2026-02-16T03:02:01.6963449Z       CurrentSheetRefinement: constructor                                                                      | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.0s
+2026-02-16T03:02:01.6964285Z       GradientRefinement: needs_refinement with large gradient                                                 | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.0s
+2026-02-16T03:02:01.6965156Z       GradientRefinement: needs_coarsening with uniform data                                                   | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.0s
+2026-02-16T03:02:01.6965971Z       refine_block! creates 4 children (2D)                                                                    | [32m     37  [39m[33m        [39m[36m     37  [39m[0m    0.0s
+2026-02-16T03:02:01.6966756Z       refine_block! child origins are correct                                                                  | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.0s
+2026-02-16T03:02:01.6967532Z       refine_block! respects max_level                                                                         | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.0s
+2026-02-16T03:02:01.6968309Z       refine_block! inactive block returns empty                                                               | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.0s
+2026-02-16T03:02:01.6969142Z       coarsen_block! removes children and reactivates parent                                                   | [32m     13  [39m[33m        [39m[36m     13  [39m[0m    0.0s
+2026-02-16T03:02:01.6969988Z       coarsen_block! fails if children have grandchildren                                                      | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.0s
+2026-02-16T03:02:01.6970821Z       coarsen_block! on active block returns false                                                             | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.0s
+2026-02-16T03:02:01.6971622Z       prolongate! preserves uniform data                                                                       | [32m     64  [39m[33m        [39m[36m     64  [39m[0m    0.1s
+2026-02-16T03:02:01.6972443Z       prolongate! with linear data                                                                             | [32m    144  [39m[33m        [39m[36m    144  [39m[0m    0.0s
+2026-02-16T03:02:01.6973193Z       restrict! with uniform data                                                                              | [32m     16  [39m[33m        [39m[36m     16  [39m[0m    0.1s
+2026-02-16T03:02:01.6973952Z       restrict! averages fine data correctly                                                                   | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.1s
+2026-02-16T03:02:01.6974781Z       restrict! then prolongate! round-trip for uniform data                                                   | [32m     16  [39m[33m        [39m[36m     16  [39m[0m    0.0s
+2026-02-16T03:02:01.6975585Z       FluxRegister constructor                                                                                 | [32m     61  [39m[33m        [39m[36m     61  [39m[0m    0.0s
+2026-02-16T03:02:01.6976316Z       reset_flux_register!                                                                                     | [32m     49  [39m[33m        [39m[36m     49  [39m[0m    0.0s
+2026-02-16T03:02:01.6977085Z       store_coarse_flux! and accumulate_fine_flux!                                                             | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.0s
+2026-02-16T03:02:01.6977853Z       apply_flux_correction_2d!                                                                                | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.0s
+2026-02-16T03:02:01.6978750Z       regrid! refines blocks with large gradients                                                              | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.0s
+2026-02-16T03:02:01.6979560Z       regrid! coarsens blocks with smooth data                                                                 | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.0s
+2026-02-16T03:02:01.6980376Z       multi-level refinement and active_blocks sorting                                                         | [32m      8  [39m[33m        [39m[36m      8  [39m[0m    0.0s
+2026-02-16T03:02:01.6981172Z       AMRGrid with non-unit domain                                                                             | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    0.0s
+2026-02-16T03:02:01.6981918Z       AMRBlock type parameters                                                                                 | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.0s
+2026-02-16T03:02:01.6982847Z       GradientRefinement and CurrentSheetRefinement are AbstractRefinementCriterion                            | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.0s
+2026-02-16T03:02:01.6983676Z   WENO                                                                                                         | [32m    986  [39m[33m        [39m[36m    986  [39m[0m    4.9s
+2026-02-16T03:02:01.6984358Z     Example: weno.jl                                                                                           | [32m    986  [39m[33m        [39m[36m    986  [39m[0m    4.9s
+2026-02-16T03:02:01.6985031Z       nghost                                                                                                   | [32m     10  [39m[33m        [39m[36m     10  [39m[0m    0.0s
+2026-02-16T03:02:01.6985750Z       WENO3 Scalar Reconstruction                                                                              | [32m     20  [39m[33m        [39m[36m     20  [39m[0m    0.0s
+2026-02-16T03:02:01.6986502Z       WENO5 Scalar Reconstruction                                                                              | [32m     22  [39m[33m        [39m[36m     22  [39m[0m    0.0s
+2026-02-16T03:02:01.6987242Z       SVector Reconstruction                                                                                   | [32m     20  [39m[33m        [39m[36m     20  [39m[0m    0.0s
+2026-02-16T03:02:01.6987976Z       Characteristic WENO                                                                                      | [32m     30  [39m[33m        [39m[36m     30  [39m[0m    0.4s
+2026-02-16T03:02:01.6988704Z       Smooth Advection Convergence                                                                             | [32m      5  [39m[33m        [39m[36m      5  [39m[0m    0.7s
+2026-02-16T03:02:01.6989468Z       1D Sod with WENO3                                                                                        | [32m    879  [39m[33m        [39m[36m    879  [39m[0m    1.7s
+2026-02-16T03:02:01.6990149Z   IMEX                                                                                                         | [32m   1851  [39m[33m        [39m[36m   1851  [39m[0m    3.6s
+2026-02-16T03:02:01.6990833Z     Example: imex.jl                                                                                           | [32m   1851  [39m[33m        [39m[36m   1851  [39m[0m    3.6s
+2026-02-16T03:02:01.6991566Z       IMEX Tableau Properties                                                                                  | [32m     98  [39m[33m        [39m[36m     98  [39m[0m    0.3s
+2026-02-16T03:02:01.6992319Z       NullSource                                                                                               | [32m      8  [39m[33m        [39m[36m      8  [39m[0m    0.0s
+2026-02-16T03:02:01.6993260Z       IMEX with NullSource matches pure explicit (Sod)                                                         | [32m    323  [39m[33m        [39m[36m    323  [39m[0m    0.6s
+2026-02-16T03:02:01.6994072Z       Stiff relaxation with CoolingSource                                                                      | [32m    162  [39m[33m        [39m[36m    162  [39m[0m    0.5s
+2026-02-16T03:02:01.6994881Z       Conservation with IMEX + periodic BCs + NullSource                                                       | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.5s
+2026-02-16T03:02:01.6995668Z       2D IMEX with NullSource                                                                                  | [32m   1027  [39m[33m        [39m[36m   1027  [39m[0m    0.7s
+2026-02-16T03:02:01.6996422Z       All IMEX schemes run Sod without crash                                                                   | [32m    207  [39m[33m        [39m[36m    207  [39m[0m    0.7s
+2026-02-16T03:02:01.6997247Z       ResistiveSource basic evaluation                                                                         | [32m     15  [39m[33m        [39m[36m     15  [39m[0m    0.1s
+2026-02-16T03:02:01.6998014Z       CoolingSource basic evaluation                                                                           | [32m      8  [39m[33m        [39m[36m      8  [39m[0m    0.0s
+2026-02-16T03:02:01.6998771Z   Unstructured Hyperbolic                                                                                      | [32m    690  [39m[33m        [39m[36m    690  [39m[0m   13.7s
+2026-02-16T03:02:01.6999537Z     Example: unstructured_hyperbolic.jl                                                                        | [32m    690  [39m[33m        [39m[36m    690  [39m[0m   13.7s
+2026-02-16T03:02:01.7000351Z       UnstructuredHyperbolicMesh Construction                                                                  | [32m    333  [39m[33m        [39m[36m    333  [39m[0m    3.3s
+2026-02-16T03:02:01.7001174Z       UnstructuredHyperbolicMesh Refined                                                                       | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.0s
+2026-02-16T03:02:01.7001914Z       State Rotation                                                                                           | [32m     12  [39m[33m        [39m[36m     12  [39m[0m    0.0s
+2026-02-16T03:02:01.7002732Z       MHD State Rotation                                                                                       | [32m      8  [39m[33m        [39m[36m      8  [39m[0m    0.0s
+2026-02-16T03:02:01.7003447Z       Boundary Ghost States                                                                                    | [32m      8  [39m[33m        [39m[36m      8  [39m[0m    0.0s
+2026-02-16T03:02:01.7004187Z       Uniform Flow Preservation                                                                                | [32m    296  [39m[33m        [39m[36m    296  [39m[0m    0.3s
+2026-02-16T03:02:01.7004936Z       2D Sod Shock Tube (x-direction)                                                                          | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    0.4s
+2026-02-16T03:02:01.7005699Z       Mass Conservation (Transmissive)                                                                         | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.4s
+2026-02-16T03:02:01.7006452Z       Forward Euler vs SSP-RK3                                                                                 | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.4s
+2026-02-16T03:02:01.7007206Z       Riemann Solvers on Unstructured Mesh                                                                     | [32m      6  [39m[33m        [39m[36m      6  [39m[0m    0.9s
+2026-02-16T03:02:01.7008038Z       Reflective BC Sedov-like                                                                                 | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.4s
+2026-02-16T03:02:01.7008803Z       Dirichlet BC                                                                                             | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.4s
+2026-02-16T03:02:01.7009500Z       Different Gamma (5/3)                                                                                    | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.3s
+2026-02-16T03:02:01.7010218Z       MHD on Unstructured Mesh                                                                                 | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.4s
+2026-02-16T03:02:01.7010964Z       Acoustic Wave Convergence                                                                                | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.3s
+2026-02-16T03:02:01.7011695Z       Per-Segment BCs                                                                                          | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.7s
+2026-02-16T03:02:01.7012473Z   Multi-Physics Coupling                                                                                       | [32m   5299  [39m[33m        [39m[36m   5299  [39m[0m   10.3s
+2026-02-16T03:02:01.7013213Z     Example: coupling.jl                                                                                       | [32m   5299  [39m[33m        [39m[36m   5299  [39m[0m   10.3s
+2026-02-16T03:02:01.7013940Z       Type Construction                                                                                        | [32m     16  [39m[33m        [39m[36m     16  [39m[0m    0.1s
+2026-02-16T03:02:01.7014640Z       Operator dt                                                                                              | [32m      4  [39m[33m        [39m[36m      4  [39m[0m    0.1s
+2026-02-16T03:02:01.7015399Z       1D Lie-Trotter NullSource = pure hyperbolic                                                              | [32m    102  [39m[33m        [39m[36m    102  [39m[0m    0.0s
+2026-02-16T03:02:01.7016165Z       1D Strang NullSource                                                                                     | [32m    203  [39m[33m        [39m[36m    203  [39m[0m    0.1s
+2026-02-16T03:02:01.7016905Z       1D Source: Uniform Cooling                                                                               | [32m    201  [39m[33m        [39m[36m    201  [39m[0m    0.3s
+2026-02-16T03:02:01.7017633Z       1D Mass Conservation                                                                                     | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.2s
+2026-02-16T03:02:01.7018385Z       1D Sod + Cooling: Lie-Trotter vs Strang                                                                  | [32m    403  [39m[33m        [39m[36m    403  [39m[0m    0.2s
+2026-02-16T03:02:01.7019141Z       1D MUSCL + Splitting                                                                                     | [32m    101  [39m[33m        [39m[36m    101  [39m[0m    0.0s
+2026-02-16T03:02:01.7019871Z       1D Different Riemann Solvers                                                                             | [32m    603  [39m[33m        [39m[36m    603  [39m[0m    0.6s
+2026-02-16T03:02:01.7020659Z       2D Lie-Trotter NullSource = pure hyperbolic                                                              | [32m    401  [39m[33m        [39m[36m    401  [39m[0m    0.0s
+2026-02-16T03:02:01.7021428Z       2D Source Operator                                                                                       | [32m   2001  [39m[33m        [39m[36m   2001  [39m[0m    2.2s
+2026-02-16T03:02:01.7022145Z       2D Mass Conservation                                                                                     | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.3s
+2026-02-16T03:02:01.7023062Z       CoupledProblem General API                                                                               | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.0s
+2026-02-16T03:02:01.7023808Z       Multiple Operators                                                                                       | [32m    152  [39m[33m        [39m[36m    152  [39m[0m    0.0s
+2026-02-16T03:02:01.7024543Z       1D MHD + Resistive Source                                                                                | [32m    101  [39m[33m        [39m[36m    101  [39m[0m    1.5s
+2026-02-16T03:02:01.7025266Z       Data Transfer                                                                                            | [32m    309  [39m[33m        [39m[36m    309  [39m[0m    1.3s
+2026-02-16T03:02:01.7025971Z       Splitting vs IMEX                                                                                        | [32m    201  [39m[33m        [39m[36m    201  [39m[0m    0.5s
+2026-02-16T03:02:01.7026698Z       2D CoupledProblem API                                                                                    | [32m    452  [39m[33m        [39m[36m    452  [39m[0m    0.0s
+2026-02-16T03:02:01.7027391Z       Edge Cases                                                                                               | [32m     44  [39m[33m        [39m[36m     44  [39m[0m    0.1s
+2026-02-16T03:02:01.7028108Z   Performance & Threading                                                                                      | [32m   2251  [39m[33m        [39m[36m   2251  [39m[0m    4.8s
+2026-02-16T03:02:01.7028855Z     Example: performance.jl                                                                                    | [32m   2251  [39m[33m        [39m[36m   2251  [39m[0m    4.8s
+2026-02-16T03:02:01.7029596Z       Threaded vs Serial: 2D CFL                                                                               | [32m      2  [39m[33m        [39m[36m      2  [39m[0m    0.3s
+2026-02-16T03:02:01.7030325Z       Threaded vs Serial: 2D RHS                                                                               | [32m    400  [39m[33m        [39m[36m    400  [39m[0m    0.2s
+2026-02-16T03:02:01.7031084Z       Threaded vs Serial: 2D solve_hyperbolic (Euler)                                                          | [32m    401  [39m[33m        [39m[36m    401  [39m[0m    0.0s
+2026-02-16T03:02:01.7031901Z       Threaded vs Serial: 2D solve_hyperbolic SSP-RK3                                                          | [32m    401  [39m[33m        [39m[36m    401  [39m[0m    0.0s
+2026-02-16T03:02:01.7032843Z       Threaded vs Serial: 2D IMEX solve                                                                        | [32m    257  [39m[33m        [39m[36m    257  [39m[0m    0.8s
+2026-02-16T03:02:01.7033619Z       Threaded vs Serial: Implicit solve 2D                                                                    | [32m    100  [39m[33m        [39m[36m    100  [39m[0m    0.2s
+2026-02-16T03:02:01.7034392Z       Threaded: Conservation check                                                                             | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.0s
+2026-02-16T03:02:01.7035136Z       Threaded: NoReconstruction                                                                               | [32m    257  [39m[33m        [39m[36m    257  [39m[0m    0.6s
+2026-02-16T03:02:01.7035910Z       Threaded: Different Riemann solvers                                                                      | [32m    432  [39m[33m        [39m[36m    432  [39m[0m    1.8s
+2026-02-16T03:02:01.7036668Z   Advanced Numerics                                                                                            | [32m    253  [39m[33m        [39m[36m    253  [39m[0m    4.3s
+2026-02-16T03:02:01.7037532Z     Example: advanced_numerics.jl                                                                              | [32m    253  [39m[33m        [39m[36m    253  [39m[0m    4.3s
+2026-02-16T03:02:01.7038283Z       PPM Reconstruction                                                                                       | [32m     33  [39m[33m        [39m[36m     33  [39m[0m    1.6s
+2026-02-16T03:02:01.7038989Z       Positivity Limiter                                                                                       | [32m     16  [39m[33m        [39m[36m     16  [39m[0m    0.0s
+2026-02-16T03:02:01.7039692Z       Subcycling                                                                                               | [32m    204  [39m[33m        [39m[36m    204  [39m[0m    0.0s
+2026-02-16T03:02:01.7040396Z   Extended Physics                                                                                             | [32m   1760  [39m[33m        [39m[36m   1760  [39m[0m    5.4s
+2026-02-16T03:02:01.7041139Z     Example: extended_physics.jl                                                                               | [32m   1760  [39m[33m        [39m[36m   1760  [39m[0m    5.4s
+2026-02-16T03:02:01.7041889Z       ShallowWaterEquations                                                                                    | [32m    252  [39m[33m        [39m[36m    252  [39m[0m    0.5s
+2026-02-16T03:02:01.7042735Z       SRHydroEquations                                                                                         | [32m    655  [39m[33m        [39m[36m    655  [39m[0m    0.6s
+2026-02-16T03:02:01.7043466Z       ResistiveMHDEquations                                                                                    | [32m     32  [39m[33m        [39m[36m     32  [39m[0m    0.0s
+2026-02-16T03:02:01.7044197Z       HallMHDEquations                                                                                         | [32m     43  [39m[33m        [39m[36m     43  [39m[0m    0.0s
+2026-02-16T03:02:01.7044930Z       TwoFluidEquations                                                                                        | [32m    778  [39m[33m        [39m[36m    778  [39m[0m    0.6s
+2026-02-16T03:02:01.7045616Z   README                                                                                                       | [32m      1  [39m[33m        [39m[36m      1  [39m[0m   31.9s
+2026-02-16T03:02:01.7046299Z     Example: README.jl                                                                                         | [32m      1  [39m[33m        [39m[36m      1  [39m[0m   31.9s
+2026-02-16T03:02:01.7046990Z   Tutorials                                                                                                    | [32m     34  [39m[33m        [39m[36m     34  [39m[0m23m45.0s
+2026-02-16T03:02:01.7047810Z     Example: diffusion_equation_in_a_wedge_with_mixed_boundary_conditions.jl                                   | [32m      3  [39m[33m        [39m[36m      3  [39m[0m 1m04.2s
+2026-02-16T03:02:01.7048690Z     Example: diffusion_equation_on_a_square_plate.jl                                                           | [32m      2  [39m[33m        [39m[36m      2  [39m[0m   22.1s
+2026-02-16T03:02:01.7049502Z     Example: diffusion_equation_on_an_annulus.jl                                                               | [32m      4  [39m[33m        [39m[36m      4  [39m[0m 1m06.3s
+2026-02-16T03:02:01.7050444Z     Example: equilibrium_temperature_distribution_with_mixed_boundary_conditions_and_using_ensembleproblems.jl | [32m      1  [39m[33m        [39m[36m      1  [39m[0m   37.6s
+2026-02-16T03:02:01.7051468Z     Example: helmholtz_equation_with_inhomogeneous_boundary_conditions.jl                                      | [32m      2  [39m[33m        [39m[36m      2  [39m[0m   24.4s
+2026-02-16T03:02:01.7052437Z     Example: laplaces_equation_with_internal_dirichlet_conditions.jl                                           | [32m      1  [39m[33m        [39m[36m      1  [39m[0m   14.5s
+2026-02-16T03:02:01.7053380Z     Example: mean_exit_time.jl                                                                                 | [32m      6  [39m[33m        [39m[36m      6  [39m[0m 2m47.0s
+2026-02-16T03:02:01.7054261Z     Example: piecewise_linear_and_natural_neighbour_interpolation_for_an_advection_diffusion_equation.jl       | [32m      4  [39m[33m        [39m[36m      4  [39m[0m 3m38.9s
+2026-02-16T03:02:01.7055218Z     Example: porous_fisher_equation_and_travelling_waves.jl                                                    | [32m      1  [39m[33m        [39m[36m      1  [39m[0m   30.4s
+2026-02-16T03:02:01.7056034Z     Example: porous_medium_equation.jl                                                                         | [32m      4  [39m[33m        [39m[36m      4  [39m[0m 2m44.4s
+2026-02-16T03:02:01.7056864Z     Example: reaction_diffusion_brusselator_system_of_pdes.jl                                                  | [32m      2  [39m[33m        [39m[36m      2  [39m[0m 1m12.0s
+2026-02-16T03:02:01.7057824Z     Example: reaction_diffusion_equation_with_a_time_dependent_dirichlet_boundary_condition_on_a_disk.jl       | [32m      2  [39m[33m        [39m[36m      2  [39m[0m   25.7s
+2026-02-16T03:02:01.7058745Z     Example: solving_mazes_with_laplaces_equation.jl                                                           | [32m         [39m[33m        [39m[36m      0  [39m[0m 1m30.9s
+2026-02-16T03:02:01.7059656Z     Example: gray_scott_model_turing_patterns_from_a_coupled_reaction_diffusion_system.jl                      | [32m      1  [39m[33m        [39m[36m      1  [39m[0m 7m06.8s
+2026-02-16T03:02:01.7060502Z   Custom Templates                                                                                             | [32m     23  [39m[33m        [39m[36m     23  [39m[0m 3m16.4s
+2026-02-16T03:02:01.7061248Z     Example: diffusion_equations.jl                                                                            | [32m      4  [39m[33m        [39m[36m      4  [39m[0m   41.2s
+2026-02-16T03:02:01.7062003Z     Example: mean_exit_time.jl                                                                                 | [32m      4  [39m[33m        [39m[36m      4  [39m[0m   24.5s
+2026-02-16T03:02:01.7062834Z     Example: linear_reaction_diffusion_equations.jl                                                            | [32m      2  [39m[33m        [39m[36m      2  [39m[0m   49.0s
+2026-02-16T03:02:01.7063629Z     Example: poissons_equation.jl                                                                              | [32m      7  [39m[33m        [39m[36m      7  [39m[0m   50.1s
+2026-02-16T03:02:01.7064381Z     Example: laplaces_equation.jl                                                                              | [32m      5  [39m[33m        [39m[36m      5  [39m[0m   31.6s
+2026-02-16T03:02:01.7065089Z   Aqua                                                                                                         | [32m      8  [39m[33m     1  [39m[36m      9  [39m[0m   15.5s
+2026-02-16T03:02:01.7065775Z     Method ambiguity                                                                                           | [32m         [39m[33m        [39m[36m      0  [39m[0m    0.0s
+2026-02-16T03:02:01.7066483Z     Unbound type parameters                                                                                    | [32m         [39m[33m        [39m[36m      0  [39m[0m    0.0s
+2026-02-16T03:02:01.7067200Z     Undefined exports                                                                                          | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.0s
+2026-02-16T03:02:01.7067950Z     Compare Project.toml and test/Project.toml                                                                 | [32m         [39m[33m        [39m[36m      0  [39m[0m    0.0s
+2026-02-16T03:02:01.7068813Z     Stale dependencies                                                                                         | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    3.4s
+2026-02-16T03:02:01.7069525Z     Compat bounds                                                                                              | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.7s
+2026-02-16T03:02:01.7070232Z     Project.toml formatting                                                                                    | [32m      3  [39m[33m        [39m[36m      3  [39m[0m    0.8s
+2026-02-16T03:02:01.7070926Z     Piracy                                                                                                     | [32m      1  [39m[33m        [39m[36m      1  [39m[0m    0.2s
+2026-02-16T03:02:01.7071612Z   Explicit Imports                                                                                             | [32m      2  [39m[33m        [39m[36m      2  [39m[0m   23.1s
+2026-02-16T03:02:01.7072414Z     Example: explicit_imports.jl                                                                               | [32m      2  [39m[33m        [39m[36m      2  [39m[0m   23.1s
+2026-02-16T03:02:03.9841606Z [32m[1m     Testing[22m[39m FiniteVolumeMethod tests passed 

@@ -1,0 +1,8 @@
+2026-02-16T02:03:57.5880000Z Job is about to start running on the hosted runner: GitHub Actions 1000000023
+2026-02-16T02:03:57.5810000Z Requested labels: ubuntu-latest
+2026-02-16T02:03:57.5810000Z Job defined at: cx-xd/FiniteVolumeMethod.jl/.github/workflows/CI.yml@refs/heads/main
+2026-02-16T02:03:57.5810000Z Waiting for a runner to pick up this job...
+2026-02-16T02:03:57.5790000Z Evaluating test.if
+2026-02-16T02:03:57.5790000Z Evaluating: success()
+2026-02-16T02:03:57.5790000Z Result: true
+2026-02-16T02:03:57.5870000Z Job is waiting for a hosted runner to come online.

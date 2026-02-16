@@ -1,0 +1,161 @@
+﻿2026-02-16T02:04:31.3637596Z ##[group]Run julia-actions/julia-buildpkg@v1
+2026-02-16T02:04:31.3637863Z with:
+2026-02-16T02:04:31.3638043Z   project: @.
+2026-02-16T02:04:31.3638228Z   precompile: no
+2026-02-16T02:04:31.3638400Z   git_cli: false
+2026-02-16T02:04:31.3638587Z   ignore-no-cache: false
+2026-02-16T02:04:31.3638776Z env:
+2026-02-16T02:04:31.3638929Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:31.3639114Z ##[endgroup]
+2026-02-16T02:04:31.3650431Z ##[group]Run echo "JULIA_PKG_SERVER_REGISTRY_PREFERENCE=${JULIA_PKG_SERVER_REGISTRY_PREFERENCE:-eager}" >> ${GITHUB_ENV}
+2026-02-16T02:04:31.3651145Z [36;1mecho "JULIA_PKG_SERVER_REGISTRY_PREFERENCE=${JULIA_PKG_SERVER_REGISTRY_PREFERENCE:-eager}" >> ${GITHUB_ENV}[0m
+2026-02-16T02:04:31.3676247Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T02:04:31.3676561Z env:
+2026-02-16T02:04:31.3676736Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:31.3676923Z ##[endgroup]
+2026-02-16T02:04:31.3755900Z ##[group]Run if "false" == "false" && !isdir(DEPOT_PATH[1])
+2026-02-16T02:04:31.3756462Z [36;1mif "false" == "false" && !isdir(DEPOT_PATH[1])[0m
+2026-02-16T02:04:31.3757326Z [36;1m    println("::notice title=[julia-buildpkg] Caching of the julia depot was not detected ::Consider using `julia-actions/cache` to speed up runs https://github.com/julia-actions/cache To ignore, set input `ignore-no-cache: true` ")[0m
+2026-02-16T02:04:31.3758125Z [36;1mend[0m
+2026-02-16T02:04:31.3758292Z [36;1mimport Pkg[0m
+2026-02-16T02:04:31.3758469Z [36;1m[0m
+2026-02-16T02:04:31.3758719Z [36;1m# Determine if Pkg uses git-cli executable instead of LibGit2[0m
+2026-02-16T02:04:31.3759110Z [36;1mVERSION >= v"1.7-" && (ENV["JULIA_PKG_USE_CLI_GIT"] = false)[0m
+2026-02-16T02:04:31.3759403Z [36;1m[0m
+2026-02-16T02:04:31.3759594Z [36;1mif VERSION < v"1.7-" && false == true[0m
+2026-02-16T02:04:31.3760133Z [36;1m  printstyled("::notice::JULIA_PKG_USE_CLI_GIT requires Julia >= 1.7. Using default LibGit2 git-interface instead! \n"; color = :yellow)[0m
+2026-02-16T02:04:31.3760643Z [36;1mend[0m
+2026-02-16T02:04:31.3760812Z [36;1m[0m
+2026-02-16T02:04:31.3760969Z [36;1m[0m
+2026-02-16T02:04:31.3761128Z [36;1mif VERSION >= v"1.5-"[0m
+2026-02-16T02:04:31.3761355Z [36;1m    if VERSION >= v"1.8-"[0m
+2026-02-16T02:04:31.3761604Z [36;1m        # Install the default registries[0m
+2026-02-16T02:04:31.3761870Z [36;1m        Pkg.Registry.add()[0m
+2026-02-16T02:04:31.3762086Z [36;1m    else[0m
+2026-02-16T02:04:31.3762481Z [36;1m        Pkg.Registry.add("General")[0m
+2026-02-16T02:04:31.3762834Z [36;1m    end[0m
+2026-02-16T02:04:31.3762998Z [36;1m[0m
+2026-02-16T02:04:31.3763193Z [36;1m    # If provided add local registries[0m
+2026-02-16T02:04:31.3763458Z [36;1m    if !isempty("")[0m
+2026-02-16T02:04:31.3763704Z [36;1m      local_repos = split("", "\n") .|> string[0m
+2026-02-16T02:04:31.3763993Z [36;1m      for repo_url in local_repos[0m
+2026-02-16T02:04:31.3764262Z [36;1m        isempty(repo_url) && continue[0m
+2026-02-16T02:04:31.3764591Z [36;1m        Pkg.Registry.add(Pkg.RegistrySpec(; url = repo_url))[0m
+2026-02-16T02:04:31.3764894Z [36;1m      end[0m
+2026-02-16T02:04:31.3765072Z [36;1m    end[0m
+2026-02-16T02:04:31.3765236Z [36;1mend[0m
+2026-02-16T02:04:31.3765390Z [36;1m[0m
+2026-02-16T02:04:31.3765672Z [36;1mVERSION >= v"1.1.0-rc1" ? retry(Pkg.build)(verbose=true) : retry(Pkg.build)()[0m
+2026-02-16T02:04:31.3766837Z shell: /opt/hostedtoolcache/julia/1.11.9/x64/bin/julia --color=yes --project=@. {0}
+2026-02-16T02:04:31.3767196Z env:
+2026-02-16T02:04:31.3767355Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:31.3767576Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-16T02:04:31.3767830Z   JULIA_PKG_PRECOMPILE_AUTO: no
+2026-02-16T02:04:31.3768188Z   GITHUB_TOKEN: ***
+2026-02-16T02:04:31.3768362Z ##[endgroup]
+2026-02-16T02:04:32.0569686Z [32m[1m  Installing[22m[39m known registries into `~/.julia`
+2026-02-16T02:04:32.1434839Z [32m[1m     Cloning[22m[39m registry from "https://github.com/JuliaRegistries/General.git"
+2026-02-16T02:05:40.3256591Z Registry `General` already exists in `~/.julia/registries/General`.
+2026-02-16T02:05:42.4527959Z [32m[1m    Updating[22m[39m registry at `~/.julia/registries/General`
+2026-02-16T02:05:43.2729798Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mThe General registry is installed via git. Consider reinstalling it via
+2026-02-16T02:05:43.2730634Z [36m[1m│ [22m[39mthe newer faster direct from tarball format by running:
+2026-02-16T02:05:43.2731169Z [36m[1m│ [22m[39m  pkg> registry rm General; registry add General
+2026-02-16T02:05:43.2731556Z [36m[1m└ [22m[39m
+2026-02-16T02:05:45.3622969Z [32m[1m    Updating[22m[39m git-repo `https://github.com/JuliaRegistries/General.git`
+2026-02-16T02:05:48.5666639Z [32m[1m    Updating[22m[39m `~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/Project.toml`
+2026-02-16T02:05:48.5825738Z [33m⌅[39m [90m[ae650224] [39m[92m+ ChunkSplitters v2.6.0[39m
+2026-02-16T02:05:48.5826557Z   [90m[38540f10] [39m[92m+ CommonSolve v0.2.6[39m
+2026-02-16T02:05:48.5827751Z   [90m[927a84f5] [39m[92m+ DelaunayTriangulation v1.6.6[39m
+2026-02-16T02:05:48.5828660Z [33m⌅[39m [90m[d236fae5] [39m[92m+ PreallocationTools v0.4.34[39m
+2026-02-16T02:05:48.5829622Z [33m⌅[39m [90m[aea7be01] [39m[92m+ PrecompileTools v1.2.1[39m
+2026-02-16T02:05:48.5830478Z   [90m[0bca4576] [39m[92m+ SciMLBase v2.138.1[39m
+2026-02-16T02:05:48.5831178Z   [90m[90137ffa] [39m[92m+ StaticArrays v1.9.16[39m
+2026-02-16T02:05:48.5831863Z   [90m[37e2e46d] [39m[93m~ LinearAlgebra ⇒ v1.11.0[39m
+2026-02-16T02:05:48.5832825Z   [90m[2f01184e] [39m[93m~ SparseArrays ⇒ v1.11.0[39m
+2026-02-16T02:05:48.5833902Z [32m[1m    Updating[22m[39m `~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/Manifest.toml`
+2026-02-16T02:05:48.6025483Z   [90m[47edcb42] [39m[92m+ ADTypes v1.21.0[39m
+2026-02-16T02:05:48.6026204Z   [90m[7d9f7c33] [39m[92m+ Accessors v0.1.43[39m
+2026-02-16T02:05:48.6026802Z   [90m[79e6a3ab] [39m[92m+ Adapt v4.4.0[39m
+2026-02-16T02:05:48.6027457Z   [90m[35492f91] [39m[92m+ AdaptivePredicates v1.2.0[39m
+2026-02-16T02:05:48.6028175Z   [90m[4fba245c] [39m[92m+ ArrayInterface v7.22.0[39m
+2026-02-16T02:05:48.6029231Z   [90m[96374032] [39m[92m+ CRlibm v1.0.2[39m
+2026-02-16T02:05:48.6030041Z [33m⌅[39m [90m[ae650224] [39m[92m+ ChunkSplitters v2.6.0[39m
+2026-02-16T02:05:48.6030815Z   [90m[38540f10] [39m[92m+ CommonSolve v0.2.6[39m
+2026-02-16T02:05:48.6031540Z   [90m[a33af91c] [39m[92m+ CompositionsBase v0.1.2[39m
+2026-02-16T02:05:48.6032472Z   [90m[187b0558] [39m[92m+ ConstructionBase v1.6.0[39m
+2026-02-16T02:05:48.6033255Z   [90m[927a84f5] [39m[92m+ DelaunayTriangulation v1.6.6[39m
+2026-02-16T02:05:48.6034063Z   [90m[ffbed154] [39m[92m+ DocStringExtensions v0.9.5[39m
+2026-02-16T02:05:48.6034722Z   [90m[4e289a0a] [39m[92m+ EnumX v1.0.6[39m
+2026-02-16T02:05:48.6035425Z   [90m[429591f6] [39m[92m+ ExactPredicates v2.2.9[39m
+2026-02-16T02:05:48.6036131Z   [90m[e2ba6199] [39m[92m+ ExprTools v0.1.10[39m
+2026-02-16T02:05:48.6036847Z   [90m[55351af7] [39m[92m+ ExproniconLite v0.10.14[39m
+2026-02-16T02:05:48.6037602Z   [90m[069b7b12] [39m[92m+ FunctionWrappers v1.1.3[39m
+2026-02-16T02:05:48.6038417Z   [90m[77dc65aa] [39m[92m+ FunctionWrappersWrappers v0.1.3[39m
+2026-02-16T02:05:48.6039193Z   [90m[46192b85] [39m[92m+ GPUArraysCore v0.2.0[39m
+2026-02-16T02:05:48.6039647Z   [90m[d1acc4aa] [39m[92m+ IntervalArithmetic v1.0.2[39m
+2026-02-16T02:05:48.6040116Z   [90m[3587e190] [39m[92m+ InverseFunctions v0.1.17[39m
+2026-02-16T02:05:48.6040590Z   [90m[82899510] [39m[92m+ IteratorInterfaceExtensions v1.0.0[39m
+2026-02-16T02:05:48.6041051Z   [90m[692b3bcd] [39m[92m+ JLLWrappers v1.7.1[39m
+2026-02-16T02:05:48.6041436Z   [90m[ae98c720] [39m[92m+ Jieko v0.2.1[39m
+2026-02-16T02:05:48.6041826Z   [90m[e6f89c97] [39m[92m+ LoggingExtras v1.2.0[39m
+2026-02-16T02:05:48.6042221Z   [90m[1914dd2f] [39m[92m+ MacroTools v0.5.16[39m
+2026-02-16T02:05:48.6042935Z   [90m[2e0e35c7] [39m[92m+ Moshi v0.3.7[39m
+2026-02-16T02:05:48.6043744Z [33m⌅[39m [90m[d236fae5] [39m[92m+ PreallocationTools v0.4.34[39m
+2026-02-16T02:05:48.6045024Z [33m⌅[39m [90m[aea7be01] [39m[92m+ PrecompileTools v1.2.1[39m
+2026-02-16T02:05:48.6045762Z   [90m[21216c6a] [39m[92m+ Preferences v1.5.1[39m
+2026-02-16T02:05:48.6046427Z   [90m[3cdcf5f2] [39m[92m+ RecipesBase v1.3.4[39m
+2026-02-16T02:05:48.6047128Z   [90m[731186ca] [39m[92m+ RecursiveArrayTools v3.48.0[39m
+2026-02-16T02:05:48.6047890Z   [90m[189a3867] [39m[92m+ Reexport v1.2.2[39m
+2026-02-16T02:05:48.6048518Z   [90m[ae029012] [39m[92m+ Requires v1.3.1[39m
+2026-02-16T02:05:48.6049077Z   [90m[5eaf0fd0] [39m[92m+ RoundingEmulator v0.2.1[39m
+2026-02-16T02:05:48.6049549Z   [90m[7e49a35a] [39m[92m+ RuntimeGeneratedFunctions v0.5.17[39m
+2026-02-16T02:05:48.6049993Z   [90m[0bca4576] [39m[92m+ SciMLBase v2.138.1[39m
+2026-02-16T02:05:48.6050394Z   [90m[a6db7da4] [39m[92m+ SciMLLogging v1.8.0[39m
+2026-02-16T02:05:48.6050806Z   [90m[c0aeaf25] [39m[92m+ SciMLOperators v1.15.1[39m
+2026-02-16T02:05:48.6051432Z   [90m[431bcebd] [39m[92m+ SciMLPublic v1.0.1[39m
+2026-02-16T02:05:48.6051844Z   [90m[53ae85a6] [39m[92m+ SciMLStructures v1.10.0[39m
+2026-02-16T02:05:48.6052412Z   [90m[90137ffa] [39m[92m+ StaticArrays v1.9.16[39m
+2026-02-16T02:05:48.6052821Z   [90m[1e83bf80] [39m[92m+ StaticArraysCore v1.4.4[39m
+2026-02-16T02:05:48.6053225Z   [90m[10745b16] [39m[92m+ Statistics v1.11.1[39m
+2026-02-16T02:05:48.6053678Z   [90m[2efcf032] [39m[92m+ SymbolicIndexingInterface v0.3.46[39m
+2026-02-16T02:05:48.6054122Z   [90m[1c621080] [39m[92m+ TestItems v1.0.0[39m
+2026-02-16T02:05:48.6054510Z   [90m[4e9b3aee] [39m[92m+ CRlibm_jll v1.0.1+0[39m
+2026-02-16T02:05:48.6054981Z   [90m[6cdc7f73] [39m[92m+ OpenBLASConsistentFPCSR_jll v0.3.30+0[39m
+2026-02-16T02:05:48.6055434Z   [90m[0dad84c5] [39m[92m+ ArgTools v1.1.2[39m
+2026-02-16T02:05:48.6055817Z   [90m[56f22d72] [39m[92m+ Artifacts v1.11.0[39m
+2026-02-16T02:05:48.6056195Z   [90m[2a0f44e3] [39m[92m+ Base64 v1.11.0[39m
+2026-02-16T02:05:48.6056575Z   [90m[ade2ca70] [39m[92m+ Dates v1.11.0[39m
+2026-02-16T02:05:48.6056954Z   [90m[8ba89e20] [39m[92m+ Distributed v1.11.0[39m
+2026-02-16T02:05:48.6057345Z   [90m[f43a241f] [39m[92m+ Downloads v1.6.0[39m
+2026-02-16T02:05:48.6057748Z   [90m[7b1f6079] [39m[92m+ FileWatching v1.11.0[39m
+2026-02-16T02:05:48.6058135Z   [90m[b27032c2] [39m[92m+ LibCURL v0.6.4[39m
+2026-02-16T02:05:48.6058505Z   [90m[76f85450] [39m[92m+ LibGit2 v1.11.0[39m
+2026-02-16T02:05:48.6058874Z   [90m[8f399da3] [39m[92m+ Libdl v1.11.0[39m
+2026-02-16T02:05:48.6059275Z   [90m[37e2e46d] [39m[92m+ LinearAlgebra v1.11.0[39m
+2026-02-16T02:05:48.6059664Z   [90m[56ddb016] [39m[92m+ Logging v1.11.0[39m
+2026-02-16T02:05:48.6060045Z   [90m[d6f4376e] [39m[92m+ Markdown v1.11.0[39m
+2026-02-16T02:05:48.6060450Z   [90m[ca575930] [39m[92m+ NetworkOptions v1.2.0[39m
+2026-02-16T02:05:48.6060827Z   [90m[44cfe95a] [39m[92m+ Pkg v1.11.0[39m
+2026-02-16T02:05:48.6061204Z   [90m[de0858da] [39m[92m+ Printf v1.11.0[39m
+2026-02-16T02:05:48.6061585Z   [90m[9a3f8284] [39m[92m+ Random v1.11.0[39m
+2026-02-16T02:05:48.6061946Z   [90m[ea8e919c] [39m[92m+ SHA v0.7.0[39m
+2026-02-16T02:05:48.6062406Z   [90m[9e88b42a] [39m[92m+ Serialization v1.11.0[39m
+2026-02-16T02:05:48.6062805Z   [90m[6462fe0b] [39m[92m+ Sockets v1.11.0[39m
+2026-02-16T02:05:48.6063208Z   [90m[2f01184e] [39m[92m+ SparseArrays v1.11.0[39m
+2026-02-16T02:05:48.6063575Z   [90m[fa267f1f] [39m[92m+ TOML v1.0.3[39m
+2026-02-16T02:05:48.6063891Z   [90m[a4e569a6] [39m[92m+ Tar v1.10.0[39m
+2026-02-16T02:05:48.6064185Z   [90m[cf7118a7] [39m[92m+ UUIDs v1.11.0[39m
+2026-02-16T02:05:48.6064481Z   [90m[4ec0a83e] [39m[92m+ Unicode v1.11.0[39m
+2026-02-16T02:05:48.6064870Z   [90m[e66e0078] [39m[92m+ CompilerSupportLibraries_jll v1.1.1+0[39m
+2026-02-16T02:05:48.6065258Z   [90m[deac9b47] [39m[92m+ LibCURL_jll v8.6.0+0[39m
+2026-02-16T02:05:48.6065595Z   [90m[e37daf67] [39m[92m+ LibGit2_jll v1.7.2+0[39m
+2026-02-16T02:05:48.6066029Z   [90m[29816b5a] [39m[92m+ LibSSH2_jll v1.11.0+1[39m
+2026-02-16T02:05:48.6066369Z   [90m[c8ffd9c3] [39m[92m+ MbedTLS_jll v2.28.6+0[39m
+2026-02-16T02:05:48.6066745Z   [90m[14a3606d] [39m[92m+ MozillaCACerts_jll v2023.12.12[39m
+2026-02-16T02:05:48.6067112Z   [90m[4536629a] [39m[92m+ OpenBLAS_jll v0.3.27+1[39m
+2026-02-16T02:05:48.6067467Z   [90m[bea87d4a] [39m[92m+ SuiteSparse_jll v7.7.0+0[39m
+2026-02-16T02:05:48.6067813Z   [90m[83775a58] [39m[92m+ Zlib_jll v1.2.13+1[39m
+2026-02-16T02:05:48.6068176Z   [90m[8e850b90] [39m[92m+ libblastrampoline_jll v5.11.0+0[39m
+2026-02-16T02:05:48.6068557Z   [90m[8e850ede] [39m[92m+ nghttp2_jll v1.59.0+0[39m
+2026-02-16T02:05:48.6068902Z   [90m[3f19e933] [39m[92m+ p7zip_jll v17.4.0+2[39m
+2026-02-16T02:05:48.6069731Z [36m[1m        Info[22m[39m Packages marked with [33m⌅[39m have new versions available but compatibility constraints restrict them from upgrading. To see why use `status --outdated -m`

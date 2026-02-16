@@ -1,0 +1,267 @@
+﻿2026-02-16T03:02:04.0096977Z ##[group]Run julia-actions/julia-processcoverage@v1
+2026-02-16T03:02:04.0097326Z with:
+2026-02-16T03:02:04.0097510Z   directories: src,ext
+2026-02-16T03:02:04.0097688Z env:
+2026-02-16T03:02:04.0097852Z   JULIA_PKG_SERVER: 
+2026-02-16T03:02:04.0098066Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-16T03:02:04.0098310Z ##[endgroup]
+2026-02-16T03:02:04.0110819Z ##[group]Run julia --color=yes "$GITHUB_ACTION_PATH"/main.jl
+2026-02-16T03:02:04.0111220Z [36;1mjulia --color=yes "$GITHUB_ACTION_PATH"/main.jl[0m
+2026-02-16T03:02:04.0973017Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T03:02:04.0973354Z env:
+2026-02-16T03:02:04.0973537Z   JULIA_PKG_SERVER: 
+2026-02-16T03:02:04.0973767Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-16T03:02:04.0974028Z   INPUT_DIRECTORIES: src,ext
+2026-02-16T03:02:04.0974241Z ##[endgroup]
+2026-02-16T03:02:04.7913720Z [32m[1m  Activating[22m[39m new project at `~/.julia/environments/coveragetempenv`
+2026-02-16T03:02:05.6198479Z [32m[1m   Resolving[22m[39m package versions...
+2026-02-16T03:02:06.2146875Z [32m[1m    Updating[22m[39m `~/.julia/environments/coveragetempenv/Project.toml`
+2026-02-16T03:02:06.2147840Z   [90m[c36e975a] [39m[92m+ CoverageTools v1.4.1[39m
+2026-02-16T03:02:06.2148758Z [32m[1m    Updating[22m[39m `~/.julia/environments/coveragetempenv/Manifest.toml`
+2026-02-16T03:02:06.2151848Z   [90m[c36e975a] [39m[92m+ CoverageTools v1.4.1[39m
+2026-02-16T03:02:06.2152865Z   [90m[70703baa] [39m[92m+ JuliaSyntax v1.0.2[39m
+2026-02-16T03:02:06.2153565Z   [90m[ade2ca70] [39m[92m+ Dates v1.11.0[39m
+2026-02-16T03:02:06.2154268Z   [90m[de0858da] [39m[92m+ Printf v1.11.0[39m
+2026-02-16T03:02:06.2154920Z   [90m[fa267f1f] [39m[92m+ TOML v1.0.3[39m
+2026-02-16T03:02:06.2155414Z   [90m[4ec0a83e] [39m[92m+ Unicode v1.11.0[39m
+2026-02-16T03:02:06.2577892Z Precompiling project...
+2026-02-16T03:02:22.3882048Z   16130.4 ms  ✓ JuliaSyntax
+2026-02-16T03:02:22.8738197Z     485.2 ms  ✓ CoverageTools
+2026-02-16T03:02:22.8738910Z   2 dependencies successfully precompiled in 17 seconds. 4 already precompiled.
+2026-02-16T03:02:24.5957316Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src for .jl files...
+2026-02-16T03:02:24.5958386Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/FiniteVolumeMethod.jl
+2026-02-16T03:02:24.5959373Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/FiniteVolumeMethod.jl do not exist.
+2026-02-16T03:02:24.5960049Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-16T03:02:24.6834451Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/amr for .jl files...
+2026-02-16T03:02:24.6835376Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/amr_grid.jl
+2026-02-16T03:02:24.6836195Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/amr/amr_grid.jl.7623.cov
+2026-02-16T03:02:24.6876006Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/amr_solve.jl
+2026-02-16T03:02:24.6876924Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/amr/amr_solve.jl.7623.cov
+2026-02-16T03:02:24.6906471Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/flux_correction.jl
+2026-02-16T03:02:24.6907913Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/amr/flux_correction.jl.7623.cov
+2026-02-16T03:02:24.6924033Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/prolongation.jl
+2026-02-16T03:02:24.6925414Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/amr/prolongation.jl.7623.cov
+2026-02-16T03:02:24.6942025Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/refinement.jl
+2026-02-16T03:02:24.6944424Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/amr/refinement.jl.7623.cov
+2026-02-16T03:02:24.6973071Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/restriction.jl
+2026-02-16T03:02:24.6974434Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/amr/restriction.jl.7623.cov
+2026-02-16T03:02:24.6988224Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/conditions for .jl files...
+2026-02-16T03:02:24.6989672Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/conditions/coupled.jl
+2026-02-16T03:02:24.6991039Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/conditions/coupled.jl.7623.cov
+2026-02-16T03:02:24.7006647Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/conditions/nonlinear.jl
+2026-02-16T03:02:24.7008116Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/conditions/nonlinear.jl.7623.cov
+2026-02-16T03:02:24.7023470Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/conditions/periodic.jl
+2026-02-16T03:02:24.7024897Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/conditions/periodic.jl.7623.cov
+2026-02-16T03:02:24.7041758Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/conditions.jl
+2026-02-16T03:02:24.7043245Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/conditions.jl.7623.cov
+2026-02-16T03:02:24.7116871Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/constrained_transport for .jl files...
+2026-02-16T03:02:24.7118381Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/ct_data.jl
+2026-02-16T03:02:24.7119906Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/constrained_transport/ct_data.jl.7623.cov
+2026-02-16T03:02:24.7130828Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/ct_data_3d.jl
+2026-02-16T03:02:24.7132564Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/constrained_transport/ct_data_3d.jl.7623.cov
+2026-02-16T03:02:24.7149301Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/ct_update.jl
+2026-02-16T03:02:24.7150844Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/constrained_transport/ct_update.jl.7623.cov
+2026-02-16T03:02:24.7157465Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/ct_update_3d.jl
+2026-02-16T03:02:24.7159037Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/constrained_transport/ct_update_3d.jl.7623.cov
+2026-02-16T03:02:24.7168270Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/divb.jl
+2026-02-16T03:02:24.7169733Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/constrained_transport/divb.jl.7623.cov
+2026-02-16T03:02:24.7174697Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/divb_3d.jl
+2026-02-16T03:02:24.7176237Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/constrained_transport/divb_3d.jl.7623.cov
+2026-02-16T03:02:24.7180909Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/emf.jl
+2026-02-16T03:02:24.7183113Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/emf.jl do not exist.
+2026-02-16T03:02:24.7184196Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-16T03:02:24.7191424Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/emf_3d.jl
+2026-02-16T03:02:24.7193078Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/constrained_transport/emf_3d.jl.7623.cov
+2026-02-16T03:02:24.7199295Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/coupling for .jl files...
+2026-02-16T03:02:24.7200722Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/coupling/abstract_coupling.jl
+2026-02-16T03:02:24.7202219Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/coupling/abstract_coupling.jl.7623.cov
+2026-02-16T03:02:24.7205943Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/coupling/coupled_solve.jl
+2026-02-16T03:02:24.7207382Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/coupling/coupled_solve.jl.7623.cov
+2026-02-16T03:02:24.7222016Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/coupling/data_transfer.jl
+2026-02-16T03:02:24.7223275Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/coupling/data_transfer.jl.7623.cov
+2026-02-16T03:02:24.7229308Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/coupling/operators.jl
+2026-02-16T03:02:24.7230241Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/coupling/operators.jl.7623.cov
+2026-02-16T03:02:24.7244778Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/eos for .jl files...
+2026-02-16T03:02:24.7245933Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/eos/eos_interface.jl
+2026-02-16T03:02:24.7246741Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/eos/eos_interface.jl do not exist.
+2026-02-16T03:02:24.7247308Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-16T03:02:24.7248242Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/eos/ideal_gas.jl
+2026-02-16T03:02:24.7249268Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/eos/ideal_gas.jl.7623.cov
+2026-02-16T03:02:24.7253829Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/eos/stiffened_gas.jl
+2026-02-16T03:02:24.7254603Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/eos/stiffened_gas.jl.7623.cov
+2026-02-16T03:02:24.7259541Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/equations for .jl files...
+2026-02-16T03:02:24.7260685Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/boundary_edge_contributions.jl
+2026-02-16T03:02:24.7261543Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/equations/boundary_edge_contributions.jl.7623.cov
+2026-02-16T03:02:24.7313177Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/control_volumes.jl
+2026-02-16T03:02:24.7314250Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/equations/control_volumes.jl.7623.cov
+2026-02-16T03:02:24.7319438Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/dirichlet.jl
+2026-02-16T03:02:24.7320432Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/equations/dirichlet.jl.7623.cov
+2026-02-16T03:02:24.7327358Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/individual_flux_contributions.jl
+2026-02-16T03:02:24.7328289Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/equations/individual_flux_contributions.jl.7623.cov
+2026-02-16T03:02:24.7336234Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/main_equations.jl
+2026-02-16T03:02:24.7337277Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/equations/main_equations.jl.7623.cov
+2026-02-16T03:02:24.7342942Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/shape_functions.jl
+2026-02-16T03:02:24.7343824Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/equations/shape_functions.jl.7623.cov
+2026-02-16T03:02:24.7347791Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/source_contributions.jl
+2026-02-16T03:02:24.7348695Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/equations/source_contributions.jl.7623.cov
+2026-02-16T03:02:24.7355786Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/triangle_contributions.jl
+2026-02-16T03:02:24.7356688Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/equations/triangle_contributions.jl.7623.cov
+2026-02-16T03:02:24.7362881Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/geometry.jl
+2026-02-16T03:02:24.7363770Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/geometry.jl.7623.cov
+2026-02-16T03:02:24.7377278Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/hyperbolic for .jl files...
+2026-02-16T03:02:24.7378498Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/boundary_conditions_2d.jl
+2026-02-16T03:02:24.7379713Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/boundary_conditions_2d.jl.7623.cov
+2026-02-16T03:02:24.7397425Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/boundary_conditions_3d.jl
+2026-02-16T03:02:24.7398760Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/boundary_conditions_3d.jl.7623.cov
+2026-02-16T03:02:24.7438641Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/boundary_conditions_hyp.jl
+2026-02-16T03:02:24.7440507Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/boundary_conditions_hyp.jl.7623.cov
+2026-02-16T03:02:24.7451423Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/characteristic_projection.jl
+2026-02-16T03:02:24.7453477Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/characteristic_projection.jl.7623.cov
+2026-02-16T03:02:24.7478594Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/con2prim.jl
+2026-02-16T03:02:24.7479807Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/con2prim.jl.7623.cov
+2026-02-16T03:02:24.7490246Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/conservation_laws.jl
+2026-02-16T03:02:24.7491532Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/conservation_laws.jl do not exist.
+2026-02-16T03:02:24.7492126Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-16T03:02:24.7494947Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/euler.jl
+2026-02-16T03:02:24.7496018Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/euler.jl.7623.cov
+2026-02-16T03:02:24.7508080Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/euler_3d.jl
+2026-02-16T03:02:24.7509258Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/euler_3d.jl.7623.cov
+2026-02-16T03:02:24.7518256Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/grmhd.jl
+2026-02-16T03:02:24.7519404Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/grmhd.jl.7623.cov
+2026-02-16T03:02:24.7547875Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/grmhd_con2prim.jl
+2026-02-16T03:02:24.7549029Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/grmhd_con2prim.jl.7623.cov
+2026-02-16T03:02:24.7568260Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/grmhd_solve_2d.jl
+2026-02-16T03:02:24.7569499Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/grmhd_solve_2d.jl.7623.cov
+2026-02-16T03:02:24.7597540Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hall_mhd.jl
+2026-02-16T03:02:24.7598599Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hall_mhd.jl.7623.cov
+2026-02-16T03:02:24.7618744Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hllc_solver.jl
+2026-02-16T03:02:24.7620407Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hllc_solver.jl.7623.cov
+2026-02-16T03:02:24.7632683Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hlld_solver.jl
+2026-02-16T03:02:24.7633907Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hlld_solver.jl.7623.cov
+2026-02-16T03:02:24.7653413Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_problem.jl
+2026-02-16T03:02:24.7654766Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hyperbolic_problem.jl.7623.cov
+2026-02-16T03:02:24.7659108Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_problem_2d.jl
+2026-02-16T03:02:24.7660262Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hyperbolic_problem_2d.jl.7623.cov
+2026-02-16T03:02:24.7664849Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_problem_3d.jl
+2026-02-16T03:02:24.7666192Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hyperbolic_problem_3d.jl.7623.cov
+2026-02-16T03:02:24.7670325Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_solve.jl
+2026-02-16T03:02:24.7671535Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hyperbolic_solve.jl.7623.cov
+2026-02-16T03:02:24.7687526Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_solve_2d.jl
+2026-02-16T03:02:24.7688821Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hyperbolic_solve_2d.jl.7623.cov
+2026-02-16T03:02:24.7709004Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_solve_3d.jl
+2026-02-16T03:02:24.7710259Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/hyperbolic_solve_3d.jl.7623.cov
+2026-02-16T03:02:24.7734605Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/imex.jl
+2026-02-16T03:02:24.7735954Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/imex.jl.7623.cov
+2026-02-16T03:02:24.7747099Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/imex_solve.jl
+2026-02-16T03:02:24.7748120Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/imex_solve.jl.7623.cov
+2026-02-16T03:02:24.7770902Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/mhd.jl
+2026-02-16T03:02:24.7771954Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/mhd.jl.7623.cov
+2026-02-16T03:02:24.7880174Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/mhd_3d.jl
+2026-02-16T03:02:24.7882692Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/mhd_3d.jl.7623.cov
+2026-02-16T03:02:24.7894602Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/mhd_solve_2d.jl
+2026-02-16T03:02:24.7895783Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/mhd_solve_2d.jl.7623.cov
+2026-02-16T03:02:24.7920382Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/mhd_solve_3d.jl
+2026-02-16T03:02:24.7922011Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/mhd_solve_3d.jl.7623.cov
+2026-02-16T03:02:24.7943380Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/multirate.jl
+2026-02-16T03:02:24.7944512Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/multirate.jl.7623.cov
+2026-02-16T03:02:24.7979751Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/navier_stokes.jl
+2026-02-16T03:02:24.7980925Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/navier_stokes.jl.7623.cov
+2026-02-16T03:02:24.7988073Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/navier_stokes_solve.jl
+2026-02-16T03:02:24.7989214Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/navier_stokes_solve.jl.7623.cov
+2026-02-16T03:02:24.7996429Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/navier_stokes_solve_2d.jl
+2026-02-16T03:02:24.7997484Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/navier_stokes_solve_2d.jl.7623.cov
+2026-02-16T03:02:24.8009990Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/noslip_bc.jl
+2026-02-16T03:02:24.8011121Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/noslip_bc.jl.7623.cov
+2026-02-16T03:02:24.8020162Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/positivity_limiter.jl
+2026-02-16T03:02:24.8021317Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/positivity_limiter.jl.7623.cov
+2026-02-16T03:02:24.8038380Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/ppm.jl
+2026-02-16T03:02:24.8039532Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/ppm.jl.7623.cov
+2026-02-16T03:02:24.8055482Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/reconstruction.jl
+2026-02-16T03:02:24.8058071Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/reconstruction.jl.7623.cov
+2026-02-16T03:02:24.8068738Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/resistive_mhd.jl
+2026-02-16T03:02:24.8070136Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/resistive_mhd.jl.7623.cov
+2026-02-16T03:02:24.8084552Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/riemann_solvers.jl
+2026-02-16T03:02:24.8086039Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/riemann_solvers.jl.7623.cov
+2026-02-16T03:02:24.8093048Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/shallow_water.jl
+2026-02-16T03:02:24.8094545Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/shallow_water.jl.7623.cov
+2026-02-16T03:02:24.8116029Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/srhydro.jl
+2026-02-16T03:02:24.8117519Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/srhydro.jl.7623.cov
+2026-02-16T03:02:24.8150301Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/srmhd.jl
+2026-02-16T03:02:24.8151727Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/srmhd.jl.7623.cov
+2026-02-16T03:02:24.8172592Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/srmhd_solve.jl
+2026-02-16T03:02:24.8174610Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/srmhd_solve.jl do not exist.
+2026-02-16T03:02:24.8175876Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-16T03:02:24.8176922Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/srmhd_solve_2d.jl
+2026-02-16T03:02:24.8178674Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/srmhd_solve_2d.jl.7623.cov
+2026-02-16T03:02:24.8195992Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/stiff_sources.jl
+2026-02-16T03:02:24.8198110Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/stiff_sources.jl.7623.cov
+2026-02-16T03:02:24.8211676Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/threading.jl
+2026-02-16T03:02:24.8213205Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/threading.jl.7623.cov
+2026-02-16T03:02:24.8224480Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/two_fluid.jl
+2026-02-16T03:02:24.8225901Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/two_fluid.jl.7623.cov
+2026-02-16T03:02:24.8254973Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/unstructured_problem.jl
+2026-02-16T03:02:24.8256494Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/unstructured_problem.jl.7623.cov
+2026-02-16T03:02:24.8262087Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/unstructured_solve.jl
+2026-02-16T03:02:24.8264218Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/unstructured_solve.jl.7623.cov
+2026-02-16T03:02:24.8286997Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/viscous_flux.jl
+2026-02-16T03:02:24.8288419Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/viscous_flux.jl.7623.cov
+2026-02-16T03:02:24.8297535Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/weno.jl
+2026-02-16T03:02:24.8298823Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/weno.jl.7623.cov
+2026-02-16T03:02:24.8314319Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/weno3.jl
+2026-02-16T03:02:24.8315664Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/hyperbolic/weno3.jl.7623.cov
+2026-02-16T03:02:24.8328037Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/mesh for .jl files...
+2026-02-16T03:02:24.8329340Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/mesh/abstract_mesh.jl
+2026-02-16T03:02:24.8330662Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/mesh/abstract_mesh.jl.7623.cov
+2026-02-16T03:02:24.8334924Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/mesh/structured_mesh.jl
+2026-02-16T03:02:24.8336312Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/mesh/structured_mesh.jl.7623.cov
+2026-02-16T03:02:24.8349621Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/mesh/structured_mesh_3d.jl
+2026-02-16T03:02:24.8351079Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/mesh/structured_mesh_3d.jl.7623.cov
+2026-02-16T03:02:24.8359505Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/mesh/unstructured_hyperbolic_mesh.jl
+2026-02-16T03:02:24.8361097Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/mesh/unstructured_hyperbolic_mesh.jl.7623.cov
+2026-02-16T03:02:24.8375631Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/metric for .jl files...
+2026-02-16T03:02:24.8377359Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/abstract_metric.jl
+2026-02-16T03:02:24.8378915Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/metric/abstract_metric.jl do not exist.
+2026-02-16T03:02:24.8380036Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-16T03:02:24.8381835Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/kerr.jl
+2026-02-16T03:02:24.8383259Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/metric/kerr.jl.7623.cov
+2026-02-16T03:02:24.8391841Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/metric_data.jl
+2026-02-16T03:02:24.8393371Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/metric/metric_data.jl.7623.cov
+2026-02-16T03:02:24.8403476Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/minkowski.jl
+2026-02-16T03:02:24.8404816Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/metric/minkowski.jl.7623.cov
+2026-02-16T03:02:24.8409368Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/schwarzschild.jl
+2026-02-16T03:02:24.8411041Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/metric/schwarzschild.jl.7623.cov
+2026-02-16T03:02:24.8418198Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/physics for .jl files...
+2026-02-16T03:02:24.8419584Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/physics/turbulence for .jl files...
+2026-02-16T03:02:24.8421098Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/physics/turbulence/k_epsilon.jl
+2026-02-16T03:02:24.8422833Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/physics/turbulence/k_epsilon.jl.7623.cov
+2026-02-16T03:02:24.8441958Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/problem.jl
+2026-02-16T03:02:24.8443365Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/problem.jl.7623.cov
+2026-02-16T03:02:24.8487839Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/schemes for .jl files...
+2026-02-16T03:02:24.8489280Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/schemes/gradients.jl
+2026-02-16T03:02:24.8490628Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/schemes/gradients.jl.7623.cov
+2026-02-16T03:02:24.8509357Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/schemes/limiters.jl
+2026-02-16T03:02:24.8510741Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/schemes/limiters.jl.7623.cov
+2026-02-16T03:02:24.8528179Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/schemes/muscl.jl
+2026-02-16T03:02:24.8529511Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/schemes/muscl.jl.7623.cov
+2026-02-16T03:02:24.8547119Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/solve.jl
+2026-02-16T03:02:24.8548379Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/solve.jl.7623.cov
+2026-02-16T03:02:24.8566857Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/specific_problems for .jl files...
+2026-02-16T03:02:24.8568471Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/abstract_templates.jl
+2026-02-16T03:02:24.8570407Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/specific_problems/abstract_templates.jl.7623.cov
+2026-02-16T03:02:24.8591814Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/advection_diffusion_equation.jl
+2026-02-16T03:02:24.8594014Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/advection_diffusion_equation.jl do not exist.
+2026-02-16T03:02:24.8595252Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-16T03:02:24.8612454Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/anisotropic_diffusion.jl
+2026-02-16T03:02:24.8614153Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/specific_problems/anisotropic_diffusion.jl.7623.cov
+2026-02-16T03:02:24.8633337Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/diffusion_equation.jl
+2026-02-16T03:02:24.8635021Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/specific_problems/diffusion_equation.jl.7623.cov
+2026-02-16T03:02:24.8641558Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/laplaces_equation.jl
+2026-02-16T03:02:24.8643752Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/specific_problems/laplaces_equation.jl.7623.cov
+2026-02-16T03:02:24.8648895Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/linear_reaction_diffusion_equations.jl
+2026-02-16T03:02:24.8650778Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/specific_problems/linear_reaction_diffusion_equations.jl.7623.cov
+2026-02-16T03:02:24.8658112Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/mean_exit_time.jl
+2026-02-16T03:02:24.8659708Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/specific_problems/mean_exit_time.jl.7623.cov
+2026-02-16T03:02:24.8666102Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/poissons_equation.jl
+2026-02-16T03:02:24.8667756Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/specific_problems/poissons_equation.jl.7623.cov
+2026-02-16T03:02:24.8673203Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/utils.jl
+2026-02-16T03:02:24.8674390Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: processing src/utils.jl.7623.cov

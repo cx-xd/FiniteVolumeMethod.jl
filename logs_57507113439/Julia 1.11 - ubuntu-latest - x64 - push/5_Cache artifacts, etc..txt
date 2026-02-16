@@ -1,0 +1,178 @@
+﻿2026-02-16T02:04:13.5026205Z ##[group]Run julia-actions/cache@v2
+2026-02-16T02:04:13.5026483Z with:
+2026-02-16T02:04:13.5026684Z   cache-name: julia-cache;workflow=CI;job=test
+2026-02-16T02:04:13.5026980Z   include-matrix: true
+2026-02-16T02:04:13.5027198Z   cache-artifacts: true
+2026-02-16T02:04:13.5027398Z   cache-packages: true
+2026-02-16T02:04:13.5027584Z   cache-registries: true
+2026-02-16T02:04:13.5027785Z   cache-compiled: true
+2026-02-16T02:04:13.5027982Z   cache-scratchspaces: true
+2026-02-16T02:04:13.5028177Z   cache-logs: true
+2026-02-16T02:04:13.5028359Z   delete-old-caches: true
+2026-02-16T02:04:13.5028667Z   token: ***
+2026-02-16T02:04:13.5028828Z env:
+2026-02-16T02:04:13.5028981Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:13.5029164Z ##[endgroup]
+2026-02-16T02:04:13.5152483Z ##[group]Run dcarbone/install-jq-action@f0e10f46ff84f4d32178b4b76e1ef180b16f82c3
+2026-02-16T02:04:13.5152873Z with:
+2026-02-16T02:04:13.5153040Z   force: false
+2026-02-16T02:04:13.5153207Z   version: 1.7.1
+2026-02-16T02:04:13.5153382Z env:
+2026-02-16T02:04:13.5153592Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:13.5153764Z ##[endgroup]
+2026-02-16T02:04:13.5186797Z ##[group]Run _jq_bin="$(which jq)"
+2026-02-16T02:04:13.5187087Z [36;1m_jq_bin="$(which jq)"[0m
+2026-02-16T02:04:13.5187302Z [36;1mif [ -f "${_jq_bin}" ]; then[0m
+2026-02-16T02:04:13.5187578Z [36;1m  echo "found=true" >> $GITHUB_OUTPUT[0m
+2026-02-16T02:04:13.5187821Z [36;1melse[0m
+2026-02-16T02:04:13.5188012Z [36;1m  echo "found=false" >> $GITHUB_OUTPUT[0m
+2026-02-16T02:04:13.5188257Z [36;1mfi[0m
+2026-02-16T02:04:13.5213554Z shell: /usr/bin/sh +e {0}
+2026-02-16T02:04:13.5213788Z env:
+2026-02-16T02:04:13.5213963Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:13.5214149Z ##[endgroup]
+2026-02-16T02:04:13.5374947Z ##[group]Run if [ -n "" ]; then
+2026-02-16T02:04:13.5375251Z [36;1mif [ -n "" ]; then[0m
+2026-02-16T02:04:13.5375449Z [36;1m    depot=""[0m
+2026-02-16T02:04:13.5375670Z [36;1melif [ -n "$JULIA_DEPOT_PATH" ]; then[0m
+2026-02-16T02:04:13.5375930Z [36;1m    # Use the first depot path[0m
+2026-02-16T02:04:13.5376288Z [36;1m    depot=$(echo $JULIA_DEPOT_PATH | cut -d$PATH_DELIMITER -f1)[0m
+2026-02-16T02:04:13.5376599Z [36;1melse[0m
+2026-02-16T02:04:13.5376765Z [36;1m    depot="~/.julia"[0m
+2026-02-16T02:04:13.5376964Z [36;1mfi[0m
+2026-02-16T02:04:13.5377186Z [36;1mif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then[0m
+2026-02-16T02:04:13.5377527Z [36;1m  depot="${depot/#\~/$USERPROFILE}"  # Windows paths[0m
+2026-02-16T02:04:13.5377896Z [36;1m  depot="${depot//\\//}"             # Replace backslashes with forward slashes[0m
+2026-02-16T02:04:13.5378212Z [36;1melse[0m
+2026-02-16T02:04:13.5378426Z [36;1m  depot="${depot/#\~/$HOME}"  # Unix-like paths[0m
+2026-02-16T02:04:13.5378671Z [36;1mfi[0m
+2026-02-16T02:04:13.5378885Z [36;1mecho "depot=$depot" | tee -a "$GITHUB_OUTPUT"[0m
+2026-02-16T02:04:13.5379134Z [36;1m[0m
+2026-02-16T02:04:13.5379297Z [36;1mcache_paths=()[0m
+2026-02-16T02:04:13.5379508Z [36;1martifacts_path="${depot}/artifacts"[0m
+2026-02-16T02:04:13.5379806Z [36;1m[ "true" = "true" ] && cache_paths+=("$artifacts_path")[0m
+2026-02-16T02:04:13.5380109Z [36;1mpackages_path="${depot}/packages"[0m
+2026-02-16T02:04:13.5380394Z [36;1m[ "true" = "true" ] && cache_paths+=("$packages_path")[0m
+2026-02-16T02:04:13.5380698Z [36;1mregistries_path="${depot}/registries"[0m
+2026-02-16T02:04:13.5380947Z [36;1mif [ "true" = "true" ]; then[0m
+2026-02-16T02:04:13.5381198Z [36;1m    if [ ! -d "${registries_path}" ]; then[0m
+2026-02-16T02:04:13.5381464Z [36;1m        cache_paths+=("$registries_path")[0m
+2026-02-16T02:04:13.5381703Z [36;1m    else[0m
+2026-02-16T02:04:13.5382722Z [36;1m        echo "::warning::Julia depot registries already exist. Skipping restoring of cached registries to avoid potential merge conflicts when updating. Please ensure that \`julia-actions/cache\` precedes any workflow steps which add registries."[0m
+2026-02-16T02:04:13.5383563Z [36;1m    fi[0m
+2026-02-16T02:04:13.5383728Z [36;1mfi[0m
+2026-02-16T02:04:13.5383905Z [36;1mcompiled_path="${depot}/compiled"[0m
+2026-02-16T02:04:13.5384360Z [36;1m[ "true" = "true" ] && cache_paths+=("$compiled_path")[0m
+2026-02-16T02:04:13.5384695Z [36;1mscratchspaces_path="${depot}/scratchspaces"[0m
+2026-02-16T02:04:13.5385016Z [36;1m[ "true" = "true" ] && cache_paths+=("$scratchspaces_path")[0m
+2026-02-16T02:04:13.5385318Z [36;1mlogs_path="${depot}/logs"[0m
+2026-02-16T02:04:13.5385580Z [36;1m[ "true" = "true" ] && cache_paths+=("$logs_path")[0m
+2026-02-16T02:04:13.5385845Z [36;1m{[0m
+2026-02-16T02:04:13.5386020Z [36;1m    echo "cache-paths<<EOF"[0m
+2026-02-16T02:04:13.5386270Z [36;1m    printf "%s\n" "${cache_paths[@]}"[0m
+2026-02-16T02:04:13.5386498Z [36;1m    echo "EOF"[0m
+2026-02-16T02:04:13.5386699Z [36;1m} | tee -a "$GITHUB_OUTPUT"[0m
+2026-02-16T02:04:13.5413058Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T02:04:13.5413380Z env:
+2026-02-16T02:04:13.5413545Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:13.5413740Z   PATH_DELIMITER: :
+2026-02-16T02:04:13.5413915Z ##[endgroup]
+2026-02-16T02:04:13.5469419Z depot=/home/runner/.julia
+2026-02-16T02:04:13.5481829Z cache-paths<<EOF
+2026-02-16T02:04:13.5482522Z /home/runner/.julia/artifacts
+2026-02-16T02:04:13.5482817Z /home/runner/.julia/packages
+2026-02-16T02:04:13.5483035Z /home/runner/.julia/registries
+2026-02-16T02:04:13.5483268Z /home/runner/.julia/compiled
+2026-02-16T02:04:13.5483488Z /home/runner/.julia/scratchspaces
+2026-02-16T02:04:13.5484029Z /home/runner/.julia/logs
+2026-02-16T02:04:13.5484341Z EOF
+2026-02-16T02:04:13.5522580Z ##[group]Run # `matrix_key` joins all of matrix keys/values (including nested objects) to ensure that concurrent runs each use a unique cache key.
+2026-02-16T02:04:13.5523496Z [36;1m# `matrix_key` joins all of matrix keys/values (including nested objects) to ensure that concurrent runs each use a unique cache key.[0m
+2026-02-16T02:04:13.5524077Z [36;1m# When `matrix` isn't set for the job then `MATRIX_JSON=null`.[0m
+2026-02-16T02:04:13.5524444Z [36;1mif [ "true" == "true" ] && [ "$MATRIX_JSON" != "null" ]; then[0m
+2026-02-16T02:04:13.5525030Z [36;1m  matrix_key=$(echo "$MATRIX_JSON" | jq 'paths(type != "object") as $p | ($p | join("-")) + "=" + (getpath($p) | tostring)' | jq -rs 'join(";") | . + ";"')[0m
+2026-02-16T02:04:13.5525524Z [36;1mfi[0m
+2026-02-16T02:04:13.5525815Z [36;1mrestore_key="julia-cache;workflow=CI;job=test;os=Linux;${matrix_key}"[0m
+2026-02-16T02:04:13.5526178Z [36;1m# URL encode any restricted characters:[0m
+2026-02-16T02:04:13.5526712Z [36;1m# https://github.com/actions/toolkit/blob/5430c5d84832076372990c7c27f900878ff66dc9/packages/cache/src/cache.ts#L38-L43[0m
+2026-02-16T02:04:13.5527259Z [36;1mrestore_key=$(sed 's/,/%2C/g' <<<"${restore_key}")[0m
+2026-02-16T02:04:13.5527661Z [36;1mkey="${restore_key}run_id=22046977833;run_attempt=1"[0m
+2026-02-16T02:04:13.5528023Z [36;1mecho "restore-key=${restore_key}" >> $GITHUB_OUTPUT[0m
+2026-02-16T02:04:13.5528327Z [36;1mecho "key=${key}" >> $GITHUB_OUTPUT[0m
+2026-02-16T02:04:13.5552714Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T02:04:13.5553048Z env:
+2026-02-16T02:04:13.5553226Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:13.5553528Z   MATRIX_JSON: {
+  "version": "1.11",
+  "os": "ubuntu-latest",
+  "arch": "x64"
+}
+2026-02-16T02:04:13.5553850Z ##[endgroup]
+2026-02-16T02:04:13.5674037Z ##[group]Run actions/cache@5a3ec84eff668545956fd18022155c47e93e2684
+2026-02-16T02:04:13.5674351Z with:
+2026-02-16T02:04:13.5674962Z   path: /home/runner/.julia/artifacts
+/home/runner/.julia/packages
+/home/runner/.julia/registries
+/home/runner/.julia/compiled
+/home/runner/.julia/scratchspaces
+/home/runner/.julia/logs
+
+2026-02-16T02:04:13.5675851Z   key: julia-cache;workflow=CI;job=test;os=Linux;version=1.11;os=ubuntu-latest;arch=x64;run_id=22046977833;run_attempt=1
+2026-02-16T02:04:13.5676453Z   restore-keys: julia-cache;workflow=CI;job=test;os=Linux;version=1.11;os=ubuntu-latest;arch=x64;
+2026-02-16T02:04:13.5676863Z   enableCrossOsArchive: false
+2026-02-16T02:04:13.5677084Z   fail-on-cache-miss: false
+2026-02-16T02:04:13.5677430Z   lookup-only: false
+2026-02-16T02:04:13.5677616Z   save-always: false
+2026-02-16T02:04:13.5677803Z env:
+2026-02-16T02:04:13.5677953Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:13.5678133Z ##[endgroup]
+2026-02-16T02:04:13.7962633Z Cache hit for: julia-cache;workflow=CI;job=test;os=Linux;version=1.11;os=ubuntu-latest;arch=x64;run_id=22046977833;run_attempt=1
+2026-02-16T02:04:14.9079898Z Received 155189248 of 1211408377 (12.8%), 148.0 MBs/sec
+2026-02-16T02:04:15.9189644Z Received 402653184 of 1211408377 (33.2%), 190.9 MBs/sec
+2026-02-16T02:04:16.9191394Z Received 662700032 of 1211408377 (54.7%), 209.9 MBs/sec
+2026-02-16T02:04:17.9239527Z Received 884998144 of 1211408377 (73.1%), 210.3 MBs/sec
+2026-02-16T02:04:18.9232618Z Received 1124073472 of 1211408377 (92.8%), 213.7 MBs/sec
+2026-02-16T02:04:19.3813698Z Received 1211408377 of 1211408377 (100.0%), 211.1 MBs/sec
+2026-02-16T02:04:19.3816570Z Cache Size: ~1155 MB (1211408377 B)
+2026-02-16T02:04:19.3853254Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1272302d-f8b7-40d7-bec8-c883ea989d26/cache.tzst -P -C /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl --use-compress-program unzstd
+2026-02-16T02:04:25.8740115Z Cache restored successfully
+2026-02-16T02:04:26.0053226Z Cache restored from key: julia-cache;workflow=CI;job=test;os=Linux;version=1.11;os=ubuntu-latest;arch=x64;run_id=22046658043;run_attempt=1
+2026-02-16T02:04:26.0130259Z ##[group]Run mkdir -p /home/runner/.julia
+2026-02-16T02:04:26.0130577Z [36;1mmkdir -p /home/runner/.julia[0m
+2026-02-16T02:04:26.0130846Z [36;1mdu -shc /home/runner/.julia/* || true[0m
+2026-02-16T02:04:26.0157917Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T02:04:26.0158217Z env:
+2026-02-16T02:04:26.0158389Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:26.0158580Z ##[endgroup]
+2026-02-16T02:04:26.3393822Z 525M	/home/runner/.julia/artifacts
+2026-02-16T02:04:26.3431879Z 1.4G	/home/runner/.julia/compiled
+2026-02-16T02:04:26.3432421Z 16K	/home/runner/.julia/logs
+2026-02-16T02:04:26.3789232Z 491M	/home/runner/.julia/packages
+2026-02-16T02:04:26.5883222Z 708M	/home/runner/.julia/registries
+2026-02-16T02:04:26.5883894Z 8.1M	/home/runner/.julia/scratchspaces
+2026-02-16T02:04:26.5887389Z 3.1G	total
+2026-02-16T02:04:26.5914198Z ##[group]Run if [ -d "/home/runner/.julia/registries" ] && [ -n "$(ls -A "/home/runner/.julia/registries")" ]; then
+2026-02-16T02:04:26.5914990Z [36;1mif [ -d "/home/runner/.julia/registries" ] && [ -n "$(ls -A "/home/runner/.julia/registries")" ]; then[0m
+2026-02-16T02:04:26.5915639Z [36;1m  echo "Registries directory exists and is non-empty. Updating any registries"[0m
+2026-02-16T02:04:26.5916236Z [36;1m  julia -e "import Pkg; isdefined(Pkg, :Registry) && Pkg.Registry.update();"[0m
+2026-02-16T02:04:26.5916652Z [36;1melse[0m
+2026-02-16T02:04:26.5917030Z [36;1m  echo "Registries directory does not exist or is empty. Skipping registry update"[0m
+2026-02-16T02:04:26.5917475Z [36;1mfi[0m
+2026-02-16T02:04:26.5944213Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T02:04:26.5944545Z env:
+2026-02-16T02:04:26.5944718Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:26.5944912Z ##[endgroup]
+2026-02-16T02:04:26.6024362Z Registries directory exists and is non-empty. Updating any registries
+2026-02-16T02:04:27.6719946Z     Updating registry at `~/.julia/registries/General`
+2026-02-16T02:04:28.5157537Z ┌ Info: The General registry is installed via git. Consider reinstalling it via
+2026-02-16T02:04:28.5158611Z │ the newer faster direct from tarball format by running:
+2026-02-16T02:04:28.5159229Z │   pkg> registry rm General; registry add General
+2026-02-16T02:04:28.5159665Z └ 
+2026-02-16T02:04:30.7041608Z     Updating git-repo `https://github.com/JuliaRegistries/General.git`
+2026-02-16T02:04:31.3510514Z ##[group]Run echo "cache-hit=$CACHE_HIT" >> $GITHUB_OUTPUT
+2026-02-16T02:04:31.3510903Z [36;1mecho "cache-hit=$CACHE_HIT" >> $GITHUB_OUTPUT[0m
+2026-02-16T02:04:31.3537960Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-16T02:04:31.3538273Z env:
+2026-02-16T02:04:31.3538619Z   JULIA_PKG_SERVER: 
+2026-02-16T02:04:31.3538819Z   CACHE_HIT: false
+2026-02-16T02:04:31.3539026Z ##[endgroup]
