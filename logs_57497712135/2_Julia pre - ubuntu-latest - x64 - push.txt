@@ -1,0 +1,1383 @@
+﻿2026-02-15T21:08:30.4992820Z Current runner version: '2.331.0'
+2026-02-15T21:08:30.5019426Z ##[group]Runner Image Provisioner
+2026-02-15T21:08:30.5020207Z Hosted Compute Agent
+2026-02-15T21:08:30.5020937Z Version: 20260123.484
+2026-02-15T21:08:30.5021526Z Commit: 6bd6555ca37d84114959e1c76d2c01448ff61c5d
+2026-02-15T21:08:30.5022223Z Build Date: 2026-01-23T19:41:17Z
+2026-02-15T21:08:30.5022961Z Worker ID: {c1db3ef0-3301-4bae-80f0-f465a71d3e66}
+2026-02-15T21:08:30.5023659Z Azure Region: northcentralus
+2026-02-15T21:08:30.5024248Z ##[endgroup]
+2026-02-15T21:08:30.5026278Z ##[group]Operating System
+2026-02-15T21:08:30.5026935Z Ubuntu
+2026-02-15T21:08:30.5027378Z 24.04.3
+2026-02-15T21:08:30.5027884Z LTS
+2026-02-15T21:08:30.5028402Z ##[endgroup]
+2026-02-15T21:08:30.5028926Z ##[group]Runner Image
+2026-02-15T21:08:30.5029504Z Image: ubuntu-24.04
+2026-02-15T21:08:30.5030006Z Version: 20260209.23.1
+2026-02-15T21:08:30.5031162Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260209.23/images/ubuntu/Ubuntu2404-Readme.md
+2026-02-15T21:08:30.5032712Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260209.23
+2026-02-15T21:08:30.5033683Z ##[endgroup]
+2026-02-15T21:08:30.5034833Z ##[group]GITHUB_TOKEN Permissions
+2026-02-15T21:08:30.5037121Z Contents: read
+2026-02-15T21:08:30.5037676Z Metadata: read
+2026-02-15T21:08:30.5038309Z Packages: read
+2026-02-15T21:08:30.5038832Z ##[endgroup]
+2026-02-15T21:08:30.5040843Z Secret source: Actions
+2026-02-15T21:08:30.5041710Z Prepare workflow directory
+2026-02-15T21:08:30.5436636Z Prepare all required actions
+2026-02-15T21:08:30.5474340Z Getting action download info
+2026-02-15T21:08:31.0157314Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-02-15T21:08:31.1668647Z Download action repository 'julia-actions/setup-julia@v2' (SHA:5c9647d97b78a5debe5164e9eec09d653d29bd71)
+2026-02-15T21:08:31.5176880Z Download action repository 'julia-actions/cache@v2' (SHA:d10a6fd8f31b12404a54613ebad242900567f2b9)
+2026-02-15T21:08:31.7802403Z Download action repository 'julia-actions/julia-buildpkg@v1' (SHA:e3eb439fad4f9aba7da2667e7510e4a46ebc46e1)
+2026-02-15T21:08:32.0241369Z Download action repository 'julia-actions/julia-runtest@v1' (SHA:d60b785c6f2bdf4ebfb18b2b6f7d93b7dfb0efe3)
+2026-02-15T21:08:32.3104442Z Download action repository 'julia-actions/julia-processcoverage@v1' (SHA:03114f09f119417c3242a9fb6e0b722676aedf38)
+2026-02-15T21:08:32.5718290Z Download action repository 'codecov/codecov-action@v5' (SHA:671740ac38dd9b0130fbe1cec585b89eea48d3de)
+2026-02-15T21:08:33.0003111Z Getting action download info
+2026-02-15T21:08:33.1916354Z Download action repository 'dcarbone/install-jq-action@f0e10f46ff84f4d32178b4b76e1ef180b16f82c3' (SHA:f0e10f46ff84f4d32178b4b76e1ef180b16f82c3)
+2026-02-15T21:08:33.4532877Z Download action repository 'actions/cache@5a3ec84eff668545956fd18022155c47e93e2684' (SHA:5a3ec84eff668545956fd18022155c47e93e2684)
+2026-02-15T21:08:33.6095583Z Download action repository 'pyTooling/Actions@42e17fae05f224e5ac3d79d021a4e3577878efe5' (SHA:42e17fae05f224e5ac3d79d021a4e3577878efe5)
+2026-02-15T21:08:34.0779850Z Getting action download info
+2026-02-15T21:08:34.2202340Z Download action repository 'actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea' (SHA:60a0d83039c74a4aee543508d2ffcb1c3799cdea)
+2026-02-15T21:08:34.5978677Z Complete job name: Julia pre - ubuntu-latest - x64 - push
+2026-02-15T21:08:34.6541969Z ##[group]Run sudo swapoff -a
+2026-02-15T21:08:34.6542366Z [36;1msudo swapoff -a[0m
+2026-02-15T21:08:34.6542633Z [36;1msudo fallocate -l 8G /swapfile[0m
+2026-02-15T21:08:34.6542916Z [36;1msudo chmod 600 /swapfile[0m
+2026-02-15T21:08:34.6543181Z [36;1msudo mkswap /swapfile[0m
+2026-02-15T21:08:34.6543409Z [36;1msudo swapon /swapfile[0m
+2026-02-15T21:08:34.6543635Z [36;1msudo swapon --show[0m
+2026-02-15T21:08:34.6594999Z shell: /usr/bin/bash -e {0}
+2026-02-15T21:08:34.6595832Z env:
+2026-02-15T21:08:34.6596024Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:34.6596224Z ##[endgroup]
+2026-02-15T21:08:34.7238841Z mkswap: /swapfile: warning: wiping old swap signature.
+2026-02-15T21:08:34.7247827Z Setting up swapspace version 1, size = 8 GiB (8589930496 bytes)
+2026-02-15T21:08:34.7248540Z no label, UUID=62f7cce4-7d29-4046-b302-f5c7b9b325db
+2026-02-15T21:08:34.7435882Z NAME      TYPE SIZE USED PRIO
+2026-02-15T21:08:34.7436455Z /swapfile file   8G   0B   -2
+2026-02-15T21:08:34.7626737Z ##[group]Run actions/checkout@v4
+2026-02-15T21:08:34.7627043Z with:
+2026-02-15T21:08:34.7627250Z   repository: cx-xd/FiniteVolumeMethod.jl
+2026-02-15T21:08:34.7627699Z   token: ***
+2026-02-15T21:08:34.7627890Z   ssh-strict: true
+2026-02-15T21:08:34.7628074Z   ssh-user: git
+2026-02-15T21:08:34.7628269Z   persist-credentials: true
+2026-02-15T21:08:34.7628487Z   clean: true
+2026-02-15T21:08:34.7628682Z   sparse-checkout-cone-mode: true
+2026-02-15T21:08:34.7628912Z   fetch-depth: 1
+2026-02-15T21:08:34.7629091Z   fetch-tags: false
+2026-02-15T21:08:34.7629272Z   show-progress: true
+2026-02-15T21:08:34.7629462Z   lfs: false
+2026-02-15T21:08:34.7629647Z   submodules: false
+2026-02-15T21:08:34.7629830Z   set-safe-directory: true
+2026-02-15T21:08:34.7630065Z env:
+2026-02-15T21:08:34.7630220Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:34.7630406Z ##[endgroup]
+2026-02-15T21:08:34.8704521Z Syncing repository: cx-xd/FiniteVolumeMethod.jl
+2026-02-15T21:08:34.8706574Z ##[group]Getting Git version info
+2026-02-15T21:08:34.8707134Z Working directory is '/home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl'
+2026-02-15T21:08:34.8707861Z [command]/usr/bin/git version
+2026-02-15T21:08:34.8722695Z git version 2.52.0
+2026-02-15T21:08:34.8750689Z ##[endgroup]
+2026-02-15T21:08:34.8776594Z Temporarily overriding HOME='/home/runner/work/_temp/e4e66168-2a2d-44aa-9791-c43ad5517e22' before making global git config changes
+2026-02-15T21:08:34.8777999Z Adding repository directory to the temporary git global config as a safe directory
+2026-02-15T21:08:34.8781964Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl
+2026-02-15T21:08:34.8826611Z Deleting the contents of '/home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl'
+2026-02-15T21:08:34.8830394Z ##[group]Initializing the repository
+2026-02-15T21:08:34.8835384Z [command]/usr/bin/git init /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl
+2026-02-15T21:08:34.8949145Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-02-15T21:08:34.8950205Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-02-15T21:08:34.8950907Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-02-15T21:08:34.8951388Z hint: call:
+2026-02-15T21:08:34.8951608Z hint:
+2026-02-15T21:08:34.8951948Z hint: 	git config --global init.defaultBranch <name>
+2026-02-15T21:08:34.8952333Z hint:
+2026-02-15T21:08:34.8952732Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-02-15T21:08:34.8953414Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-02-15T21:08:34.8953951Z hint:
+2026-02-15T21:08:34.8954331Z hint: 	git branch -m <name>
+2026-02-15T21:08:34.8954752Z hint:
+2026-02-15T21:08:34.8955670Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-02-15T21:08:34.8956784Z Initialized empty Git repository in /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/.git/
+2026-02-15T21:08:34.8967707Z [command]/usr/bin/git remote add origin https://github.com/cx-xd/FiniteVolumeMethod.jl
+2026-02-15T21:08:34.9007792Z ##[endgroup]
+2026-02-15T21:08:34.9008447Z ##[group]Disabling automatic garbage collection
+2026-02-15T21:08:34.9013375Z [command]/usr/bin/git config --local gc.auto 0
+2026-02-15T21:08:34.9043850Z ##[endgroup]
+2026-02-15T21:08:34.9044483Z ##[group]Setting up auth
+2026-02-15T21:08:34.9052716Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-02-15T21:08:34.9086387Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-02-15T21:08:34.9466665Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-02-15T21:08:34.9501554Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-02-15T21:08:34.9743226Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-02-15T21:08:34.9778269Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-02-15T21:08:35.0025366Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-02-15T21:08:35.0062350Z ##[endgroup]
+2026-02-15T21:08:35.0063016Z ##[group]Fetching the repository
+2026-02-15T21:08:35.0071199Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +22c1d29b80b9a04026fdc8da876a5d4bb0c182d0:refs/remotes/origin/main
+2026-02-15T21:08:36.9170405Z From https://github.com/cx-xd/FiniteVolumeMethod.jl
+2026-02-15T21:08:36.9204663Z  * [new ref]         22c1d29b80b9a04026fdc8da876a5d4bb0c182d0 -> origin/main
+2026-02-15T21:08:36.9206321Z ##[endgroup]
+2026-02-15T21:08:36.9206709Z ##[group]Determining the checkout info
+2026-02-15T21:08:36.9208247Z ##[endgroup]
+2026-02-15T21:08:36.9213400Z [command]/usr/bin/git sparse-checkout disable
+2026-02-15T21:08:36.9258385Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-02-15T21:08:36.9286281Z ##[group]Checking out the ref
+2026-02-15T21:08:36.9291557Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-02-15T21:08:37.2978705Z Switched to a new branch 'main'
+2026-02-15T21:08:37.2979665Z branch 'main' set up to track 'origin/main'.
+2026-02-15T21:08:37.3013649Z ##[endgroup]
+2026-02-15T21:08:37.3059678Z [command]/usr/bin/git log -1 --format=%H
+2026-02-15T21:08:37.3083666Z 22c1d29b80b9a04026fdc8da876a5d4bb0c182d0
+2026-02-15T21:08:37.3227283Z ##[group]Run julia-actions/setup-julia@v2
+2026-02-15T21:08:37.3227586Z with:
+2026-02-15T21:08:37.3227757Z   version: pre
+2026-02-15T21:08:37.3227924Z   arch: x64
+2026-02-15T21:08:37.3228109Z   include-all-prereleases: false
+2026-02-15T21:08:37.3228342Z   show-versioninfo: false
+2026-02-15T21:08:37.3228546Z env:
+2026-02-15T21:08:37.3228699Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:37.3228884Z ##[endgroup]
+2026-02-15T21:08:39.5210638Z [command]/usr/bin/tar xf /home/runner/work/_temp/15bb3043-4416-44f8-81ab-ffafd000ce40 --strip-components=1 -C /opt/hostedtoolcache/julia/1.13.0-beta2/x64
+2026-02-15T21:08:46.1859071Z [command]/opt/hostedtoolcache/julia/1.13.0-beta2/x64/bin/julia --version
+2026-02-15T21:08:46.1987630Z julia version 1.13.0-beta2
+2026-02-15T21:08:46.2291124Z ##[group]Run julia-actions/cache@v2
+2026-02-15T21:08:46.2291420Z with:
+2026-02-15T21:08:46.2291663Z   cache-name: julia-cache;workflow=CI;job=test
+2026-02-15T21:08:46.2291989Z   include-matrix: true
+2026-02-15T21:08:46.2292246Z   cache-artifacts: true
+2026-02-15T21:08:46.2292452Z   cache-packages: true
+2026-02-15T21:08:46.2292659Z   cache-registries: true
+2026-02-15T21:08:46.2292860Z   cache-compiled: true
+2026-02-15T21:08:46.2293059Z   cache-scratchspaces: true
+2026-02-15T21:08:46.2293262Z   cache-logs: true
+2026-02-15T21:08:46.2293448Z   delete-old-caches: true
+2026-02-15T21:08:46.2293786Z   token: ***
+2026-02-15T21:08:46.2293960Z env:
+2026-02-15T21:08:46.2294131Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.2294317Z ##[endgroup]
+2026-02-15T21:08:46.2429311Z ##[group]Run dcarbone/install-jq-action@f0e10f46ff84f4d32178b4b76e1ef180b16f82c3
+2026-02-15T21:08:46.2429713Z with:
+2026-02-15T21:08:46.2429886Z   force: false
+2026-02-15T21:08:46.2430058Z   version: 1.7.1
+2026-02-15T21:08:46.2430267Z env:
+2026-02-15T21:08:46.2430434Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.2430627Z ##[endgroup]
+2026-02-15T21:08:46.2467466Z ##[group]Run _jq_bin="$(which jq)"
+2026-02-15T21:08:46.2467755Z [36;1m_jq_bin="$(which jq)"[0m
+2026-02-15T21:08:46.2467983Z [36;1mif [ -f "${_jq_bin}" ]; then[0m
+2026-02-15T21:08:46.2468269Z [36;1m  echo "found=true" >> $GITHUB_OUTPUT[0m
+2026-02-15T21:08:46.2468535Z [36;1melse[0m
+2026-02-15T21:08:46.2468740Z [36;1m  echo "found=false" >> $GITHUB_OUTPUT[0m
+2026-02-15T21:08:46.2468996Z [36;1mfi[0m
+2026-02-15T21:08:46.2513423Z shell: /usr/bin/sh +e {0}
+2026-02-15T21:08:46.2513653Z env:
+2026-02-15T21:08:46.2513828Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.2514028Z ##[endgroup]
+2026-02-15T21:08:46.2710970Z ##[group]Run if [ -n "" ]; then
+2026-02-15T21:08:46.2711291Z [36;1mif [ -n "" ]; then[0m
+2026-02-15T21:08:46.2711501Z [36;1m    depot=""[0m
+2026-02-15T21:08:46.2711731Z [36;1melif [ -n "$JULIA_DEPOT_PATH" ]; then[0m
+2026-02-15T21:08:46.2712034Z [36;1m    # Use the first depot path[0m
+2026-02-15T21:08:46.2712371Z [36;1m    depot=$(echo $JULIA_DEPOT_PATH | cut -d$PATH_DELIMITER -f1)[0m
+2026-02-15T21:08:46.2712706Z [36;1melse[0m
+2026-02-15T21:08:46.2712882Z [36;1m    depot="~/.julia"[0m
+2026-02-15T21:08:46.2713087Z [36;1mfi[0m
+2026-02-15T21:08:46.2713319Z [36;1mif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then[0m
+2026-02-15T21:08:46.2713681Z [36;1m  depot="${depot/#\~/$USERPROFILE}"  # Windows paths[0m
+2026-02-15T21:08:46.2714078Z [36;1m  depot="${depot//\\//}"             # Replace backslashes with forward slashes[0m
+2026-02-15T21:08:46.2714423Z [36;1melse[0m
+2026-02-15T21:08:46.2714645Z [36;1m  depot="${depot/#\~/$HOME}"  # Unix-like paths[0m
+2026-02-15T21:08:46.2714905Z [36;1mfi[0m
+2026-02-15T21:08:46.2715364Z [36;1mecho "depot=$depot" | tee -a "$GITHUB_OUTPUT"[0m
+2026-02-15T21:08:46.2715738Z [36;1m[0m
+2026-02-15T21:08:46.2715915Z [36;1mcache_paths=()[0m
+2026-02-15T21:08:46.2716141Z [36;1martifacts_path="${depot}/artifacts"[0m
+2026-02-15T21:08:46.2716475Z [36;1m[ "true" = "true" ] && cache_paths+=("$artifacts_path")[0m
+2026-02-15T21:08:46.2716816Z [36;1mpackages_path="${depot}/packages"[0m
+2026-02-15T21:08:46.2717116Z [36;1m[ "true" = "true" ] && cache_paths+=("$packages_path")[0m
+2026-02-15T21:08:46.2717434Z [36;1mregistries_path="${depot}/registries"[0m
+2026-02-15T21:08:46.2717696Z [36;1mif [ "true" = "true" ]; then[0m
+2026-02-15T21:08:46.2717963Z [36;1m    if [ ! -d "${registries_path}" ]; then[0m
+2026-02-15T21:08:46.2718250Z [36;1m        cache_paths+=("$registries_path")[0m
+2026-02-15T21:08:46.2718504Z [36;1m    else[0m
+2026-02-15T21:08:46.2719379Z [36;1m        echo "::warning::Julia depot registries already exist. Skipping restoring of cached registries to avoid potential merge conflicts when updating. Please ensure that \`julia-actions/cache\` precedes any workflow steps which add registries."[0m
+2026-02-15T21:08:46.2720295Z [36;1m    fi[0m
+2026-02-15T21:08:46.2720462Z [36;1mfi[0m
+2026-02-15T21:08:46.2720863Z [36;1mcompiled_path="${depot}/compiled"[0m
+2026-02-15T21:08:46.2721185Z [36;1m[ "true" = "true" ] && cache_paths+=("$compiled_path")[0m
+2026-02-15T21:08:46.2721542Z [36;1mscratchspaces_path="${depot}/scratchspaces"[0m
+2026-02-15T21:08:46.2721878Z [36;1m[ "true" = "true" ] && cache_paths+=("$scratchspaces_path")[0m
+2026-02-15T21:08:46.2722188Z [36;1mlogs_path="${depot}/logs"[0m
+2026-02-15T21:08:46.2722453Z [36;1m[ "true" = "true" ] && cache_paths+=("$logs_path")[0m
+2026-02-15T21:08:46.2722723Z [36;1m{[0m
+2026-02-15T21:08:46.2722895Z [36;1m    echo "cache-paths<<EOF"[0m
+2026-02-15T21:08:46.2723151Z [36;1m    printf "%s\n" "${cache_paths[@]}"[0m
+2026-02-15T21:08:46.2723393Z [36;1m    echo "EOF"[0m
+2026-02-15T21:08:46.2723600Z [36;1m} | tee -a "$GITHUB_OUTPUT"[0m
+2026-02-15T21:08:46.2772160Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:08:46.2772488Z env:
+2026-02-15T21:08:46.2772653Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.2772860Z   PATH_DELIMITER: :
+2026-02-15T21:08:46.2773048Z ##[endgroup]
+2026-02-15T21:08:46.2858166Z depot=/home/runner/.julia
+2026-02-15T21:08:46.2877092Z cache-paths<<EOF
+2026-02-15T21:08:46.2877515Z /home/runner/.julia/artifacts
+2026-02-15T21:08:46.2877924Z /home/runner/.julia/packages
+2026-02-15T21:08:46.2878313Z /home/runner/.julia/registries
+2026-02-15T21:08:46.2878565Z /home/runner/.julia/compiled
+2026-02-15T21:08:46.2878809Z /home/runner/.julia/scratchspaces
+2026-02-15T21:08:46.2879046Z /home/runner/.julia/logs
+2026-02-15T21:08:46.2879251Z EOF
+2026-02-15T21:08:46.2926115Z ##[group]Run # `matrix_key` joins all of matrix keys/values (including nested objects) to ensure that concurrent runs each use a unique cache key.
+2026-02-15T21:08:46.2927043Z [36;1m# `matrix_key` joins all of matrix keys/values (including nested objects) to ensure that concurrent runs each use a unique cache key.[0m
+2026-02-15T21:08:46.2927677Z [36;1m# When `matrix` isn't set for the job then `MATRIX_JSON=null`.[0m
+2026-02-15T21:08:46.2928073Z [36;1mif [ "true" == "true" ] && [ "$MATRIX_JSON" != "null" ]; then[0m
+2026-02-15T21:08:46.2928689Z [36;1m  matrix_key=$(echo "$MATRIX_JSON" | jq 'paths(type != "object") as $p | ($p | join("-")) + "=" + (getpath($p) | tostring)' | jq -rs 'join(";") | . + ";"')[0m
+2026-02-15T21:08:46.2929250Z [36;1mfi[0m
+2026-02-15T21:08:46.2929539Z [36;1mrestore_key="julia-cache;workflow=CI;job=test;os=Linux;${matrix_key}"[0m
+2026-02-15T21:08:46.2929943Z [36;1m# URL encode any restricted characters:[0m
+2026-02-15T21:08:46.2930511Z [36;1m# https://github.com/actions/toolkit/blob/5430c5d84832076372990c7c27f900878ff66dc9/packages/cache/src/cache.ts#L38-L43[0m
+2026-02-15T21:08:46.2931120Z [36;1mrestore_key=$(sed 's/,/%2C/g' <<<"${restore_key}")[0m
+2026-02-15T21:08:46.2931473Z [36;1mkey="${restore_key}run_id=22043099896;run_attempt=1"[0m
+2026-02-15T21:08:46.2931828Z [36;1mecho "restore-key=${restore_key}" >> $GITHUB_OUTPUT[0m
+2026-02-15T21:08:46.2932159Z [36;1mecho "key=${key}" >> $GITHUB_OUTPUT[0m
+2026-02-15T21:08:46.2980227Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:08:46.2980550Z env:
+2026-02-15T21:08:46.2980728Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.2981033Z   MATRIX_JSON: {
+  "version": "pre",
+  "os": "ubuntu-latest",
+  "arch": "x64"
+}
+2026-02-15T21:08:46.2981382Z ##[endgroup]
+2026-02-15T21:08:46.3158317Z ##[group]Run actions/cache@5a3ec84eff668545956fd18022155c47e93e2684
+2026-02-15T21:08:46.3158663Z with:
+2026-02-15T21:08:46.3159324Z   path: /home/runner/.julia/artifacts
+/home/runner/.julia/packages
+/home/runner/.julia/registries
+/home/runner/.julia/compiled
+/home/runner/.julia/scratchspaces
+/home/runner/.julia/logs
+
+2026-02-15T21:08:46.3160294Z   key: julia-cache;workflow=CI;job=test;os=Linux;version=pre;os=ubuntu-latest;arch=x64;run_id=22043099896;run_attempt=1
+2026-02-15T21:08:46.3160952Z   restore-keys: julia-cache;workflow=CI;job=test;os=Linux;version=pre;os=ubuntu-latest;arch=x64;
+2026-02-15T21:08:46.3161386Z   enableCrossOsArchive: false
+2026-02-15T21:08:46.3161801Z   fail-on-cache-miss: false
+2026-02-15T21:08:46.3162025Z   lookup-only: false
+2026-02-15T21:08:46.3162212Z   save-always: false
+2026-02-15T21:08:46.3162403Z env:
+2026-02-15T21:08:46.3162560Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.3162740Z ##[endgroup]
+2026-02-15T21:08:46.5737697Z Cache not found for input keys: julia-cache;workflow=CI;job=test;os=Linux;version=pre;os=ubuntu-latest;arch=x64;run_id=22043099896;run_attempt=1, julia-cache;workflow=CI;job=test;os=Linux;version=pre;os=ubuntu-latest;arch=x64;
+2026-02-15T21:08:46.5807557Z ##[group]Run mkdir -p /home/runner/.julia
+2026-02-15T21:08:46.5807883Z [36;1mmkdir -p /home/runner/.julia[0m
+2026-02-15T21:08:46.5808169Z [36;1mdu -shc /home/runner/.julia/* || true[0m
+2026-02-15T21:08:46.5858102Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:08:46.5858433Z env:
+2026-02-15T21:08:46.5858603Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.5858798Z ##[endgroup]
+2026-02-15T21:08:46.5964616Z du: cannot access '/home/runner/.julia/*': No such file or directory
+2026-02-15T21:08:46.5965537Z 0	total
+2026-02-15T21:08:46.6003490Z ##[group]Run if [ -d "/home/runner/.julia/registries" ] && [ -n "$(ls -A "/home/runner/.julia/registries")" ]; then
+2026-02-15T21:08:46.6004364Z [36;1mif [ -d "/home/runner/.julia/registries" ] && [ -n "$(ls -A "/home/runner/.julia/registries")" ]; then[0m
+2026-02-15T21:08:46.6004948Z [36;1m  echo "Registries directory exists and is non-empty. Updating any registries"[0m
+2026-02-15T21:08:46.6005785Z [36;1m  julia -e "import Pkg; isdefined(Pkg, :Registry) && Pkg.Registry.update();"[0m
+2026-02-15T21:08:46.6006152Z [36;1melse[0m
+2026-02-15T21:08:46.6006483Z [36;1m  echo "Registries directory does not exist or is empty. Skipping registry update"[0m
+2026-02-15T21:08:46.6006868Z [36;1mfi[0m
+2026-02-15T21:08:46.6054344Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:08:46.6054650Z env:
+2026-02-15T21:08:46.6054820Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.6055008Z ##[endgroup]
+2026-02-15T21:08:46.6126437Z Registries directory does not exist or is empty. Skipping registry update
+2026-02-15T21:08:46.6163853Z ##[group]Run echo "cache-hit=$CACHE_HIT" >> $GITHUB_OUTPUT
+2026-02-15T21:08:46.6164255Z [36;1mecho "cache-hit=$CACHE_HIT" >> $GITHUB_OUTPUT[0m
+2026-02-15T21:08:46.6211317Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:08:46.6211639Z env:
+2026-02-15T21:08:46.6211811Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.6211999Z   CACHE_HIT: 
+2026-02-15T21:08:46.6212178Z ##[endgroup]
+2026-02-15T21:08:46.6344726Z ##[group]Run julia-actions/julia-buildpkg@v1
+2026-02-15T21:08:46.6345021Z with:
+2026-02-15T21:08:46.6345341Z   project: @.
+2026-02-15T21:08:46.6345516Z   precompile: no
+2026-02-15T21:08:46.6345688Z   git_cli: false
+2026-02-15T21:08:46.6345866Z   ignore-no-cache: false
+2026-02-15T21:08:46.6346052Z env:
+2026-02-15T21:08:46.6346207Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.6346385Z ##[endgroup]
+2026-02-15T21:08:46.6360758Z ##[group]Run echo "JULIA_PKG_SERVER_REGISTRY_PREFERENCE=${JULIA_PKG_SERVER_REGISTRY_PREFERENCE:-eager}" >> ${GITHUB_ENV}
+2026-02-15T21:08:46.6361517Z [36;1mecho "JULIA_PKG_SERVER_REGISTRY_PREFERENCE=${JULIA_PKG_SERVER_REGISTRY_PREFERENCE:-eager}" >> ${GITHUB_ENV}[0m
+2026-02-15T21:08:46.6408852Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:08:46.6409166Z env:
+2026-02-15T21:08:46.6409339Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.6409531Z ##[endgroup]
+2026-02-15T21:08:46.6503825Z ##[group]Run if "false" == "false" && !isdir(DEPOT_PATH[1])
+2026-02-15T21:08:46.6504236Z [36;1mif "false" == "false" && !isdir(DEPOT_PATH[1])[0m
+2026-02-15T21:08:46.6505448Z [36;1m    println("::notice title=[julia-buildpkg] Caching of the julia depot was not detected ::Consider using `julia-actions/cache` to speed up runs https://github.com/julia-actions/cache To ignore, set input `ignore-no-cache: true` ")[0m
+2026-02-15T21:08:46.6506348Z [36;1mend[0m
+2026-02-15T21:08:46.6506524Z [36;1mimport Pkg[0m
+2026-02-15T21:08:46.6506701Z [36;1m[0m
+2026-02-15T21:08:46.6506954Z [36;1m# Determine if Pkg uses git-cli executable instead of LibGit2[0m
+2026-02-15T21:08:46.6507370Z [36;1mVERSION >= v"1.7-" && (ENV["JULIA_PKG_USE_CLI_GIT"] = false)[0m
+2026-02-15T21:08:46.6507682Z [36;1m[0m
+2026-02-15T21:08:46.6507869Z [36;1mif VERSION < v"1.7-" && false == true[0m
+2026-02-15T21:08:46.6508441Z [36;1m  printstyled("::notice::JULIA_PKG_USE_CLI_GIT requires Julia >= 1.7. Using default LibGit2 git-interface instead! \n"; color = :yellow)[0m
+2026-02-15T21:08:46.6508996Z [36;1mend[0m
+2026-02-15T21:08:46.6509153Z [36;1m[0m
+2026-02-15T21:08:46.6509304Z [36;1m[0m
+2026-02-15T21:08:46.6509465Z [36;1mif VERSION >= v"1.5-"[0m
+2026-02-15T21:08:46.6509688Z [36;1m    if VERSION >= v"1.8-"[0m
+2026-02-15T21:08:46.6509939Z [36;1m        # Install the default registries[0m
+2026-02-15T21:08:46.6510210Z [36;1m        Pkg.Registry.add()[0m
+2026-02-15T21:08:46.6510436Z [36;1m    else[0m
+2026-02-15T21:08:46.6510629Z [36;1m        Pkg.Registry.add("General")[0m
+2026-02-15T21:08:46.6510871Z [36;1m    end[0m
+2026-02-15T21:08:46.6511031Z [36;1m[0m
+2026-02-15T21:08:46.6511220Z [36;1m    # If provided add local registries[0m
+2026-02-15T21:08:46.6511644Z [36;1m    if !isempty("")[0m
+2026-02-15T21:08:46.6511893Z [36;1m      local_repos = split("", "\n") .|> string[0m
+2026-02-15T21:08:46.6512181Z [36;1m      for repo_url in local_repos[0m
+2026-02-15T21:08:46.6512437Z [36;1m        isempty(repo_url) && continue[0m
+2026-02-15T21:08:46.6512778Z [36;1m        Pkg.Registry.add(Pkg.RegistrySpec(; url = repo_url))[0m
+2026-02-15T21:08:46.6513080Z [36;1m      end[0m
+2026-02-15T21:08:46.6513253Z [36;1m    end[0m
+2026-02-15T21:08:46.6513413Z [36;1mend[0m
+2026-02-15T21:08:46.6513570Z [36;1m[0m
+2026-02-15T21:08:46.6513870Z [36;1mVERSION >= v"1.1.0-rc1" ? retry(Pkg.build)(verbose=true) : retry(Pkg.build)()[0m
+2026-02-15T21:08:46.6515509Z shell: /opt/hostedtoolcache/julia/1.13.0-beta2/x64/bin/julia --color=yes --project=@. {0}
+2026-02-15T21:08:46.6515915Z env:
+2026-02-15T21:08:46.6516084Z   JULIA_PKG_SERVER: 
+2026-02-15T21:08:46.6516301Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:08:46.6516579Z   JULIA_PKG_PRECOMPILE_AUTO: no
+2026-02-15T21:08:46.6516971Z   GITHUB_TOKEN: ***
+2026-02-15T21:08:46.6517159Z ##[endgroup]
+2026-02-15T21:08:47.2052055Z [32m[1m  Installing[22m[39m known registries into `~/.julia`
+2026-02-15T21:08:47.2146947Z [32m[1m     Cloning[22m[39m registry from "https://github.com/JuliaRegistries/General.git"
+2026-02-15T21:08:57.0062244Z [32m[1m       Added[22m[39m registry `General` to `~/.julia/registries/General`
+2026-02-15T21:08:59.7544713Z [32m[1m   Installed[22m[39m Adapt ─────────────────────── v4.4.0
+2026-02-15T21:08:59.7573379Z [32m[1m   Installed[22m[39m ConstructionBase ──────────── v1.6.0
+2026-02-15T21:08:59.7576843Z [32m[1m   Installed[22m[39m MacroTools ────────────────── v0.5.16
+2026-02-15T21:08:59.7618668Z [32m[1m   Installed[22m[39m OpenBLASConsistentFPCSR_jll ─ v0.3.30+0
+2026-02-15T21:08:59.7623724Z [32m[1m   Installed[22m[39m ChunkSplitters ────────────── v2.6.0
+2026-02-15T21:08:59.7651478Z [32m[1m   Installed[22m[39m CompositionsBase ──────────── v0.1.2
+2026-02-15T21:08:59.7836259Z [32m[1m   Installed[22m[39m RuntimeGeneratedFunctions ─── v0.5.17
+2026-02-15T21:08:59.7964725Z [32m[1m   Installed[22m[39m CommonSolve ───────────────── v0.2.6
+2026-02-15T21:08:59.9178463Z [32m[1m   Installed[22m[39m ExprTools ─────────────────── v0.1.10
+2026-02-15T21:08:59.9396014Z [32m[1m   Installed[22m[39m RecipesBase ───────────────── v1.3.4
+2026-02-15T21:08:59.9404444Z [32m[1m   Installed[22m[39m ArrayInterface ────────────── v7.22.0
+2026-02-15T21:08:59.9432655Z [32m[1m   Installed[22m[39m IteratorInterfaceExtensions ─ v1.0.0
+2026-02-15T21:08:59.9698882Z [32m[1m   Installed[22m[39m PreallocationTools ────────── v0.4.34
+2026-02-15T21:08:59.9702655Z [32m[1m   Installed[22m[39m SymbolicIndexingInterface ─── v0.3.46
+2026-02-15T21:08:59.9787002Z [32m[1m   Installed[22m[39m PrecompileTools ───────────── v1.3.3
+2026-02-15T21:08:59.9931831Z [32m[1m   Installed[22m[39m SciMLOperators ────────────── v1.15.1
+2026-02-15T21:09:00.0922591Z [32m[1m   Installed[22m[39m Statistics ────────────────── v1.11.1
+2026-02-15T21:09:00.1578228Z [32m[1m   Installed[22m[39m ExproniconLite ────────────── v0.10.14
+2026-02-15T21:09:00.1607491Z [32m[1m   Installed[22m[39m SciMLStructures ───────────── v1.10.0
+2026-02-15T21:09:00.1645578Z [32m[1m   Installed[22m[39m GPUArraysCore ─────────────── v0.2.0
+2026-02-15T21:09:00.1650882Z [32m[1m   Installed[22m[39m StaticArraysCore ──────────── v1.4.4
+2026-02-15T21:09:00.1654716Z [32m[1m   Installed[22m[39m LoggingExtras ─────────────── v1.2.0
+2026-02-15T21:09:00.1815792Z [32m[1m   Installed[22m[39m FunctionWrappersWrappers ──── v0.1.3
+2026-02-15T21:09:00.2052921Z [32m[1m   Installed[22m[39m StaticArrays ──────────────── v1.9.16
+2026-02-15T21:09:00.2698755Z [32m[1m   Installed[22m[39m SciMLPublic ───────────────── v1.0.1
+2026-02-15T21:09:00.3524960Z [32m[1m   Installed[22m[39m RoundingEmulator ──────────── v0.2.1
+2026-02-15T21:09:00.3706717Z [32m[1m   Installed[22m[39m AdaptivePredicates ────────── v1.2.0
+2026-02-15T21:09:00.3809524Z [32m[1m   Installed[22m[39m SciMLLogging ──────────────── v1.8.0
+2026-02-15T21:09:00.3974200Z [32m[1m   Installed[22m[39m Requires ──────────────────── v1.3.1
+2026-02-15T21:09:00.4575574Z [32m[1m   Installed[22m[39m FunctionWrappers ──────────── v1.1.3
+2026-02-15T21:09:00.4612841Z [32m[1m   Installed[22m[39m SciMLBase ─────────────────── v2.138.1
+2026-02-15T21:09:00.4648437Z [32m[1m   Installed[22m[39m IntervalArithmetic ────────── v1.0.2
+2026-02-15T21:09:00.4654144Z [32m[1m   Installed[22m[39m EnumX ─────────────────────── v1.0.6
+2026-02-15T21:09:00.5230076Z [32m[1m   Installed[22m[39m Jieko ─────────────────────── v0.2.1
+2026-02-15T21:09:00.5379942Z [32m[1m   Installed[22m[39m InverseFunctions ──────────── v0.1.17
+2026-02-15T21:09:00.6057225Z [32m[1m   Installed[22m[39m Reexport ──────────────────── v1.2.2
+2026-02-15T21:09:00.6134358Z [32m[1m   Installed[22m[39m Preferences ───────────────── v1.5.1
+2026-02-15T21:09:00.6355948Z [32m[1m   Installed[22m[39m JLLWrappers ───────────────── v1.7.1
+2026-02-15T21:09:00.6473193Z [32m[1m   Installed[22m[39m TestItems ─────────────────── v1.0.0
+2026-02-15T21:09:00.6542699Z [32m[1m   Installed[22m[39m CRlibm_jll ────────────────── v1.0.1+0
+2026-02-15T21:09:00.6764136Z [32m[1m   Installed[22m[39m Moshi ─────────────────────── v0.3.7
+2026-02-15T21:09:00.7218207Z [32m[1m   Installed[22m[39m ExactPredicates ───────────── v2.2.9
+2026-02-15T21:09:01.0146814Z [32m[1m   Installed[22m[39m ADTypes ───────────────────── v1.21.0
+2026-02-15T21:09:01.0163376Z [32m[1m   Installed[22m[39m CRlibm ────────────────────── v1.0.2
+2026-02-15T21:09:01.0179124Z [32m[1m   Installed[22m[39m Accessors ─────────────────── v0.1.43
+2026-02-15T21:09:01.0181478Z [32m[1m   Installed[22m[39m DocStringExtensions ───────── v0.9.5
+2026-02-15T21:09:01.0183143Z [32m[1m   Installed[22m[39m RecursiveArrayTools ───────── v3.48.0
+2026-02-15T21:09:05.9686824Z [32m[1m   Installed[22m[39m DelaunayTriangulation ─────── v1.6.6
+2026-02-15T21:09:06.2851013Z [32m[1m  Installing[22m[39m 2 artifacts
+2026-02-15T21:09:07.3320663Z [32m[1m   Installed[22m[39m artifact CRlibm                  170.1 KiB
+2026-02-15T21:09:07.7910500Z [32m[1m   Installed[22m[39m artifact OpenBLASConsistentFPCSR 9.9 MiB
+2026-02-15T21:09:08.0622400Z [32m[1m    Updating[22m[39m `~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/Project.toml`
+2026-02-15T21:09:08.0629431Z [33m⌅[39m [90m[ae650224] [39m[92m+ ChunkSplitters v2.6.0[39m
+2026-02-15T21:09:08.0630223Z   [90m[38540f10] [39m[92m+ CommonSolve v0.2.6[39m
+2026-02-15T21:09:08.0630907Z   [90m[927a84f5] [39m[92m+ DelaunayTriangulation v1.6.6[39m
+2026-02-15T21:09:08.0631671Z [33m⌅[39m [90m[d236fae5] [39m[92m+ PreallocationTools v0.4.34[39m
+2026-02-15T21:09:08.0632426Z   [90m[aea7be01] [39m[92m+ PrecompileTools v1.3.3[39m
+2026-02-15T21:09:08.0633084Z   [90m[0bca4576] [39m[92m+ SciMLBase v2.138.1[39m
+2026-02-15T21:09:08.0634871Z   [90m[90137ffa] [39m[92m+ StaticArrays v1.9.16[39m
+2026-02-15T21:09:08.0638623Z   [90m[37e2e46d] [39m[93m~ LinearAlgebra ⇒ v1.13.0[39m
+2026-02-15T21:09:08.0639525Z   [90m[2f01184e] [39m[93m~ SparseArrays ⇒ v1.13.0[39m
+2026-02-15T21:09:08.0641465Z [32m[1m    Updating[22m[39m `~/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/Manifest.toml`
+2026-02-15T21:09:08.0761630Z   [90m[47edcb42] [39m[92m+ ADTypes v1.21.0[39m
+2026-02-15T21:09:08.0762440Z   [90m[7d9f7c33] [39m[92m+ Accessors v0.1.43[39m
+2026-02-15T21:09:08.0763154Z   [90m[79e6a3ab] [39m[92m+ Adapt v4.4.0[39m
+2026-02-15T21:09:08.0763931Z   [90m[35492f91] [39m[92m+ AdaptivePredicates v1.2.0[39m
+2026-02-15T21:09:08.0764759Z   [90m[4fba245c] [39m[92m+ ArrayInterface v7.22.0[39m
+2026-02-15T21:09:08.0765710Z   [90m[96374032] [39m[92m+ CRlibm v1.0.2[39m
+2026-02-15T21:09:08.0766575Z [33m⌅[39m [90m[ae650224] [39m[92m+ ChunkSplitters v2.6.0[39m
+2026-02-15T21:09:08.0767428Z   [90m[38540f10] [39m[92m+ CommonSolve v0.2.6[39m
+2026-02-15T21:09:08.0768255Z   [90m[a33af91c] [39m[92m+ CompositionsBase v0.1.2[39m
+2026-02-15T21:09:08.0769192Z   [90m[187b0558] [39m[92m+ ConstructionBase v1.6.0[39m
+2026-02-15T21:09:08.0770090Z   [90m[927a84f5] [39m[92m+ DelaunayTriangulation v1.6.6[39m
+2026-02-15T21:09:08.0771366Z   [90m[ffbed154] [39m[92m+ DocStringExtensions v0.9.5[39m
+2026-02-15T21:09:08.0772193Z   [90m[4e289a0a] [39m[92m+ EnumX v1.0.6[39m
+2026-02-15T21:09:08.0772981Z   [90m[429591f6] [39m[92m+ ExactPredicates v2.2.9[39m
+2026-02-15T21:09:08.0773772Z   [90m[e2ba6199] [39m[92m+ ExprTools v0.1.10[39m
+2026-02-15T21:09:08.0774581Z   [90m[55351af7] [39m[92m+ ExproniconLite v0.10.14[39m
+2026-02-15T21:09:08.0775579Z   [90m[069b7b12] [39m[92m+ FunctionWrappers v1.1.3[39m
+2026-02-15T21:09:08.0776506Z   [90m[77dc65aa] [39m[92m+ FunctionWrappersWrappers v0.1.3[39m
+2026-02-15T21:09:08.0777408Z   [90m[46192b85] [39m[92m+ GPUArraysCore v0.2.0[39m
+2026-02-15T21:09:08.0778256Z   [90m[d1acc4aa] [39m[92m+ IntervalArithmetic v1.0.2[39m
+2026-02-15T21:09:08.0779145Z   [90m[3587e190] [39m[92m+ InverseFunctions v0.1.17[39m
+2026-02-15T21:09:08.0779759Z   [90m[82899510] [39m[92m+ IteratorInterfaceExtensions v1.0.0[39m
+2026-02-15T21:09:08.0780480Z   [90m[692b3bcd] [39m[92m+ JLLWrappers v1.7.1[39m
+2026-02-15T21:09:08.0781063Z   [90m[ae98c720] [39m[92m+ Jieko v0.2.1[39m
+2026-02-15T21:09:08.0781414Z   [90m[e6f89c97] [39m[92m+ LoggingExtras v1.2.0[39m
+2026-02-15T21:09:08.0781753Z   [90m[1914dd2f] [39m[92m+ MacroTools v0.5.16[39m
+2026-02-15T21:09:08.0782319Z   [90m[2e0e35c7] [39m[92m+ Moshi v0.3.7[39m
+2026-02-15T21:09:08.0782995Z [33m⌅[39m [90m[d236fae5] [39m[92m+ PreallocationTools v0.4.34[39m
+2026-02-15T21:09:08.0783536Z   [90m[aea7be01] [39m[92m+ PrecompileTools v1.3.3[39m
+2026-02-15T21:09:08.0784129Z   [90m[21216c6a] [39m[92m+ Preferences v1.5.1[39m
+2026-02-15T21:09:08.0784711Z   [90m[3cdcf5f2] [39m[92m+ RecipesBase v1.3.4[39m
+2026-02-15T21:09:08.0785483Z   [90m[731186ca] [39m[92m+ RecursiveArrayTools v3.48.0[39m
+2026-02-15T21:09:08.0786071Z   [90m[189a3867] [39m[92m+ Reexport v1.2.2[39m
+2026-02-15T21:09:08.0786614Z   [90m[ae029012] [39m[92m+ Requires v1.3.1[39m
+2026-02-15T21:09:08.0787185Z   [90m[5eaf0fd0] [39m[92m+ RoundingEmulator v0.2.1[39m
+2026-02-15T21:09:08.0787598Z   [90m[7e49a35a] [39m[92m+ RuntimeGeneratedFunctions v0.5.17[39m
+2026-02-15T21:09:08.0788180Z   [90m[0bca4576] [39m[92m+ SciMLBase v2.138.1[39m
+2026-02-15T21:09:08.0788762Z   [90m[a6db7da4] [39m[92m+ SciMLLogging v1.8.0[39m
+2026-02-15T21:09:08.0789330Z   [90m[c0aeaf25] [39m[92m+ SciMLOperators v1.15.1[39m
+2026-02-15T21:09:08.0789677Z   [90m[431bcebd] [39m[92m+ SciMLPublic v1.0.1[39m
+2026-02-15T21:09:08.0790234Z   [90m[53ae85a6] [39m[92m+ SciMLStructures v1.10.0[39m
+2026-02-15T21:09:08.0790855Z   [90m[90137ffa] [39m[92m+ StaticArrays v1.9.16[39m
+2026-02-15T21:09:08.0791385Z   [90m[1e83bf80] [39m[92m+ StaticArraysCore v1.4.4[39m
+2026-02-15T21:09:08.0792227Z   [90m[10745b16] [39m[92m+ Statistics v1.11.1[39m
+2026-02-15T21:09:08.0792888Z   [90m[2efcf032] [39m[92m+ SymbolicIndexingInterface v0.3.46[39m
+2026-02-15T21:09:08.0793382Z   [90m[1c621080] [39m[92m+ TestItems v1.0.0[39m
+2026-02-15T21:09:08.0793985Z   [90m[4e9b3aee] [39m[92m+ CRlibm_jll v1.0.1+0[39m
+2026-02-15T21:09:08.0794679Z   [90m[6cdc7f73] [39m[92m+ OpenBLASConsistentFPCSR_jll v0.3.30+0[39m
+2026-02-15T21:09:08.0795337Z   [90m[0dad84c5] [39m[92m+ ArgTools v1.1.2[39m
+2026-02-15T21:09:08.0795926Z   [90m[56f22d72] [39m[92m+ Artifacts v1.11.0[39m
+2026-02-15T21:09:08.0796487Z   [90m[2a0f44e3] [39m[92m+ Base64 v1.11.0[39m
+2026-02-15T21:09:08.0796874Z   [90m[ade2ca70] [39m[92m+ Dates v1.11.0[39m
+2026-02-15T21:09:08.0797197Z   [90m[8ba89e20] [39m[92m+ Distributed v1.11.0[39m
+2026-02-15T21:09:08.0797758Z   [90m[f43a241f] [39m[92m+ Downloads v1.7.0[39m
+2026-02-15T21:09:08.0798334Z   [90m[7b1f6079] [39m[92m+ FileWatching v1.11.0[39m
+2026-02-15T21:09:08.0798917Z   [90m[ac6e5ff7] [39m[92m+ JuliaSyntaxHighlighting v1.12.0[39m
+2026-02-15T21:09:08.0799464Z   [90m[b27032c2] [39m[92m+ LibCURL v1.0.0[39m
+2026-02-15T21:09:08.0800008Z   [90m[76f85450] [39m[92m+ LibGit2 v1.11.0[39m
+2026-02-15T21:09:08.0800544Z   [90m[8f399da3] [39m[92m+ Libdl v1.11.0[39m
+2026-02-15T21:09:08.0801282Z   [90m[37e2e46d] [39m[93m~ LinearAlgebra ⇒ v1.13.0[39m
+2026-02-15T21:09:08.0801928Z   [90m[56ddb016] [39m[92m+ Logging v1.11.0[39m
+2026-02-15T21:09:08.0803144Z   [90m[d6f4376e] [39m[92m+ Markdown v1.11.0[39m
+2026-02-15T21:09:08.0804797Z   [90m[ca575930] [39m[92m+ NetworkOptions v1.3.0[39m
+2026-02-15T21:09:08.0806575Z   [90m[44cfe95a] [39m[92m+ Pkg v1.13.0[39m
+2026-02-15T21:09:08.0808330Z   [90m[de0858da] [39m[92m+ Printf v1.11.0[39m
+2026-02-15T21:09:08.0810255Z   [90m[9a3f8284] [39m[92m+ Random v1.11.0[39m
+2026-02-15T21:09:08.0812143Z   [90m[ea8e919c] [39m[92m+ SHA v1.0.0[39m
+2026-02-15T21:09:08.0812730Z   [90m[9e88b42a] [39m[92m+ Serialization v1.11.0[39m
+2026-02-15T21:09:08.0814161Z   [90m[6462fe0b] [39m[92m+ Sockets v1.11.0[39m
+2026-02-15T21:09:08.0814763Z   [90m[2f01184e] [39m[93m~ SparseArrays ⇒ v1.13.0[39m
+2026-02-15T21:09:08.0816434Z   [90m[f489334b] [39m[92m+ StyledStrings v1.11.0[39m
+2026-02-15T21:09:08.0818044Z   [90m[fa267f1f] [39m[92m+ TOML v1.0.3[39m
+2026-02-15T21:09:08.0819932Z   [90m[a4e569a6] [39m[92m+ Tar v1.10.0[39m
+2026-02-15T21:09:08.0821425Z   [90m[cf7118a7] [39m[92m+ UUIDs v1.11.0[39m
+2026-02-15T21:09:08.0821976Z   [90m[4ec0a83e] [39m[92m+ Unicode v1.11.0[39m
+2026-02-15T21:09:08.0824092Z   [90m[e66e0078] [39m[92m+ CompilerSupportLibraries_jll v1.3.0+1[39m
+2026-02-15T21:09:08.0825557Z   [90m[deac9b47] [39m[92m+ LibCURL_jll v8.16.0+0[39m
+2026-02-15T21:09:08.0827606Z   [90m[e37daf67] [39m[92m+ LibGit2_jll v1.9.1+0[39m
+2026-02-15T21:09:08.0829130Z   [90m[29816b5a] [39m[92m+ LibSSH2_jll v1.11.3+1[39m
+2026-02-15T21:09:08.0831132Z   [90m[14a3606d] [39m[92m+ MozillaCACerts_jll v2025.12.2[39m
+2026-02-15T21:09:08.0832846Z   [90m[4536629a] [39m[92m+ OpenBLAS_jll v0.3.30+0[39m
+2026-02-15T21:09:08.0834738Z   [90m[458c3c95] [39m[92m+ OpenSSL_jll v3.5.5+0[39m
+2026-02-15T21:09:08.0836562Z   [90m[efcefdf7] [39m[92m+ PCRE2_jll v10.46.0+0[39m
+2026-02-15T21:09:08.0837201Z   [90m[bea87d4a] [39m[92m+ SuiteSparse_jll v7.10.1+0[39m
+2026-02-15T21:09:08.0838627Z   [90m[83775a58] [39m[92m+ Zlib_jll v1.3.1+2[39m
+2026-02-15T21:09:08.0840504Z   [90m[3161d3a3] [39m[92m+ Zstd_jll v1.5.7+1[39m
+2026-02-15T21:09:08.0842512Z   [90m[8e850b90] [39m[92m+ libblastrampoline_jll v5.15.0+0[39m
+2026-02-15T21:09:08.0844011Z   [90m[8e850ede] [39m[92m+ nghttp2_jll v1.67.1+0[39m
+2026-02-15T21:09:08.0845831Z   [90m[3f19e933] [39m[92m+ p7zip_jll v17.7.0+0[39m
+2026-02-15T21:09:08.0847203Z [36m[1m        Info[22m[39m Packages marked with [33m⌅[39m have new versions available but compatibility constraints restrict them from upgrading. To see why use `status --outdated -m`
+2026-02-15T21:09:08.3181866Z ##[group]Run julia-actions/julia-runtest@v1
+2026-02-15T21:09:08.3182163Z with:
+2026-02-15T21:09:08.3182328Z   check_bounds: yes
+2026-02-15T21:09:08.3182507Z   coverage: true
+2026-02-15T21:09:08.3182673Z   depwarn: yes
+2026-02-15T21:09:08.3182861Z   force_latest_compatible_version: auto
+2026-02-15T21:09:08.3183093Z   inline: yes
+2026-02-15T21:09:08.3183258Z   project: @.
+2026-02-15T21:09:08.3183431Z   annotate: false
+2026-02-15T21:09:08.3183607Z   compiled_modules: yes
+2026-02-15T21:09:08.3183803Z   allow_reresolve: true
+2026-02-15T21:09:08.3183978Z env:
+2026-02-15T21:09:08.3184132Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:08.3184338Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:08.3184589Z ##[endgroup]
+2026-02-15T21:09:08.3199542Z ##[group]Run echo "JULIA_PKG_SERVER_REGISTRY_PREFERENCE=${JULIA_PKG_SERVER_REGISTRY_PREFERENCE:-eager}" >> ${GITHUB_ENV}
+2026-02-15T21:09:08.3200332Z [36;1mecho "JULIA_PKG_SERVER_REGISTRY_PREFERENCE=${JULIA_PKG_SERVER_REGISTRY_PREFERENCE:-eager}" >> ${GITHUB_ENV}[0m
+2026-02-15T21:09:08.3249133Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:08.3249441Z env:
+2026-02-15T21:09:08.3249608Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:08.3249828Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:08.3250080Z ##[endgroup]
+2026-02-15T21:09:08.3412931Z ##[group]Run # The Julia command that will be executed
+2026-02-15T21:09:08.3413508Z [36;1m# The Julia command that will be executed[0m
+2026-02-15T21:09:08.3414597Z [36;1mjulia_cmd=( julia --color=yes --inline=yes --project=@. -e 'include(joinpath(ENV["GITHUB_ACTION_PATH"], "test_harness.jl"))' --  )[0m
+2026-02-15T21:09:08.3415824Z [36;1m[0m
+2026-02-15T21:09:08.3416230Z [36;1m# Add the prefix in front of the command if there is one[0m
+2026-02-15T21:09:08.3416778Z [36;1mprefix=(  )[0m
+2026-02-15T21:09:08.3417268Z [36;1m[[ -n ${prefix[*]} ]] && julia_cmd=( "${prefix[@]}" "${julia_cmd[@]}" )[0m
+2026-02-15T21:09:08.3417838Z [36;1m[0m
+2026-02-15T21:09:08.3418141Z [36;1m# Run the Julia command[0m
+2026-02-15T21:09:08.3418638Z [36;1mecho "::debug::Executing Julia: ${julia_cmd[*]}"[0m
+2026-02-15T21:09:08.3419135Z [36;1m"${julia_cmd[@]}"[0m
+2026-02-15T21:09:08.3486822Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:08.3487384Z env:
+2026-02-15T21:09:08.3487687Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:08.3488091Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:08.3488571Z   ANNOTATE: false
+2026-02-15T21:09:08.3488894Z   COVERAGE: true
+2026-02-15T21:09:08.3489250Z   FORCE_LATEST_COMPATIBLE_VERSION: auto
+2026-02-15T21:09:08.3489690Z   CHECK_BOUNDS: yes
+2026-02-15T21:09:08.3490026Z   COMPILED_MODULES: yes
+2026-02-15T21:09:08.3490372Z   ALLOW_RERESOLVE: true
+2026-02-15T21:09:08.3490702Z   DEPWARN: yes
+2026-02-15T21:09:08.3490989Z ##[endgroup]
+2026-02-15T21:09:09.4197945Z │
+2026-02-15T21:09:09.4198892Z │ To reproduce this CI run locally run the following from the same repository state on julia version 1.13.0-beta2:
+2026-02-15T21:09:09.4199548Z │
+2026-02-15T21:09:09.4200417Z │ `import Pkg; Pkg.test(;coverage=true, julia_args=["--check-bounds=yes", "--compiled-modules=yes", "--depwarn=yes"], force_latest_compatible_version=false, allow_reresolve=true)`
+2026-02-15T21:09:09.4201258Z │
+2026-02-15T21:09:10.5216468Z [32m[1m     Testing[22m[39m FiniteVolumeMethod
+2026-02-15T21:09:12.2392528Z [33m[1m        Test[22m[39m Could not use exact versions of packages in manifest, re-resolving. Note: if you do not check your manifest file into source control, then you can probably ignore this message. However, if you do check your manifest file into source control, then you probably want to pass the `allow_reresolve = false` kwarg when calling the `Pkg.test` function.
+2026-02-15T21:09:14.5178713Z [91m[1mERROR: [22m[39mLoadError: Unsatisfiable requirements detected for package [38;5;1mJET [c3a54625][39m:
+2026-02-15T21:09:14.5179618Z  [38;5;1mJET [c3a54625][39m log:
+2026-02-15T21:09:14.5180835Z  ├─possible versions are: [38;5;1m0.0.1 - 0.11.3[39m or uninstalled
+2026-02-15T21:09:14.5182258Z  ├─restricted to versions [38;5;1m*[39m by [38;5;13mproject [38753bcf][39m, leaving only versions: [38;5;1m0.0.1 - 0.11.3[39m
+2026-02-15T21:09:14.5183294Z  │ └─[38;5;13mproject [38753bcf][39m log:
+2026-02-15T21:09:14.5186788Z  │   ├─possible versions are: [38;5;13m0.0.0[39m or uninstalled
+2026-02-15T21:09:14.5187777Z  │   └─[38;5;13mproject [38753bcf][39m is fixed to version [38;5;13m0.0.0[39m
+2026-02-15T21:09:14.5562376Z  └─restricted by julia compatibility requirements to versions: uninstalled — no versions left
+2026-02-15T21:09:14.5563039Z Stacktrace:
+2026-02-15T21:09:14.5578927Z    [1] [0m[1mpropagate_constraints![22m[0m[1m([22m[90mgraph[39m::[0mPkg.Resolve.Graph, [90msources[39m::[0mSet[90m{Int64}[39m; [90mlog_events[39m::[0mBool, [90merr_msg_preamble[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.5581094Z  [90m    @[39m [35mPkg.Resolve[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/Resolve/[39m[90m[4mgraphtype.jl:1194[24m[39m
+2026-02-15T21:09:14.5582303Z  [90m┌[39m [2] [0m[1mpropagate_constraints![22m
+2026-02-15T21:09:14.5583729Z  [90m│[39m[90m   @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/Resolve/[39m[90m[4mgraphtype.jl:1111[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.5585301Z [90m ╰────[39m[90m[3m repeated 2 times[23m[39m
+2026-02-15T21:09:14.5586766Z    [4] [0m[1msimplify_graph![22m[0m[1m([22m[90mgraph[39m::[0mPkg.Resolve.Graph, [90msources[39m::[0mSet[90m{Int64}[39m; [90mvalidate_versions[39m::[0mBool[0m[1m)[22m
+2026-02-15T21:09:14.5588686Z  [90m    @[39m [35mPkg.Resolve[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/Resolve/[39m[90m[4mgraphtype.jl:1718[24m[39m
+2026-02-15T21:09:14.5591726Z  [90m┌[39m [5] [0m[1msimplify_graph![22m
+2026-02-15T21:09:14.5593216Z  [90m│[39m[90m   @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/Resolve/[39m[90m[4mgraphtype.jl:1717[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.5594247Z [90m ╰────[39m[90m[3m repeated 2 times[23m[39m
+2026-02-15T21:09:14.5600822Z    [7] [0m[1mresolve_versions![22m[0m[1m([22m[90menv[39m::[0mPkg.Types.EnvCache, [90mregistries[39m::[0mVector[90m{Pkg.Registry.RegistryInstance}[39m, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m, [90mjulia_version[39m::[0mVersionNumber, [90minstalled_only[39m::[0mBool[0m[1m)[22m
+2026-02-15T21:09:14.5602985Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:781[24m[39m
+2026-02-15T21:09:14.5606589Z    [8] [0m[1mup[22m[0m[1m([22m[90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m, [90mlevel[39m::[0mPkg.Types.UpgradeLevel; [90mskip_writing_project[39m::[0mBool, [90mpreserve[39m::[0mNothing[0m[1m)[22m
+2026-02-15T21:09:14.5608973Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2434[24m[39m
+2026-02-15T21:09:14.5609827Z    [9] [0m[1mup[22m
+2026-02-15T21:09:14.5610676Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2408[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.5680816Z   [10] [0m[1mup[22m[0m[1m([22m[90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m; [90mlevel[39m::[0mPkg.Types.UpgradeLevel, [90mmode[39m::[0mPkg.Types.PackageMode, [90mpreserve[39m::[0mNothing, [90mupdate_registry[39m::[0mBool, [90mskip_writing_project[39m::[0mBool, [90mkwargs[39m::[0m@Kwargs[90m{io::IOContext{IO}}[39m[0m[1m)[22m
+2026-02-15T21:09:14.5683502Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:465[24m[39m
+2026-02-15T21:09:14.5684323Z   [11] [0m[1mup[22m
+2026-02-15T21:09:14.5685296Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:433[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.5794938Z   [12] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{skip_writing_project::Bool, update_registry::Bool, io::IOContext{IO}}[39m, ::[0mtypeof(Pkg.API.up), [90mctx[39m::[0mPkg.Types.Context[0m[1m)[22m
+2026-02-15T21:09:14.5796798Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:177[24m[39m
+2026-02-15T21:09:14.6048961Z   [13] [0m[1m(::Pkg.Operations.var"#215#216"{String, Pkg.Types.EnvCache, Bool, Bool, Bool, Pkg.Operations.var"#230#231"{Bool, Cmd, Cmd, Nothing, Pkg.Types.Context, Vector{Tuple{String, Base.Process}}, String, Pkg.Types.PackageSpec}, Pkg.Types.Context, Pkg.Types.PackageSpec})[22m[0m[1m([22m[0m[1m)[22m
+2026-02-15T21:09:14.6051203Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2773[24m[39m
+2026-02-15T21:09:14.6058239Z   [14] [0m[1mwith_temp_env[22m[0m[1m([22m[90mfn[39m::[0mPkg.Operations.var"#215#216"[90m{String, Pkg.Types.EnvCache, Bool, Bool, Bool, Pkg.Operations.var"#230#231"{Bool, Cmd, Cmd, Nothing, Pkg.Types.Context, Vector{Tuple{String, Base.Process}}, String, Pkg.Types.PackageSpec}, Pkg.Types.Context, Pkg.Types.PackageSpec}[39m, [90mtemp_env[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6060672Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2628[24m[39m
+2026-02-15T21:09:14.6068334Z   [15] [0m[1m(::Pkg.Operations.var"#211#212"{Dict{String, Any}, Bool, Bool, Bool, Pkg.Operations.var"#230#231"{Bool, Cmd, Cmd, Nothing, Pkg.Types.Context, Vector{Tuple{String, Base.Process}}, String, Pkg.Types.PackageSpec}, Pkg.Types.Context, Pkg.Types.PackageSpec, String, String})[22m[0m[1m([22m[90mtmp[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6070145Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2742[24m[39m
+2026-02-15T21:09:14.6078177Z   [16] [0m[1mmktempdir[22m[0m[1m([22m[90mfn[39m::[0mPkg.Operations.var"#211#212"[90m{Dict{String, Any}, Bool, Bool, Bool, Pkg.Operations.var"#230#231"{Bool, Cmd, Cmd, Nothing, Pkg.Types.Context, Vector{Tuple{String, Base.Process}}, String, Pkg.Types.PackageSpec}, Pkg.Types.Context, Pkg.Types.PackageSpec, String, String}[39m, [90mparent[39m::[0mString; [90mprefix[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6080419Z  [90m    @[39m [90mBase.Filesystem[39m [90m./[39m[90m[4mfile.jl:936[24m[39m
+2026-02-15T21:09:14.6081098Z   [17] [0m[1mmktempdir[22m[0m[1m([22m[90mfn[39m::[0mFunction, [90mparent[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6081718Z  [90m    @[39m [90mBase.Filesystem[39m [90m./[39m[90m[4mfile.jl:932[24m[39m
+2026-02-15T21:09:14.6082118Z   [18] [0m[1m#sandbox#207[22m
+2026-02-15T21:09:14.6082847Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2689[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6211852Z   [19] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{preferences::Dict{String, Any}, force_latest_compatible_version::Bool, allow_earlier_backwards_compatible_versions::Bool, allow_reresolve::Bool}[39m, ::[0mtypeof(Pkg.Operations.sandbox), [90mfn[39m::[0mFunction, [90mctx[39m::[0mPkg.Types.Context, [90mtarget[39m::[0mPkg.Types.PackageSpec, [90msandbox_path[39m::[0mString, [90msandbox_project_override[39m::[0mNothing[0m[1m)[22m
+2026-02-15T21:09:14.6214970Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2679[24m[39m
+2026-02-15T21:09:14.6218612Z   [20] [0m[1mtest[22m[0m[1m([22m[90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m; [90mcoverage[39m::[0mBool, [90mjulia_args[39m::[0mCmd, [90mtest_args[39m::[0mCmd, [90mtest_fn[39m::[0mNothing, [90mforce_latest_compatible_version[39m::[0mBool, [90mallow_earlier_backwards_compatible_versions[39m::[0mBool, [90mallow_reresolve[39m::[0mBool[0m[1m)[22m
+2026-02-15T21:09:14.6223277Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2953[24m[39m
+2026-02-15T21:09:14.6224494Z   [21] [0m[1mtest[22m
+2026-02-15T21:09:14.6225887Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2859[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6238185Z   [22] [0m[1mtest[22m[0m[1m([22m[90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m; [90mcoverage[39m::[0mBool, [90mtest_fn[39m::[0mNothing, [90mjulia_args[39m::[0mVector[90m{String}[39m, [90mtest_args[39m::[0mCmd, [90mforce_latest_compatible_version[39m::[0mBool, [90mallow_earlier_backwards_compatible_versions[39m::[0mBool, [90mallow_reresolve[39m::[0mBool, [90mkwargs[39m::[0m@Kwargs[90m{io::IOContext{IO}}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6241698Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:572[24m[39m
+2026-02-15T21:09:14.6388191Z   [23] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool, io::IOContext{IO}}[39m, ::[0mtypeof(Pkg.API.test), [90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6391097Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:548[24m[39m
+2026-02-15T21:09:14.6405691Z   [24] [0m[1mtest[22m[0m[1m([22m[90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m; [90mio[39m::[0mIOContext[90m{IO}[39m, [90mkwargs[39m::[0m@Kwargs[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6408300Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:172[24m[39m
+2026-02-15T21:09:14.6420729Z   [25] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool}[39m, ::[0mtypeof(Pkg.API.test), [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6423323Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:161[24m[39m
+2026-02-15T21:09:14.6432850Z   [26] [0m[1mtest[22m[0m[1m([22m; [90mname[39m::[0mNothing, [90muuid[39m::[0mNothing, [90mversion[39m::[0mNothing, [90murl[39m::[0mNothing, [90mrev[39m::[0mNothing, [90mpath[39m::[0mNothing, [90mmode[39m::[0mPkg.Types.PackageMode, [90msubdir[39m::[0mNothing, [90mkwargs[39m::[0m@Kwargs[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6436388Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:189[24m[39m
+2026-02-15T21:09:14.6443413Z   [27] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool}[39m, ::[0mtypeof(Pkg.API.test)[0m[1m)[22m
+2026-02-15T21:09:14.6446115Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:178[24m[39m
+2026-02-15T21:09:14.6447169Z   [28] top-level scope
+2026-02-15T21:09:14.6448075Z  [90m    @[39m [90m~/work/_actions/julia-actions/julia-runtest/v1/[39m[90m[4mtest_harness.jl:81[24m[39m
+2026-02-15T21:09:14.6449647Z   [29] [0m[1minclude[22m[0m[1m([22m[90mmapexpr[39m::[0mFunction, [90mmod[39m::[0mModule, [90m_path[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6450763Z  [90m    @[39m [90mBase[39m [90m./[39m[90m[4mBase.jl:310[24m[39m
+2026-02-15T21:09:14.6451272Z   [30] top-level scope
+2026-02-15T21:09:14.6451711Z  [90m    @[39m [90m[4mnone:1[24m[39m
+2026-02-15T21:09:14.6452540Z   [31] [0m[1meval[22m[0m[1m([22m[90mm[39m::[0mModule, [90me[39m::[0mAny[0m[1m)[22m
+2026-02-15T21:09:14.6453415Z  [90m    @[39m [90mCore[39m [90m./[39m[90m[4mboot.jl:489[24m[39m
+2026-02-15T21:09:14.6454331Z   [32] [0m[1mexec_options[22m[0m[1m([22m[90mopts[39m::[0mBase.JLOptions[0m[1m)[22m
+2026-02-15T21:09:14.6455373Z  [90m    @[39m [90mBase[39m [90m./[39m[90m[4mclient.jl:310[24m[39m
+2026-02-15T21:09:14.6456038Z   [33] [0m[1m_start[22m[0m[1m([22m[0m[1m)[22m
+2026-02-15T21:09:14.6456762Z  [90m    @[39m [90mBase[39m [90m./[39m[90m[4mclient.jl:577[24m[39m
+2026-02-15T21:09:14.6457704Z in expression starting at /home/runner/work/_actions/julia-actions/julia-runtest/v1/test_harness.jl:62
+2026-02-15T21:09:14.6458400Z 
+2026-02-15T21:09:14.6459026Z [91mcaused by: [39mUnsatisfiable requirements detected for package [38;5;1mJET [c3a54625][39m:
+2026-02-15T21:09:14.6459841Z  [38;5;1mJET [c3a54625][39m log:
+2026-02-15T21:09:14.6460557Z  ├─possible versions are: [38;5;1m0.0.1 - 0.11.3[39m or uninstalled
+2026-02-15T21:09:14.6461810Z  ├─restricted to versions [38;5;1m*[39m by [38;5;13mproject [38753bcf][39m, leaving only versions: [38;5;1m0.0.1 - 0.11.3[39m
+2026-02-15T21:09:14.6462748Z  │ └─[38;5;13mproject [38753bcf][39m log:
+2026-02-15T21:09:14.6463373Z  │   ├─possible versions are: [38;5;13m0.0.0[39m or uninstalled
+2026-02-15T21:09:14.6464241Z  │   └─[38;5;13mproject [38753bcf][39m is fixed to version [38;5;13m0.0.0[39m
+2026-02-15T21:09:14.6465517Z  └─restricted by julia compatibility requirements to versions: uninstalled — no versions left
+2026-02-15T21:09:14.6466267Z Stacktrace:
+2026-02-15T21:09:14.6467819Z    [1] [0m[1mpropagate_constraints![22m[0m[1m([22m[90mgraph[39m::[0mPkg.Resolve.Graph, [90msources[39m::[0mSet[90m{Int64}[39m; [90mlog_events[39m::[0mBool, [90merr_msg_preamble[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6470141Z  [90m    @[39m [35mPkg.Resolve[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/Resolve/[39m[90m[4mgraphtype.jl:1194[24m[39m
+2026-02-15T21:09:14.6471452Z  [90m┌[39m [2] [0m[1mpropagate_constraints![22m
+2026-02-15T21:09:14.6472867Z  [90m│[39m[90m   @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/Resolve/[39m[90m[4mgraphtype.jl:1111[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6474150Z [90m ╰────[39m[90m[3m repeated 2 times[23m[39m
+2026-02-15T21:09:14.6475789Z    [4] [0m[1msimplify_graph![22m[0m[1m([22m[90mgraph[39m::[0mPkg.Resolve.Graph, [90msources[39m::[0mSet[90m{Int64}[39m; [90mvalidate_versions[39m::[0mBool[0m[1m)[22m
+2026-02-15T21:09:14.6477870Z  [90m    @[39m [35mPkg.Resolve[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/Resolve/[39m[90m[4mgraphtype.jl:1718[24m[39m
+2026-02-15T21:09:14.6479087Z  [90m┌[39m [5] [0m[1msimplify_graph![22m
+2026-02-15T21:09:14.6480407Z  [90m│[39m[90m   @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/Resolve/[39m[90m[4mgraphtype.jl:1717[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6482009Z [90m ╰────[39m[90m[3m repeated 2 times[23m[39m
+2026-02-15T21:09:14.6484622Z    [7] [0m[1mresolve_versions![22m[0m[1m([22m[90menv[39m::[0mPkg.Types.EnvCache, [90mregistries[39m::[0mVector[90m{Pkg.Registry.RegistryInstance}[39m, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m, [90mjulia_version[39m::[0mVersionNumber, [90minstalled_only[39m::[0mBool[0m[1m)[22m
+2026-02-15T21:09:14.6487665Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:781[24m[39m
+2026-02-15T21:09:14.6492238Z    [8] [0m[1mup[22m[0m[1m([22m[90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m, [90mlevel[39m::[0mPkg.Types.UpgradeLevel; [90mskip_writing_project[39m::[0mBool, [90mpreserve[39m::[0mNothing[0m[1m)[22m
+2026-02-15T21:09:14.6494808Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2434[24m[39m
+2026-02-15T21:09:14.6496246Z    [9] [0m[1mup[22m
+2026-02-15T21:09:14.6497419Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2408[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6506443Z   [10] [0m[1mup[22m[0m[1m([22m[90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m; [90mlevel[39m::[0mPkg.Types.UpgradeLevel, [90mmode[39m::[0mPkg.Types.PackageMode, [90mpreserve[39m::[0mNothing, [90mupdate_registry[39m::[0mBool, [90mskip_writing_project[39m::[0mBool, [90mkwargs[39m::[0m@Kwargs[90m{io::Base.DevNull}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6509530Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:465[24m[39m
+2026-02-15T21:09:14.6510590Z   [11] [0m[1mup[22m
+2026-02-15T21:09:14.6511716Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:433[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6512789Z   [12] [0m[1mup[22m
+2026-02-15T21:09:14.6513873Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:177[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6514922Z   [13] [0m[1m#resolve#170[22m
+2026-02-15T21:09:14.6516279Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:471[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6517404Z   [14] [0m[1mresolve[22m
+2026-02-15T21:09:14.6518553Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:470[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6521503Z   [15] [0m[1m(::Pkg.Operations.var"#215#216"{String, Pkg.Types.EnvCache, Bool, Bool, Bool, Pkg.Operations.var"#230#231"{Bool, Cmd, Cmd, Nothing, Pkg.Types.Context, Vector{Tuple{String, Base.Process}}, String, Pkg.Types.PackageSpec}, Pkg.Types.Context, Pkg.Types.PackageSpec})[22m[0m[1m([22m[0m[1m)[22m
+2026-02-15T21:09:14.6524301Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2758[24m[39m
+2026-02-15T21:09:14.6528488Z   [16] [0m[1mwith_temp_env[22m[0m[1m([22m[90mfn[39m::[0mPkg.Operations.var"#215#216"[90m{String, Pkg.Types.EnvCache, Bool, Bool, Bool, Pkg.Operations.var"#230#231"{Bool, Cmd, Cmd, Nothing, Pkg.Types.Context, Vector{Tuple{String, Base.Process}}, String, Pkg.Types.PackageSpec}, Pkg.Types.Context, Pkg.Types.PackageSpec}[39m, [90mtemp_env[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6531609Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2628[24m[39m
+2026-02-15T21:09:14.6540476Z   [17] [0m[1m(::Pkg.Operations.var"#211#212"{Dict{String, Any}, Bool, Bool, Bool, Pkg.Operations.var"#230#231"{Bool, Cmd, Cmd, Nothing, Pkg.Types.Context, Vector{Tuple{String, Base.Process}}, String, Pkg.Types.PackageSpec}, Pkg.Types.Context, Pkg.Types.PackageSpec, String, String})[22m[0m[1m([22m[90mtmp[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6543631Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2742[24m[39m
+2026-02-15T21:09:14.6552337Z   [18] [0m[1mmktempdir[22m[0m[1m([22m[90mfn[39m::[0mPkg.Operations.var"#211#212"[90m{Dict{String, Any}, Bool, Bool, Bool, Pkg.Operations.var"#230#231"{Bool, Cmd, Cmd, Nothing, Pkg.Types.Context, Vector{Tuple{String, Base.Process}}, String, Pkg.Types.PackageSpec}, Pkg.Types.Context, Pkg.Types.PackageSpec, String, String}[39m, [90mparent[39m::[0mString; [90mprefix[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6555295Z  [90m    @[39m [90mBase.Filesystem[39m [90m./[39m[90m[4mfile.jl:936[24m[39m
+2026-02-15T21:09:14.6556442Z   [19] [0m[1mmktempdir[22m[0m[1m([22m[90mfn[39m::[0mFunction, [90mparent[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6557449Z  [90m    @[39m [90mBase.Filesystem[39m [90m./[39m[90m[4mfile.jl:932[24m[39m
+2026-02-15T21:09:14.6558144Z   [20] [0m[1m#sandbox#207[22m
+2026-02-15T21:09:14.6559383Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2689[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6565438Z   [21] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{preferences::Dict{String, Any}, force_latest_compatible_version::Bool, allow_earlier_backwards_compatible_versions::Bool, allow_reresolve::Bool}[39m, ::[0mtypeof(Pkg.Operations.sandbox), [90mfn[39m::[0mFunction, [90mctx[39m::[0mPkg.Types.Context, [90mtarget[39m::[0mPkg.Types.PackageSpec, [90msandbox_path[39m::[0mString, [90msandbox_project_override[39m::[0mNothing[0m[1m)[22m
+2026-02-15T21:09:14.6569157Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2679[24m[39m
+2026-02-15T21:09:14.6573755Z   [22] [0m[1mtest[22m[0m[1m([22m[90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m; [90mcoverage[39m::[0mBool, [90mjulia_args[39m::[0mCmd, [90mtest_args[39m::[0mCmd, [90mtest_fn[39m::[0mNothing, [90mforce_latest_compatible_version[39m::[0mBool, [90mallow_earlier_backwards_compatible_versions[39m::[0mBool, [90mallow_reresolve[39m::[0mBool[0m[1m)[22m
+2026-02-15T21:09:14.6577328Z  [90m    @[39m [35mPkg.Operations[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2953[24m[39m
+2026-02-15T21:09:14.6578473Z   [23] [0m[1mtest[22m
+2026-02-15T21:09:14.6579642Z  [90m    @[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mOperations.jl:2859[24m[39m[90m [inlined][39m
+2026-02-15T21:09:14.6595017Z   [24] [0m[1mtest[22m[0m[1m([22m[90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m; [90mcoverage[39m::[0mBool, [90mtest_fn[39m::[0mNothing, [90mjulia_args[39m::[0mVector[90m{String}[39m, [90mtest_args[39m::[0mCmd, [90mforce_latest_compatible_version[39m::[0mBool, [90mallow_earlier_backwards_compatible_versions[39m::[0mBool, [90mallow_reresolve[39m::[0mBool, [90mkwargs[39m::[0m@Kwargs[90m{io::IOContext{IO}}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6598832Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:572[24m[39m
+2026-02-15T21:09:14.6613018Z   [25] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool, io::IOContext{IO}}[39m, ::[0mtypeof(Pkg.API.test), [90mctx[39m::[0mPkg.Types.Context, [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6616219Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:548[24m[39m
+2026-02-15T21:09:14.6631040Z   [26] [0m[1mtest[22m[0m[1m([22m[90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m; [90mio[39m::[0mIOContext[90m{IO}[39m, [90mkwargs[39m::[0m@Kwargs[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6633616Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:172[24m[39m
+2026-02-15T21:09:14.6645897Z   [27] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool}[39m, ::[0mtypeof(Pkg.API.test), [90mpkgs[39m::[0mVector[90m{Pkg.Types.PackageSpec}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6648442Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:161[24m[39m
+2026-02-15T21:09:14.6657941Z   [28] [0m[1mtest[22m[0m[1m([22m; [90mname[39m::[0mNothing, [90muuid[39m::[0mNothing, [90mversion[39m::[0mNothing, [90murl[39m::[0mNothing, [90mrev[39m::[0mNothing, [90mpath[39m::[0mNothing, [90mmode[39m::[0mPkg.Types.PackageMode, [90msubdir[39m::[0mNothing, [90mkwargs[39m::[0m@Kwargs[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool}[39m[0m[1m)[22m
+2026-02-15T21:09:14.6661259Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:189[24m[39m
+2026-02-15T21:09:14.6667936Z   [29] [0m[1mkwcall[22m[0m[1m([22m::[0m@NamedTuple[90m{coverage::Bool, julia_args::Vector{String}, force_latest_compatible_version::Bool, allow_reresolve::Bool}[39m, ::[0mtypeof(Pkg.API.test)[0m[1m)[22m
+2026-02-15T21:09:14.6670250Z  [90m    @[39m [35mPkg.API[39m [90m/opt/hostedtoolcache/julia/1.13.0-beta2/x64/share/julia/stdlib/v1.13/Pkg/src/[39m[90m[4mAPI.jl:178[24m[39m
+2026-02-15T21:09:14.6671326Z   [30] top-level scope
+2026-02-15T21:09:14.6672210Z  [90m    @[39m [90m~/work/_actions/julia-actions/julia-runtest/v1/[39m[90m[4mtest_harness.jl:81[24m[39m
+2026-02-15T21:09:14.6673776Z   [31] [0m[1minclude[22m[0m[1m([22m[90mmapexpr[39m::[0mFunction, [90mmod[39m::[0mModule, [90m_path[39m::[0mString[0m[1m)[22m
+2026-02-15T21:09:14.6674863Z  [90m    @[39m [90mBase[39m [90m./[39m[90m[4mBase.jl:310[24m[39m
+2026-02-15T21:09:14.6675615Z   [32] top-level scope
+2026-02-15T21:09:14.6676047Z  [90m    @[39m [90m[4mnone:1[24m[39m
+2026-02-15T21:09:14.6676820Z   [33] [0m[1meval[22m[0m[1m([22m[90mm[39m::[0mModule, [90me[39m::[0mAny[0m[1m)[22m
+2026-02-15T21:09:14.6677624Z  [90m    @[39m [90mCore[39m [90m./[39m[90m[4mboot.jl:489[24m[39m
+2026-02-15T21:09:14.6678445Z   [34] [0m[1mexec_options[22m[0m[1m([22m[90mopts[39m::[0mBase.JLOptions[0m[1m)[22m
+2026-02-15T21:09:14.6679258Z  [90m    @[39m [90mBase[39m [90m./[39m[90m[4mclient.jl:310[24m[39m
+2026-02-15T21:09:14.6679886Z   [35] [0m[1m_start[22m[0m[1m([22m[0m[1m)[22m
+2026-02-15T21:09:14.6680494Z  [90m    @[39m [90mBase[39m [90m./[39m[90m[4mclient.jl:577[24m[39m
+2026-02-15T21:09:14.6978048Z ##[error]Process completed with exit code 1.
+2026-02-15T21:09:14.7038920Z ##[group]Run julia-actions/julia-processcoverage@v1
+2026-02-15T21:09:14.7039218Z with:
+2026-02-15T21:09:14.7039383Z   directories: src,ext
+2026-02-15T21:09:14.7039557Z env:
+2026-02-15T21:09:14.7039715Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:14.7039921Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:14.7040172Z ##[endgroup]
+2026-02-15T21:09:14.7053369Z ##[group]Run julia --color=yes "$GITHUB_ACTION_PATH"/main.jl
+2026-02-15T21:09:14.7053757Z [36;1mjulia --color=yes "$GITHUB_ACTION_PATH"/main.jl[0m
+2026-02-15T21:09:14.7102624Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:14.7102932Z env:
+2026-02-15T21:09:14.7103103Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:14.7103323Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:14.7103587Z   INPUT_DIRECTORIES: src,ext
+2026-02-15T21:09:14.7103788Z ##[endgroup]
+2026-02-15T21:09:15.2459954Z [32m[1m  Activating[22m[39m new project at `~/.julia/environments/coveragetempenv`
+2026-02-15T21:09:15.4410054Z [32m[1m   Resolving[22m[39m package versions...
+2026-02-15T21:09:15.9193364Z [32m[1m   Installed[22m[39m CoverageTools ─ v1.4.1
+2026-02-15T21:09:15.9500147Z [32m[1m   Installed[22m[39m JuliaSyntax ─── v1.0.2
+2026-02-15T21:09:16.1995387Z [32m[1m    Updating[22m[39m `~/.julia/environments/coveragetempenv/Project.toml`
+2026-02-15T21:09:16.1996363Z   [90m[c36e975a] [39m[92m+ CoverageTools v1.4.1[39m
+2026-02-15T21:09:16.1997251Z [32m[1m    Updating[22m[39m `~/.julia/environments/coveragetempenv/Manifest.toml`
+2026-02-15T21:09:16.2002021Z   [90m[c36e975a] [39m[92m+ CoverageTools v1.4.1[39m
+2026-02-15T21:09:16.2002694Z   [90m[70703baa] [39m[92m+ JuliaSyntax v1.0.2[39m
+2026-02-15T21:09:16.2005565Z   [90m[ade2ca70] [39m[92m+ Dates v1.11.0[39m
+2026-02-15T21:09:16.2008103Z   [90m[de0858da] [39m[92m+ Printf v1.11.0[39m
+2026-02-15T21:09:16.2010279Z   [90m[fa267f1f] [39m[92m+ TOML v1.0.3[39m
+2026-02-15T21:09:16.2010879Z   [90m[4ec0a83e] [39m[92m+ Unicode v1.11.0[39m
+2026-02-15T21:09:16.2466483Z [32m[1mPrecompiling[22m[39m packages...
+2026-02-15T21:09:36.9948756Z   20748.2 ms[32m  ✓ [39m[90mJuliaSyntax[39m
+2026-02-15T21:09:37.6056836Z     610.7 ms[32m  ✓ [39mCoverageTools
+2026-02-15T21:09:37.6057767Z   2 dependencies successfully precompiled in 21 seconds. 4 already precompiled.
+2026-02-15T21:09:38.5610750Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src for .jl files...
+2026-02-15T21:09:38.5612239Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/FiniteVolumeMethod.jl
+2026-02-15T21:09:38.5613634Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/FiniteVolumeMethod.jl do not exist.
+2026-02-15T21:09:38.5614555Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6256405Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/amr for .jl files...
+2026-02-15T21:09:38.6257466Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/amr_grid.jl
+2026-02-15T21:09:38.6258556Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/amr/amr_grid.jl do not exist.
+2026-02-15T21:09:38.6259291Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6269042Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/amr_solve.jl
+2026-02-15T21:09:38.6270029Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/amr/amr_solve.jl do not exist.
+2026-02-15T21:09:38.6270677Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6294549Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/flux_correction.jl
+2026-02-15T21:09:38.6297096Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/amr/flux_correction.jl do not exist.
+2026-02-15T21:09:38.6298299Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6311414Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/prolongation.jl
+2026-02-15T21:09:38.6313008Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/amr/prolongation.jl do not exist.
+2026-02-15T21:09:38.6314414Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6327574Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/refinement.jl
+2026-02-15T21:09:38.6329330Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/amr/refinement.jl do not exist.
+2026-02-15T21:09:38.6331992Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6355916Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/amr/restriction.jl
+2026-02-15T21:09:38.6357383Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/amr/restriction.jl do not exist.
+2026-02-15T21:09:38.6358072Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6368840Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/conditions for .jl files...
+2026-02-15T21:09:38.6370392Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/conditions/coupled.jl
+2026-02-15T21:09:38.6371560Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/conditions/coupled.jl do not exist.
+2026-02-15T21:09:38.6372278Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6384836Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/conditions/nonlinear.jl
+2026-02-15T21:09:38.6386476Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/conditions/nonlinear.jl do not exist.
+2026-02-15T21:09:38.6387170Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6399309Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/conditions/periodic.jl
+2026-02-15T21:09:38.6400748Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/conditions/periodic.jl do not exist.
+2026-02-15T21:09:38.6401444Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6414287Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/conditions.jl
+2026-02-15T21:09:38.6415908Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/conditions.jl do not exist.
+2026-02-15T21:09:38.6416561Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6481668Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/constrained_transport for .jl files...
+2026-02-15T21:09:38.6483609Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/ct_data.jl
+2026-02-15T21:09:38.6484952Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/ct_data.jl do not exist.
+2026-02-15T21:09:38.6486138Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6493250Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/ct_data_3d.jl
+2026-02-15T21:09:38.6494876Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/ct_data_3d.jl do not exist.
+2026-02-15T21:09:38.6495816Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6508848Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/ct_update.jl
+2026-02-15T21:09:38.6510254Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/ct_update.jl do not exist.
+2026-02-15T21:09:38.6510968Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6514893Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/ct_update_3d.jl
+2026-02-15T21:09:38.6516761Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/ct_update_3d.jl do not exist.
+2026-02-15T21:09:38.6517491Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6523762Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/divb.jl
+2026-02-15T21:09:38.6525495Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/divb.jl do not exist.
+2026-02-15T21:09:38.6526142Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6529191Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/divb_3d.jl
+2026-02-15T21:09:38.6530639Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/divb_3d.jl do not exist.
+2026-02-15T21:09:38.6531279Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6534317Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/emf.jl
+2026-02-15T21:09:38.6535913Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/emf.jl do not exist.
+2026-02-15T21:09:38.6536520Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6543024Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/constrained_transport/emf_3d.jl
+2026-02-15T21:09:38.6544480Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/constrained_transport/emf_3d.jl do not exist.
+2026-02-15T21:09:38.6545317Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6549512Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/coupling for .jl files...
+2026-02-15T21:09:38.6550936Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/coupling/abstract_coupling.jl
+2026-02-15T21:09:38.6552059Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/coupling/abstract_coupling.jl do not exist.
+2026-02-15T21:09:38.6552678Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6554914Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/coupling/coupled_solve.jl
+2026-02-15T21:09:38.6556464Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/coupling/coupled_solve.jl do not exist.
+2026-02-15T21:09:38.6557067Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6568785Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/coupling/data_transfer.jl
+2026-02-15T21:09:38.6570255Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/coupling/data_transfer.jl do not exist.
+2026-02-15T21:09:38.6570861Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6574159Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/coupling/operators.jl
+2026-02-15T21:09:38.6575888Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/coupling/operators.jl do not exist.
+2026-02-15T21:09:38.6576501Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6586151Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/eos for .jl files...
+2026-02-15T21:09:38.6587475Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/eos/eos_interface.jl
+2026-02-15T21:09:38.6588851Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/eos/eos_interface.jl do not exist.
+2026-02-15T21:09:38.6589437Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6590552Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/eos/ideal_gas.jl
+2026-02-15T21:09:38.6591943Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/eos/ideal_gas.jl do not exist.
+2026-02-15T21:09:38.6592508Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6596263Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/eos/stiffened_gas.jl
+2026-02-15T21:09:38.6597639Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/eos/stiffened_gas.jl do not exist.
+2026-02-15T21:09:38.6598219Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6601818Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/equations for .jl files...
+2026-02-15T21:09:38.6603323Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/boundary_edge_contributions.jl
+2026-02-15T21:09:38.6604522Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/equations/boundary_edge_contributions.jl do not exist.
+2026-02-15T21:09:38.6605375Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6614315Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/control_volumes.jl
+2026-02-15T21:09:38.6615904Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/equations/control_volumes.jl do not exist.
+2026-02-15T21:09:38.6616512Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6620102Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/dirichlet.jl
+2026-02-15T21:09:38.6621523Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/equations/dirichlet.jl do not exist.
+2026-02-15T21:09:38.6622114Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6627842Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/individual_flux_contributions.jl
+2026-02-15T21:09:38.6629341Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/equations/individual_flux_contributions.jl do not exist.
+2026-02-15T21:09:38.6629986Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6635730Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/main_equations.jl
+2026-02-15T21:09:38.6637177Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/equations/main_equations.jl do not exist.
+2026-02-15T21:09:38.6637789Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6641773Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/shape_functions.jl
+2026-02-15T21:09:38.6643600Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/equations/shape_functions.jl do not exist.
+2026-02-15T21:09:38.6644720Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6648789Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/source_contributions.jl
+2026-02-15T21:09:38.6650830Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/equations/source_contributions.jl do not exist.
+2026-02-15T21:09:38.6652155Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6659088Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/equations/triangle_contributions.jl
+2026-02-15T21:09:38.6660915Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/equations/triangle_contributions.jl do not exist.
+2026-02-15T21:09:38.6662133Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6667957Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/geometry.jl
+2026-02-15T21:09:38.6669447Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/geometry.jl do not exist.
+2026-02-15T21:09:38.6670472Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6682081Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/hyperbolic for .jl files...
+2026-02-15T21:09:38.6683679Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/boundary_conditions_2d.jl
+2026-02-15T21:09:38.6685770Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/boundary_conditions_2d.jl do not exist.
+2026-02-15T21:09:38.6686994Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6702619Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/boundary_conditions_3d.jl
+2026-02-15T21:09:38.6704475Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/boundary_conditions_3d.jl do not exist.
+2026-02-15T21:09:38.6705903Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6740598Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/boundary_conditions_hyp.jl
+2026-02-15T21:09:38.6742517Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/boundary_conditions_hyp.jl do not exist.
+2026-02-15T21:09:38.6743714Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6754124Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/characteristic_projection.jl
+2026-02-15T21:09:38.6755937Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/characteristic_projection.jl do not exist.
+2026-02-15T21:09:38.6756620Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6778723Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/con2prim.jl
+2026-02-15T21:09:38.6780294Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/con2prim.jl do not exist.
+2026-02-15T21:09:38.6780933Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6789033Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/conservation_laws.jl
+2026-02-15T21:09:38.6790643Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/conservation_laws.jl do not exist.
+2026-02-15T21:09:38.6791268Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6793378Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/euler.jl
+2026-02-15T21:09:38.6795242Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/euler.jl do not exist.
+2026-02-15T21:09:38.6795902Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6805253Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/euler_3d.jl
+2026-02-15T21:09:38.6806749Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/euler_3d.jl do not exist.
+2026-02-15T21:09:38.6807562Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6814515Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/grmhd.jl
+2026-02-15T21:09:38.6816159Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/grmhd.jl do not exist.
+2026-02-15T21:09:38.6816819Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6840424Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/grmhd_con2prim.jl
+2026-02-15T21:09:38.6842244Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/grmhd_con2prim.jl do not exist.
+2026-02-15T21:09:38.6843023Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6857909Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/grmhd_solve_2d.jl
+2026-02-15T21:09:38.6859480Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/grmhd_solve_2d.jl do not exist.
+2026-02-15T21:09:38.6860092Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6881723Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hall_mhd.jl
+2026-02-15T21:09:38.6883250Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hall_mhd.jl do not exist.
+2026-02-15T21:09:38.6883884Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6900302Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hllc_solver.jl
+2026-02-15T21:09:38.6901869Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hllc_solver.jl do not exist.
+2026-02-15T21:09:38.6902551Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6912733Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hlld_solver.jl
+2026-02-15T21:09:38.6914387Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hlld_solver.jl do not exist.
+2026-02-15T21:09:38.6915299Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6929122Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_problem.jl
+2026-02-15T21:09:38.6930792Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hyperbolic_problem.jl do not exist.
+2026-02-15T21:09:38.6931553Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6934259Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_problem_2d.jl
+2026-02-15T21:09:38.6936121Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hyperbolic_problem_2d.jl do not exist.
+2026-02-15T21:09:38.6936856Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6939529Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_problem_3d.jl
+2026-02-15T21:09:38.6941304Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hyperbolic_problem_3d.jl do not exist.
+2026-02-15T21:09:38.6942040Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6944796Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_solve.jl
+2026-02-15T21:09:38.6946478Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hyperbolic_solve.jl do not exist.
+2026-02-15T21:09:38.6947275Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6960044Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_solve_2d.jl
+2026-02-15T21:09:38.6961629Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hyperbolic_solve_2d.jl do not exist.
+2026-02-15T21:09:38.6962246Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.6978784Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/hyperbolic_solve_3d.jl
+2026-02-15T21:09:38.6980358Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/hyperbolic_solve_3d.jl do not exist.
+2026-02-15T21:09:38.6980997Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7001422Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/imex.jl
+2026-02-15T21:09:38.7002888Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/imex.jl do not exist.
+2026-02-15T21:09:38.7003526Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7011398Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/imex_solve.jl
+2026-02-15T21:09:38.7012943Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/imex_solve.jl do not exist.
+2026-02-15T21:09:38.7013555Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7031888Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/mhd.jl
+2026-02-15T21:09:38.7033338Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/mhd.jl do not exist.
+2026-02-15T21:09:38.7034023Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7048792Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/mhd_3d.jl
+2026-02-15T21:09:38.7050394Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/mhd_3d.jl do not exist.
+2026-02-15T21:09:38.7051107Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7059449Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/mhd_solve_2d.jl
+2026-02-15T21:09:38.7061146Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/mhd_solve_2d.jl do not exist.
+2026-02-15T21:09:38.7061882Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7080989Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/mhd_solve_3d.jl
+2026-02-15T21:09:38.7082641Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/mhd_solve_3d.jl do not exist.
+2026-02-15T21:09:38.7083375Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7100024Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/multirate.jl
+2026-02-15T21:09:38.7101668Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/multirate.jl do not exist.
+2026-02-15T21:09:38.7102603Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7132625Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/navier_stokes.jl
+2026-02-15T21:09:38.7134274Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/navier_stokes.jl do not exist.
+2026-02-15T21:09:38.7135382Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7140384Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/navier_stokes_solve.jl
+2026-02-15T21:09:38.7142060Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/navier_stokes_solve.jl do not exist.
+2026-02-15T21:09:38.7142815Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7147755Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/navier_stokes_solve_2d.jl
+2026-02-15T21:09:38.7149320Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/navier_stokes_solve_2d.jl do not exist.
+2026-02-15T21:09:38.7149960Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7159609Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/noslip_bc.jl
+2026-02-15T21:09:38.7161160Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/noslip_bc.jl do not exist.
+2026-02-15T21:09:38.7161779Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7168915Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/positivity_limiter.jl
+2026-02-15T21:09:38.7170489Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/positivity_limiter.jl do not exist.
+2026-02-15T21:09:38.7171116Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7185497Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/ppm.jl
+2026-02-15T21:09:38.7186970Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/ppm.jl do not exist.
+2026-02-15T21:09:38.7187652Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7196688Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/reconstruction.jl
+2026-02-15T21:09:38.7198265Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/reconstruction.jl do not exist.
+2026-02-15T21:09:38.7198928Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7205561Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/resistive_mhd.jl
+2026-02-15T21:09:38.7207186Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/resistive_mhd.jl do not exist.
+2026-02-15T21:09:38.7207886Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7218417Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/riemann_solvers.jl
+2026-02-15T21:09:38.7220010Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/riemann_solvers.jl do not exist.
+2026-02-15T21:09:38.7220700Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7224956Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/shallow_water.jl
+2026-02-15T21:09:38.7226752Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/shallow_water.jl do not exist.
+2026-02-15T21:09:38.7227676Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7243876Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/srhydro.jl
+2026-02-15T21:09:38.7245559Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/srhydro.jl do not exist.
+2026-02-15T21:09:38.7246538Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7273576Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/srmhd.jl
+2026-02-15T21:09:38.7275568Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/srmhd.jl do not exist.
+2026-02-15T21:09:38.7276331Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7291736Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/srmhd_solve.jl
+2026-02-15T21:09:38.7293230Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/srmhd_solve.jl do not exist.
+2026-02-15T21:09:38.7294180Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7295415Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/srmhd_solve_2d.jl
+2026-02-15T21:09:38.7296763Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/srmhd_solve_2d.jl do not exist.
+2026-02-15T21:09:38.7297443Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7309741Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/stiff_sources.jl
+2026-02-15T21:09:38.7311288Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/stiff_sources.jl do not exist.
+2026-02-15T21:09:38.7311903Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7323071Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/threading.jl
+2026-02-15T21:09:38.7324583Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/threading.jl do not exist.
+2026-02-15T21:09:38.7325395Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7333289Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/two_fluid.jl
+2026-02-15T21:09:38.7334718Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/two_fluid.jl do not exist.
+2026-02-15T21:09:38.7335453Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7359124Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/unstructured_problem.jl
+2026-02-15T21:09:38.7360883Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/unstructured_problem.jl do not exist.
+2026-02-15T21:09:38.7361662Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7364554Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/unstructured_solve.jl
+2026-02-15T21:09:38.7366427Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/unstructured_solve.jl do not exist.
+2026-02-15T21:09:38.7367139Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7385969Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/viscous_flux.jl
+2026-02-15T21:09:38.7387739Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/viscous_flux.jl do not exist.
+2026-02-15T21:09:38.7388720Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7394149Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/weno.jl
+2026-02-15T21:09:38.7396014Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/weno.jl do not exist.
+2026-02-15T21:09:38.7396658Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7408238Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/hyperbolic/weno3.jl
+2026-02-15T21:09:38.7409661Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/hyperbolic/weno3.jl do not exist.
+2026-02-15T21:09:38.7410293Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7419051Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/mesh for .jl files...
+2026-02-15T21:09:38.7420425Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/mesh/abstract_mesh.jl
+2026-02-15T21:09:38.7421529Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/mesh/abstract_mesh.jl do not exist.
+2026-02-15T21:09:38.7422184Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7424612Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/mesh/structured_mesh.jl
+2026-02-15T21:09:38.7426181Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/mesh/structured_mesh.jl do not exist.
+2026-02-15T21:09:38.7426840Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7437139Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/mesh/structured_mesh_3d.jl
+2026-02-15T21:09:38.7438438Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/mesh/structured_mesh_3d.jl do not exist.
+2026-02-15T21:09:38.7439047Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7446368Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/mesh/unstructured_hyperbolic_mesh.jl
+2026-02-15T21:09:38.7447712Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/mesh/unstructured_hyperbolic_mesh.jl do not exist.
+2026-02-15T21:09:38.7448410Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7459170Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/metric for .jl files...
+2026-02-15T21:09:38.7460568Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/abstract_metric.jl
+2026-02-15T21:09:38.7461722Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/metric/abstract_metric.jl do not exist.
+2026-02-15T21:09:38.7462411Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7463884Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/kerr.jl
+2026-02-15T21:09:38.7465350Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/metric/kerr.jl do not exist.
+2026-02-15T21:09:38.7466008Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7472030Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/metric_data.jl
+2026-02-15T21:09:38.7473383Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/metric/metric_data.jl do not exist.
+2026-02-15T21:09:38.7474048Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7481769Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/minkowski.jl
+2026-02-15T21:09:38.7483218Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/metric/minkowski.jl do not exist.
+2026-02-15T21:09:38.7483855Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7486756Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/metric/schwarzschild.jl
+2026-02-15T21:09:38.7488071Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/metric/schwarzschild.jl do not exist.
+2026-02-15T21:09:38.7488864Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7493620Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/physics for .jl files...
+2026-02-15T21:09:38.7495015Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/physics/turbulence for .jl files...
+2026-02-15T21:09:38.7496575Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/physics/turbulence/k_epsilon.jl
+2026-02-15T21:09:38.7497629Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/physics/turbulence/k_epsilon.jl do not exist.
+2026-02-15T21:09:38.7498253Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7514914Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/problem.jl
+2026-02-15T21:09:38.7516619Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/problem.jl do not exist.
+2026-02-15T21:09:38.7517360Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7556432Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/schemes for .jl files...
+2026-02-15T21:09:38.7558118Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/schemes/gradients.jl
+2026-02-15T21:09:38.7559299Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/schemes/gradients.jl do not exist.
+2026-02-15T21:09:38.7560028Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7575946Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/schemes/limiters.jl
+2026-02-15T21:09:38.7577601Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/schemes/limiters.jl do not exist.
+2026-02-15T21:09:38.7578356Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7592120Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/schemes/muscl.jl
+2026-02-15T21:09:38.7593509Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/schemes/muscl.jl do not exist.
+2026-02-15T21:09:38.7594201Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7608295Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/solve.jl
+2026-02-15T21:09:38.7609662Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/solve.jl do not exist.
+2026-02-15T21:09:38.7610322Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7625795Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_folder: Searching src/specific_problems for .jl files...
+2026-02-15T21:09:38.7627573Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/abstract_templates.jl
+2026-02-15T21:09:38.7628823Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/abstract_templates.jl do not exist.
+2026-02-15T21:09:38.7629623Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7648843Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/advection_diffusion_equation.jl
+2026-02-15T21:09:38.7650329Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/advection_diffusion_equation.jl do not exist.
+2026-02-15T21:09:38.7651108Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7665868Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/anisotropic_diffusion.jl
+2026-02-15T21:09:38.7667556Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/anisotropic_diffusion.jl do not exist.
+2026-02-15T21:09:38.7668279Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7682777Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/diffusion_equation.jl
+2026-02-15T21:09:38.7684213Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/diffusion_equation.jl do not exist.
+2026-02-15T21:09:38.7684893Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7689351Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/laplaces_equation.jl
+2026-02-15T21:09:38.7690768Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/laplaces_equation.jl do not exist.
+2026-02-15T21:09:38.7691472Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7694968Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/linear_reaction_diffusion_equations.jl
+2026-02-15T21:09:38.7696673Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/linear_reaction_diffusion_equations.jl do not exist.
+2026-02-15T21:09:38.7697387Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7703496Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/mean_exit_time.jl
+2026-02-15T21:09:38.7704865Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/mean_exit_time.jl do not exist.
+2026-02-15T21:09:38.7705822Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7709975Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/specific_problems/poissons_equation.jl
+2026-02-15T21:09:38.7711359Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/specific_problems/poissons_equation.jl do not exist.
+2026-02-15T21:09:38.7712003Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:38.7715587Z [36m[1m[ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_file: Detecting coverage for src/utils.jl
+2026-02-15T21:09:38.7716902Z [36m[1m┌ [22m[39m[36m[1mInfo: [22m[39mCoverageTools.process_cov: Coverage file(s) for src/utils.jl do not exist.
+2026-02-15T21:09:38.7717438Z [36m[1m└ [22m[39mAssuming file has no coverage.
+2026-02-15T21:09:39.0091433Z ##[group]Run codecov/codecov-action@v5
+2026-02-15T21:09:39.0091720Z with:
+2026-02-15T21:09:39.0091879Z   files: lcov.info
+2026-02-15T21:09:39.0092085Z   disable_file_fixes: false
+2026-02-15T21:09:39.0092288Z   disable_search: false
+2026-02-15T21:09:39.0092487Z   disable_safe_directory: false
+2026-02-15T21:09:39.0092694Z   disable_telem: false
+2026-02-15T21:09:39.0092872Z   dry_run: false
+2026-02-15T21:09:39.0093046Z   fail_ci_if_error: false
+2026-02-15T21:09:39.0093243Z   git_service: github
+2026-02-15T21:09:39.0093425Z   gcov_executable: gcov
+2026-02-15T21:09:39.0093626Z   handle_no_reports_found: false
+2026-02-15T21:09:39.0093856Z   recurse_submodules: false
+2026-02-15T21:09:39.0094064Z   run_command: upload-coverage
+2026-02-15T21:09:39.0094278Z   skip_validation: false
+2026-02-15T21:09:39.0094480Z   use_legacy_upload_endpoint: false
+2026-02-15T21:09:39.0094705Z   use_oidc: false
+2026-02-15T21:09:39.0094870Z   use_pypi: false
+2026-02-15T21:09:39.0095190Z   verbose: false
+2026-02-15T21:09:39.0095394Z   version: latest
+2026-02-15T21:09:39.0095559Z env:
+2026-02-15T21:09:39.0095717Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.0095924Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.0096345Z ##[endgroup]
+2026-02-15T21:09:39.0116257Z ##[group]Run missing_deps=""
+2026-02-15T21:09:39.0116517Z [36;1mmissing_deps=""[0m
+2026-02-15T21:09:39.0116713Z [36;1m[0m
+2026-02-15T21:09:39.0116903Z [36;1m# Check for always-required commands[0m
+2026-02-15T21:09:39.0117173Z [36;1mfor cmd in bash git curl; do[0m
+2026-02-15T21:09:39.0117456Z [36;1m  if ! command -v "$cmd" >/dev/null 2>&1; then[0m
+2026-02-15T21:09:39.0117748Z [36;1m    missing_deps="$missing_deps $cmd"[0m
+2026-02-15T21:09:39.0117992Z [36;1m  fi[0m
+2026-02-15T21:09:39.0118146Z [36;1mdone[0m
+2026-02-15T21:09:39.0118305Z [36;1m[0m
+2026-02-15T21:09:39.0118533Z [36;1m# Check for gpg only if validation is not being skipped[0m
+2026-02-15T21:09:39.0118851Z [36;1mif [ "false" != "true" ]; then[0m
+2026-02-15T21:09:39.0119128Z [36;1m  if ! command -v gpg >/dev/null 2>&1; then[0m
+2026-02-15T21:09:39.0119417Z [36;1m    missing_deps="$missing_deps gpg"[0m
+2026-02-15T21:09:39.0119691Z [36;1m  fi[0m
+2026-02-15T21:09:39.0119850Z [36;1mfi[0m
+2026-02-15T21:09:39.0120010Z [36;1m[0m
+2026-02-15T21:09:39.0120197Z [36;1m# Report missing required dependencies[0m
+2026-02-15T21:09:39.0120473Z [36;1mif [ -n "$missing_deps" ]; then[0m
+2026-02-15T21:09:39.0120838Z [36;1m  echo "Error: The following required dependencies are missing:$missing_deps"[0m
+2026-02-15T21:09:39.0121323Z [36;1m  echo "Please install these dependencies before using this action."[0m
+2026-02-15T21:09:39.0121657Z [36;1m  exit 1[0m
+2026-02-15T21:09:39.0121827Z [36;1mfi[0m
+2026-02-15T21:09:39.0121983Z [36;1m[0m
+2026-02-15T21:09:39.0122209Z [36;1mecho "All required system dependencies are available."[0m
+2026-02-15T21:09:39.0162754Z shell: /usr/bin/sh -e {0}
+2026-02-15T21:09:39.0162976Z env:
+2026-02-15T21:09:39.0163137Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.0163374Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.0163624Z ##[endgroup]
+2026-02-15T21:09:39.0221818Z All required system dependencies are available.
+2026-02-15T21:09:39.0239714Z ##[group]Run CC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)
+2026-02-15T21:09:39.0240182Z [36;1mCC_ACTION_VERSION=$(cat ${GITHUB_ACTION_PATH}/src/version)[0m
+2026-02-15T21:09:39.0240619Z [36;1mecho -e "\033[0;32m==>\033[0m Running Action version $CC_ACTION_VERSION"[0m
+2026-02-15T21:09:39.0286853Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:39.0287182Z env:
+2026-02-15T21:09:39.0287347Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.0287582Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.0287846Z ##[endgroup]
+2026-02-15T21:09:39.0369207Z [0;32m==>[0m Running Action version 5.5.2
+2026-02-15T21:09:39.0392484Z ##[group]Run git config --global --add safe.directory "/home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl"
+2026-02-15T21:09:39.0393469Z [36;1mgit config --global --add safe.directory "/home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl"[0m
+2026-02-15T21:09:39.0394074Z [36;1mgit config --global --add safe.directory "$GITHUB_WORKSPACE"[0m
+2026-02-15T21:09:39.0438447Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:39.0438753Z env:
+2026-02-15T21:09:39.0438917Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.0439141Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.0439399Z ##[endgroup]
+2026-02-15T21:09:39.0552503Z ##[group]Run CC_FORK="false"
+2026-02-15T21:09:39.0552743Z [36;1mCC_FORK="false"[0m
+2026-02-15T21:09:39.0553261Z [36;1mif [ -n "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" ] && [ "$GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME" != "$GITHUB_REPOSITORY" ];[0m
+2026-02-15T21:09:39.0553833Z [36;1mthen[0m
+2026-02-15T21:09:39.0554043Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected"[0m
+2026-02-15T21:09:39.0554316Z [36;1m  CC_FORK="true"[0m
+2026-02-15T21:09:39.0554523Z [36;1mfi[0m
+2026-02-15T21:09:39.0554714Z [36;1mecho "CC_FORK=$CC_FORK" >> "$GITHUB_ENV"[0m
+2026-02-15T21:09:39.0598827Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:39.0599307Z env:
+2026-02-15T21:09:39.0599477Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.0599698Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.0599972Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: 
+2026-02-15T21:09:39.0600240Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: 
+2026-02-15T21:09:39.0600549Z   GITHUB_REPOSITORY: cx-xd/FiniteVolumeMethod.jl
+2026-02-15T21:09:39.0600801Z ##[endgroup]
+2026-02-15T21:09:39.0703771Z ##[group]Run actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
+2026-02-15T21:09:39.0704130Z with:
+2026-02-15T21:09:39.0704693Z   script: if (process.env.CC_USE_OIDC === 'true' && process.env.CC_FORK != 'true') {
+  const id_token = await core.getIDToken(process.env.CC_OIDC_AUDIENCE)
+  return id_token
+}
+
+2026-02-15T21:09:39.0705719Z   github-token: ***
+2026-02-15T21:09:39.0705933Z   debug: false
+2026-02-15T21:09:39.0706121Z   user-agent: actions/github-script
+2026-02-15T21:09:39.0706370Z   result-encoding: json
+2026-02-15T21:09:39.0706565Z   retries: 0
+2026-02-15T21:09:39.0706768Z   retry-exempt-status-codes: 400,401,403,404,422
+2026-02-15T21:09:39.0707019Z env:
+2026-02-15T21:09:39.0707180Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.0707387Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.0707638Z   CC_FORK: false
+2026-02-15T21:09:39.0707838Z   CC_OIDC_AUDIENCE: https://codecov.io
+2026-02-15T21:09:39.0708075Z   CC_USE_OIDC: false
+2026-02-15T21:09:39.0708255Z ##[endgroup]
+2026-02-15T21:09:39.1641253Z ##[group]Run if [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];
+2026-02-15T21:09:39.1641637Z [36;1mif [ "false" == 'true' ] && [ "$CC_FORK" != 'true' ];[0m
+2026-02-15T21:09:39.1641919Z [36;1mthen[0m
+2026-02-15T21:09:39.1642141Z [36;1m  echo "CC_TOKEN=$CC_OIDC_TOKEN" >> "$GITHUB_ENV"[0m
+2026-02-15T21:09:39.1642421Z [36;1melif [ -n "" ];[0m
+2026-02-15T21:09:39.1642626Z [36;1mthen[0m
+2026-02-15T21:09:39.1642838Z [36;1m  echo -e "\033[0;32m==>\033[0m Token set from env"[0m
+2026-02-15T21:09:39.1643150Z [36;1m    echo "CC_TOKEN=" >> "$GITHUB_ENV"[0m
+2026-02-15T21:09:39.1643382Z [36;1melse[0m
+2026-02-15T21:09:39.1643549Z [36;1m  if [ -n "" ];[0m
+2026-02-15T21:09:39.1643730Z [36;1m  then[0m
+2026-02-15T21:09:39.1643964Z [36;1m    echo -e "\033[0;32m==>\033[0m Token set from input"[0m
+2026-02-15T21:09:39.1644273Z [36;1m    CC_TOKEN=$(echo "" | tr -d '\n')[0m
+2026-02-15T21:09:39.1644561Z [36;1m    echo "CC_TOKEN=$CC_TOKEN" >> "$GITHUB_ENV"[0m
+2026-02-15T21:09:39.1644823Z [36;1m  fi[0m
+2026-02-15T21:09:39.1644975Z [36;1mfi[0m
+2026-02-15T21:09:39.1693233Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:39.1693546Z env:
+2026-02-15T21:09:39.1693708Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.1693934Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.1694190Z   CC_FORK: false
+2026-02-15T21:09:39.1694538Z   CC_OIDC_TOKEN: 
+2026-02-15T21:09:39.1694746Z   CC_OIDC_AUDIENCE: https://codecov.io
+2026-02-15T21:09:39.1694986Z ##[endgroup]
+2026-02-15T21:09:39.1791910Z ##[group]Run if [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ]
+2026-02-15T21:09:39.1792373Z [36;1mif [ -z "$CC_BRANCH" ] && [ -z "$CC_TOKEN" ] && [ "$CC_FORK" == 'true' ][0m
+2026-02-15T21:09:39.1792703Z [36;1mthen[0m
+2026-02-15T21:09:39.1793067Z [36;1m  echo -e "\033[0;32m==>\033[0m Fork detected, setting branch to $GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-02-15T21:09:39.1793558Z [36;1m  TOKENLESS="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-02-15T21:09:39.1793888Z [36;1m  CC_BRANCH="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"[0m
+2026-02-15T21:09:39.1794206Z [36;1m  echo "TOKENLESS=$TOKENLESS" >> "$GITHUB_ENV"[0m
+2026-02-15T21:09:39.1794459Z [36;1mfi[0m
+2026-02-15T21:09:39.1794617Z [36;1m[0m
+2026-02-15T21:09:39.1794817Z [36;1mecho "CC_BRANCH=$CC_BRANCH" >> "$GITHUB_ENV"[0m
+2026-02-15T21:09:39.1838104Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:39.1838403Z env:
+2026-02-15T21:09:39.1838569Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.1838948Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.1839203Z   CC_FORK: false
+2026-02-15T21:09:39.1839371Z   CC_BRANCH: 
+2026-02-15T21:09:39.1839551Z   GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL: 
+2026-02-15T21:09:39.1839816Z   GITHUB_EVENT_PULL_REQUEST_HEAD_REPO_FULL_NAME: 
+2026-02-15T21:09:39.1840113Z   GITHUB_REPOSITORY: cx-xd/FiniteVolumeMethod.jl
+2026-02-15T21:09:39.1840371Z ##[endgroup]
+2026-02-15T21:09:39.1924275Z ##[group]Run if [ -z "$CC_SHA" ];
+2026-02-15T21:09:39.1924530Z [36;1mif [ -z "$CC_SHA" ];[0m
+2026-02-15T21:09:39.1924738Z [36;1mthen[0m
+2026-02-15T21:09:39.1924951Z [36;1m  CC_SHA="$GITHUB_EVENT_PULL_REQUEST_HEAD_SHA"[0m
+2026-02-15T21:09:39.1925512Z [36;1mfi[0m
+2026-02-15T21:09:39.1925724Z [36;1mif [ -z "$CC_PR" ] && [ "$CC_FORK" == 'true' ];[0m
+2026-02-15T21:09:39.1925990Z [36;1mthen[0m
+2026-02-15T21:09:39.1926179Z [36;1m  CC_PR="$GITHUB_EVENT_NUMBER"[0m
+2026-02-15T21:09:39.1926411Z [36;1mfi[0m
+2026-02-15T21:09:39.1926561Z [36;1m[0m
+2026-02-15T21:09:39.1926754Z [36;1mecho "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"[0m
+2026-02-15T21:09:39.1927032Z [36;1mecho "CC_PR=$CC_PR" >> "$GITHUB_ENV"[0m
+2026-02-15T21:09:39.1970242Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:39.1970547Z env:
+2026-02-15T21:09:39.1970715Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.1970938Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.1971191Z   CC_FORK: false
+2026-02-15T21:09:39.1971357Z   CC_BRANCH: 
+2026-02-15T21:09:39.1971519Z   CC_PR: 
+2026-02-15T21:09:39.1971665Z   CC_SHA: 
+2026-02-15T21:09:39.1971832Z   GITHUB_EVENT_NAME: push
+2026-02-15T21:09:39.1972030Z   GITHUB_EVENT_NUMBER: 
+2026-02-15T21:09:39.1972238Z   GITHUB_EVENT_PULL_REQUEST_HEAD_SHA: 
+2026-02-15T21:09:39.1972470Z ##[endgroup]
+2026-02-15T21:09:39.2057375Z ##[group]Run ${GITHUB_ACTION_PATH}/dist/codecov.sh
+2026-02-15T21:09:39.2057703Z [36;1m${GITHUB_ACTION_PATH}/dist/codecov.sh[0m
+2026-02-15T21:09:39.2101314Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-02-15T21:09:39.2101640Z env:
+2026-02-15T21:09:39.2101798Z   JULIA_PKG_SERVER: 
+2026-02-15T21:09:39.2102023Z   JULIA_PKG_SERVER_REGISTRY_PREFERENCE: eager
+2026-02-15T21:09:39.2102277Z   CC_FORK: false
+2026-02-15T21:09:39.2102443Z   CC_BRANCH: 
+2026-02-15T21:09:39.2102601Z   CC_SHA: 
+2026-02-15T21:09:39.2102749Z   CC_PR: 
+2026-02-15T21:09:39.2102904Z   CC_BASE_SHA: 
+2026-02-15T21:09:39.2103065Z   CC_BINARY: 
+2026-02-15T21:09:39.2103220Z   CC_BUILD: 
+2026-02-15T21:09:39.2103392Z   CC_BUILD_URL: 
+2026-02-15T21:09:39.2103549Z   CC_CODE: 
+2026-02-15T21:09:39.2103703Z   CC_DIR: 
+2026-02-15T21:09:39.2103864Z   CC_DISABLE_FILE_FIXES: false
+2026-02-15T21:09:39.2104081Z   CC_DISABLE_SEARCH: false
+2026-02-15T21:09:39.2104277Z   CC_DISABLE_TELEM: false
+2026-02-15T21:09:39.2104472Z   CC_DRY_RUN: false
+2026-02-15T21:09:39.2104647Z   CC_ENTERPRISE_URL: 
+2026-02-15T21:09:39.2104973Z   CC_ENV: 
+2026-02-15T21:09:39.2105388Z   CC_EXCLUDES: 
+2026-02-15T21:09:39.2105559Z   CC_FAIL_ON_ERROR: false
+2026-02-15T21:09:39.2105755Z   CC_FILES: lcov.info
+2026-02-15T21:09:39.2105929Z   CC_FLAGS: 
+2026-02-15T21:09:39.2106081Z   CC_FORCE: 
+2026-02-15T21:09:39.2106229Z   CC_GCOV_ARGS: 
+2026-02-15T21:09:39.2106405Z   CC_GCOV_EXECUTABLE: gcov
+2026-02-15T21:09:39.2106590Z   CC_GCOV_IGNORE: 
+2026-02-15T21:09:39.2106758Z   CC_GCOV_INCLUDE: 
+2026-02-15T21:09:39.2106926Z   CC_GIT_SERVICE: github
+2026-02-15T21:09:39.2107130Z   CC_HANDLE_NO_REPORTS_FOUND: false
+2026-02-15T21:09:39.2107342Z   CC_JOB_CODE: 
+2026-02-15T21:09:39.2107505Z   CC_LEGACY: false
+2026-02-15T21:09:39.2107668Z   CC_NAME: 
+2026-02-15T21:09:39.2107822Z   CC_NETWORK_FILTER: 
+2026-02-15T21:09:39.2107999Z   CC_NETWORK_PREFIX: 
+2026-02-15T21:09:39.2108174Z   CC_NETWORK_ROOT_FOLDER: 
+2026-02-15T21:09:39.2108357Z   CC_OS: 
+2026-02-15T21:09:39.2108502Z   CC_PARENT_SHA: 
+2026-02-15T21:09:39.2108670Z   CC_PLUGINS: 
+2026-02-15T21:09:39.2108844Z   CC_RECURSE_SUBMODULES: false
+2026-02-15T21:09:39.2109052Z   CC_REPORT_TYPE: 
+2026-02-15T21:09:39.2109229Z   CC_RUN_CMD: upload-coverage
+2026-02-15T21:09:39.2109579Z   CC_SERVICE: github
+2026-02-15T21:09:39.2109765Z   CC_SKIP_VALIDATION: false
+2026-02-15T21:09:39.2109952Z   CC_SLUG: 
+2026-02-15T21:09:39.2110112Z   CC_SWIFT_PROJECT: 
+2026-02-15T21:09:39.2110287Z   CC_USE_PYPI: false
+2026-02-15T21:09:39.2110462Z   CC_VERBOSE: false
+2026-02-15T21:09:39.2110630Z   CC_VERSION: latest
+2026-02-15T21:09:39.2110802Z   CC_YML_PATH: 
+2026-02-15T21:09:39.2110965Z ##[endgroup]
+2026-02-15T21:09:39.2197816Z      _____          _
+2026-02-15T21:09:39.2198157Z     / ____|        | |
+2026-02-15T21:09:39.2198473Z    | |     ___   __| | ___  ___ _____   __
+2026-02-15T21:09:39.2198868Z    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+2026-02-15T21:09:39.2199145Z    | |___| (_) | (_| |  __/ (_| (_) \ V /
+2026-02-15T21:09:39.2199389Z     \_____\___/ \__,_|\___|\___\___/ \_/
+2026-02-15T21:09:39.2199877Z                            [0;31m Wrapper-0.2.7[0m
+2026-02-15T21:09:39.2200136Z                            
+2026-02-15T21:09:39.2257719Z [0;32m==>[0m Detected [0;36mlinux[0m
+2026-02-15T21:09:39.2258548Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov[0m
+2026-02-15T21:09:39.2312644Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-02-15T21:09:39.2313348Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-02-15T21:09:39.2313834Z 
+2026-02-15T21:09:39.3577455Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-02-15T21:09:39.3578513Z 100 10.6M  100 10.6M    0     0  84.1M      0 --:--:-- --:--:-- --:--:-- 84.5M
+2026-02-15T21:09:39.3601097Z [0;32m==>[0m Finishing downloading [0;36mlinux:latest[0m
+2026-02-15T21:09:39.4106545Z       Version: [0;36mv11.2.6[0m
+2026-02-15T21:09:39.4107013Z  
+2026-02-15T21:09:39.5096528Z gpg: directory '/home/runner/.gnupg' created
+2026-02-15T21:09:39.5101452Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2026-02-15T21:09:39.5629692Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2026-02-15T21:09:39.5630684Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2026-02-15T21:09:39.6641605Z gpg: Total number processed: 1
+2026-02-15T21:09:39.6642063Z gpg:               imported: 1
+2026-02-15T21:09:39.6648802Z [0;32m==>[0m Verifying GPG signature integrity
+2026-02-15T21:09:39.6649722Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM[0m
+2026-02-15T21:09:39.6651097Z [0;32m ->[0m Downloading [0;36mhttps://cli.codecov.io/latest/linux/codecov.SHA256SUM.sig[0m
+2026-02-15T21:09:39.6652010Z  
+2026-02-15T21:09:39.7651539Z gpg: Signature made Fri Dec  5 15:31:48 2025 UTC
+2026-02-15T21:09:39.7652031Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2026-02-15T21:09:39.7654826Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2026-02-15T21:09:39.7655700Z gpg: WARNING: This key is not certified with a trusted signature!
+2026-02-15T21:09:39.7656221Z gpg:          There is no indication that the signature belongs to the owner.
+2026-02-15T21:09:39.7656753Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2026-02-15T21:09:39.9034996Z codecov: OK
+2026-02-15T21:09:39.9044983Z [0;32m==>[0m CLI integrity verified
+2026-02-15T21:09:39.9045606Z 
+2026-02-15T21:09:39.9692109Z [0;32m ->[0m Token length: 0
+2026-02-15T21:09:39.9692759Z [0;32m==>[0m Running upload-coverage
+2026-02-15T21:09:39.9702951Z       [0;36m./codecov  upload-coverage --git-service github --file lcov.info --gcov-executable gcov[0m
+2026-02-15T21:09:40.3233098Z info - 2026-02-15 21:09:40,323 -- ci service found: github-actions
+2026-02-15T21:09:40.3331191Z warning - 2026-02-15 21:09:40,332 -- No config file could be found. Ignoring config.
+2026-02-15T21:09:40.3649001Z warning - 2026-02-15 21:09:40,364 -- xcrun is not installed or can't be found.
+2026-02-15T21:09:40.3709748Z warning - 2026-02-15 21:09:40,370 -- No gcov data found.
+2026-02-15T21:09:40.3713071Z warning - 2026-02-15 21:09:40,371 -- coverage.py is not installed or can't be found.
+2026-02-15T21:09:40.3999950Z info - 2026-02-15 21:09:40,399 -- Found 1 coverage files to report
+2026-02-15T21:09:40.4001078Z info - 2026-02-15 21:09:40,399 -- > /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl/lcov.info
+2026-02-15T21:09:40.5911402Z info - 2026-02-15 21:09:40,590 -- Process Upload complete
+2026-02-15T21:09:40.5912579Z error - 2026-02-15 21:09:40,591 -- Upload failed: {"message":"Token required - not valid tokenless upload"}
+2026-02-15T21:09:40.7742011Z Post job cleanup.
+2026-02-15T21:09:40.7838318Z Post job cleanup.
+2026-02-15T21:09:40.8814692Z [command]/usr/bin/git version
+2026-02-15T21:09:40.8852304Z git version 2.52.0
+2026-02-15T21:09:40.8889965Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/d840dfa2-39ec-45e5-812b-a39f8af0131a/.gitconfig'
+2026-02-15T21:09:40.8901087Z Temporarily overriding HOME='/home/runner/work/_temp/d840dfa2-39ec-45e5-812b-a39f8af0131a' before making global git config changes
+2026-02-15T21:09:40.8902527Z Adding repository directory to the temporary git global config as a safe directory
+2026-02-15T21:09:40.8914888Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl
+2026-02-15T21:09:40.8952142Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-02-15T21:09:40.8986462Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-02-15T21:09:40.9234728Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-02-15T21:09:40.9257174Z http.https://github.com/.extraheader
+2026-02-15T21:09:40.9270188Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-02-15T21:09:40.9303784Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-02-15T21:09:40.9542349Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-02-15T21:09:40.9574942Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-02-15T21:09:40.9924713Z Cleaning up orphan processes
