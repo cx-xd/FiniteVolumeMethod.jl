@@ -1,8 +1,0 @@
-﻿2026-02-16T02:45:18.8543882Z Post job cleanup.
-2026-02-16T02:45:18.8575456Z Post job cleanup.
-2026-02-16T02:45:19.0338420Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/FiniteVolumeMethod.jl/FiniteVolumeMethod.jl --files-from manifest.txt --use-compress-program zstdmt
-2026-02-16T02:45:40.2206631Z Sent 0 of 1074721851 (0.0%), 0.0 MBs/sec
-2026-02-16T02:45:41.2218524Z Sent 134217728 of 1074721851 (12.5%), 63.9 MBs/sec
-2026-02-16T02:45:42.2257468Z Sent 536870912 of 1074721851 (50.0%), 170.4 MBs/sec
-2026-02-16T02:45:42.8202915Z Sent 1074721851 of 1074721851 (100.0%), 284.6 MBs/sec
-2026-02-16T02:45:43.1906090Z Cache saved with key: julia-cache;workflow=CI;job=test;os=Linux;version=lts;os=ubuntu-latest;arch=x64;run_id=22046977833;run_attempt=1
