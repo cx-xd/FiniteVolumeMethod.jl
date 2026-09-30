@@ -1,4 +1,4 @@
-/* Shared reading theme. Maintained in S-AM-I/dotfiles/sites; sync, do not fork. */
+/* Shared reading theme. Maintained in S-AM-I/sites/shared; sync, do not fork. */
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap');
 :root { --site-bg:#000; --site-text:#eef1f6; --site-muted:#868d98; --site-hover:#0c080e; --site-border:#252229; --site-font:Geist,ui-sans-serif,system-ui,sans-serif; color-scheme:dark; }
 html, body { background:var(--site-bg); color:var(--site-text); }
