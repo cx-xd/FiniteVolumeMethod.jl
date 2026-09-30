@@ -111,6 +111,7 @@ HyperbolicProblem
 HyperbolicProblem2D
 HyperbolicProblem3D
 mhd_stage_limiter
+apply_mhd_positivity_floor!
 compute_dt
 compute_dt_2d
 compute_dt_3d
