@@ -1,9 +1,7 @@
-# Use DocumenterVitepress's extension hook so its standard theme, search and
-# scientific rendering remain intact. The checked-in CSS is independently loaded
-# through the supported docs/src/.vitepress/theme/overrides.css convention.
+# Generated from the owner's catalogue identity through the supported extension hook.
 struct SharedHome <: Documenter.Plugin end
 function DocumenterVitepress.vitepress_config_transform(::SharedHome, config::String)
     marker = "const nav = ["
     occursin(marker, config) || error("VitePress navigation template changed; review the shared-home adapter")
-    return replace(config, marker => marker * "\n  { text: '← s-am-i.com', link: 'https://s-am-i.com/' },"; count=1)
+    return replace(config, marker => marker * "\n  { text: '← cx-xd.org', link: 'https://cx-xd.org/', target: '_self' },"; count=1)
 end

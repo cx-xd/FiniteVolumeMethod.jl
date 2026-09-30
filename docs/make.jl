@@ -312,7 +312,7 @@ makedocs(;
         repo = "github.com/cx-xd/FiniteVolumeMethod.jl",
         devbranch = "main",
         devurl = "dev",
-        deploy_url = "https://fvm.cx-xd.org",
+        deploy_url = "https://cx-xd.org/FiniteVolumeMethod.jl/",
     ),
     draft = IS_LIVESERVER,
     pages = _PAGES,
