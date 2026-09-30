@@ -97,6 +97,7 @@ using FiniteVolumeMethod
 using CommonSolve  # `solve` is CommonSolve.solve; makes the canonical name resolvable for @ref targets
 using Documenter
 using DocumenterVitepress
+include(joinpath(@__DIR__, "shared_theme.jl"))
 using Literate
 using Dates
 
@@ -297,6 +298,7 @@ catch
     false
 end
 makedocs(;
+    plugins = [SharedHome()],
     modules = [FiniteVolumeMethod],
     # The repo exposes a much broader research/development surface than the
     # narrative manual aims to cover. Governance tests and the validation

@@ -1,0 +1,17 @@
+/* Shared reading theme. Maintained in S-AM-I/dotfiles/sites; sync, do not fork. */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap');
+:root { --site-bg:#000; --site-text:#eef1f6; --site-muted:#868d98; --site-hover:#0c080e; --site-border:#252229; --site-font:Geist,ui-sans-serif,system-ui,sans-serif; color-scheme:dark; }
+html, body { background:var(--site-bg); color:var(--site-text); }
+body { font-family:var(--site-font); }
+a { color:var(--site-accent); text-underline-offset:.2em; }
+:where(a,button,input,select,summary):focus-visible { outline:2px solid var(--site-accent); outline-offset:3px; }
+::selection { background:var(--site-accent); color:#000; }
+.sami-home { display:block; padding:.65rem 1rem; color:var(--site-accent); background:#000; font:500 14px/1.5 var(--site-font); text-decoration:none; }
+.sami-home:hover { background:var(--site-hover); }
+:where(pre, .math.display, .katex-display) { overflow-x:auto; }
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+:root{--site-accent:#5fd1c4}
+:root,.dark{--vp-c-bg:#000;--vp-c-bg-alt:#000;--vp-c-bg-elv:#000;--vp-c-bg-soft:#000;--vp-sidebar-bg-color:#000;--vp-nav-bg-color:#000;--vp-c-text-1:#eef1f6;--vp-c-text-2:#868d98;--vp-c-text-3:#868d98;--vp-c-brand-1:var(--site-accent);--vp-c-brand-2:var(--site-accent);--vp-c-brand-3:var(--site-accent);--vp-c-brand-soft:#0c080e;--vp-font-family-base:Geist,ui-sans-serif,system-ui,sans-serif;--vp-code-block-bg:#000;--vp-local-search-bg:#000}.VPNavBar,.VPNavBar .content-body,.VPSidebar,.VPLocalNav{background:#000!important}.VPNavBar .sami-home{font-size:12px;white-space:nowrap}.VPNavBarTitle .title{color:var(--site-accent)}
+
+.VPNavBarMenu > .VPNavBarMenuGroup{display:none}.vp-doc .custom-block{background:#000}.vp-doc h1{color:var(--site-accent)}.VPNavBar .container{min-width:0}.VPNavBar .sami-home{flex-shrink:0;padding:.5rem;font-size:12px}
