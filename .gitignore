@@ -16,8 +16,12 @@ validation/reports/
 validation/reproduction_bundles/
 validation/release_outputs/
 .gitignore
+!/.specify/.gitignore
 docker-compose.override.yml
-.claude/
+/.claude/*
+!/.claude/skills/
+/.claude/skills/*
+!/.claude/skills/speckit-*/
 .lycheecache
 
 # Benchmark harness artifacts (local provenance, not committed)
