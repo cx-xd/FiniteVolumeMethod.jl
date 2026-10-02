@@ -27,3 +27,7 @@
 - `julia --startup-file=no --history-file=no -e 'using TOML; TOML.parsefile("Project.toml"); println("Project.toml parsed")'` — exit 0.
 - `make help` — exit 0.
 - `git diff --check` — exit 0.
+
+Independent review found the root ignore pattern also suppressed the generated
+`.specify/.gitignore`. A narrow exception now preserves this managed file in Git;
+checkout-local feature pointers remain ignored in clean clones.
