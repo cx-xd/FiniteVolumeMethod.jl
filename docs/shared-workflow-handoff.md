@@ -1,3 +1,15 @@
+## Checkout migration — 2026-10-13
+
+Current checkout: `/home/sami/Projects/Libraries/FiniteVolumeMethod.jl`; retained branch: `main`.
+The authorized storage migration changes operational paths only. Scientific
+pause, evidence, review and merge gates remain unchanged. Dated paths and
+execution claims below are historical; use the current locations here to resume.
+
+- `/home/sami/Code/github.com/cx-xd/FiniteVolumeMethod.jl` → `/home/sami/Projects/Libraries/FiniteVolumeMethod.jl`.
+
+The earlier enrollment worktree record below is retained as history;
+this migration does not recreate a retired checkout or reopen its task.
+
 # Shared workflow enrollment handoff
 
 - Issue and acceptance criteria: Authorized 16-repository shared-workflow rollout; the dedicated [Work tracking issue](https://github.com/S-AM-I/agents/issues/1) is maintained by the parent coordinator. Issues are disabled on this public research fork, so tracking uses S-AM-I/agents without changing repository settings. This repository's criteria are shared guidance, both pinned core Spec Kit integrations, project-specific principles, real validation commands, selector recovery and maintained evidence. Installation does not implement a scientific backlog item.
