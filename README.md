@@ -1,4 +1,8 @@
-# FiniteVolumeMethod
+# FiniteVolumeMethod.jl
+
+**Finite-volume PDE solvers in Julia, with explicit scientific maturity contracts.**
+
+[Choose a solver](#choose-a-solver-family) · [Use this fork](#use-this-research-fork) · [Examples](#parabolic-diffusion-example) · [Maturity](#maturity-and-scope) · [Upstream](https://github.com/DanielVandH/FiniteVolumeMethod.jl)
 
 [![Docs](https://img.shields.io/badge/docs-online-blue.svg)](https://cx-xd.github.io/FiniteVolumeMethod.jl/)
 [![Coverage](https://codecov.io/gh/cx-xd/FiniteVolumeMethod.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/cx-xd/FiniteVolumeMethod.jl)
@@ -11,15 +15,39 @@
 > this fork in the General registry it must be renamed, since the
 > `FiniteVolumeMethod` name and UUID belong to the upstream package.
 
-FiniteVolumeMethod.jl is a Julia package for solving partial differential equations (PDEs) with three solver families:
+## Choose a solver family
 
-- a cell-vertex parabolic/elliptic solver on unstructured triangular meshes
-- a cell-centered hyperbolic solver on structured 1D/2D/3D meshes
-- a collocated incompressible solver (SIMPLE/PISO/PIMPLE) on unstructured polyhedral meshes, with composable turbulence, thermal, radiation, combustion and multiphase physics
+| Family | Discretisation | Entry point |
+| --- | --- | --- |
+| Parabolic / elliptic | Cell-vertex, unstructured triangular meshes | [Diffusion example](#parabolic-diffusion-example), `FVMProblem` and equation templates |
+| Hyperbolic | Cell-centred, structured 1D/2D/3D meshes | [Euler example](#hyperbolic-solver), Riemann solvers and reconstruction |
+| Incompressible | Collocated, unstructured polyhedral meshes | SIMPLE/PISO/PIMPLE; consult the [capability matrix](docs/src/capability_matrix.md) before use |
 
 The repository also contains more advanced capabilities such as constrained-transport MHD, relativistic solvers, AMR, coupling infrastructure, and research-support tooling. These capabilities do **not** all share the same scientific maturity.
 
 The authoritative public contract for what is publication-grade, provisional, or experimental is the documentation's capability matrix and verification material. Only features marked `stable` in that contract should be used for publication-grade scientific claims.
+
+## Use this research fork
+
+The package name alone selects the registered upstream project. To work on this
+fork, use its checkout and root Julia environment; follow the
+[documentation](docs/src/index.md) for the selected solver's dependencies and
+examples. Preserve the fork's source identity when recording results.
+
+Before choosing a case:
+
+1. Check the [capability matrix](docs/src/capability_matrix.md), generated from
+   [the validation manifest](validation/manifest.toml).
+2. Read the [v4 migration guide](docs/src/migration/v4.md) for result-changing
+   fixes and [known failures and demoted claims](test/KNOWN_FAILURES.md).
+3. Choose the corresponding local verification lane in [the Makefile](Makefile).
+   `make help` lists the available commands without launching a solver.
+
+The examples below execute numerical solves and some write animations. They are
+API illustrations; case-specific verification and the full evidence suite have
+separate prerequisites and costs.
+
+## Parabolic equation forms
 
 The parabolic solver handles PDEs of the form
 
@@ -50,7 +78,9 @@ This repository treats only the current Julia stable release and the current Jul
 
 If this package doesn't suit what you need, you may like to review some of the other PDE packages shown [here](https://github.com/JuliaPDE/SurveyofPDEPackages).
 
-As a very quick demonstration, here is how we could solve a diffusion equation with Dirichlet boundary conditions on a square domain using the standard `FVMProblem` formulation; please see the docs for more information.
+## Parabolic diffusion example
+
+Here is how to solve a diffusion equation with Dirichlet boundary conditions on a square domain using the standard `FVMProblem` formulation; please see the docs for more information.
 
 ```julia
 using FiniteVolumeMethod, DelaunayTriangulation, CairoMakie, OrdinaryDiffEq
@@ -219,3 +249,9 @@ All solver families produce standard `SciMLBase.ODEProblem` objects, compatible 
 - **SymbolicIndexingInterface**: Access solution fields by name — `sol[:rho]`, `sol[:E]`, `sol[:Bx]`
 - **SciMLStructures**: Parameter partitioning for optimization and sensitivity analysis
 - **RecipesBase**: Plot recipes for 1D line plots and 2D heatmaps (via `FVMRecipesExt`)
+
+## Attribution and license
+
+This research fork retains [Daniel VandenHeuvel's upstream project](https://github.com/DanielVandH/FiniteVolumeMethod.jl)
+and its [MIT license and copyright](LICENSE). Fork-specific extensions and
+maturity statements must not be attributed to the registered upstream package.
