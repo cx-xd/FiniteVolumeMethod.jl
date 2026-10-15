@@ -1,13 +1,19 @@
-# Shared project guidance
+# FiniteVolumeMethod.jl (research fork)
 
-Keep one canonical local checkout per repository and use task branches there. Do not automatically create a worktree for a task, client, review or handoff. An additional persistent worktree requires explicit user authorization and a genuine parallel-work or conflicting-runtime need; record its purpose, owner, branch, path and cleanup condition. Authorized exceptions use sibling <repo>-<task> paths. Disposable test fixtures are permitted and must be cleaned up. Preserve unrelated changes before switching branches. This rule overrides older isolation defaults in skills and historical task plans.
+Julia finite volume solver library; a research fork of Daniel VandenHeuvel's FiniteVolumeMethod.jl.
 
-Read README.md, docs/src/capability_matrix.md, docs/src/migration/v4.md and test/KNOWN_FAILURES.md. Preserve Daniel VandenHeuvel’s license and upstream attribution. This fork is not the registered package: Pkg.add("FiniteVolumeMethod") selects upstream, and registration requires a new name/UUID. Scientific maturity follows the capability matrix; CPU Float64 remains the publication baseline and GPU support has limited audited scope. Keep current stable/LTS support and local scientific evidence lanes.
+## Constraints
 
-For tasks tracked in GitHub [Work](https://github.com/users/S-AM-I/projects/11), read `/home/sami/.agents/docs/workflow.md` and use the canonical `github-issues` skill. A backlog entry is context, not authorization. Read the maintained handoff and current responsibility before editing; use one active implementer per issue and transfer responsibility explicitly. Preserve existing task records rather than duplicating publishers.
+- This fork is not the registered package: `Pkg.add("FiniteVolumeMethod")` installs upstream. Registering the fork requires a new name and UUID.
+- Preserve Daniel VandenHeuvel's license and upstream attribution.
+- Scientific maturity claims follow `docs/src/capability_matrix.md`; CPU Float64 is the publication baseline and GPU support has limited audited scope. Known failures live in `test/KNOWN_FAILURES.md`.
+- Only current Julia stable and LTS are release-supported targets.
+- GitHub Actions are disabled for this fork; the local `make` lanes are the authoritative checks.
 
-Substantial authorized features use core Spec Kit specifications, plans and tasks. Small fixes use a concise plan and relevant checks. Reuse approved native/Spec Kit artifacts and authorization; Superpowers supports them without competing plans or repeated approvals. Recover from the recorded feature path using `SPECIFY_FEATURE_DIRECTORY` or ignored `.specify/feature.json`, independently of the branch name.
+## Commands
 
-Use task-based branches without client identity prefixes in the canonical checkout; only explicitly authorized additional worktrees are named `<repo>-<task>` under `/home/sami/Projects/Libraries/`. Preserve the exact branch and absolute checkout on handoff. Update [the maintained handoff](docs/shared-workflow-handoff.md); feature-specific tasks may keep their handoff beside their artifacts and link it there. Completion requires applicable acceptance criteria, review and merge evidence.
-
-[Workflow setup and checks](docs/shared-workflow.md) documents this enrollment. No hooks, autosave or background jobs are enrolled here; current shared hook enrollment is only `/home/sami/.agents`. Preserve licenses and native tooling; keep credentials and live client settings outside Git.
+- Docker lanes (need Docker with 12+ GB memory; run `make ci-build` first and after `Project.toml` changes): `make ci-fast`, `make ci-smoke`, `make ci-full-evidence`, `make ci-performance`, `make ci-release-audit`, `make ci-test`, `make ci-docs-ci`.
+- Single test file: `TEST_FILE=test/geometry/geometry.jl make ci-test-file`.
+- Formatting (Runic): `make ci-format` / `make ci-format-fix`; `scripts/install_hooks.sh` installs a Runic pre-commit hook.
+- Published benchmarks run natively (no Docker): `make ci-published-benchmarks`.
+- `make help` lists all targets.

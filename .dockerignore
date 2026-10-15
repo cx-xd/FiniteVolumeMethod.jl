@@ -10,9 +10,6 @@ Manifest.toml
 test/Manifest.toml
 docs/Manifest.toml
 
-# Claude Code
-.claude/
-
 # Editor / OS files
 *.swp
 *.swo
